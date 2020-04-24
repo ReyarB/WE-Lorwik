@@ -1,0 +1,4 @@
+Línea 15: la clase WorldEditor.lvButtons_H del control cmdCerrar no era una clase de control cargada.
+Línea 40: la clase WorldEditor.lvButtons_H del control cmdAplicarYCerrar no era una clase de control cargada.
+Línea 66: la clase WorldEditor.lvButtons_H del control cmdDetener no era una clase de control cargada.
+Línea 92: la clase WorldEditor.lvButtons_H del control cmdEscuchar no era una clase de control cargada.

@@ -1,0 +1,30 @@
+Línea 76: la clase WorldEditor.lvButtons_H del control cmdAplicar no era una clase de control cargada.
+Línea 410: la clase WorldEditor.lvButtons_H del control cmdCancelar no era una clase de control cargada.
+Línea 435: la clase WorldEditor.lvButtons_H del control cmdDefault no era una clase de control cargada.
+Línea 82: el nombre de la propiedad _ExtentX de cmdAplicar no es válido.
+Línea 83: el nombre de la propiedad _ExtentY de cmdAplicar no es válido.
+Línea 84: el nombre de la propiedad Caption de cmdAplicar no es válido.
+Línea 85: el nombre de la propiedad CapAlign de cmdAplicar no es válido.
+Línea 86: el nombre de la propiedad BackStyle de cmdAplicar no es válido.
+Línea 96: el nombre de la propiedad cGradient de cmdAplicar no es válido.
+Línea 97: el nombre de la propiedad Mode de cmdAplicar no es válido.
+Línea 98: el nombre de la propiedad Value de cmdAplicar no es válido.
+Línea 99: el nombre de la propiedad cBack de cmdAplicar no es válido.
+Línea 416: el nombre de la propiedad _ExtentX de cmdCancelar no es válido.
+Línea 417: el nombre de la propiedad _ExtentY de cmdCancelar no es válido.
+Línea 418: el nombre de la propiedad Caption de cmdCancelar no es válido.
+Línea 419: el nombre de la propiedad CapAlign de cmdCancelar no es válido.
+Línea 420: el nombre de la propiedad BackStyle de cmdCancelar no es válido.
+Línea 430: el nombre de la propiedad cGradient de cmdCancelar no es válido.
+Línea 431: el nombre de la propiedad Mode de cmdCancelar no es válido.
+Línea 432: el nombre de la propiedad Value de cmdCancelar no es válido.
+Línea 433: el nombre de la propiedad cBack de cmdCancelar no es válido.
+Línea 441: el nombre de la propiedad _ExtentX de cmdDefault no es válido.
+Línea 442: el nombre de la propiedad _ExtentY de cmdDefault no es válido.
+Línea 443: el nombre de la propiedad Caption de cmdDefault no es válido.
+Línea 444: el nombre de la propiedad CapAlign de cmdDefault no es válido.
+Línea 445: el nombre de la propiedad BackStyle de cmdDefault no es válido.
+Línea 455: el nombre de la propiedad cGradient de cmdDefault no es válido.
+Línea 456: el nombre de la propiedad Mode de cmdDefault no es válido.
+Línea 457: el nombre de la propiedad Value de cmdDefault no es válido.
+Línea 458: el nombre de la propiedad cBack de cmdDefault no es válido.
