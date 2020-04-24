@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
-Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "Richtx32.ocx"
+Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
 Begin VB.Form frmMain 
    Appearance      =   0  'Flat
    BackColor       =   &H00FFFFFF&
@@ -194,7 +194,7 @@ Begin VB.Form frmMain
          cGradient       =   0
          Mode            =   0
          Value           =   0   'False
-         Image           =   "frmMain.frx":25CA
+         Image           =   "frmMain.frx":000C
          cBack           =   -2147483633
       End
       Begin VB.CheckBox chkRenderizarAl 
@@ -229,7 +229,7 @@ Begin VB.Form frmMain
          cGradient       =   0
          Mode            =   0
          Value           =   0   'False
-         Image           =   "frmMain.frx":321C
+         Image           =   "frmMain.frx":0C5E
          cBack           =   -2147483633
       End
       Begin WorldEditor.lvButtons_H LvBOpcion 
@@ -255,7 +255,7 @@ Begin VB.Form frmMain
          cGradient       =   0
          Mode            =   0
          Value           =   0   'False
-         Image           =   "frmMain.frx":3E6E
+         Image           =   "frmMain.frx":18B0
          cBack           =   -2147483633
       End
       Begin WorldEditor.lvButtons_H LvBOpcion 
@@ -281,7 +281,7 @@ Begin VB.Form frmMain
          cGradient       =   0
          Mode            =   0
          Value           =   0   'False
-         Image           =   "frmMain.frx":4AC0
+         Image           =   "frmMain.frx":2502
          cBack           =   -2147483633
       End
       Begin WorldEditor.lvButtons_H LvBOpcion 
@@ -405,7 +405,7 @@ Begin VB.Form frmMain
       ForeColor       =   &H80000008&
       Height          =   660
       Left            =   20880
-      Picture         =   "frmMain.frx":5712
+      Picture         =   "frmMain.frx":3154
       ScaleHeight     =   660
       ScaleWidth      =   1455
       TabIndex        =   121
@@ -730,7 +730,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":90C0
+      Image           =   "frmMain.frx":6B02
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -762,7 +762,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":9686
+      Image           =   "frmMain.frx":70C8
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -794,7 +794,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":9B87
+      Image           =   "frmMain.frx":75C9
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -826,7 +826,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":9F3B
+      Image           =   "frmMain.frx":797D
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -857,7 +857,7 @@ Begin VB.Form frmMain
       Mode            =   1
       Value           =   0   'False
       ImgAlign        =   5
-      Image           =   "frmMain.frx":A2BC
+      Image           =   "frmMain.frx":7CFE
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -889,7 +889,7 @@ Begin VB.Form frmMain
       Mode            =   1
       Value           =   0   'False
       ImgAlign        =   5
-      Image           =   "frmMain.frx":D91C
+      Image           =   "frmMain.frx":B35E
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -942,7 +942,7 @@ Begin VB.Form frmMain
       ForeColor       =   &H80000008&
       Height          =   6255
       Left            =   120
-      Picture         =   "frmMain.frx":10E62
+      Picture         =   "frmMain.frx":E8A4
       ScaleHeight     =   415
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   295
@@ -2029,9 +2029,9 @@ Begin VB.Form frmMain
          EndProperty
          ForeColor       =   &H80000014&
          Height          =   330
-         ItemData        =   "frmMain.frx":6AE2E
+         ItemData        =   "frmMain.frx":68870
          Left            =   1080
-         List            =   "frmMain.frx":6AE3E
+         List            =   "frmMain.frx":68880
          TabIndex        =   1
          TabStop         =   0   'False
          Text            =   "1"
@@ -2094,9 +2094,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   2580
          Index           =   0
-         ItemData        =   "frmMain.frx":6AE4E
+         ItemData        =   "frmMain.frx":68890
          Left            =   120
-         List            =   "frmMain.frx":6AE50
+         List            =   "frmMain.frx":68892
          Sorted          =   -1  'True
          TabIndex        =   61
          Tag             =   "-1"
@@ -2197,9 +2197,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   330
          Index           =   2
-         ItemData        =   "frmMain.frx":6AE52
+         ItemData        =   "frmMain.frx":68894
          Left            =   3360
-         List            =   "frmMain.frx":6AE54
+         List            =   "frmMain.frx":68896
          TabIndex        =   57
          Text            =   "1"
          Top             =   3120
@@ -2221,9 +2221,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   330
          Index           =   2
-         ItemData        =   "frmMain.frx":6AE56
+         ItemData        =   "frmMain.frx":68898
          Left            =   840
-         List            =   "frmMain.frx":6AE58
+         List            =   "frmMain.frx":6889A
          TabIndex        =   0
          Text            =   "1"
          Top             =   3120
@@ -2244,9 +2244,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   2580
          Index           =   3
-         ItemData        =   "frmMain.frx":6AE5A
+         ItemData        =   "frmMain.frx":6889C
          Left            =   120
-         List            =   "frmMain.frx":6AE5C
+         List            =   "frmMain.frx":6889E
          TabIndex        =   56
          Tag             =   "-1"
          Top             =   120
@@ -2288,9 +2288,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   330
          Index           =   0
-         ItemData        =   "frmMain.frx":6AE5E
+         ItemData        =   "frmMain.frx":688A0
          Left            =   840
-         List            =   "frmMain.frx":6AE60
+         List            =   "frmMain.frx":688A2
          TabIndex        =   48
          Text            =   "1"
          Top             =   3120
@@ -2312,9 +2312,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   330
          Index           =   0
-         ItemData        =   "frmMain.frx":6AE62
+         ItemData        =   "frmMain.frx":688A4
          Left            =   3360
-         List            =   "frmMain.frx":6AE64
+         List            =   "frmMain.frx":688A6
          TabIndex        =   47
          Text            =   "1"
          Top             =   3120
@@ -2355,9 +2355,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   2580
          Index           =   1
-         ItemData        =   "frmMain.frx":6AE66
+         ItemData        =   "frmMain.frx":688A8
          Left            =   120
-         List            =   "frmMain.frx":6AE68
+         List            =   "frmMain.frx":688AA
          TabIndex        =   45
          Tag             =   "-1"
          Top             =   120
@@ -2378,9 +2378,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   3210
          Index           =   4
-         ItemData        =   "frmMain.frx":6AE6A
+         ItemData        =   "frmMain.frx":688AC
          Left            =   120
-         List            =   "frmMain.frx":6AE6C
+         List            =   "frmMain.frx":688AE
          TabIndex        =   44
          Tag             =   "-1"
          Top             =   120
@@ -2909,9 +2909,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   330
          Index           =   1
-         ItemData        =   "frmMain.frx":6AE6E
+         ItemData        =   "frmMain.frx":688B0
          Left            =   840
-         List            =   "frmMain.frx":6AE70
+         List            =   "frmMain.frx":688B2
          TabIndex        =   67
          Text            =   "1"
          Top             =   3120
@@ -2952,9 +2952,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   2580
          Index           =   2
-         ItemData        =   "frmMain.frx":6AE72
+         ItemData        =   "frmMain.frx":688B4
          Left            =   120
-         List            =   "frmMain.frx":6AE74
+         List            =   "frmMain.frx":688B6
          TabIndex        =   69
          Tag             =   "-1"
          Top             =   120
@@ -2976,9 +2976,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   330
          Index           =   1
-         ItemData        =   "frmMain.frx":6AE76
+         ItemData        =   "frmMain.frx":688B8
          Left            =   3360
-         List            =   "frmMain.frx":6AE78
+         List            =   "frmMain.frx":688BA
          TabIndex        =   70
          Text            =   "500"
          Top             =   3120
@@ -3418,7 +3418,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":6AE7A
+      Image           =   "frmMain.frx":688BC
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -3434,11 +3434,10 @@ Begin VB.Form frmMain
       _ExtentY        =   2037
       _Version        =   393217
       BackColor       =   0
-      Enabled         =   -1  'True
       ReadOnly        =   -1  'True
       ScrollBars      =   2
       DisableNoScroll =   -1  'True
-      TextRTF         =   $"frmMain.frx":6B22E
+      TextRTF         =   $"frmMain.frx":68C70
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
          Size            =   8.25
@@ -3477,7 +3476,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":6B2AB
+      Image           =   "frmMain.frx":68CED
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -3509,7 +3508,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":6B8EC
+      Image           =   "frmMain.frx":6932E
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -3541,7 +3540,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":6BF6E
+      Image           =   "frmMain.frx":699B0
       ImgSize         =   24
       cBack           =   -2147483633
    End
