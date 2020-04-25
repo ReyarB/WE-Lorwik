@@ -196,7 +196,7 @@ Private Sub Command1_Click()
 Dim i As Integer
     If Automatico = False Then
         Call modMapIO.NuevoMapa
-        Call MapaInteger_Cargar(App.Path & "\Conversor\Mapas Integer\Mapa" & Text1.Text & ".map")
+        Call MapaV2_Cargar(App.Path & "\Conversor\Mapas Integer\Mapa" & Text1.Text & ".map", True)
         Call MapaV2_Guardar(App.Path & "\Conversor\Mapas Long\Mapa" & Text1.Text & ".map")
         
         Info.Caption = "Conversion realizada correctamente!"
@@ -204,7 +204,7 @@ Dim i As Integer
         For i = Text1.Text To Text2.Text
             If FileExist(App.Path & "\Conversor\Mapas Integer\Mapa" & i & ".map", vbNormal) = True Then
                 Call modMapIO.NuevoMapa
-                Call MapaInteger_Cargar(App.Path & "\Conversor\Mapas Integer\Mapa" & i & ".map")
+                Call MapaV2_Cargar(App.Path & "\Conversor\Mapas Integer\Mapa" & i & ".map", True)
                 Call MapaV2_Guardar(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map")
             
                 Info.Caption = "Mapa" & i & " convertido correctamente!"

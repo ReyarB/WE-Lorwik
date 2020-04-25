@@ -4,27 +4,27 @@ Begin VB.Form frmCargando
    BackColor       =   &H00000000&
    BorderStyle     =   0  'None
    Caption         =   "Argentum"
-   ClientHeight    =   5940
+   ClientHeight    =   4740
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   4560
+   ClientWidth     =   3330
    Icon            =   "frmCargando.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   5940
-   ScaleWidth      =   4560
+   ScaleHeight     =   4740
+   ScaleWidth      =   3330
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.PictureBox Picture1 
       AutoSize        =   -1  'True
       BackColor       =   &H000000FF&
-      Height          =   4560
+      Height          =   3060
       Left            =   0
       Picture         =   "frmCargando.frx":628A
-      ScaleHeight     =   4500
-      ScaleWidth      =   4500
+      ScaleHeight     =   3000
+      ScaleWidth      =   3240
       TabIndex        =   0
       Top             =   0
-      Width           =   4560
+      Width           =   3300
       Begin VB.Label verX 
          Alignment       =   2  'Center
          AutoSize        =   -1  'True
@@ -63,10 +63,10 @@ Begin VB.Form frmCargando
    End
    Begin VB.Image P6 
       Height          =   480
-      Left            =   2355
-      Picture         =   "frmCargando.frx":15180
+      Left            =   2235
+      Picture         =   "frmCargando.frx":90F4
       ToolTipText     =   "Función de Trigger"
-      Top             =   5400
+      Top             =   4080
       Visible         =   0   'False
       Width           =   480
    End
@@ -86,9 +86,9 @@ Begin VB.Form frmCargando
       ForeColor       =   &H00FFFFFF&
       Height          =   195
       Index           =   5
-      Left            =   2880
+      Left            =   2760
       TabIndex        =   8
-      Top             =   5520
+      Top             =   4200
       Visible         =   0   'False
       Width           =   450
    End
@@ -108,9 +108,9 @@ Begin VB.Form frmCargando
       ForeColor       =   &H00FFFFFF&
       Height          =   195
       Index           =   4
-      Left            =   1800
+      Left            =   1560
       TabIndex        =   7
-      Top             =   5520
+      Top             =   4200
       Visible         =   0   'False
       Width           =   510
    End
@@ -130,9 +130,9 @@ Begin VB.Form frmCargando
       ForeColor       =   &H00FFFFFF&
       Height          =   195
       Index           =   3
-      Left            =   3600
+      Left            =   600
       TabIndex        =   6
-      Top             =   4920
+      Top             =   4200
       Visible         =   0   'False
       Width           =   540
    End
@@ -154,7 +154,7 @@ Begin VB.Form frmCargando
       Index           =   2
       Left            =   2640
       TabIndex        =   5
-      Top             =   4920
+      Top             =   3600
       Visible         =   0   'False
       Width           =   495
    End
@@ -174,9 +174,9 @@ Begin VB.Form frmCargando
       ForeColor       =   &H00FFFFFF&
       Height          =   195
       Index           =   1
-      Left            =   1680
+      Left            =   1560
       TabIndex        =   4
-      Top             =   4920
+      Top             =   3600
       Visible         =   0   'False
       Width           =   480
    End
@@ -196,54 +196,54 @@ Begin VB.Form frmCargando
       ForeColor       =   &H00FFFFFF&
       Height          =   195
       Index           =   0
-      Left            =   840
+      Left            =   720
       TabIndex        =   3
-      Top             =   4920
+      Top             =   3600
       Visible         =   0   'False
       Width           =   375
    End
    Begin VB.Image P5 
       Height          =   480
-      Left            =   1320
-      Picture         =   "frmCargando.frx":15DC2
+      Left            =   1080
+      Picture         =   "frmCargando.frx":9D36
       ToolTipText     =   "Objetos"
-      Top             =   5400
+      Top             =   4080
       Visible         =   0   'False
       Width           =   480
    End
    Begin VB.Image P1 
       Height          =   480
-      Left            =   360
-      Picture         =   "frmCargando.frx":16606
+      Left            =   240
+      Picture         =   "frmCargando.frx":A57A
       ToolTipText     =   "Base de Datos"
-      Top             =   4800
+      Top             =   3480
       Visible         =   0   'False
       Width           =   480
    End
    Begin VB.Image P3 
       Height          =   480
       Left            =   2160
-      Picture         =   "frmCargando.frx":16E4A
+      Picture         =   "frmCargando.frx":ADBE
       ToolTipText     =   "Cabezas"
-      Top             =   4800
+      Top             =   3480
       Visible         =   0   'False
       Width           =   480
    End
    Begin VB.Image P4 
       Height          =   480
-      Left            =   3120
-      Picture         =   "frmCargando.frx":1768E
+      Left            =   120
+      Picture         =   "frmCargando.frx":B602
       ToolTipText     =   "NPC's"
-      Top             =   4800
+      Top             =   4080
       Visible         =   0   'False
       Width           =   480
    End
    Begin VB.Image P2 
       Height          =   480
-      Left            =   1200
-      Picture         =   "frmCargando.frx":182D0
+      Left            =   1080
+      Picture         =   "frmCargando.frx":C244
       ToolTipText     =   "Cuerpos"
-      Top             =   4800
+      Top             =   3480
       Visible         =   0   'False
       Width           =   480
    End
@@ -255,8 +255,8 @@ Begin VB.Form frmCargando
       Height          =   255
       Left            =   120
       TabIndex        =   1
-      Top             =   4500
-      Width           =   4335
+      Top             =   3120
+      Width           =   3015
    End
 End
 Attribute VB_Name = "frmCargando"
@@ -283,3 +283,6 @@ Attribute VB_Exposed = False
 'You can contact the original creator of ORE at aaron@baronsoft.com
 'for more information about ORE please visit http://www.baronsoft.com/
 '**************************************************************
+Private Sub Picture1_Click()
+
+End Sub

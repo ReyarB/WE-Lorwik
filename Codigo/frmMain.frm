@@ -27,6 +27,60 @@ Begin VB.Form frmMain
    ScaleWidth      =   719.516
    StartUpPosition =   1  'CenterOwner
    Visible         =   0   'False
+   Begin VB.PictureBox Picture2 
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   900
+      Left            =   20040
+      Picture         =   "frmMain.frx":000C
+      ScaleHeight     =   900
+      ScaleWidth      =   855
+      TabIndex        =   173
+      TabStop         =   0   'False
+      Top             =   12960
+      Width           =   855
+   End
+   Begin VB.Frame FraFormatoDel 
+      BackColor       =   &H00FFFFFF&
+      Caption         =   "Formato del Mapa"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1095
+      Left            =   17640
+      TabIndex        =   170
+      Top             =   12840
+      Width           =   2295
+      Begin VB.OptionButton OptX 
+         BackColor       =   &H00FFFFFF&
+         Caption         =   "200 x 200 (agrandado)"
+         Height          =   195
+         Index           =   1
+         Left            =   120
+         TabIndex        =   172
+         Top             =   720
+         Width           =   2055
+      End
+      Begin VB.OptionButton OptX 
+         BackColor       =   &H00FFFFFF&
+         Caption         =   "100 x 100 (clasico)"
+         Height          =   195
+         Index           =   0
+         Left            =   120
+         TabIndex        =   171
+         Top             =   360
+         Value           =   -1  'True
+         Width           =   1695
+      End
+   End
    Begin VB.PictureBox MinimapCapture 
       Appearance      =   0  'Flat
       AutoRedraw      =   -1  'True
@@ -194,7 +248,7 @@ Begin VB.Form frmMain
          cGradient       =   0
          Mode            =   0
          Value           =   0   'False
-         Image           =   "frmMain.frx":000C
+         Image           =   "frmMain.frx":2A80
          cBack           =   -2147483633
       End
       Begin VB.CheckBox chkRenderizarAl 
@@ -229,7 +283,7 @@ Begin VB.Form frmMain
          cGradient       =   0
          Mode            =   0
          Value           =   0   'False
-         Image           =   "frmMain.frx":0C5E
+         Image           =   "frmMain.frx":36D2
          cBack           =   -2147483633
       End
       Begin WorldEditor.lvButtons_H LvBOpcion 
@@ -255,7 +309,7 @@ Begin VB.Form frmMain
          cGradient       =   0
          Mode            =   0
          Value           =   0   'False
-         Image           =   "frmMain.frx":18B0
+         Image           =   "frmMain.frx":4324
          cBack           =   -2147483633
       End
       Begin WorldEditor.lvButtons_H LvBOpcion 
@@ -281,7 +335,7 @@ Begin VB.Form frmMain
          cGradient       =   0
          Mode            =   0
          Value           =   0   'False
-         Image           =   "frmMain.frx":2502
+         Image           =   "frmMain.frx":4F76
          cBack           =   -2147483633
       End
       Begin WorldEditor.lvButtons_H LvBOpcion 
@@ -405,11 +459,11 @@ Begin VB.Form frmMain
       ForeColor       =   &H80000008&
       Height          =   660
       Left            =   20880
-      Picture         =   "frmMain.frx":3154
+      Picture         =   "frmMain.frx":5BC8
       ScaleHeight     =   660
       ScaleWidth      =   1455
       TabIndex        =   121
-      Top             =   13080
+      Top             =   13200
       Width           =   1455
    End
    Begin VB.PictureBox Minimap 
@@ -730,7 +784,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":6B02
+      Image           =   "frmMain.frx":9576
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -762,7 +816,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":70C8
+      Image           =   "frmMain.frx":9B3C
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -794,7 +848,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":75C9
+      Image           =   "frmMain.frx":A03D
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -826,7 +880,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":797D
+      Image           =   "frmMain.frx":A3F1
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -857,7 +911,7 @@ Begin VB.Form frmMain
       Mode            =   1
       Value           =   0   'False
       ImgAlign        =   5
-      Image           =   "frmMain.frx":7CFE
+      Image           =   "frmMain.frx":A772
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -889,7 +943,7 @@ Begin VB.Form frmMain
       Mode            =   1
       Value           =   0   'False
       ImgAlign        =   5
-      Image           =   "frmMain.frx":B35E
+      Image           =   "frmMain.frx":DDD2
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -942,7 +996,7 @@ Begin VB.Form frmMain
       ForeColor       =   &H80000008&
       Height          =   6255
       Left            =   120
-      Picture         =   "frmMain.frx":E8A4
+      Picture         =   "frmMain.frx":11318
       ScaleHeight     =   415
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   295
@@ -2029,9 +2083,9 @@ Begin VB.Form frmMain
          EndProperty
          ForeColor       =   &H80000014&
          Height          =   330
-         ItemData        =   "frmMain.frx":68870
+         ItemData        =   "frmMain.frx":6B2E4
          Left            =   1080
-         List            =   "frmMain.frx":68880
+         List            =   "frmMain.frx":6B2F4
          TabIndex        =   1
          TabStop         =   0   'False
          Text            =   "1"
@@ -2094,9 +2148,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   2580
          Index           =   0
-         ItemData        =   "frmMain.frx":68890
+         ItemData        =   "frmMain.frx":6B304
          Left            =   120
-         List            =   "frmMain.frx":68892
+         List            =   "frmMain.frx":6B306
          Sorted          =   -1  'True
          TabIndex        =   61
          Tag             =   "-1"
@@ -2197,9 +2251,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   330
          Index           =   2
-         ItemData        =   "frmMain.frx":68894
+         ItemData        =   "frmMain.frx":6B308
          Left            =   3360
-         List            =   "frmMain.frx":68896
+         List            =   "frmMain.frx":6B30A
          TabIndex        =   57
          Text            =   "1"
          Top             =   3120
@@ -2221,9 +2275,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   330
          Index           =   2
-         ItemData        =   "frmMain.frx":68898
+         ItemData        =   "frmMain.frx":6B30C
          Left            =   840
-         List            =   "frmMain.frx":6889A
+         List            =   "frmMain.frx":6B30E
          TabIndex        =   0
          Text            =   "1"
          Top             =   3120
@@ -2244,9 +2298,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   2580
          Index           =   3
-         ItemData        =   "frmMain.frx":6889C
+         ItemData        =   "frmMain.frx":6B310
          Left            =   120
-         List            =   "frmMain.frx":6889E
+         List            =   "frmMain.frx":6B312
          TabIndex        =   56
          Tag             =   "-1"
          Top             =   120
@@ -2288,9 +2342,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   330
          Index           =   0
-         ItemData        =   "frmMain.frx":688A0
+         ItemData        =   "frmMain.frx":6B314
          Left            =   840
-         List            =   "frmMain.frx":688A2
+         List            =   "frmMain.frx":6B316
          TabIndex        =   48
          Text            =   "1"
          Top             =   3120
@@ -2312,9 +2366,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   330
          Index           =   0
-         ItemData        =   "frmMain.frx":688A4
+         ItemData        =   "frmMain.frx":6B318
          Left            =   3360
-         List            =   "frmMain.frx":688A6
+         List            =   "frmMain.frx":6B31A
          TabIndex        =   47
          Text            =   "1"
          Top             =   3120
@@ -2355,9 +2409,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   2580
          Index           =   1
-         ItemData        =   "frmMain.frx":688A8
+         ItemData        =   "frmMain.frx":6B31C
          Left            =   120
-         List            =   "frmMain.frx":688AA
+         List            =   "frmMain.frx":6B31E
          TabIndex        =   45
          Tag             =   "-1"
          Top             =   120
@@ -2378,9 +2432,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   3210
          Index           =   4
-         ItemData        =   "frmMain.frx":688AC
+         ItemData        =   "frmMain.frx":6B320
          Left            =   120
-         List            =   "frmMain.frx":688AE
+         List            =   "frmMain.frx":6B322
          TabIndex        =   44
          Tag             =   "-1"
          Top             =   120
@@ -2909,9 +2963,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   330
          Index           =   1
-         ItemData        =   "frmMain.frx":688B0
+         ItemData        =   "frmMain.frx":6B324
          Left            =   840
-         List            =   "frmMain.frx":688B2
+         List            =   "frmMain.frx":6B326
          TabIndex        =   67
          Text            =   "1"
          Top             =   3120
@@ -2952,9 +3006,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   2580
          Index           =   2
-         ItemData        =   "frmMain.frx":688B4
+         ItemData        =   "frmMain.frx":6B328
          Left            =   120
-         List            =   "frmMain.frx":688B6
+         List            =   "frmMain.frx":6B32A
          TabIndex        =   69
          Tag             =   "-1"
          Top             =   120
@@ -2976,9 +3030,9 @@ Begin VB.Form frmMain
          ForeColor       =   &H80000014&
          Height          =   330
          Index           =   1
-         ItemData        =   "frmMain.frx":688B8
+         ItemData        =   "frmMain.frx":6B32C
          Left            =   3360
-         List            =   "frmMain.frx":688BA
+         List            =   "frmMain.frx":6B32E
          TabIndex        =   70
          Text            =   "500"
          Top             =   3120
@@ -3418,7 +3472,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":688BC
+      Image           =   "frmMain.frx":6B330
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -3429,15 +3483,16 @@ Begin VB.Form frmMain
       TabStop         =   0   'False
       ToolTipText     =   "Mensajes del servidor"
       Top             =   12840
-      Width           =   15975
-      _ExtentX        =   28178
+      Width           =   12855
+      _ExtentX        =   22675
       _ExtentY        =   2037
       _Version        =   393217
       BackColor       =   0
+      Enabled         =   -1  'True
       ReadOnly        =   -1  'True
       ScrollBars      =   2
       DisableNoScroll =   -1  'True
-      TextRTF         =   $"frmMain.frx":68C70
+      TextRTF         =   $"frmMain.frx":6B6E4
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
          Size            =   8.25
@@ -3476,7 +3531,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":68CED
+      Image           =   "frmMain.frx":6B761
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -3508,7 +3563,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":6932E
+      Image           =   "frmMain.frx":6BDA2
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -3540,7 +3595,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":699B0
+      Image           =   "frmMain.frx":6C424
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -3997,6 +4052,9 @@ Begin VB.Form frmMain
       End
       Begin VB.Menu mnuAbrirMapaNew 
          Caption         =   "&Abrir Mapa"
+      End
+      Begin VB.Menu mnuAbrirMapaInt 
+         Caption         =   "&Abrir Mapa (Int)"
       End
       Begin VB.Menu mnuArchivoLine2 
          Caption         =   "-"
@@ -4464,32 +4522,32 @@ Do While i > 0
 Loop
 End Sub
 
-Private Sub cAgregarFuncalAzar_Click(index As Integer)
+Private Sub cAgregarFuncalAzar_Click(Index As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
 On Error Resume Next
-If IsNumeric(cCantFunc(index).Text) = False Or cCantFunc(index).Text > 200 Then
+If IsNumeric(cCantFunc(Index).Text) = False Or cCantFunc(Index).Text > 200 Then
     MsgBox "El Valor de Cantidad introducido no es soportado!" & vbCrLf & "El valor maximo es 200.", vbCritical
     Exit Sub
 End If
-cAgregarFuncalAzar(index).Enabled = False
-Call PonerAlAzar(CInt(cCantFunc(index).Text), 1 + (IIf(index = 2, -1, index)))
-cAgregarFuncalAzar(index).Enabled = True
+cAgregarFuncalAzar(Index).Enabled = False
+Call PonerAlAzar(CInt(cCantFunc(Index).Text), 1 + (IIf(Index = 2, -1, Index)))
+cAgregarFuncalAzar(Index).Enabled = True
 End Sub
 
-Private Sub cCantFunc_Change(index As Integer)
+Private Sub cCantFunc_Change(Index As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
 On Error Resume Next
-    If Val(cCantFunc(index)) < 1 Then
-      cCantFunc(index).Text = 1
+    If Val(cCantFunc(Index)) < 1 Then
+      cCantFunc(Index).Text = 1
     End If
-    If Val(cCantFunc(index)) > 10000 Then
-      cCantFunc(index).Text = 10000
+    If Val(cCantFunc(Index)) > 10000 Then
+      cCantFunc(Index).Text = 10000
     End If
 End Sub
 
@@ -4515,7 +4573,7 @@ Private Sub cCapas_KeyPress(KeyAscii As Integer)
 If IsNumeric(Chr(KeyAscii)) = False Then KeyAscii = 0
 End Sub
 
-Private Sub cFiltro_GotFocus(index As Integer)
+Private Sub cFiltro_GotFocus(Index As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
@@ -4523,17 +4581,17 @@ Private Sub cFiltro_GotFocus(index As Integer)
 HotKeysAllow = False
 End Sub
 
-Private Sub cFiltro_KeyPress(index As Integer, KeyAscii As Integer)
+Private Sub cFiltro_KeyPress(Index As Integer, KeyAscii As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
 If KeyAscii = 13 Then
-    Call Filtrar(index)
+    Call Filtrar(Index)
 End If
 End Sub
 
-Private Sub cFiltro_LostFocus(index As Integer)
+Private Sub cFiltro_LostFocus(Index As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
@@ -4565,25 +4623,25 @@ Fallo:
 End Sub
 
 
-Private Sub chkOptMinimap_Click(index As Integer)
+Private Sub chkOptMinimap_Click(Index As Integer)
     Call DibujarMiniMapa
 End Sub
 
-Private Sub cInsertarFunc_Click(index As Integer)
+Private Sub cInsertarFunc_Click(Index As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
-If cInsertarFunc(index).value = True Then
-    cQuitarFunc(index).Enabled = False
-    cAgregarFuncalAzar(index).Enabled = False
-    If index <> 2 Then cCantFunc(index).Enabled = False
-    Call modPaneles.EstSelectPanel((index) + 3, True)
+If cInsertarFunc(Index).value = True Then
+    cQuitarFunc(Index).Enabled = False
+    cAgregarFuncalAzar(Index).Enabled = False
+    If Index <> 2 Then cCantFunc(Index).Enabled = False
+    Call modPaneles.EstSelectPanel((Index) + 3, True)
 Else
-    cQuitarFunc(index).Enabled = True
-    cAgregarFuncalAzar(index).Enabled = True
-    If index <> 2 Then cCantFunc(index).Enabled = True
-    Call modPaneles.EstSelectPanel((index) + 3, False)
+    cQuitarFunc(Index).Enabled = True
+    cAgregarFuncalAzar(Index).Enabled = True
+    If Index <> 2 Then cCantFunc(Index).Enabled = True
+    Call modPaneles.EstSelectPanel((Index) + 3, False)
 End If
 End Sub
 
@@ -4666,12 +4724,12 @@ Private Sub cmdQuitarFunciones_Click()
 Call mnuQuitarFunciones_Click
 End Sub
 
-Private Sub COPIAR_GRH_Click(index As Integer)
+Private Sub COPIAR_GRH_Click(Index As Integer)
 On Error Resume Next
 Dim Y As Integer
 Dim X As Integer
  
-    Select Case index
+    Select Case Index
         Case 0 'Arriba
             For Y = 1 To 11
                 For X = 1 To 200
@@ -4755,7 +4813,7 @@ Private Sub cverTriggers_Click()
 mnuVerTriggers.Checked = cVerTriggers.value
 End Sub
 
-Private Sub cNumFunc_KeyPress(index As Integer, KeyAscii As Integer)
+Private Sub cNumFunc_KeyPress(Index As Integer, KeyAscii As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
@@ -4764,13 +4822,13 @@ On Error Resume Next
 
 If KeyAscii = 13 Then
     Dim Cont As String
-    Cont = frmMain.cNumFunc(index).Text
-    Call cNumFunc_LostFocus(index)
-    If Cont <> frmMain.cNumFunc(index).Text Then Exit Sub
-    If frmMain.cNumFunc(index).ListCount > 5 Then
-        frmMain.cNumFunc(index).RemoveItem 0
+    Cont = frmMain.cNumFunc(Index).Text
+    Call cNumFunc_LostFocus(Index)
+    If Cont <> frmMain.cNumFunc(Index).Text Then Exit Sub
+    If frmMain.cNumFunc(Index).ListCount > 5 Then
+        frmMain.cNumFunc(Index).RemoveItem 0
     End If
-    frmMain.cNumFunc(index).AddItem frmMain.cNumFunc(index).Text
+    frmMain.cNumFunc(Index).AddItem frmMain.cNumFunc(Index).Text
     Exit Sub
 ElseIf KeyAscii = 8 Then
     
@@ -4781,34 +4839,34 @@ End If
 
 End Sub
 
-Private Sub cNumFunc_KeyUp(index As Integer, KeyCode As Integer, Shift As Integer)
+Private Sub cNumFunc_KeyUp(Index As Integer, KeyCode As Integer, Shift As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
 On Error Resume Next
-If cNumFunc(index).Text = vbNullString Then
-    frmMain.cNumFunc(index).Text = IIf(index = 1, 500, 1)
+If cNumFunc(Index).Text = vbNullString Then
+    frmMain.cNumFunc(Index).Text = IIf(Index = 1, 500, 1)
 End If
 End Sub
 
-Private Sub cNumFunc_LostFocus(index As Integer)
+Private Sub cNumFunc_LostFocus(Index As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
 On Error Resume Next
-    If index = 0 Then
-        If frmMain.cNumFunc(index).Text > 499 Or frmMain.cNumFunc(index).Text < 1 Then
-            frmMain.cNumFunc(index).Text = 1
+    If Index = 0 Then
+        If frmMain.cNumFunc(Index).Text > 499 Or frmMain.cNumFunc(Index).Text < 1 Then
+            frmMain.cNumFunc(Index).Text = 1
         End If
-    ElseIf index = 1 Then
-        If frmMain.cNumFunc(index).Text < 500 Or frmMain.cNumFunc(index).Text > 32000 Then
-            frmMain.cNumFunc(index).Text = 500
+    ElseIf Index = 1 Then
+        If frmMain.cNumFunc(Index).Text < 500 Or frmMain.cNumFunc(Index).Text > 32000 Then
+            frmMain.cNumFunc(Index).Text = 500
         End If
-    ElseIf index = 2 Then
-        If frmMain.cNumFunc(index).Text < 1 Or frmMain.cNumFunc(index).Text > 32000 Then
-            frmMain.cNumFunc(index).Text = 1
+    ElseIf Index = 2 Then
+        If frmMain.cNumFunc(Index).Text < 1 Or frmMain.cNumFunc(Index).Text > 32000 Then
+            frmMain.cNumFunc(Index).Text = 1
         End If
     End If
 End Sub
@@ -4890,27 +4948,27 @@ End If
 End Sub
 
 
-Private Sub cQuitarFunc_Click(index As Integer)
+Private Sub cQuitarFunc_Click(Index As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
-If cQuitarFunc(index).value = True Then
-    cInsertarFunc(index).Enabled = False
-    cAgregarFuncalAzar(index).Enabled = False
-    cCantFunc(index).Enabled = False
-    cNumFunc(index).Enabled = False
-    cFiltro((index) + 1).Enabled = False
-    lListado((index) + 1).Enabled = False
-    Call modPaneles.EstSelectPanel((index) + 3, True)
+If cQuitarFunc(Index).value = True Then
+    cInsertarFunc(Index).Enabled = False
+    cAgregarFuncalAzar(Index).Enabled = False
+    cCantFunc(Index).Enabled = False
+    cNumFunc(Index).Enabled = False
+    cFiltro((Index) + 1).Enabled = False
+    lListado((Index) + 1).Enabled = False
+    Call modPaneles.EstSelectPanel((Index) + 3, True)
 Else
-    cInsertarFunc(index).Enabled = True
-    cAgregarFuncalAzar(index).Enabled = True
-    cCantFunc(index).Enabled = True
-    cNumFunc(index).Enabled = True
-    cFiltro((index) + 1).Enabled = True
-    lListado((index) + 1).Enabled = True
-    Call modPaneles.EstSelectPanel((index) + 3, False)
+    cInsertarFunc(Index).Enabled = True
+    cAgregarFuncalAzar(Index).Enabled = True
+    cCantFunc(Index).Enabled = True
+    cNumFunc(Index).Enabled = True
+    cFiltro((Index) + 1).Enabled = True
+    lListado((Index) + 1).Enabled = True
+    Call modPaneles.EstSelectPanel((Index) + 3, False)
 End If
 End Sub
 
@@ -4991,7 +5049,7 @@ Me.SetFocus
 
 End Sub
 
-Private Sub LvBGuardarMinimapa_Click(index As Integer)
+Private Sub LvBGuardarMinimapa_Click(Index As Integer)
     Shape1.Visible = False
     UserArea.Visible = False
     DoEvents
@@ -5001,8 +5059,8 @@ Private Sub LvBGuardarMinimapa_Click(index As Integer)
     UserArea.Visible = True
 End Sub
 
-Private Sub LvBOpcion_Click(index As Integer)
-    Select Case index
+Private Sub LvBOpcion_Click(Index As Integer)
+    Select Case Index
         Case 0
             cVerBloqueos.value = (cVerBloqueos.value = False)
             mnuVerBloqueos.Checked = cVerBloqueos.value
@@ -5024,7 +5082,7 @@ Private Sub LvBOpcion_Click(index As Integer)
     End Select
 End Sub
 
-Private Sub LvBAreas_Click(index As Integer)
+Private Sub LvBAreas_Click(Index As Integer)
     If IsNumeric(DX1.Text) = False Or _
        IsNumeric(DX2.Text) = False Or _
        IsNumeric(DY1.Text) = False Or _
@@ -5035,7 +5093,7 @@ Private Sub LvBAreas_Click(index As Integer)
        Exit Sub
     End If
     
-    Select Case index
+    Select Case Index
         Case 0
             Call Bloqueos_Area(DX1.Text, DX2.Text, DY1.Text, DY2.Text, False)
         Case 1
@@ -5055,6 +5113,41 @@ Private Sub LvBVerMapa_Click()
   End If
 End Sub
 
+Private Sub mnuAbrirMapaInt_Click()
+'*************************************************
+'Author: Lorwik
+'Last modified: 25/04/2020
+'*************************************************
+Dialog.CancelError = True
+On Error GoTo errhandler
+
+DeseaGuardarMapa Dialog.FileName
+
+ObtenerNombreArchivo False
+
+If Len(Dialog.FileName) < 3 Then Exit Sub
+
+    If WalkMode = True Then
+        Call modGeneral.ToggleWalkMode
+    End If
+    
+    Call modMapIO.NuevoMapa
+    
+    'Tambien podrá elegir CSM, pero no habra diferencia
+    If frmMain.Dialog.FilterIndex = 1 Then
+        modMapIO.Cargar_CSM Dialog.FileName
+    ElseIf frmMain.Dialog.FilterIndex = 2 Then
+        modMapIO.MapaV2_Cargar Dialog.FileName, True
+    End If
+    
+    DoEvents
+    mnuReAbrirMapa.Enabled = True
+    EngineRun = True
+    
+Exit Sub
+errhandler:
+End Sub
+
 Private Sub mnuCostas_Click()
     Call PutCoast
 End Sub
@@ -5070,6 +5163,27 @@ End Sub
 
 Private Sub mnuQuitarBloqueosBorde_Click()
  Call Bloquear_Bordes(0)
+End Sub
+
+Private Sub OptX_Click(Index As Integer)
+'*************************************************
+'Author: Lorwik
+'Last modified: 25/04/2020
+'*************************************************
+'Nota: Hay que cambiar muchas cosas, el engine cuando inicia hace calculos con el tamaño de los mapas
+'ademas hay mas funciones que manejan estos datos, no basta con cambiar el XMax & YMax.
+
+    Select Case Index
+    
+        Case 1
+            XMaxMapSize = 100
+            YMaxMapSize = 100
+        
+        Case 2
+            XMaxMapSize = 200
+            YMaxMapSize = 200
+    
+    End Select
 End Sub
 
 Private Sub renderer_DblClick()
@@ -5126,7 +5240,7 @@ Private Sub Form_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As 
     'If Seleccionando Then CopiarSeleccion
 End Sub
 
-Private Sub lListado_Click(index As Integer)
+Private Sub lListado_Click(Index As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 29/05/06
@@ -5134,20 +5248,20 @@ Private Sub lListado_Click(index As Integer)
 On Error Resume Next
 
 If HotKeysAllow = False Then
-    lListado(index).Tag = lListado(index).ListIndex
-    Select Case index
+    lListado(Index).Tag = lListado(Index).ListIndex
+    Select Case Index
         Case 0
-            cGrh.Text = DameGrhIndex(ReadField(2, lListado(index).Text, Asc("#")))
-            If SupData(ReadField(2, lListado(index).Text, Asc("#"))).Capa <> 0 Then
-                If LenB(ReadField(2, lListado(index).Text, Asc("#"))) = 0 Then cCapas.Tag = cCapas.Text
-                cCapas.Text = SupData(ReadField(2, lListado(index).Text, Asc("#"))).Capa
+            cGrh.Text = DameGrhIndex(ReadField(2, lListado(Index).Text, Asc("#")))
+            If SupData(ReadField(2, lListado(Index).Text, Asc("#"))).Capa <> 0 Then
+                If LenB(ReadField(2, lListado(Index).Text, Asc("#"))) = 0 Then cCapas.Tag = cCapas.Text
+                cCapas.Text = SupData(ReadField(2, lListado(Index).Text, Asc("#"))).Capa
             Else
                 If LenB(cCapas.Tag) <> 0 Then
                     cCapas.Text = cCapas.Tag
                     cCapas.Tag = vbNullString
                 End If
             End If
-            If SupData(ReadField(2, lListado(index).Text, Asc("#"))).Block = True Then
+            If SupData(ReadField(2, lListado(Index).Text, Asc("#"))).Block = True Then
                 If LenB(cInsertarBloqueo.Tag) = 0 Then cInsertarBloqueo.Tag = IIf(cInsertarBloqueo.value = True, 1, 0)
                 cInsertarBloqueo.value = True
                 Call cInsertarBloqueo_Click
@@ -5161,29 +5275,29 @@ If HotKeysAllow = False Then
             Call fPreviewGrh(cGrh.Text)
             Call modPaneles.VistaPreviaDeSup
         Case 1
-            cNumFunc(0).Text = ReadField(2, lListado(index).Text, Asc("#"))
+            cNumFunc(0).Text = ReadField(2, lListado(Index).Text, Asc("#"))
         Case 2
-            cNumFunc(1).Text = ReadField(2, lListado(index).Text, Asc("#"))
+            cNumFunc(1).Text = ReadField(2, lListado(Index).Text, Asc("#"))
         Case 3
-            cNumFunc(2).Text = ReadField(2, lListado(index).Text, Asc("#"))
+            cNumFunc(2).Text = ReadField(2, lListado(Index).Text, Asc("#"))
     End Select
 Else
-    lListado(index).ListIndex = lListado(index).Tag
+    lListado(Index).ListIndex = lListado(Index).Tag
 End If
 
 End Sub
 
-Private Sub lListado_MouseDown(index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub lListado_MouseDown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 29/05/06
 '*************************************************
-If index = 3 And Button = 2 Then
+If Index = 3 And Button = 2 Then
     If lListado(3).ListIndex > -1 Then Me.PopupMenu mnuObjSc
 End If
 End Sub
 
-Private Sub lListado_MouseMove(index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub lListado_MouseMove(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 22/05/06
@@ -5208,7 +5322,7 @@ Private Sub lvButtons_H4_Click()
 base_light = ARGB(165, 165, 165, 255)
 End Sub
 
-Private Sub MapPest_Click(index As Integer)
+Private Sub MapPest_Click(Index As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
@@ -5221,10 +5335,10 @@ Dim formato As String
         formato = ".csm"
     End If
 
-    If (index + NumMap_Save - 4) <> NumMap_Save Then
+    If (Index + NumMap_Save - 4) <> NumMap_Save Then
         Dialog.CancelError = True
-        On Error GoTo ErrHandler
-        Dialog.FileName = PATH_Save & NameMap_Save & (index + NumMap_Save - 7) & formato
+        On Error GoTo errhandler
+        Dialog.FileName = PATH_Save & NameMap_Save & (Index + NumMap_Save - 7) & formato
         If MapInfo.Changed = 1 Then
             If MsgBox(MSGMod, vbExclamation + vbYesNo) = vbYes Then
                 modMapIO.GuardarMapa Dialog.FileName
@@ -5240,7 +5354,7 @@ Dim formato As String
             EngineRun = True
         Exit Sub
     
-ErrHandler:
+errhandler:
     MsgBox err.Description
 
 End If
@@ -5275,7 +5389,7 @@ Private Sub mnuAbrirMapaNew_Click()
 'Last modified: 04/11/2015
 '*************************************************
 Dialog.CancelError = True
-On Error GoTo ErrHandler
+On Error GoTo errhandler
 
 DeseaGuardarMapa Dialog.FileName
 
@@ -5298,7 +5412,7 @@ If Len(Dialog.FileName) < 3 Then Exit Sub
     EngineRun = True
     
 Exit Sub
-ErrHandler:
+errhandler:
 End Sub
 
 Private Sub mnuActualizarCabezas_Click()
@@ -5876,7 +5990,7 @@ Private Sub mnuReAbrirMapa_Click()
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
-On Error GoTo ErrHandler
+On Error GoTo errhandler
     If FileExist(Dialog.FileName, vbArchive) = False Then Exit Sub
     If MapInfo.Changed = 1 Then
         If MsgBox(MSGMod, vbExclamation + vbYesNo) = vbYes Then
@@ -5895,7 +6009,7 @@ On Error GoTo ErrHandler
     mnuReAbrirMapa.Enabled = True
     EngineRun = True
 Exit Sub
-ErrHandler:
+errhandler:
 End Sub
 
 Private Sub mnuRealizarOperacion_Click()
@@ -6166,20 +6280,20 @@ End If
 
 End Sub
 
-Private Sub SelectPanel_Click(index As Integer)
+Private Sub SelectPanel_Click(Index As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
 Dim i As Byte
 For i = 0 To 9
-    If i <> index Then
+    If i <> Index Then
         SelectPanel(i).value = False
         Call VerFuncion(i, False)
     End If
 Next
 If mnuAutoQuitarFunciones.Checked = True Then Call mnuQuitarFunciones_Click
-Call VerFuncion(index, SelectPanel(index).value)
+Call VerFuncion(Index, SelectPanel(Index).value)
 End Sub
 
 Private Sub TimAutoGuardarMapa_Timer()
@@ -6206,7 +6320,7 @@ Public Sub ObtenerNombreArchivo(ByVal Guardar As Boolean)
 '*************************************************
 On Error Resume Next
 With Dialog
-    .Filter = "Mapas de AODrag (*.csm)|*.csm|Mapas de Argentum Online (*.map)|*.map"
+    .Filter = "Mapas del nuevo formato (*.csm)|*.csm|Mapas clasicos de Argentum Online (*.map)|*.map"
     If Guardar Then
             .DialogTitle = "Guardar"
             .DefaultExt = ".txt"

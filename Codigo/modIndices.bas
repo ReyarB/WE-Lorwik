@@ -6,54 +6,57 @@ Public GrhCount As Long
 ''
 ' Carga los indices de Graficos
 '
-
 Public Function LoadGrhData() As Boolean
-On Error GoTo ErrorHandler
-    Dim Grh As Long
-    Dim Frame As Long
-    Dim Handle As Integer
+
+    On Error GoTo ErrorHandler
+
+    Dim Grh         As Long
+    Dim Frame       As Long
+    Dim handle      As Integer
     Dim fileVersion As Long
-    Dim file As String
-    
-    file = Get_Extract(Scripts, "Graficos.ind")
-    
+    Dim File        As String
+
     'Open files
-    Handle = FreeFile()
-    Open file For Binary Access Read As Handle
+    handle = FreeFile()
+    Open DirIndex & "Graficos.ind" For Binary Access Read As handle
     Seek #1, 1
     
     'Get file version
-    Get Handle, , fileVersion
+    Get handle, , fileVersion
     
     'Get number of grhs
-    Get Handle, , GrhCount
+    Get handle, , GrhCount
     
     'Resize arrays
     ReDim GrhData(1 To GrhCount) As GrhData
     
-    While Not EOF(Handle)
-        Get Handle, , Grh
+    While Not EOF(handle)
+
+        Get handle, , Grh
+
         If Grh <> 0 Then
+
             With GrhData(Grh)
+            
                 'Get number of frames
-                Get Handle, , .NumFrames
+                Get handle, , .NumFrames
                 If .NumFrames <= 0 Then GoTo ErrorHandler
                 
                 .Active = True
                 
-                ReDim .Frames(1 To GrhData(Grh).NumFrames)
+                ReDim .Frames(1 To .NumFrames)
                 
                 If .NumFrames > 1 Then
+
                     'Read a animation GRH set
                     For Frame = 1 To .NumFrames
-                        Get Handle, , .Frames(Frame)
-                        If .Frames(Frame) <= 0 Or .Frames(Frame) > GrhCount Then
-                            GoTo ErrorHandler
-                        End If
+                    
+                        Get handle, , .Frames(Frame)
+                        If .Frames(Frame) <= 0 Or .Frames(Frame) > GrhCount Then GoTo ErrorHandler
+
                     Next Frame
                     
-                    Get Handle, , .Speed
-                    
+                    Get handle, , .Speed
                     If .Speed <= 0 Then GoTo ErrorHandler
                     
                     'Compute width and height
@@ -68,21 +71,22 @@ On Error GoTo ErrorHandler
                     
                     .TileHeight = GrhData(.Frames(1)).TileHeight
                     If .TileHeight <= 0 Then GoTo ErrorHandler
+                    
                 Else
                     'Read in normal GRH data
-                    Get Handle, , .FileNum
+                    Get handle, , .FileNum
                     If .FileNum <= 0 Then GoTo ErrorHandler
                     
-                    Get Handle, , GrhData(Grh).sX
+                    Get handle, , GrhData(Grh).sX
                     If .sX < 0 Then GoTo ErrorHandler
                     
-                    Get Handle, , .sY
+                    Get handle, , .sY
                     If .sY < 0 Then GoTo ErrorHandler
                     
-                    Get Handle, , .pixelWidth
+                    Get handle, , .pixelWidth
                     If .pixelWidth <= 0 Then GoTo ErrorHandler
                     
-                    Get Handle, , .pixelHeight
+                    Get handle, , .pixelHeight
                     If .pixelHeight <= 0 Then GoTo ErrorHandler
                     
                     'Compute width and height
@@ -90,20 +94,25 @@ On Error GoTo ErrorHandler
                     .TileHeight = .pixelHeight / TilePixelWidth
                     
                     .Frames(1) = Grh
+
                 End If
+
             End With
+
         End If
+
     Wend
     
-    Close Handle
-   Delete_File file
+    Close handle
 
     LoadGrhData = True
-Exit Function
+    
+    Exit Function
  
 ErrorHandler:
     LoadGrhData = False
     Debug.Print "Error en LoadGrhData... Grh: " & Grh
+
 End Function
 
 
@@ -239,16 +248,16 @@ End Sub
 '
 
 Public Sub CargarIndicesDeCuerpos()
-    Dim n As Integer
-    Dim i As Long
-    Dim j As Byte
-    Dim file As String
-    Dim NumCuerpos As Integer
+
+    Dim n            As Integer
+    Dim i            As Long
+    Dim J            As Byte
+    Dim File         As String
+    Dim NumCuerpos   As Integer
     Dim MisCuerpos() As tIndiceCuerpo
     
     n = FreeFile()
-    file = Get_Extract(Scripts, "Personajes.ind")
-    Open file For Binary Access Read As #n
+    Open DirIndex & "Personajes.ind" For Binary Access Read As #n
     
     'cabecera
     Get #n, , MiCabecera
@@ -264,18 +273,20 @@ Public Sub CargarIndicesDeCuerpos()
         Get #n, , MisCuerpos(i)
         
         If MisCuerpos(i).Body(1) Then
-            For j = 1 To 4
-                InitGrh BodyData(i).Walk(j), MisCuerpos(i).Body(j), 0
-            Next j
+
+            For J = 1 To 4
+                InitGrh BodyData(i).Walk(J), MisCuerpos(i).Body(J), 0
+            Next J
 
             BodyData(i).HeadOffset.X = MisCuerpos(i).HeadOffsetX
             BodyData(i).HeadOffset.Y = MisCuerpos(i).HeadOffsetY
+
         End If
+
     Next i
     
     Close #n
-    
-    Delete_File file
+
 End Sub
 
 ''
@@ -283,35 +294,42 @@ End Sub
 '
 
 Public Sub CargarIndicesDeCabezas()
-    Dim i As Integer
-    Dim file As String
+
+    Dim n            As Integer
+    Dim i            As Long
+    Dim J            As Byte
+    Dim Miscabezas() As tIndiceCabeza
+    Dim File         As String
     
-        file = Get_Extract(Scripts, "Cabezas.ind")
-        Open file For Binary Access Read As #1
+    'Cabezas
+    n = FreeFile()
+    Open DirIndex & "Cabezas.ind" For Binary Access Read As #n
     
-            Get #1, , Numheads   'cantidad de cabezas
-             
-            ReDim heads(1 To Numheads) As tHead
-             
-            Dim Texture As Integer
-            Dim temp    As Integer
-            Dim startX  As Integer
-            Dim startY  As Integer
-            Dim skip As Byte
-            
-            For i = 1 To Numheads
-                Get #1, , Texture 'number of .bmp
-                Get #1, , startX
-                Get #1, , startY
-             
-                heads(i).Texture = Texture
-                heads(i).startX = startX
-                heads(i).startY = startY
-                
-            Next i
-         
-    Close #1
-    Delete_File file
+    'cabecera
+    Get #n, , MiCabecera
+    
+    'num de cabezas
+    Get #n, , Numheads
+    
+    'Resize array
+    ReDim HeadData(0 To Numheads) As tHeadData
+    ReDim Miscabezas(0 To Numheads) As tIndiceCabeza
+    
+    For i = 1 To Numheads
+        Get #n, , Miscabezas(i)
+        
+        If Miscabezas(i).Head(1) Then
+
+            For J = 1 To 4
+                Call InitGrh(HeadData(i).Head(J), Miscabezas(i).Head(J), 0)
+            Next J
+
+        End If
+
+    Next i
+    
+    Close #n
+
 End Sub
 
 ''
@@ -371,117 +389,141 @@ Fallo:
 End Sub
 
 Public Sub LoadMiniMap()
-On Error GoTo ErrorHandler
-    Dim file As String
-    Dim count As Long
-    Dim Handle As Integer
+
+    On Error GoTo ErrorHandler
     
+    If Not FileExist(DirIndex & "minimap.dat", vbNormal) Then Exit Sub
+    
+    Dim File   As String
+    Dim count  As Long
+    Dim handle As Integer
+        
     'Open files
-    Handle = FreeFile()
+    handle = FreeFile()
     
-    file = Get_Extract(Scripts, "minimap.dat")
-    Open file For Binary As Handle
-        Seek Handle, 1
-        For count = 1 To GrhCount
-            If GrhData(count).Active Then
-                Get Handle, , GrhData(count).MiniMap_color
-            End If
-        Next count
-    Close Handle
-    Delete_File file
+    Open DirIndex & "minimap.dat" For Binary As handle
+    Seek handle, 1
+
+    For count = 1 To GrhCount
+
+        If GrhData(count).Active Then
+            Get handle, , GrhData(count).MiniMap_color
+        End If
+
+    Next count
+
+    Close handle
     
 ErrorHandler:
     Debug.Print "Error en LoadMiniMap."
+
 End Sub
 
 Public Sub CargarParticulas()
-'*************************************
-'Coded by OneZero (onezero_ss@hotmail.com)
-'Last Modified: 6/4/03
-'Loads the Particles.ini file to the ComboBox
-'Edited by Juan Martín Sotuyo Dodero to add speed and life
-'*************************************
+    '*************************************
+    'Coded by OneZero (onezero_ss@hotmail.com)
+    'Last Modified: 6/4/03
+    'Loads the Particles.ini file to the ComboBox
+    'Edited by Juan Martín Sotuyo Dodero to add speed and life
+    '*************************************
     
-On Error GoTo ErrorHandler
+    On Error GoTo ErrorHandler
     
-    Dim loopc As Long
-    Dim i As Long
+    Dim LoopC      As Long
+    Dim i          As Long
     Dim GrhListing As String
-    Dim TempSet As String
-    Dim ColorSet As Long
+    Dim TempSet    As String
+    Dim ColorSet   As Long
     Dim StreamFile As String
-    Dim Leer As New clsIniReader
-    
-    If Not Extract_File(Scripts, App.Path & "\Recursos", "particulas.ini", Windows_Temp_Dir, False) Then
-        err.Description = "¡No se puede cargar el archivo de recurso!"
-        GoTo ErrorHandler
-    End If
-    
-    StreamFile = Windows_Temp_Dir & "Particulas.ini"
-    Leer.Initialize StreamFile
+    Dim Leer       As New clsIniReader
+
+    Call Leer.Initialize(App.Path & "\Recursos\Init\Particulas.ini")
     
     TotalStreams = Val(Leer.GetValue("INIT", "Total"))
     
     'resize StreamData array
     ReDim StreamData(1 To TotalStreams) As Stream
     
-        For loopc = 1 To TotalStreams
-            StreamData(loopc).name = Leer.GetValue(Val(loopc), "Name")
-            frmMain.lstParticle.AddItem loopc & "-" & StreamData(loopc).name
-            StreamData(loopc).NumOfParticles = Leer.GetValue(Val(loopc), "NumOfParticles")
-            StreamData(loopc).X1 = Leer.GetValue(Val(loopc), "X1")
-            StreamData(loopc).Y1 = Leer.GetValue(Val(loopc), "Y1")
-            StreamData(loopc).X2 = Leer.GetValue(Val(loopc), "X2")
-            StreamData(loopc).Y2 = Leer.GetValue(Val(loopc), "Y2")
-            StreamData(loopc).angle = Leer.GetValue(Val(loopc), "Angle")
-            StreamData(loopc).vecx1 = Leer.GetValue(Val(loopc), "VecX1")
-            StreamData(loopc).vecx2 = Leer.GetValue(Val(loopc), "VecX2")
-            StreamData(loopc).vecy1 = Leer.GetValue(Val(loopc), "VecY1")
-            StreamData(loopc).vecy2 = Leer.GetValue(Val(loopc), "VecY2")
-            StreamData(loopc).life1 = Leer.GetValue(Val(loopc), "Life1")
-            StreamData(loopc).life2 = Leer.GetValue(Val(loopc), "Life2")
-            StreamData(loopc).friction = Leer.GetValue(Val(loopc), "Friction")
-            StreamData(loopc).spin = Leer.GetValue(Val(loopc), "Spin")
-            StreamData(loopc).spin_speedL = Leer.GetValue(Val(loopc), "Spin_SpeedL")
-            StreamData(loopc).spin_speedH = Leer.GetValue(Val(loopc), "Spin_SpeedH")
-            StreamData(loopc).AlphaBlend = Leer.GetValue(Val(loopc), "AlphaBlend")
-            StreamData(loopc).gravity = Leer.GetValue(Val(loopc), "Gravity")
-            StreamData(loopc).grav_strength = Leer.GetValue(Val(loopc), "Grav_Strength")
-            StreamData(loopc).bounce_strength = Leer.GetValue(Val(loopc), "Bounce_Strength")
-            StreamData(loopc).XMove = Leer.GetValue(Val(loopc), "XMove")
-            StreamData(loopc).YMove = Leer.GetValue(Val(loopc), "YMove")
-            StreamData(loopc).move_x1 = Leer.GetValue(Val(loopc), "move_x1")
-            StreamData(loopc).move_x2 = Leer.GetValue(Val(loopc), "move_x2")
-            StreamData(loopc).move_y1 = Leer.GetValue(Val(loopc), "move_y1")
-            StreamData(loopc).move_y2 = Leer.GetValue(Val(loopc), "move_y2")
-            StreamData(loopc).Radio = Val(Leer.GetValue(Val(loopc), "Radio"))
-            StreamData(loopc).life_counter = Leer.GetValue(Val(loopc), "life_counter")
-            StreamData(loopc).Speed = Val(Leer.GetValue(Val(loopc), "Speed"))
-            StreamData(loopc).NumGrhs = Leer.GetValue(Val(loopc), "NumGrhs")
+    For LoopC = 1 To TotalStreams
+
+        With StreamData(LoopC)
+        
+            .name = Leer.GetValue(Val(LoopC), "Name")
+        
+            Call frmMain.lstParticle.AddItem(LoopC & "-" & .name)
+        
+            .NumOfParticles = Leer.GetValue(Val(LoopC), "NumOfParticles")
+            .X1 = Leer.GetValue(Val(LoopC), "X1")
+            .Y1 = Leer.GetValue(Val(LoopC), "Y1")
+            .X2 = Leer.GetValue(Val(LoopC), "X2")
+            .Y2 = Leer.GetValue(Val(LoopC), "Y2")
+            .angle = Leer.GetValue(Val(LoopC), "Angle")
+            .vecx1 = Leer.GetValue(Val(LoopC), "VecX1")
+            .vecx2 = Leer.GetValue(Val(LoopC), "VecX2")
+            .vecy1 = Leer.GetValue(Val(LoopC), "VecY1")
+            .vecy2 = Leer.GetValue(Val(LoopC), "VecY2")
+            .life1 = Leer.GetValue(Val(LoopC), "Life1")
+            .life2 = Leer.GetValue(Val(LoopC), "Life2")
+            .friction = Leer.GetValue(Val(LoopC), "Friction")
+            .spin = Leer.GetValue(Val(LoopC), "Spin")
+            .spin_speedL = Leer.GetValue(Val(LoopC), "Spin_SpeedL")
+            .spin_speedH = Leer.GetValue(Val(LoopC), "Spin_SpeedH")
+            .AlphaBlend = Leer.GetValue(Val(LoopC), "AlphaBlend")
+            .gravity = Leer.GetValue(Val(LoopC), "Gravity")
+            .grav_strength = Leer.GetValue(Val(LoopC), "Grav_Strength")
+            .bounce_strength = Leer.GetValue(Val(LoopC), "Bounce_Strength")
+            .XMove = Leer.GetValue(Val(LoopC), "XMove")
+            .YMove = Leer.GetValue(Val(LoopC), "YMove")
+            .move_x1 = Leer.GetValue(Val(LoopC), "move_x1")
+            .move_x2 = Leer.GetValue(Val(LoopC), "move_x2")
+            .move_y1 = Leer.GetValue(Val(LoopC), "move_y1")
+            .move_y2 = Leer.GetValue(Val(LoopC), "move_y2")
+            .Radio = Val(Leer.GetValue(Val(LoopC), "Radio"))
+            .life_counter = Leer.GetValue(Val(LoopC), "life_counter")
+            .Speed = Val(Leer.GetValue(Val(LoopC), "Speed"))
+            .NumGrhs = Leer.GetValue(Val(LoopC), "NumGrhs")
            
-            ReDim StreamData(loopc).grh_list(1 To StreamData(loopc).NumGrhs)
-            GrhListing = Leer.GetValue(Val(loopc), "Grh_List")
+            ReDim .grh_list(1 To .NumGrhs)
+            GrhListing = Leer.GetValue(Val(LoopC), "Grh_List")
            
-            For i = 1 To StreamData(loopc).NumGrhs
-                StreamData(loopc).grh_list(i) = ReadField(Str(i), GrhListing, 44)
+            For i = 1 To .NumGrhs
+                .grh_list(i) = ReadField(Str(i), GrhListing, 44)
             Next i
-            StreamData(loopc).grh_list(i - 1) = StreamData(loopc).grh_list(i - 1)
+
+            .grh_list(i - 1) = .grh_list(i - 1)
+
             For ColorSet = 1 To 4
-                TempSet = Leer.GetValue(Val(loopc), "ColorSet" & ColorSet)
-                StreamData(loopc).colortint(ColorSet - 1).R = ReadField(1, TempSet, 44)
-                StreamData(loopc).colortint(ColorSet - 1).G = ReadField(2, TempSet, 44)
-                StreamData(loopc).colortint(ColorSet - 1).B = ReadField(3, TempSet, 44)
+                TempSet = Leer.GetValue(Val(LoopC), "ColorSet" & ColorSet)
+                .colortint(ColorSet - 1).R = ReadField(1, TempSet, 44)
+                .colortint(ColorSet - 1).G = ReadField(2, TempSet, 44)
+                .colortint(ColorSet - 1).B = ReadField(3, TempSet, 44)
             Next ColorSet
         
-    Next loopc
-    
-    Delete_File Windows_Temp_Dir & "particulas.ini"
+        End With
+        
+    Next LoopC
+
     Set Leer = Nothing
     
-Exit Sub
+    Exit Sub
     
 ErrorHandler:
-    If FileExist(Windows_Temp_Dir & "particulas.ini", vbNormal) Then Delete_File Windows_Temp_Dir & "particulas.ini"
+
+    If err.Number <> 0 Then
+        
+        Select Case err.Number
+        
+            Case 9
+                Call MsgBox("Se han encontrado valores invalidos en el Particulas.ini - Index: " & LoopC)
+                Exit Sub
+                
+            Case 53
+                Call MsgBox("No se encuentra el archivo Particulas.ini en Recursos\Init", vbApplicationModal)
+                Exit Sub
+                
+        End Select
+
+    End If
     
 End Sub
 

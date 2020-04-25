@@ -114,7 +114,9 @@ Public Cfg_TrOBJ As Integer
 
 'Path
 Public IniPath As String
+Public DirIndex As String
 Public DirDats As String
+Public DirGraficos As String
 
 Public bAutoGuardarMapa As Byte
 Public bAutoGuardarMapaCount As Byte
@@ -225,9 +227,9 @@ Public Const SOUTH As Byte = 3
 Public Const WEST  As Byte = 4
 
 'Map sizes in tiles
-Public Const XMaxMapSize As Integer = 200
+Public XMaxMapSize As Integer
 Public Const XMinMapSize As Integer = 1
-Public Const YMaxMapSize As Integer = 200
+Public YMaxMapSize As Integer
 Public Const YMinMapSize As Integer = 1
 
 '********** TYPES ***********
@@ -278,36 +280,43 @@ Public Type GrhData
     MiniMap_color As Long
 End Type
 
-'Lista de cabezas
-Public Type tHead
-    Texture As Integer
-    startX As Integer
-    startY As Integer
-End Type
-
-Public heads() As tHead
-Public Cascos() As tHead
-
 ' Cuerpos body.dat
 Public Type tIndiceCuerpo
+
     Body(1 To 4) As Long
     HeadOffsetX As Integer
     HeadOffsetY As Integer
+
 End Type
+
 ' Lista de Cuerpos body.dat
 Public Type tBodyData
+
     Walk(1 To 4) As Grh
     HeadOffset As Position
+
 End Type
+
 ' body.dat
 Public BodyData() As tBodyData
-Public NumBodies As Integer
-'Heads list
-Public HeadData() As HeadData
+
+Public NumBodies  As Integer
+
 'Lista de cabezas
-Public Type HeadData
-    Head(1 To 4) As Grh
+Public Type tIndiceCabeza
+
+    Head(1 To 4) As Long
+
 End Type
+
+'Heads list
+Public Type tHeadData
+
+    Head(0 To 4) As Grh
+
+End Type
+
+Public HeadData() As tHeadData
 
 'Hold info about a character
 Public Type Char
@@ -403,7 +412,7 @@ Public Const MAX_INVENORY_OBJS  As Integer = 10000
 
 ' Deshacer
 Public Const maxDeshacer As Integer = 10
-Public MapData_Deshacer(1 To maxDeshacer, XMinMapSize To XMaxMapSize, YMinMapSize To YMaxMapSize) As MapBlock
+Public MapData_Deshacer() As MapBlock
 Type tDeshacerInfo
     Libre As Boolean
     desc As String
@@ -483,7 +492,7 @@ Public WalkMode As Boolean
 Public NumMaps As Integer 'Number of maps
 Public Numheads As Integer
 Public NumGrhFiles As Integer 'Number of bmps
-Public MaxGrhs As Integer 'Number of Grhs
+Public MaxGrhs As Long 'Number of Grhs
 Global NumChars As Integer
 Global LastChar As Integer
 

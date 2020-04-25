@@ -222,23 +222,23 @@ Private Sub CargarMapIni()
     On Error GoTo Fallo
     Dim tStr As String
     Dim Leer As New clsIniReader
-    Dim NUMCONFIG As Byte
-    
-    IniPath = App.Path & "\"
-    
-    If FileExist(IniPath & "WorldEditor.ini", vbArchive) = False Then
-        frmMain.mnuGuardarUltimaConfig.Checked = True
-        DirDats = IniPath & "DATS\"
-        MaxGrhs = 15000
-        UserPos.X = 50
-        UserPos.Y = 50
-        PantallaX = 19
-        PantallaY = 22
-        MsgBox "Falta el archivo 'WorldEditor.ini' de configuración.", vbInformation
-        Exit Sub
-    End If
     
     Call Leer.Initialize(IniPath & "WorldEditor.ini")
+    
+    IniPath = App.Path & "\"
+
+    If FileExist(IniPath & "WorldEditor.ini", vbArchive) = False Then
+        MsgBox "Falta el archivo 'WorldEditor.ini' de configuración.", vbInformation
+        End
+    End If
+        
+    MaxGrhs = Val(Leer.GetValue("INDEX", "MaxGrhs"))
+    If MaxGrhs < 1 Then MaxGrhs = 15000
+        
+    UserPos.X = 50
+    UserPos.Y = 50
+    PantallaX = Val(Leer.GetValue("MOSTRAR", "PantallaX"))
+    PantallaY = Val(Leer.GetValue("MOSTRAR", "PantallaY"))
     
     ' Obj de Translado
     Cfg_TrOBJ = Val(Leer.GetValue("CONFIGURACION", "ObjTranslado"))
@@ -248,27 +248,25 @@ Private Sub CargarMapIni()
     
     ' Guardar Ultima Configuracion
     frmMain.mnuGuardarUltimaConfig.Checked = Val(Leer.GetValue("CONFIGURACION", "GuardarConfig"))
-    
-    ' Index
-    MaxGrhs = Val(GetVar(IniPath & "WorldEditor.ini", "INDEX", "MaxGrhs"))
-    If MaxGrhs < 1 Then MaxGrhs = 15000
-    
-    NUMCONFIG = InputBox("¿Numero de configuración? (1- Default, 2- Portatil, ...")
-    
+
     'Reciente
-    frmMain.Dialog.InitDir = Leer.GetValue("PATH" & NUMCONFIG, "UltimoMapa")
-    If FileExist(App.Path & "\Recursos\Graphics.DRAG", vbDirectory) = False Then
-        MsgBox "¡Falta el archivo Graphics.DRAG!", vbCritical + vbOKOnly
+    frmMain.Dialog.InitDir = Leer.GetValue("PATH", "UltimoMapa")
+
+    'Rutas
+    DirGraficos = IniPath & "Recursos\Graficos\"
+    Debug.Print DirGraficos
+    If FileExist(DirGraficos, vbDirectory) = False Then
+        MsgBox "¡Faltan los graficos!", vbCritical + vbOKOnly
         End
     End If
-    If FileExist(App.Path & "\Recursos\Scripts.DRAG", vbDirectory) = False Then
+    
+    DirIndex = IniPath & "Recursos\INIT\"
+    If FileExist(DirIndex, vbDirectory) = False Then
         MsgBox "¡Falta el archivo Scripts.DRAG!", vbCritical + vbOKOnly
         End
     End If
-    DirDats = autoCompletaPath(Leer.GetValue("PATH" & NUMCONFIG, "DirDats"))
-    If DirDats = "\" Then
-        DirDats = IniPath & "DATS\"
-    End If
+    
+    DirDats = IniPath & "Recursos\Dat\"
     If FileExist(DirDats, vbDirectory) = False Then
         MsgBox "El directorio de Dats es incorrecto", vbCritical + vbOKOnly
         End
@@ -334,7 +332,6 @@ On Error Resume Next
     Dim OffsetCounterY As Integer
     Dim Chkflag As Integer
     
-    Windows_Temp_Dir = General_Get_Temp_Dir
     Call CargarMapIni
     
     If FileExist(IniPath & "WorldEditor.jpg", vbArchive) Then frmCargando.Picture1.Picture = LoadPicture(IniPath & "WorldEditor.jpg")
@@ -349,11 +346,16 @@ On Error Resume Next
     
     frmCargando.X.Caption = "Indexando Cargado de Imagenes..."
     
+    'Lorwik> Arrancamos en 100x100
+    XMaxMapSize = 100
+    YMaxMapSize = 100
+    
     If Not Engine_Init Then ' 30/05/2006
         MsgBox "¡No se ha logrado iniciar el engine gráfico! Reinstale los últimos controladores de DirectX y actualize sus controladores de video.", vbCritical, "Saliendo"
         End
     End If
     DoEvents
+    ReDim MapData_Deshacer(1 To maxDeshacer, XMinMapSize To XMaxMapSize, YMinMapSize To YMaxMapSize) As MapBlock
     
     With MapSize
         .XMax = XMaxMapSize
@@ -376,7 +378,7 @@ On Error Resume Next
     Call AddtoRichTextBox(frmMain.StatTxt, "World Editor By Lorwik iniciado...", 0, 255, 0)
 End Sub
 
-Public Function GetVar(file As String, Main As String, Var As String) As String
+Public Function GetVar(File As String, Main As String, Var As String) As String
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06
@@ -387,17 +389,17 @@ Dim sSpaces As String ' This will hold the input that the program will retrieve
 Dim szReturn As String ' This will be the defaul value if the string is not found
 szReturn = vbNullString
 sSpaces = Space(5000) ' This tells the computer how long the longest string can be. If you want, you can change the number 75 to any number you wish
-GetPrivateProfileString Main, Var, szReturn, sSpaces, Len(sSpaces), file
+GetPrivateProfileString Main, Var, szReturn, sSpaces, Len(sSpaces), File
 GetVar = RTrim(sSpaces)
 GetVar = Left(GetVar, Len(GetVar) - 1)
 End Function
 
-Public Sub WriteVar(file As String, Main As String, Var As String, value As String)
+Public Sub WriteVar(File As String, Main As String, Var As String, value As String)
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06
 '*************************************************
-writeprivateprofilestring Main, Var, value, file
+writeprivateprofilestring Main, Var, value, File
 End Sub
 
 Public Sub ToggleWalkMode()
@@ -574,3 +576,18 @@ General_Particle_Create = Particle_Group_Create(X, Y, StreamData(ParticulaInd).g
     StreamData(ParticulaInd).move_y2, StreamData(ParticulaInd).YMove, StreamData(ParticulaInd).spin_speedH, StreamData(ParticulaInd).spin, StreamData(ParticulaInd).Radio)
 End Function
 '*******************************************************************
+
+'Solo se usa para el minimapa
+Public Function ReturnNumberFromString(ByVal sString As String) As String
+   
+   Dim i As Integer
+   
+   For i = 1 To LenB(sString)
+   
+       If mid$(sString, i, 1) Like "[0-9]" Then
+           ReturnNumberFromString = ReturnNumberFromString + mid$(sString, i, 1)
+       End If
+       
+   Next i
+   
+End Function

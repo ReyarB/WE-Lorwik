@@ -21,31 +21,31 @@ Sub MakeChar(CharIndex As Integer, Body As Integer, Head As Integer, Heading As 
 '*************************************************
 On Error Resume Next
 
-'Update LastChar
-If CharIndex > LastChar Then LastChar = CharIndex
-NumChars = NumChars + 1
-
-'Update head, body, ect.
-CharList(CharIndex).Body = BodyData(Body)
-CharList(CharIndex).Head = Head
-CharList(CharIndex).Heading = Heading
-
-'Reset moving stats
-CharList(CharIndex).Moving = 0
-CharList(CharIndex).MoveOffset.X = 0
-CharList(CharIndex).MoveOffset.Y = 0
-
-'Update position
-CharList(CharIndex).Pos.X = X
-CharList(CharIndex).Pos.Y = Y
-
-'Make active
-CharList(CharIndex).Active = 1
-
-'Plot on map
-MapData(X, Y).CharIndex = CharIndex
-
-bRefreshRadar = True ' GS
+    'Update LastChar
+    If CharIndex > LastChar Then LastChar = CharIndex
+    NumChars = NumChars + 1
+    
+    'Update head, body, ect.
+    CharList(CharIndex).Body = BodyData(Body)
+    CharList(CharIndex).Head = Head
+    CharList(CharIndex).Heading = Heading
+    
+    'Reset moving stats
+    CharList(CharIndex).Moving = 0
+    CharList(CharIndex).MoveOffset.X = 0
+    CharList(CharIndex).MoveOffset.Y = 0
+    
+    'Update position
+    CharList(CharIndex).Pos.X = X
+    CharList(CharIndex).Pos.Y = Y
+    
+    'Make active
+    CharList(CharIndex).Active = 1
+    
+    'Plot on map
+    MapData(X, Y).CharIndex = CharIndex
+    
+    bRefreshRadar = True ' GS
 
 End Sub
 
@@ -288,7 +288,7 @@ Public Sub DePegar()
     Next
 End Sub
 Public Sub PegarSeleccion() '(mx As Integer, my As Integer)
-On Error GoTo ErrHandler:
+On Error GoTo errhandler:
 
 '*************************************************
 'Author: Loopzer
@@ -336,11 +336,11 @@ On Error GoTo ErrHandler:
         Next
     Next
     Seleccionando = False
-ErrHandler:
+errhandler:
     
 End Sub
 Public Sub AccionSeleccion()
-On Error GoTo ErrHandler:
+On Error GoTo errhandler:
 '*************************************************
 'Author: Loopzer
 'Last modified: 21/11/07
@@ -366,7 +366,7 @@ On Error GoTo ErrHandler:
         Next
     Next
     Seleccionando = False
-ErrHandler:
+errhandler:
     
 End Sub
 
