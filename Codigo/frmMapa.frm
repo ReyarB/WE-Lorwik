@@ -188,20 +188,21 @@ Private Sub Form_Load()
  Call ActualizarMapa
 End Sub
 
-Private Sub ActualizarMapa()
+Private Sub ActualizarMapa() ' modificar ReyarB
   Dim i As Byte
   For i = 0 To 99
     Mapa(i).Stretch = True
-    If Len(Dir("E:\Google Drive\AODrag 9\world editor\Renderizados\" & i + 1 & ".bmp", vbNormal)) > 0 Then
-      Set Mapa(i).Picture = LoadPicture("E:\Google Drive\AODrag 9\world editor\Renderizados\" & i + 1 & ".bmp")
+    'App.Path & "\Recursos\Graficos\MiniMapa
+    If Len(Dir("C:\Users\Administrador\Desktop\AO1024\WE-Lorwik\Recursos\Graficos\MiniMapa\" & i + 1 & ".bmp", vbNormal)) > 0 Then
+      Set Mapa(i).Picture = LoadPicture("C:\Users\Administrador\Desktop\AO1024\WE-Lorwik\Recursos\Graficos\MiniMapa\" & i + 1 & ".bmp")
     Else
-     Set Mapa(i).Picture = LoadPicture("E:\Google Drive\AODrag 9\world editor\Renderizados\no.bmp")
+     Set Mapa(i).Picture = LoadPicture("C:\Users\Administrador\Desktop\AO1024\WE-Lorwik\Recursos\Graficos\MiniMapa\no.bmp")
     End If
   Next i
 End Sub
 
 Private Sub Mapa_Click(index As Integer)
-  If Len(Dir("E:\Google Drive\AODrag 9\servidor\maps\Mapa" & index + 1 & ".csm", vbNormal)) > 0 Then
+  If Len(Dir("C:\Users\Administrador\Desktop\AO1024\WE-Lorwik\Conversor\Mapas CSM" & index + 1 & ".csm", vbNormal)) > 0 Then
     Call modMapIO.NuevoMapa
     Call modMapIO.Cargar_CSM("Mapa" & index + 1 & ".csm")
     Call ActualizarMapa
