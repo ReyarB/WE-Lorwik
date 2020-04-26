@@ -3,8 +3,8 @@ Begin VB.Form frmConfigSup
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Configuración Avanzada de Superficie "
    ClientHeight    =   2820
-   ClientLeft      =   45
-   ClientTop       =   330
+   ClientLeft      =   2175
+   ClientTop       =   9885
    ClientWidth     =   6315
    Icon            =   "frmConfigSup.frx":0000
    LinkTopic       =   "Form1"
@@ -12,26 +12,32 @@ Begin VB.Form frmConfigSup
    MinButton       =   0   'False
    ScaleHeight     =   2820
    ScaleWidth      =   6315
-   StartUpPosition =   2  'CenterScreen
    Begin WorldEditor.lvButtons_H cmdAceptar 
       Height          =   375
       Left            =   4200
       TabIndex        =   15
       Top             =   2280
       Width           =   1935
-      _extentx        =   3413
-      _extenty        =   661
-      caption         =   "&Aceptar"
-      capalign        =   2
-      backstyle       =   2
-      cgradient       =   0
-      font            =   "frmConfigSup.frx":628A
-      mode            =   0
-      value           =   0
-      cback           =   -2147483633
+      _ExtentX        =   3413
+      _ExtentY        =   661
+      Caption         =   "&Aceptar"
+      CapAlign        =   2
+      BackStyle       =   2
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      cGradient       =   0
+      Mode            =   0
+      Value           =   0   'False
+      cBack           =   -2147483633
    End
    Begin VB.CommandButton cmdDM 
-      Caption         =   "+"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   8.25
@@ -41,16 +47,16 @@ Begin VB.Form frmConfigSup
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   240
+      Height          =   480
       Index           =   3
-      Left            =   5880
+      Left            =   5520
+      Picture         =   "frmConfigSup.frx":628A
       Style           =   1  'Graphical
       TabIndex        =   12
-      Top             =   1605
-      Width           =   240
+      Top             =   1560
+      Width           =   480
    End
    Begin VB.CommandButton cmdDM 
-      Caption         =   "-"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   8.25
@@ -60,16 +66,16 @@ Begin VB.Form frmConfigSup
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   240
+      Height          =   480
       Index           =   2
-      Left            =   4005
+      Left            =   4200
+      Picture         =   "frmConfigSup.frx":9F79
       Style           =   1  'Graphical
       TabIndex        =   11
-      Top             =   1605
-      Width           =   240
+      Top             =   1560
+      Width           =   480
    End
    Begin VB.CommandButton cmdDM 
-      Caption         =   "-"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   8.25
@@ -79,16 +85,16 @@ Begin VB.Form frmConfigSup
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   240
+      Height          =   480
       Index           =   1
-      Left            =   4005
+      Left            =   4200
+      Picture         =   "frmConfigSup.frx":DD01
       Style           =   1  'Graphical
       TabIndex        =   10
-      Top             =   1200
-      Width           =   240
+      Top             =   1080
+      Width           =   480
    End
    Begin VB.CommandButton cmdDM 
-      Caption         =   "+"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   8.25
@@ -98,13 +104,14 @@ Begin VB.Form frmConfigSup
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   240
+      Height          =   480
       Index           =   0
-      Left            =   5880
+      Left            =   5520
+      Picture         =   "frmConfigSup.frx":11A1C
       Style           =   1  'Graphical
       TabIndex        =   9
-      Top             =   1200
-      Width           =   240
+      Top             =   1080
+      Width           =   480
    End
    Begin VB.TextBox DMLargo 
       Appearance      =   0  'Flat
@@ -120,11 +127,11 @@ Begin VB.Form frmConfigSup
       EndProperty
       ForeColor       =   &H0000FF00&
       Height          =   330
-      Left            =   4245
+      Left            =   4845
       TabIndex        =   8
       Text            =   "0"
-      Top             =   1560
-      Width           =   1620
+      Top             =   1680
+      Width           =   540
    End
    Begin VB.TextBox DMAncho 
       Appearance      =   0  'Flat
@@ -140,11 +147,11 @@ Begin VB.Form frmConfigSup
       EndProperty
       ForeColor       =   &H0000FF00&
       Height          =   330
-      Left            =   4245
+      Left            =   4845
       TabIndex        =   7
       Text            =   "0"
-      Top             =   1155
-      Width           =   1620
+      Top             =   1200
+      Width           =   540
    End
    Begin VB.CheckBox DespMosaic 
       Appearance      =   0  'Flat
@@ -163,6 +170,8 @@ Begin VB.Form frmConfigSup
       Left            =   3240
       TabIndex        =   6
       Top             =   840
+      UseMaskColor    =   -1  'True
+      Value           =   1  'Checked
       Width           =   2880
    End
    Begin VB.TextBox mAncho 
@@ -179,11 +188,11 @@ Begin VB.Form frmConfigSup
       EndProperty
       ForeColor       =   &H0000FF00&
       Height          =   330
-      Left            =   1080
+      Left            =   1440
       TabIndex        =   1
-      Text            =   "1"
-      Top             =   1200
-      Width           =   1905
+      Text            =   "4"
+      Top             =   1320
+      Width           =   585
    End
    Begin VB.TextBox mLargo 
       Appearance      =   0  'Flat
@@ -199,11 +208,11 @@ Begin VB.Form frmConfigSup
       EndProperty
       ForeColor       =   &H0000FF00&
       Height          =   330
-      Left            =   1080
+      Left            =   1440
       TabIndex        =   0
-      Text            =   "1"
-      Top             =   1560
-      Width           =   1905
+      Text            =   "4"
+      Top             =   1680
+      Width           =   585
    End
    Begin VB.CheckBox MOSAICO 
       Appearance      =   0  'Flat
@@ -219,9 +228,9 @@ Begin VB.Form frmConfigSup
       EndProperty
       ForeColor       =   &H00000000&
       Height          =   165
-      Left            =   120
+      Left            =   480
       TabIndex        =   2
-      Top             =   840
+      Top             =   960
       Value           =   1  'Checked
       Width           =   1335
    End
@@ -313,9 +322,9 @@ Begin VB.Form frmConfigSup
       EndProperty
       ForeColor       =   &H00000000&
       Height          =   210
-      Left            =   240
+      Left            =   600
       TabIndex        =   4
-      Top             =   1275
+      Top             =   1395
       Width           =   525
    End
    Begin VB.Label Label6 
@@ -334,9 +343,9 @@ Begin VB.Form frmConfigSup
       EndProperty
       ForeColor       =   &H00000000&
       Height          =   210
-      Left            =   240
+      Left            =   600
       TabIndex        =   3
-      Top             =   1620
+      Top             =   1740
       Width           =   480
    End
    Begin VB.Line Line1 

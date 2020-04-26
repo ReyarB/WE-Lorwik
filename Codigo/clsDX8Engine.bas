@@ -275,10 +275,10 @@ On Local Error GoTo ErrorHandler
         .BackBufferHeight = 6400
         .EnableAutoDepthStencil = 1
         .AutoDepthStencilFormat = D3DFMT_D16
-        .hDeviceWindow = frmMain.Renderer.hwnd
+        .hDeviceWindow = frmMain.Renderer.hWnd
     End With
     
-    Set D3DDevice = D3D.CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, frmMain.Renderer.hwnd, D3DCREATE_SOFTWARE_VERTEXPROCESSING, _
+    Set D3DDevice = D3D.CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, frmMain.Renderer.hWnd, D3DCREATE_SOFTWARE_VERTEXPROCESSING, _
                                                             D3DWindow)
                                                             
     D3DDevice.SetVertexShader D3DFVF_XYZRHW Or D3DFVF_TEX1 Or D3DFVF_DIFFUSE Or D3DFVF_SPECULAR
@@ -309,10 +309,15 @@ On Local Error GoTo ErrorHandler
     '***********************************
     'Tamaño del mapa
     '***********************************
-    MinXBorder = XMinMapSize + (Round(700 / 32) \ 2) '700 = Width render cliente
-    MaxXBorder = XMaxMapSize - (Round(700 / 32) \ 2)
-    MinYBorder = YMinMapSize + (Round(524 / 32) \ 2) '524 = Heigth render cliente
-    MaxYBorder = YMaxMapSize - (Round(524 / 32) \ 2)
+    'MinXBorder = XMinMapSize + (Round(700 / 32) \ 2) '700 = Width render cliente
+    'MaxXBorder = XMaxMapSize - (Round(700 / 32) \ 2)
+    'MinYBorder = YMinMapSize + (Round(524 / 32) \ 2) '524 = Heigth render cliente
+    'MaxYBorder = YMaxMapSize - (Round(524 / 32) \ 2)
+    
+    MinXBorder = XMinMapSize + (ClienteWidth \ 2)
+    MaxXBorder = XMaxMapSize - (ClienteWidth \ 2)
+    MinYBorder = YMinMapSize + (ClienteHeight \ 2)
+    MaxYBorder = YMaxMapSize - (ClienteHeight \ 2)
     '***********************************
     
     ScrollPixelsPerFrameX = 8
@@ -1098,14 +1103,14 @@ Public Sub MapCapture(ByRef Format As Boolean)
             re.Right = 6400
 
           frmRender.pgbProgress.value = 0
-          frmRender.pgbProgress.max = 500000
+          frmRender.pgbProgress.Max = 500000
             
             D3DDevice.Clear 0, ByVal 0, D3DCLEAR_TARGET, 0, 0#, 0
             D3DDevice.BeginScene
           'Draw floor layer
 
-          For Y = 1 To 200
-                    For X = 1 To 200
+          For Y = 1 To YMaxMapSize
+                    For X = 1 To XMaxMapSize
                     
                               RX = X - 1
                               RY = Y - 1
@@ -1202,12 +1207,12 @@ Public Sub MapCapture(ByRef Format As Boolean)
                 
                                        ' frmRender.pgbProgress.value = frmRender.pgbProgress.value + 1
                               'End With
-                      D3DDevice.Present re, ByVal 0, frmRender.picMap.hwnd, ByVal 0
+                      D3DDevice.Present re, ByVal 0, frmRender.picMap.hWnd, ByVal 0
                     Next X
           Next Y
           
         D3DDevice.EndScene
-        D3DDevice.Present re, ByVal 0, frmRender.picMap.hwnd, ByVal 0
+        D3DDevice.Present re, ByVal 0, frmRender.picMap.hWnd, ByVal 0
         ''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         '''''''''''''''''''Guardo la imagen'''''''''''''''''''''
         ''''''''''''''''''''''''''''''''''''''''''''''''''''''''

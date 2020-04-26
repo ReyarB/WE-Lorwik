@@ -176,7 +176,30 @@ Public Sub VerFuncion(ByVal Numero As Byte, ByVal Ver As Boolean, Optional Norma
             frmMain.cVerTriggers.Visible = Ver
             frmMain.lListado(4).Visible = Ver
         Case 7 'Copiar Bordes
+                       On Error GoTo Error
+ 
+            MapData_Adyacente = MapData
+            
             frmMain.CopyBorder.Visible = Ver
+            
+            frmMain.MemoriaAuxiliar.Visible = False
+            frmMain.COPIAR_GRH(0).Visible = True
+            frmMain.COPIAR_GRH(1).Visible = True
+            frmMain.COPIAR_GRH(2).Visible = True
+            frmMain.COPIAR_GRH(3).Visible = True
+            frmMain.OpcBorde.Visible = True
+            frmMain.OpcExit.Visible = True
+
+            frmMain.TXTArriba.Visible = False
+            frmMain.TxTAbajo.Visible = False
+            frmMain.TxTDerecha.Visible = False
+            frmMain.TxTIzquierda.Visible = False
+            
+            Call AddtoRichTextBox(frmMain.StatTxt, "Mapa copiado a la memoria", 0, 255, 0)
+            Exit Sub
+Error:
+            Call AddtoRichTextBox(frmMain.StatTxt, "Error guardando mapa", 255, 0, 0)
+
         Case 8 'Particulas
             frmMain.lstParticle.Visible = Ver
             frmMain.Life.Visible = Ver
@@ -215,7 +238,7 @@ Public Sub Filtrar(ByVal Numero As Byte)
     Dim vDatos As String
     Dim NumI As Integer
     Dim i As Integer
-    Dim j As Integer
+    Dim J As Integer
     
     If frmMain.cFiltro(Numero).ListCount > 5 Then
         frmMain.cFiltro(Numero).RemoveItem 0
@@ -251,8 +274,8 @@ Public Sub Filtrar(ByVal Numero As Byte)
                 NumI = i + 1
         End Select
         
-        For j = 1 To Len(vDatos)
-            If UCase$(mid$(vDatos & Str(i), j, Len(frmMain.cFiltro(Numero).Text))) = UCase$(frmMain.cFiltro(Numero).Text) Or LenB(frmMain.cFiltro(Numero).Text) = 0 Then
+        For J = 1 To Len(vDatos)
+            If UCase$(mid$(vDatos & Str(i), J, Len(frmMain.cFiltro(Numero).Text))) = UCase$(frmMain.cFiltro(Numero).Text) Or LenB(frmMain.cFiltro(Numero).Text) = 0 Then
                 frmMain.lListado(Numero).AddItem vDatos & " - #" & NumI
                 Exit For
             End If
@@ -331,13 +354,13 @@ If CurrentGrh.GrhIndex = 0 Then Exit Sub
         SR.Right = SR.Left + (GrhData(CurrentGrh.GrhIndex).pixelWidth)
         Call DrawGrhtoHdc(frmMain.PreviewGrh, CurrentGrh.GrhIndex, 1, 1)
     Else
-        Dim X As Integer, y As Integer, j As Integer, i As Integer
+        Dim X As Integer, Y As Integer, J As Integer, i As Integer
         Dim Cont As Integer
         For i = 1 To CInt(Val(frmConfigSup.mLargo))
-            For j = 1 To CInt(Val(frmConfigSup.mAncho))
-                DR.Left = (j - 1) * 32
+            For J = 1 To CInt(Val(frmConfigSup.mAncho))
+                DR.Left = (J - 1) * 32
                 DR.Top = (i - 1) * 32
-                DR.Right = j * 32
+                DR.Right = J * 32
                 DR.Bottom = i * 32
                 SR.Left = GrhData(CurrentGrh.GrhIndex).sX
                 SR.Top = GrhData(CurrentGrh.GrhIndex).sY

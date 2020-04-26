@@ -80,7 +80,7 @@ Begin VB.Form frmAbout
       Index           =   1
       Left            =   720
       TabIndex        =   7
-      Top             =   1200
+      Top             =   1320
       Width           =   3075
    End
    Begin VB.Label lblTitle 
@@ -222,7 +222,7 @@ Begin VB.Form frmAbout
       Index           =   2
       Left            =   720
       TabIndex        =   0
-      Top             =   960
+      Top             =   1080
       Width           =   3075
    End
    Begin VB.Shape Shape1 

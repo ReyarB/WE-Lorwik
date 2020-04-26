@@ -1108,8 +1108,8 @@ If FileExist(MapRoute, vbNormal) = True Then
 End If
 
 frmMain.MousePointer = 11
-MapSize.XMax = 200
-MapSize.YMax = 200
+MapSize.XMax = XMaxMapSize
+MapSize.YMax = YMaxMapSize
 ReDim L1(MapSize.XMin To MapSize.XMax, MapSize.YMin To MapSize.YMax)
 
 For J = MapSize.YMin To MapSize.YMax
@@ -1310,4 +1310,25 @@ Public Sub CSMInfoCargar()
     MapInfo.BackUp = MapDat.backup_mode
     
     Call MapInfo_Actualizar
+End Sub
+Public Sub Resolucion()
+
+    If frmMain.Option2.value = True Then
+        ClienteHeight = 13
+        ClienteWidth = 17
+        Else
+        ClienteHeight = 19
+        ClienteWidth = 24
+    End If
+    
+    'MinXBorder = XMinMapSize + (Round(700 / 32) \ 2) '700 = Width render cliente
+    'MaxXBorder = XMaxMapSize - (Round(700 / 32) \ 2)
+    'MinYBorder = YMinMapSize + (Round(524 / 32) \ 2) '524 = Heigth render cliente
+    'MaxYBorder = YMaxMapSize - (Round(524 / 32) \ 2)
+   
+    MinXBorder = XMinMapSize + (ClienteWidth \ 2)
+    MaxXBorder = XMaxMapSize - (ClienteWidth \ 2)
+    MinYBorder = YMinMapSize + (ClienteHeight \ 2)
+    MaxYBorder = YMaxMapSize - (ClienteHeight \ 2)
+
 End Sub

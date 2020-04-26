@@ -4,27 +4,27 @@ Begin VB.Form frmCargando
    BackColor       =   &H00000000&
    BorderStyle     =   0  'None
    Caption         =   "Argentum"
-   ClientHeight    =   4740
+   ClientHeight    =   6345
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   3330
+   ClientWidth     =   4590
    Icon            =   "frmCargando.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   4740
-   ScaleWidth      =   3330
+   ScaleHeight     =   6345
+   ScaleWidth      =   4590
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.PictureBox Picture1 
       AutoSize        =   -1  'True
       BackColor       =   &H000000FF&
-      Height          =   3060
+      Height          =   4560
       Left            =   0
       Picture         =   "frmCargando.frx":628A
-      ScaleHeight     =   3000
-      ScaleWidth      =   3240
+      ScaleHeight     =   4500
+      ScaleWidth      =   4500
       TabIndex        =   0
       Top             =   0
-      Width           =   3300
+      Width           =   4560
       Begin VB.Label verX 
          Alignment       =   2  'Center
          AutoSize        =   -1  'True
@@ -63,10 +63,10 @@ Begin VB.Form frmCargando
    End
    Begin VB.Image P6 
       Height          =   480
-      Left            =   2235
-      Picture         =   "frmCargando.frx":90F4
+      Left            =   3315
+      Picture         =   "frmCargando.frx":1269A
       ToolTipText     =   "Función de Trigger"
-      Top             =   4080
+      Top             =   5640
       Visible         =   0   'False
       Width           =   480
    End
@@ -86,9 +86,9 @@ Begin VB.Form frmCargando
       ForeColor       =   &H00FFFFFF&
       Height          =   195
       Index           =   5
-      Left            =   2760
+      Left            =   3840
       TabIndex        =   8
-      Top             =   4200
+      Top             =   5760
       Visible         =   0   'False
       Width           =   450
    End
@@ -108,9 +108,9 @@ Begin VB.Form frmCargando
       ForeColor       =   &H00FFFFFF&
       Height          =   195
       Index           =   4
-      Left            =   1560
+      Left            =   2280
       TabIndex        =   7
-      Top             =   4200
+      Top             =   5760
       Visible         =   0   'False
       Width           =   510
    End
@@ -130,9 +130,9 @@ Begin VB.Form frmCargando
       ForeColor       =   &H00FFFFFF&
       Height          =   195
       Index           =   3
-      Left            =   600
+      Left            =   720
       TabIndex        =   6
-      Top             =   4200
+      Top             =   5760
       Visible         =   0   'False
       Width           =   540
    End
@@ -152,9 +152,9 @@ Begin VB.Form frmCargando
       ForeColor       =   &H00FFFFFF&
       Height          =   195
       Index           =   2
-      Left            =   2640
+      Left            =   3840
       TabIndex        =   5
-      Top             =   3600
+      Top             =   5160
       Visible         =   0   'False
       Width           =   495
    End
@@ -174,9 +174,9 @@ Begin VB.Form frmCargando
       ForeColor       =   &H00FFFFFF&
       Height          =   195
       Index           =   1
-      Left            =   1560
+      Left            =   2280
       TabIndex        =   4
-      Top             =   3600
+      Top             =   5160
       Visible         =   0   'False
       Width           =   480
    End
@@ -198,52 +198,52 @@ Begin VB.Form frmCargando
       Index           =   0
       Left            =   720
       TabIndex        =   3
-      Top             =   3600
+      Top             =   5160
       Visible         =   0   'False
       Width           =   375
    End
    Begin VB.Image P5 
       Height          =   480
-      Left            =   1080
-      Picture         =   "frmCargando.frx":9D36
+      Left            =   1800
+      Picture         =   "frmCargando.frx":132DC
       ToolTipText     =   "Objetos"
-      Top             =   4080
+      Top             =   5640
       Visible         =   0   'False
       Width           =   480
    End
    Begin VB.Image P1 
       Height          =   480
       Left            =   240
-      Picture         =   "frmCargando.frx":A57A
+      Picture         =   "frmCargando.frx":13B20
       ToolTipText     =   "Base de Datos"
-      Top             =   3480
+      Top             =   5040
       Visible         =   0   'False
       Width           =   480
    End
    Begin VB.Image P3 
       Height          =   480
-      Left            =   2160
-      Picture         =   "frmCargando.frx":ADBE
+      Left            =   3360
+      Picture         =   "frmCargando.frx":14364
       ToolTipText     =   "Cabezas"
-      Top             =   3480
+      Top             =   5040
       Visible         =   0   'False
       Width           =   480
    End
    Begin VB.Image P4 
       Height          =   480
-      Left            =   120
-      Picture         =   "frmCargando.frx":B602
+      Left            =   240
+      Picture         =   "frmCargando.frx":14BA8
       ToolTipText     =   "NPC's"
-      Top             =   4080
+      Top             =   5640
       Visible         =   0   'False
       Width           =   480
    End
    Begin VB.Image P2 
       Height          =   480
-      Left            =   1080
-      Picture         =   "frmCargando.frx":C244
+      Left            =   1800
+      Picture         =   "frmCargando.frx":157EA
       ToolTipText     =   "Cuerpos"
-      Top             =   3480
+      Top             =   5040
       Visible         =   0   'False
       Width           =   480
    End
@@ -255,8 +255,8 @@ Begin VB.Form frmCargando
       Height          =   255
       Left            =   120
       TabIndex        =   1
-      Top             =   3120
-      Width           =   3015
+      Top             =   4680
+      Width           =   4335
    End
 End
 Attribute VB_Name = "frmCargando"
