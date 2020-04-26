@@ -914,7 +914,7 @@ Open Map For Binary Access Read As fh
     Get #fh, , MapDat
     
     With MapSize
-        If Not .XMax = 100 Or Not .YMax = 100 Then
+        If Not .XMax = XMaxMapSize Or Not .YMax = YMaxMapSize Then
             ReDim MapData(.XMin To .XMax, .YMin To .YMax)
         End If
         ReDim L1(.XMin To .XMax, .YMin To .YMax)

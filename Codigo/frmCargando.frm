@@ -7,24 +7,25 @@ Begin VB.Form frmCargando
    ClientHeight    =   6345
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   4590
+   ClientWidth     =   4485
    Icon            =   "frmCargando.frx":0000
    LinkTopic       =   "Form1"
    ScaleHeight     =   6345
-   ScaleWidth      =   4590
+   ScaleWidth      =   4485
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.PictureBox Picture1 
       AutoSize        =   -1  'True
       BackColor       =   &H000000FF&
-      Height          =   4560
+      BorderStyle     =   0  'None
+      Height          =   4500
       Left            =   0
       Picture         =   "frmCargando.frx":628A
       ScaleHeight     =   4500
       ScaleWidth      =   4500
       TabIndex        =   0
       Top             =   0
-      Width           =   4560
+      Width           =   4500
       Begin VB.Label verX 
          Alignment       =   2  'Center
          AutoSize        =   -1  'True

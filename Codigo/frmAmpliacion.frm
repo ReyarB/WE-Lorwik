@@ -156,7 +156,7 @@ End Sub
 Private Sub LvBTraslados_Click()
 Dim X As Long, Y As Long
 
-    For X = 1 To 100
+    For X = 1 To XMaxMapSize
         For Y = 1 To 8
         
            If MapData(X, Y).TileExit.Map > 0 Then
@@ -169,8 +169,8 @@ Dim X As Long, Y As Long
         Next Y
     Next X
     
-    For X = 1 To 100
-        For Y = 93 To 100
+    For X = 1 To XMaxMapSize
+        For Y = 93 To YMaxMapSize
         
            If MapData(X, Y).TileExit.Map > 0 Then
               MapData(X, 92).TileExit = MapData(X, Y).TileExit
@@ -183,7 +183,7 @@ Dim X As Long, Y As Long
     Next X
     
     For X = 1 To 11
-        For Y = 1 To 100
+        For Y = 1 To YMaxMapSize
         
            If MapData(X, Y).TileExit.Map > 0 Then
               MapData(12, Y).TileExit = MapData(X, Y).TileExit
@@ -195,8 +195,8 @@ Dim X As Long, Y As Long
         Next Y
     Next X
     
-    For X = 90 To 100
-        For Y = 1 To 100
+    For X = 90 To XMaxMapSize
+        For Y = 1 To YMaxMapSize
         
            If MapData(X, Y).TileExit.Map > 0 Then
               MapData(89, Y).TileExit = MapData(X, Y).TileExit
@@ -215,8 +215,8 @@ Private Sub LvBCopiarMapa_Click()
 Dim X As Integer
 Dim Y As Integer
 
-    For X = 1 To 100
-        For Y = 1 To 100
+    For X = 1 To XMaxMapSize
+        For Y = 1 To YMaxMapSize
             With MapData2(X, Y)
                 .Graphic(1) = MapData(X, Y).Graphic(1)
                 .Graphic(2) = MapData(X, Y).Graphic(2)
@@ -257,11 +257,11 @@ Jump:
     Next
 End Sub
 
-Private Sub Label2_Click(Index As Integer)
+Private Sub Label2_Click(index As Integer)
     Dim Borrado As Boolean
     Borrado = False
     If Not Borrado Then
-        Select Case Index
+        Select Case index
             Case 0
                 Call PegarMapa(0 + Val(Text10.Text), 0 + (Val(Text9.Text)))
             Case 1
@@ -282,7 +282,7 @@ Private Sub Label2_Click(Index As Integer)
                 Call PegarMapa(200 + Val(Text10.Text), 200 + Val(Text9.Text))
         End Select
     Else
-        Select Case Index
+        Select Case index
         
             Case 0
                 Call BorrarMapa(0, 0)
@@ -317,8 +317,8 @@ Dim X As Integer, Y As Integer
     OffsetX = X + mX
     OffsetY = Y + mY
 
-    For X = 1 To 100
-        For Y = 1 To 100
+    For X = 1 To XMaxMapSize
+        For Y = 1 To YMaxMapSize
         
             If OffsetX + X > 0 And OffsetX + X < 201 Then
               If OffsetY + Y > 0 And OffsetY + Y < 201 Then
@@ -350,8 +350,8 @@ Dim GrhNull As Grh
 Dim ObjectNull As Obj
 Dim X As Integer, Y As Integer
 
-For X = 1 To 100
-    For Y = 1 To 100
+For X = 1 To XMaxMapSize
+    For Y = 1 To YMaxMapSize
         With MapData(X + mX, Y + mY)
             .Graphic(1) = GrhNull
             .Graphic(2) = GrhNull
