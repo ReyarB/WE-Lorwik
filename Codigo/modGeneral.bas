@@ -223,9 +223,9 @@ Private Sub CargarMapIni()
     Dim tStr As String
     Dim Leer As New clsIniReader
     
-    IniPath = App.Path & "\"
-    
     Call Leer.Initialize(IniPath & "WorldEditor.ini")
+    
+    IniPath = App.Path & "\"
 
     If FileExist(IniPath & "WorldEditor.ini", vbArchive) = False Then
         MsgBox "Falta el archivo 'WorldEditor.ini' de configuración.", vbInformation
@@ -347,8 +347,17 @@ On Error Resume Next
     frmCargando.X.Caption = "Indexando Cargado de Imagenes..."
     
     'Lorwik> Arrancamos en 100x100
-    XMaxMapSize = 200
-    YMaxMapSize = 200
+'    Select Case frmMain.OpcBorde.index
+'
+'        Case 0
+            XMaxMapSize = 100
+            YMaxMapSize = 100
+        
+'        Case 1
+'            XMaxMapSize = 200
+'            YMaxMapSize = 200
+'
+'    End Select
     
     If Not Engine_Init Then ' 30/05/2006
         MsgBox "¡No se ha logrado iniciar el engine gráfico! Reinstale los últimos controladores de DirectX y actualize sus controladores de video.", vbCritical, "Saliendo"

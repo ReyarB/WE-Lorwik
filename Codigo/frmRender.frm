@@ -2,55 +2,63 @@ VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmRender 
    BorderStyle     =   0  'None
-   ClientHeight    =   15690
+   ClientHeight    =   11955
    ClientLeft      =   0
    ClientTop       =   45
-   ClientWidth     =   15795
+   ClientWidth     =   12000
    ClipControls    =   0   'False
    ControlBox      =   0   'False
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   1046
+   ScaleHeight     =   797
    ScaleMode       =   3  'Pixel
-   ScaleWidth      =   1053
+   ScaleWidth      =   800
    ShowInTaskbar   =   0   'False
    StartUpPosition =   1  'CenterOwner
+   Begin VB.CommandButton RenderizarMinimap 
+      Caption         =   "Renderizar Minimap"
+      Height          =   375
+      Left            =   9000
+      TabIndex        =   5
+      Top             =   0
+      Width           =   1815
+   End
    Begin VB.CommandButton Command1 
       Caption         =   "Salir"
-      Height          =   195
-      Left            =   9120
+      Height          =   375
+      Left            =   10920
       TabIndex        =   4
       Top             =   0
       Width           =   975
    End
    Begin VB.CommandButton cmdAceptar 
       Caption         =   "Renderizar"
-      Height          =   195
-      Left            =   7560
+      Height          =   375
+      Left            =   7440
       TabIndex        =   2
       Top             =   0
       Width           =   1455
    End
    Begin VB.PictureBox picMap 
       AutoRedraw      =   -1  'True
-      Height          =   15000
+      Height          =   1500
       Left            =   120
-      ScaleHeight     =   996
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   996
+      ScaleHeight     =   9.639
+      ScaleMode       =   0  'User
+      ScaleWidth      =   9.639
       TabIndex        =   1
-      Top             =   360
-      Width           =   15000
+      Top             =   480
+      Width           =   1500
    End
    Begin MSComctlLib.ProgressBar pgbProgress 
-      Height          =   255
-      Left            =   0
+      Height          =   375
+      Left            =   120
       TabIndex        =   0
       Top             =   0
-      Width           =   7455
-      _ExtentX        =   13150
-      _ExtentY        =   450
+      Width           =   7215
+      _ExtentX        =   12726
+      _ExtentY        =   661
       _Version        =   393216
       Appearance      =   1
    End
@@ -94,11 +102,11 @@ Option Explicit
         ByVal dwRop As Long) As Long
       
     ' Recupera la imagen del área del control
-    Private Declare Function GetWindowDC Lib "user32" (ByVal hwnd As Long) As Long
+    Private Declare Function GetWindowDC Lib "user32" (ByVal hWnd As Long) As Long
       
 
 Private Sub cmdAceptar_Click()
-    Call MapCapture(1)
+    Call MapCapture(0)
 End Sub
     '*************************************************************
       
@@ -133,7 +141,7 @@ End Sub
         ' limpia el error
         On Error GoTo 0
         ' Captura el área de pantalla correspondiente al control
-        hdc = GetWindowDC(Control.hwnd)
+        hdc = GetWindowDC(Control.hWnd)
         ' Copia esa área al picturebox
         BitBlt Destino.hdc, 0, 0, ancho, alto, hdc, 0, 0, vbSrcCopy
         ' Convierte la imagen anterior en un Mapa de bits
@@ -153,3 +161,6 @@ Private Sub Command1_Click()
     Unload Me
 End Sub
 
+Private Sub RenderizarMinimap_Click()
+Call MapCapture(1)
+End Sub

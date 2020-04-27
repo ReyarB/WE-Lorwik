@@ -193,10 +193,10 @@ Private Sub ActualizarMapa() ' modificar ReyarB
   For i = 0 To 99
     Mapa(i).Stretch = True
     'App.Path & "\Recursos\Graficos\MiniMapa
-    If Len(Dir("C:\Users\Administrador\Desktop\AO1024\WE-Lorwik\Recursos\Graficos\MiniMapa\" & i + 1 & ".bmp", vbNormal)) > 0 Then
-      Set Mapa(i).Picture = LoadPicture("C:\Users\Administrador\Desktop\AO1024\WE-Lorwik\Recursos\Graficos\MiniMapa\" & i + 1 & ".bmp")
+    If Len(Dir("C:\Users\Administrador\Desktop\AO1024\WE-Lorwik\Recursos\MiniMapa\" & i + 1 & ".bmp", vbNormal)) > 0 Then
+      Set Mapa(i).Picture = LoadPicture("C:\Users\Administrador\Desktop\AO1024\WE-Lorwik\Recursos\MiniMapa\" & i + 1 & ".bmp")
     Else
-     Set Mapa(i).Picture = LoadPicture("C:\Users\Administrador\Desktop\AO1024\WE-Lorwik\Recursos\Graficos\MiniMapa\no.bmp")
+     Set Mapa(i).Picture = LoadPicture("C:\Users\Administrador\Desktop\AO1024\WE-Lorwik\Recursos\MiniMapa\no.bmp")
     End If
   Next i
 End Sub

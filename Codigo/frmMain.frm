@@ -2582,7 +2582,6 @@ Begin VB.Form frmMain
          Left            =   120
          TabIndex        =   172
          Top             =   720
-         Value           =   -1  'True
          Width           =   2055
       End
       Begin VB.OptionButton OptX 
@@ -2593,6 +2592,7 @@ Begin VB.Form frmMain
          Left            =   120
          TabIndex        =   171
          Top             =   360
+         Value           =   -1  'True
          Width           =   1695
       End
    End

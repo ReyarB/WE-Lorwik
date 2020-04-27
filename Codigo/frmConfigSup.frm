@@ -144,7 +144,7 @@ Begin VB.Form frmConfigSup
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00000000&
+      ForeColor       =   &H00FFFFFF&
       Height          =   210
       Left            =   1200
       TabIndex        =   5
@@ -206,7 +206,7 @@ Begin VB.Form frmConfigSup
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00000000&
+      ForeColor       =   &H00FFFFFF&
       Height          =   165
       Left            =   0
       TabIndex        =   2
@@ -317,10 +317,10 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 'Last modified: 20/05/06
 '*************************************************
 
-'If UnloadMode <> 0 Then
+If UnloadMode <> 0 Then
 '    Cancel = True
-'    Me.Hide
-'End If
+    Me.Hide
+End If
 End Sub
 
 Private Sub DespMosaic_Click()
