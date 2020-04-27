@@ -1,5 +1,5 @@
 frmMain = 156, 156, 984, 806, , 182, 182, 1089, 699, C
-modGeneral = 156, 156, 1471, 806, 
+modGeneral = 156, 156, 1471, 806, Z
 modDeclaraciones = 52, 52, 939, 494, 
 frmGrafico = 78, 78, 1423, 620, C, 0, 0, 1305, 650, C
 frmCargando = 0, 0, 0, 0, C, 26, 26, 1331, 676, C

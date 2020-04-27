@@ -91,14 +91,14 @@ If HotKeysAllow = False Then Exit Sub
     
     
     If GetKeyState(vbKeyUp) < 0 Then
-        If UserPos.y < 1 Then Exit Sub ' 10
-        If LegalPos(UserPos.X, UserPos.y - 1) And WalkMode = True Then
+        If UserPos.Y < 1 Then Exit Sub ' 10
+        If LegalPos(UserPos.X, UserPos.Y - 1) And WalkMode = True Then
             If dLastWalk + 25 > GetTickCount Then Exit Sub
-            UserPos.y = UserPos.y - 1
-            MoveCharbyPos UserCharIndex, UserPos.X, UserPos.y
+            UserPos.Y = UserPos.Y - 1
+            MoveCharbyPos UserCharIndex, UserPos.X, UserPos.Y
             dLastWalk = GetTickCount
         ElseIf WalkMode = False Then
-            UserPos.y = UserPos.y - 1
+            UserPos.Y = UserPos.Y - 1
         End If
         Call ActualizaMinimap ' Radar
         frmMain.SetFocus
@@ -107,10 +107,10 @@ If HotKeysAllow = False Then Exit Sub
 
     If GetKeyState(vbKeyRight) < 0 Then
         If UserPos.X > XMaxMapSize Then Exit Sub ' 89
-        If LegalPos(UserPos.X + 1, UserPos.y) And WalkMode = True Then
+        If LegalPos(UserPos.X + 1, UserPos.Y) And WalkMode = True Then
             If dLastWalk + 25 > GetTickCount Then Exit Sub
             UserPos.X = UserPos.X + 1
-            MoveCharbyPos UserCharIndex, UserPos.X, UserPos.y
+            MoveCharbyPos UserCharIndex, UserPos.X, UserPos.Y
             dLastWalk = GetTickCount
         ElseIf WalkMode = False Then
             UserPos.X = UserPos.X + 1
@@ -121,14 +121,14 @@ If HotKeysAllow = False Then Exit Sub
     End If
 
     If GetKeyState(vbKeyDown) < 0 Then
-        If UserPos.y > XMaxMapSize Then Exit Sub ' 92
-        If LegalPos(UserPos.X, UserPos.y + 1) And WalkMode = True Then
+        If UserPos.Y > XMaxMapSize Then Exit Sub ' 92
+        If LegalPos(UserPos.X, UserPos.Y + 1) And WalkMode = True Then
             If dLastWalk + 25 > GetTickCount Then Exit Sub
-            UserPos.y = UserPos.y + 1
-            MoveCharbyPos UserCharIndex, UserPos.X, UserPos.y
+            UserPos.Y = UserPos.Y + 1
+            MoveCharbyPos UserCharIndex, UserPos.X, UserPos.Y
             dLastWalk = GetTickCount
         ElseIf WalkMode = False Then
-            UserPos.y = UserPos.y + 1
+            UserPos.Y = UserPos.Y + 1
         End If
         Call ActualizaMinimap ' Radar
         frmMain.SetFocus
@@ -137,10 +137,10 @@ If HotKeysAllow = False Then Exit Sub
 
     If GetKeyState(vbKeyLeft) < 0 Then
         If UserPos.X < 1 Then Exit Sub ' 12
-        If LegalPos(UserPos.X - 1, UserPos.y) And WalkMode = True Then
+        If LegalPos(UserPos.X - 1, UserPos.Y) And WalkMode = True Then
             If dLastWalk + 25 > GetTickCount Then Exit Sub
             UserPos.X = UserPos.X - 1
-            MoveCharbyPos UserCharIndex, UserPos.X, UserPos.y
+            MoveCharbyPos UserCharIndex, UserPos.X, UserPos.Y
             dLastWalk = GetTickCount
         ElseIf WalkMode = False Then
             UserPos.X = UserPos.X - 1
@@ -223,9 +223,9 @@ Private Sub CargarMapIni()
     Dim tStr As String
     Dim Leer As New clsIniReader
     
-    Call Leer.Initialize(IniPath & "WorldEditor.ini")
-    
     IniPath = App.Path & "\"
+    
+    Call Leer.Initialize(IniPath & "WorldEditor.ini")
 
     If FileExist(IniPath & "WorldEditor.ini", vbArchive) = False Then
         MsgBox "Falta el archivo 'WorldEditor.ini' de configuración.", vbInformation
@@ -236,7 +236,7 @@ Private Sub CargarMapIni()
     If MaxGrhs < 1 Then MaxGrhs = 15000
         
     UserPos.X = 50
-    UserPos.y = 50
+    UserPos.Y = 50
     PantallaX = Val(Leer.GetValue("MOSTRAR", "PantallaX"))
     PantallaY = Val(Leer.GetValue("MOSTRAR", "PantallaY"))
     
@@ -274,12 +274,12 @@ Private Sub CargarMapIni()
     
     tStr = Leer.GetValue("MOSTRAR", "LastPos") ' x-y
     UserPos.X = Val(ReadField(1, tStr, Asc("-")))
-    UserPos.y = Val(ReadField(2, tStr, Asc("-")))
+    UserPos.Y = Val(ReadField(2, tStr, Asc("-")))
     If UserPos.X < XMinMapSize Or UserPos.X > XMaxMapSize Then
         UserPos.X = 50
     End If
-    If UserPos.y < YMinMapSize Or UserPos.y > YMaxMapSize Then
-        UserPos.y = 50
+    If UserPos.Y < YMinMapSize Or UserPos.Y > YMaxMapSize Then
+        UserPos.Y = 50
     End If
     
     ' Menu Mostrar
@@ -418,12 +418,12 @@ End If
 If WalkMode = False Then
     'Erase character
     Call EraseChar(UserCharIndex)
-    MapData(UserPos.X, UserPos.y).CharIndex = 0
+    MapData(UserPos.X, UserPos.Y).CharIndex = 0
 Else
     'MakeCharacter
-    If LegalPos(UserPos.X, UserPos.y) Then
-        Call MakeChar(NextOpenChar(), 1, 1, SOUTH, UserPos.X, UserPos.y)
-        UserCharIndex = MapData(UserPos.X, UserPos.y).CharIndex
+    If LegalPos(UserPos.X, UserPos.Y) Then
+        Call MakeChar(NextOpenChar(), 1, 1, SOUTH, UserPos.X, UserPos.Y)
+        UserCharIndex = MapData(UserPos.X, UserPos.Y).CharIndex
         frmMain.mnuModoCaminata.Checked = True
     Else
         MsgBox "ERROR: Ubicacion ilegal."
@@ -433,7 +433,7 @@ End If
 fin:
 End Sub
 
-Public Sub FixCoasts(ByVal GrhIndex As Long, ByVal X As Integer, ByVal y As Integer)
+Public Sub FixCoasts(ByVal GrhIndex As Long, ByVal X As Integer, ByVal Y As Integer)
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06
@@ -451,7 +451,7 @@ If GrhIndex = 7284 Or GrhIndex = 7290 Or GrhIndex = 7291 Or GrhIndex = 7297 Or _
    GrhIndex = 7354 Or GrhIndex = 7357 Or GrhIndex = 7358 Or GrhIndex = 7360 Or _
    GrhIndex = 7362 Or GrhIndex = 7363 Or GrhIndex = 7365 Or GrhIndex = 7366 Or _
    GrhIndex = 7367 Or GrhIndex = 7368 Or GrhIndex = 7369 Or GrhIndex = 7371 Or _
-   GrhIndex = 7373 Or GrhIndex = 7375 Or GrhIndex = 7376 Then MapData(X, y).Graphic(2).GrhIndex = 0
+   GrhIndex = 7373 Or GrhIndex = 7375 Or GrhIndex = 7376 Then MapData(X, Y).Graphic(2).GrhIndex = 0
 
 End Sub
 
@@ -559,7 +559,7 @@ Public Function ColorToDX8(ByVal long_color As Long) As Long
 End Function
 
 '******************Generar particulas en el mapa********************
-Public Function General_Particle_Create(ByVal ParticulaInd As Long, ByVal X As Integer, ByVal y As Integer, Optional ByVal particle_life As Long = 0) As Long
+Public Function General_Particle_Create(ByVal ParticulaInd As Long, ByVal X As Integer, ByVal Y As Integer, Optional ByVal particle_life As Long = 0) As Long
    
 Dim rgb_list(0 To 3) As Long
 rgb_list(0) = RGB(StreamData(ParticulaInd).colortint(0).R, StreamData(ParticulaInd).colortint(0).G, StreamData(ParticulaInd).colortint(0).B)
@@ -567,7 +567,7 @@ rgb_list(1) = RGB(StreamData(ParticulaInd).colortint(1).R, StreamData(ParticulaI
 rgb_list(2) = RGB(StreamData(ParticulaInd).colortint(2).R, StreamData(ParticulaInd).colortint(2).G, StreamData(ParticulaInd).colortint(2).B)
 rgb_list(3) = RGB(StreamData(ParticulaInd).colortint(3).R, StreamData(ParticulaInd).colortint(3).G, StreamData(ParticulaInd).colortint(3).B)
  
-General_Particle_Create = Particle_Group_Create(X, y, StreamData(ParticulaInd).grh_list, rgb_list(), StreamData(ParticulaInd).NumOfParticles, ParticulaInd, _
+General_Particle_Create = Particle_Group_Create(X, Y, StreamData(ParticulaInd).grh_list, rgb_list(), StreamData(ParticulaInd).NumOfParticles, ParticulaInd, _
     StreamData(ParticulaInd).AlphaBlend, IIf(particle_life = 0, StreamData(ParticulaInd).life_counter, particle_life), StreamData(ParticulaInd).Speed, , StreamData(ParticulaInd).X1, StreamData(ParticulaInd).Y1, StreamData(ParticulaInd).angle, _
     StreamData(ParticulaInd).vecx1, StreamData(ParticulaInd).vecx2, StreamData(ParticulaInd).vecy1, StreamData(ParticulaInd).vecy2, _
     StreamData(ParticulaInd).life1, StreamData(ParticulaInd).life2, StreamData(ParticulaInd).friction, StreamData(ParticulaInd).spin_speedL, _
