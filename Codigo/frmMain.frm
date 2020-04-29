@@ -5506,10 +5506,19 @@ Private Sub mnuquitararboles_Click()
 End Sub
 
 Private Sub mnuQuitarBloqueosBorde_Click()
+ Call Resolucion
  Call Bloquear_Bordes(0)
 End Sub
 
 
+
+Private Sub Option1_Click()
+Call Resolucion
+End Sub
+
+Private Sub Option2_Click()
+Call Resolucion
+End Sub
 
 Private Sub OptX_Click(index As Integer)
 '*************************************************
@@ -5933,6 +5942,7 @@ Private Sub mnuBloquearBordes_Click()
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
+Call Resolucion
 Call modEdicion.Bloquear_Bordes(1)
 End Sub
 
@@ -6145,12 +6155,12 @@ Private Sub mnuNuevoMapa_Click()
 'Last modified: 20/05/06
 '*************************************************
 On Error Resume Next
-Dim LoopC As Integer
+Dim loopc As Integer
 
 DeseaGuardarMapa Dialog.FileName
 
-For LoopC = 0 To frmMain.MapPest.count
-    frmMain.MapPest(LoopC).Visible = False
+For loopc = 0 To frmMain.MapPest.count
+    frmMain.MapPest(loopc).Visible = False
 Next
 
 frmMain.Dialog.FileName = Empty

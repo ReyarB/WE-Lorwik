@@ -1000,7 +1000,7 @@ Attribute VB_Exposed = False
 '**************************************************************
 Option Explicit
 
-Private Sub Aplicar_Click(Index As Integer)
+Private Sub Aplicar_Click(index As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
@@ -1187,15 +1187,15 @@ Private Sub Form_Load()
 Call mnuBasica_Click
 End Sub
 
-Private Sub Mapa_Change(Index As Integer)
+Private Sub Mapa_Change(index As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
-Aplicar(Index).value = 1
+Aplicar(index).value = 1
 End Sub
 
-Private Sub Mapa_KeyPress(Index As Integer, KeyAscii As Integer)
+Private Sub Mapa_KeyPress(index As Integer, KeyAscii As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
@@ -1207,13 +1207,13 @@ End If
 
 End Sub
 
-Private Sub Mapa_KeyUp(Index As Integer, KeyCode As Integer, Shift As Integer)
+Private Sub Mapa_KeyUp(index As Integer, KeyCode As Integer, Shift As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 15/10/06
 '*************************************************
-If LenB(Mapa(Index).Text) = 0 Then Mapa(Index).Text = 0
-If Mapa(Index).Text > 1024 Then Mapa(Index).Text = 1024
+If LenB(Mapa(index).Text) = 0 Then Mapa(index).Text = 0
+If Mapa(index).Text > 1024 Then Mapa(index).Text = 1024
 End Sub
 
 Private Sub mnuBasica_Click()
@@ -1221,14 +1221,22 @@ Private Sub mnuBasica_Click()
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
-PosLim(0).Text = 189
-PosLim(1).Text = 12
-PosLim(2).Text = 189
-PosLim(3).Text = 12
-PosLim(4).Text = 188
-PosLim(5).Text = 13
-PosLim(6).Text = 13
-PosLim(7).Text = 188
+'PosLim(0).Text = 189
+'PosLim(1).Text = 12
+'PosLim(2).Text = 189
+'PosLim(3).Text = 12
+'PosLim(4).Text = 188
+'PosLim(5).Text = 13
+'PosLim(6).Text = 13
+'PosLim(7).Text = 188
+PosLim(0).Text = 91
+PosLim(1).Text = 10
+PosLim(2).Text = 88
+PosLim(3).Text = 13
+PosLim(4).Text = 90
+PosLim(5).Text = 11
+PosLim(6).Text = 14
+PosLim(7).Text = 87
 Call LeerMapaExit
 End Sub
 
@@ -1264,7 +1272,7 @@ PosLim(7).Text = 91
 Call LeerMapaExit
 End Sub
 
-Private Sub PosLim_KeyPress(Index As Integer, KeyAscii As Integer)
+Private Sub PosLim_KeyPress(index As Integer, KeyAscii As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 20/05/06
@@ -1277,15 +1285,15 @@ End If
 
 End Sub
 
-Private Sub PosLim_KeyUp(Index As Integer, KeyCode As Integer, Shift As Integer)
+Private Sub PosLim_KeyUp(index As Integer, KeyCode As Integer, Shift As Integer)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 26/05/06
 '*************************************************
 On Error Resume Next
-If LenB(PosLim(Index).Text) = 0 Then PosLim(Index).Text = 1
-If PosLim(Index).Text > 99 Then PosLim(Index) = 99
-If PosLim(Index).Text < 1 Then PosLim(Index) = 1
+If LenB(PosLim(index).Text) = 0 Then PosLim(index).Text = 1
+If PosLim(index).Text > 99 Then PosLim(index) = 99
+If PosLim(index).Text < 1 Then PosLim(index) = 1
 
 Dim Y As Integer
 Dim X As Integer

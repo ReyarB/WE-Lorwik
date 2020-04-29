@@ -164,12 +164,10 @@ End Function
 
 Public Sub Bloquear_Bordes(ByVal ac As Byte)
 '*************************************************
-'Author: ^[GS]^
-'Last modified: 20/05/06
+'Author: ^[GS]^ Modificado por ReyarB
+'Last modified: 29/04/2020
 '*************************************************
-    'Lorwik> Lo he hardcodeado por que debido a la nueva resolucion el mapa no quedaria cuadrado
-    'el borde ancho seria de 11px mientras el borde alto seria de 8px. Si lo seteamos a 11/11
-    'nos aseguramos de que siempre va a estar cuadrado :>
+    
     Dim Y As Integer
     Dim X As Integer
     
@@ -177,17 +175,20 @@ Public Sub Bloquear_Bordes(ByVal ac As Byte)
         Exit Sub
     End If
     
-    modEdicion.Deshacer_Add "Bloquear los bordes" ' Hago deshacer
     
     For Y = YMinMapSize To YMaxMapSize
         For X = XMinMapSize To XMaxMapSize
     
-            If X < 12 Or X > XMaxMapSize - 11 Or Y < 12 Or Y > YMaxMapSize - 11 Then
+        If X < MinXBorder Or X > MaxXBorder Or Y < MinYBorder Or Y > MaxYBorder Then
                 MapData(X, Y).blocked = ac
             End If
         Next X
     Next Y
-    
+    ' Bloqueo las 4 esquinitas que queda feo sino :v
+    MapData(MinXBorder, MinYBorder).blocked = ac
+    MapData(MaxXBorder, MinYBorder).blocked = ac
+    MapData(MinXBorder, MaxYBorder).blocked = ac
+    MapData(MaxXBorder, MaxYBorder).blocked = ac
     'Set changed flag
     MapInfo.Changed = 1
 End Sub
