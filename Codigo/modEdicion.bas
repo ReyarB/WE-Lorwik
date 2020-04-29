@@ -702,9 +702,50 @@ MapInfo.Changed = 1
 End Sub
 
 ''
+' Eliminar translados del mapa
+'
+Public Sub Quitar_TrasladosMap()
+'*************************************************
+'Author: ^[ReyarB]^
+'Last modified: 29/04/2020
+'*************************************************
+'Quito todos los traslados fuera del mapa y el el traslado
+If EditWarning Then Exit Sub
+
+modEdicion.Deshacer_Add "Quitar los Translados" ' Hago deshacer
+
+Dim Y As Integer
+Dim X As Integer
+
+    If Not MapaCargado Then
+        Exit Sub
+
+    End If
+    
+Call Resolucion
+
+    modEdicion.Deshacer_Add "Bloquear los bordes" ' Hago deshacer
+
+For Y = YMinMapSize To YMaxMapSize
+    For X = XMinMapSize To XMaxMapSize
+            If X <= MinXBorder Or X >= MaxXBorder Or Y <= MinYBorder Or Y >= MaxYBorder Then
+                If MapData(X, Y).TileExit.Map > 0 Then
+                    MapData(X, Y).TileExit.Map = 0
+                    MapData(X, Y).TileExit.X = 0
+                    MapData(X, Y).TileExit.Y = 0
+                End If
+        End If
+    Next X
+Next Y
+
+'Set changed flag
+MapInfo.Changed = 1
+
+End Sub
+
+''
 ' Elimita todos los translados del mapa
 '
-
 Public Sub Quitar_Translados()
 '*************************************************
 'Author: ^[GS]^

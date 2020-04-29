@@ -43,6 +43,7 @@ Begin VB.Form frmOptimizar
       Left            =   120
       TabIndex        =   2
       Top             =   840
+      Value           =   1  'Checked
       Width           =   3375
    End
    Begin VB.CheckBox chkQuitarTrigBloq 
@@ -51,6 +52,7 @@ Begin VB.Form frmOptimizar
       Left            =   120
       TabIndex        =   1
       Top             =   480
+      Value           =   1  'Checked
       Width           =   3375
    End
    Begin VB.CheckBox chkQuitarTrans 
@@ -59,6 +61,7 @@ Begin VB.Form frmOptimizar
       Left            =   120
       TabIndex        =   0
       Top             =   120
+      Value           =   1  'Checked
       Width           =   3375
    End
    Begin WorldEditor.lvButtons_H cOptimizar 

@@ -4246,8 +4246,14 @@ Begin VB.Form frmMain
          Begin VB.Menu mnuCostas 
             Caption         =   "Costas Automaticas (BETA)"
          End
+         Begin VB.Menu mnuBloquearBordes 
+            Caption         =   "Bloqueo en &Bordes del Mapa"
+         End
          Begin VB.Menu mnuInsertarTransladosAdyasentes 
             Caption         =   "&Translados a Mapas Adyasentes"
+         End
+         Begin VB.Menu mnuLinea11 
+            Caption         =   "-"
          End
          Begin VB.Menu mnuInsertarSuperficieAlAzar 
             Caption         =   "Superficie al &Azar"
@@ -4258,15 +4264,27 @@ Begin VB.Form frmMain
          Begin VB.Menu mnuInsertarSuperficieEnTodo 
             Caption         =   "Superficie en Todo el Mapa"
          End
-         Begin VB.Menu mnuBloquearBordes 
-            Caption         =   "Bloqueo en &Bordes del Mapa"
-         End
          Begin VB.Menu mnuBloquearMapa 
             Caption         =   "Bloqueo en &Todo el Mapa"
          End
       End
       Begin VB.Menu mnuquitar 
          Caption         =   "&Quitar"
+         Begin VB.Menu mnuTrasladosMap 
+            Caption         =   "Traslados legales"
+         End
+         Begin VB.Menu mnuQuitarBloqueosBorde 
+            Caption         =   "Bloqueos de los borde"
+         End
+         Begin VB.Menu mnuQuitarSuperficieBordes 
+            Caption         =   "Superficie de los B&ordes"
+         End
+         Begin VB.Menu mnuQuitarSuperficieDeCapa 
+            Caption         =   "Superficie de la &Capa Seleccionada"
+         End
+         Begin VB.Menu mnuLine10 
+            Caption         =   "-"
+         End
          Begin VB.Menu mnuQuitarTranslados 
             Caption         =   "Todos los &Translados"
          End
@@ -4287,15 +4305,6 @@ Begin VB.Form frmMain
          End
          Begin VB.Menu mnuQuitarTriggers 
             Caption         =   "Todos los Tri&gger's"
-         End
-         Begin VB.Menu mnuQuitarBloqueosBorde 
-            Caption         =   "Bloqueos de los borde"
-         End
-         Begin VB.Menu mnuQuitarSuperficieBordes 
-            Caption         =   "Superficie de los B&ordes"
-         End
-         Begin VB.Menu mnuQuitarSuperficieDeCapa 
-            Caption         =   "Superficie de la &Capa Seleccionada"
          End
          Begin VB.Menu mnuLineEdicion2 
             Caption         =   "-"
@@ -5512,6 +5521,10 @@ End Sub
 
 
 
+Private Sub mnuTrasladosMap_Click()
+Call Quitar_TrasladosMap
+End Sub
+
 Private Sub Option1_Click()
 Call Resolucion
 End Sub
@@ -6359,6 +6372,7 @@ Private Sub mnuQuitarSuperficieBordes_Click()
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
+Call Resolucion
 Call modEdicion.Quitar_Bordes
 End Sub
 

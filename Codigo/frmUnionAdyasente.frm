@@ -961,16 +961,16 @@ Begin VB.Form frmUnionAdyacente
       Width           =   4215
    End
    Begin VB.Menu mnuDefault 
-      Caption         =   "mnuDefault"
+      Caption         =   "Default"
       Visible         =   0   'False
       Begin VB.Menu mnuLegal 
          Caption         =   "Borde Legal Automatico"
       End
       Begin VB.Menu mnuBasica 
-         Caption         =   "12,10 y 89,91 - Basica"
+         Caption         =   "Mapas 1024 * 768"
       End
       Begin VB.Menu mnuUlla 
-         Caption         =   "9,7 y 92,94 - Ullathorpe"
+         Caption         =   "Mapas 800 * 600"
       End
    End
 End
