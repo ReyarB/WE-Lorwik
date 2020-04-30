@@ -3589,6 +3589,7 @@ Begin VB.Form frmMain
       _ExtentY        =   2037
       _Version        =   393217
       BackColor       =   0
+      Enabled         =   -1  'True
       ReadOnly        =   -1  'True
       ScrollBars      =   2
       DisableNoScroll =   -1  'True
@@ -4514,6 +4515,9 @@ Begin VB.Form frmMain
    End
    Begin VB.Menu mnuAyuda 
       Caption         =   "Ay&uda"
+      Begin VB.Menu mnuIniciarWE 
+         Caption         =   "Carga Inicial"
+      End
       Begin VB.Menu mnuManual 
          Caption         =   "&Manual"
          Shortcut        =   {F1}
@@ -5503,6 +5507,14 @@ End Sub
 
 Private Sub mnuCostas_Click()
     Call PutCoast
+End Sub
+
+Private Sub mnuImpServer_Click()
+Call frmImpCliente.Show
+End Sub
+
+Private Sub mnuIniciarWE_Click()
+ frmImpCliente.Show
 End Sub
 
 Private Sub mnulmpcostas_Click()
