@@ -430,13 +430,13 @@ Public Sub Engine_Deinit()
     End
 End Sub
 
-Private Function CreateTLVertex(X As Single, Y As Single, Z As Single, rhw As Single, color As Long, Specular As Long, tu As Single, tv As Single) As TLVERTEX
+Private Function CreateTLVertex(X As Single, Y As Single, z As Single, rhw As Single, color As Long, Specular As Long, tu As Single, tv As Single) As TLVERTEX
 '*****************************************************
 '****** Coded by Menduz (lord.yo.wo@gmail.com) *******
 '*****************************************************
     CreateTLVertex.X = X
     CreateTLVertex.Y = Y
-    CreateTLVertex.Z = Z
+    CreateTLVertex.z = z
     CreateTLVertex.rhw = rhw
     CreateTLVertex.color = color
     CreateTLVertex.Specular = Specular
@@ -490,7 +490,7 @@ On Error Resume Next
     If Grh.GrhIndex = 0 Then Exit Sub
     
     If Grh.GrhIndex > GrhCount Or GrhData(Grh.GrhIndex).NumFrames = 0 And GrhData(Grh.GrhIndex).FileNum = 0 Then
-        Call InitGrh(Grh, 20299)
+        Call InitGrh(Grh, 32179)
         Call AddtoRichTextBox(frmMain.StatTxt, "Error en Grh. Posicion: X:" & map_x & " Y:" & map_y, 255, 0, 0)
     End If
     
@@ -642,7 +642,7 @@ Private Sub Geometry_Create_Box(ByRef verts() As TLVERTEX, ByRef dest As RECT, B
  
 End Sub
 
-Private Function Geometry_Create_TLVertex(ByVal X As Single, ByVal Y As Single, ByVal Z As Single, _
+Private Function Geometry_Create_TLVertex(ByVal X As Single, ByVal Y As Single, ByVal z As Single, _
                                             ByVal rhw As Single, ByVal color As Long, ByVal Specular As Long, tu As Single, _
                                             ByVal tv As Single) As TLVERTEX
 '**************************************************************
@@ -651,7 +651,7 @@ Private Function Geometry_Create_TLVertex(ByVal X As Single, ByVal Y As Single, 
 '**************************************************************
     Geometry_Create_TLVertex.X = X
     Geometry_Create_TLVertex.Y = Y
-    Geometry_Create_TLVertex.Z = Z
+    Geometry_Create_TLVertex.z = z
     Geometry_Create_TLVertex.rhw = rhw
     Geometry_Create_TLVertex.color = color
     Geometry_Create_TLVertex.Specular = Specular
@@ -964,6 +964,7 @@ For Y = MinY To MaxY
         End If
             
         If VerGrilla Then
+            Grh.GrhIndex = 2 ' Ver resultados ReyarB
             Call Draw_Grh(Grh, _
                 ScreenX * 32 + PixelOffsetX, _
                 ScreenY * 32 + PixelOffsetY, _
@@ -1337,18 +1338,18 @@ Public Function Particle_Group_Find(ByVal ID As Long) As Long
 'Find the index related to the handle
 '*****************************************************************
 On Error GoTo ErrorHandler:
-    Dim LoopC As Long
+    Dim loopc As Long
     
-    LoopC = 1
-    Do Until particle_group_list(LoopC).ID = ID
-        If LoopC = particle_group_last Then
+    loopc = 1
+    Do Until particle_group_list(loopc).ID = ID
+        If loopc = particle_group_last Then
             Particle_Group_Find = 0
             Exit Function
         End If
-        LoopC = LoopC + 1
+        loopc = loopc + 1
     Loop
     
-    Particle_Group_Find = LoopC
+    Particle_Group_Find = loopc
 Exit Function
 ErrorHandler:
     Particle_Group_Find = 0
@@ -1523,7 +1524,7 @@ Public Sub Particle_Group_Render(ByVal particle_group_index As Long, ByVal scree
 '*****************************************************************
     If particle_group_index = 0 Then Exit Sub
     
-    Dim LoopC As Long
+    Dim loopc As Long
     Dim temp_rgb(0 To 3) As Long
     Dim no_move As Boolean
     
@@ -1545,10 +1546,10 @@ Public Sub Particle_Group_Render(ByVal particle_group_index As Long, ByVal scree
         End If
     
         'If it's still alive render all the particles inside
-        For LoopC = 1 To particle_group_list(particle_group_index).particle_count
+        For loopc = 1 To particle_group_list(particle_group_index).particle_count
                 
         'Render particle
-            Particle_Render particle_group_list(particle_group_index).particle_stream(LoopC), _
+            Particle_Render particle_group_list(particle_group_index).particle_stream(loopc), _
                             screen_x, screen_y, _
                             particle_group_list(particle_group_index).grh_index_list(Round(RandomNumber(1, particle_group_list(particle_group_index).grh_index_count), 0)), _
                             temp_rgb(), _
@@ -1565,8 +1566,8 @@ Public Sub Particle_Group_Render(ByVal particle_group_index As Long, ByVal scree
                             particle_group_list(particle_group_index).move_y1, particle_group_list(particle_group_index).move_y2, _
                             particle_group_list(particle_group_index).YMove, particle_group_list(particle_group_index).spin_speedH, _
                             particle_group_list(particle_group_index).spin, particle_group_list(particle_group_index).Radio, _
-                            particle_group_list(particle_group_index).particle_count, LoopC
-        Next LoopC
+                            particle_group_list(particle_group_index).particle_count, loopc
+        Next loopc
         
         If no_move = False Then
             'Update the group alive counter
@@ -1664,23 +1665,23 @@ Private Function Particle_Group_Next_Open() As Long
 '
 '*****************************************************************
 On Error GoTo ErrorHandler:
-    Dim LoopC As Long
+    Dim loopc As Long
     
     If particle_group_last = 0 Then
         Particle_Group_Next_Open = 1
         Exit Function
     End If
     
-    LoopC = 1
-    Do Until particle_group_list(LoopC).Active = False
-        If LoopC = particle_group_last Then
+    loopc = 1
+    Do Until particle_group_list(loopc).Active = False
+        If loopc = particle_group_last Then
             Particle_Group_Next_Open = particle_group_last + 1
             Exit Function
         End If
-        LoopC = LoopC + 1
+        loopc = loopc + 1
     Loop
     
-    Particle_Group_Next_Open = LoopC
+    Particle_Group_Next_Open = loopc
 
 Exit Function
 

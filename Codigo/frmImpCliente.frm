@@ -9,51 +9,52 @@ Begin VB.Form frmImpCliente
    LinkTopic       =   "Form1"
    ScaleHeight     =   6855
    ScaleWidth      =   5130
+   Begin VB.CommandButton Command2 
+      Caption         =   "Importar del Server"
+      Height          =   375
+      Left            =   2640
+      TabIndex        =   8
+      Top             =   840
+      Width           =   2175
+   End
+   Begin VB.CommandButton Command1 
+      Caption         =   "Importar del Cliente"
+      Height          =   375
+      Left            =   2640
+      TabIndex        =   7
+      Top             =   240
+      Width           =   2175
+   End
    Begin VB.DriveListBox Drive1 
       Appearance      =   0  'Flat
       Height          =   315
       Left            =   120
-      TabIndex        =   3
+      TabIndex        =   2
       Top             =   240
       Width           =   2295
    End
    Begin VB.DirListBox Dir1 
       Appearance      =   0  'Flat
-      Height          =   4140
+      Height          =   3915
       Left            =   120
-      TabIndex        =   2
-      Top             =   960
-      Width           =   2295
-   End
-   Begin VB.DriveListBox Drive2 
-      Appearance      =   0  'Flat
-      Height          =   315
-      Left            =   2640
       TabIndex        =   1
-      Top             =   240
+      Top             =   1200
       Width           =   2295
    End
    Begin VB.DirListBox Dir2 
       Appearance      =   0  'Flat
-      Height          =   4140
+      Height          =   3465
       Left            =   2640
       TabIndex        =   0
-      Top             =   960
+      Top             =   1560
+      Visible         =   0   'False
       Width           =   2295
    End
-   Begin VB.Label Label3 
-      Caption         =   "Indicar Carpeta raiz del Editor"
-      Height          =   255
-      Left            =   2640
-      TabIndex        =   9
-      Top             =   600
-      Width           =   2175
-   End
    Begin VB.Label LblCliente 
-      Caption         =   "Indicar carpeta Raiz del Cliente"
-      Height          =   255
+      Caption         =   "Seleccionar la carpeta Cliente    y luego la del Servidor "
+      Height          =   495
       Left            =   120
-      TabIndex        =   8
+      TabIndex        =   6
       Top             =   600
       Width           =   2295
    End
@@ -63,19 +64,9 @@ Begin VB.Form frmImpCliente
       ForeColor       =   &H80000008&
       Height          =   255
       Left            =   120
-      TabIndex        =   7
+      TabIndex        =   5
       Top             =   0
       Width           =   2295
-   End
-   Begin VB.Label Label4 
-      Appearance      =   0  'Flat
-      Caption         =   "Disco:"
-      ForeColor       =   &H80000008&
-      Height          =   255
-      Left            =   2640
-      TabIndex        =   6
-      Top             =   0
-      Width           =   1095
    End
    Begin VB.Label Label6 
       Appearance      =   0  'Flat
@@ -83,7 +74,7 @@ Begin VB.Form frmImpCliente
       ForeColor       =   &H80000008&
       Height          =   255
       Left            =   120
-      TabIndex        =   5
+      TabIndex        =   4
       Top             =   5280
       Width           =   1455
    End
@@ -92,15 +83,15 @@ Begin VB.Form frmImpCliente
       BorderStyle     =   1  'Fixed Single
       Height          =   1095
       Left            =   120
-      TabIndex        =   4
+      TabIndex        =   3
       Top             =   5640
       Width           =   4935
    End
    Begin VB.Menu mnuMover 
-      Caption         =   "Importar Datos del Cliente"
+      Caption         =   "Importar del Cliente"
    End
    Begin VB.Menu mnuServer 
-      Caption         =   "Importar Datos del Server"
+      Caption         =   "Importar del Server"
    End
 End
 Attribute VB_Name = "frmImpCliente"
@@ -108,6 +99,10 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
+Private Sub Command1_Click()
+Call mnuMover_Click
+End Sub
 
 Private Sub Form_Load()
 On Error Resume Next
@@ -211,7 +206,7 @@ wgraficos = Ruta & "Graficos\"
 wminimapa = Ruta & "Graficos\MiniMapa\"
 '*************Rutas destinos******************
 z = Ruta1 & "INIT\"
-wegraficos = Ruta1 & "graficos\"
+wegraficos = Ruta1 & "Recursos\graficos\"
 weminimapa = Ruta1 & "Recursos\MiniMapa\"
 
 '*************copiado*************************
