@@ -188,6 +188,10 @@ malxfilecopy:
 End Function
 
 
+Private Sub Label1_Click()
+
+End Sub
+
 Private Sub mnuMover_Click()
 Dim Ruta, Ruta1, X, z
 Dim wgraficos, wegraficos
@@ -211,7 +215,7 @@ wgraficos = Ruta & "Graficos\"
 wminimapa = Ruta & "Graficos\MiniMapa\"
 '*************Rutas destinos******************
 z = Ruta1 & "INIT\"
-wegraficos = Ruta1 & "graficos\"
+wegraficos = Ruta1 & "Recursos\Graficos\"
 weminimapa = Ruta1 & "Recursos\MiniMapa\"
 
 '*************copiado*************************
