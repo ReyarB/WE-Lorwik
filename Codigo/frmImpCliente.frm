@@ -163,7 +163,7 @@ Dim Ruta, Ruta1, X, z
 Dim wgraficos, wegraficos
 Dim wminimapa, weminimapa
 
-If MsgBox("Desea copiar los archivos del directorio:" + Chr$(10) + Dir1.Path + Chr$(10) + "A:" + Chr$(10) + Dir2.Path, 4 + 64 + 256, "Copiar archivos a otro directorio") = 6 Then
+If MsgBox("Desea copiar los archivos del directorio:" + Chr$(10) + Dir1.Path + Chr$(10) + "A:" + Chr$(10) + App.Path, 4 + 64 + 256, "Copiar archivos a otro directorio") = 6 Then
 On Error Resume Next
 If Right(Dir1.Path, 1) = "\" Then
   Ruta = Dir1.Path & ""
