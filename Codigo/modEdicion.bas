@@ -175,6 +175,7 @@ Public Sub Bloquear_Bordes(ByVal ac As Byte)
         Exit Sub
     End If
     
+    modEdicion.Deshacer_Add "Bloquear los bordes" ' Hago deshacer
     
     For Y = YMinMapSize To YMaxMapSize
         For X = XMinMapSize To XMaxMapSize

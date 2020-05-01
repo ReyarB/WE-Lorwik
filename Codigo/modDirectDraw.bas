@@ -212,14 +212,14 @@ Function NextOpenChar() As Integer
 'Author: Unkwown
 'Last modified: 20/05/06
 '*************************************************
-Dim LoopC As Integer
+Dim loopc As Integer
 
-LoopC = 1
-Do While CharList(LoopC).Active
-    LoopC = LoopC + 1
+loopc = 1
+Do While CharList(loopc).Active
+    loopc = loopc + 1
 Loop
 
-NextOpenChar = LoopC
+NextOpenChar = loopc
 
 End Function
 
@@ -232,7 +232,7 @@ Function LegalPos(X As Integer, Y As Integer) As Boolean
 LegalPos = True
 
 'Check to see if its out of bounds
-If X - 8 < YMinMapSize Or X - 8 > XMaxMapSize Or Y - 6 < YMinMapSize Or Y - 6 > YMaxMapSize Then
+If X - 12 < YMinMapSize Or X - 12 > XMaxMapSize Or Y - 9 < YMinMapSize Or Y - 9 > YMaxMapSize Then
     LegalPos = False
     Exit Function
 End If
@@ -489,21 +489,21 @@ PixelPos = (TilePixelWidth * X) - TilePixelWidth
 
 End Function
 
-Public Function ARGB(ByVal r As Long, ByVal g As Long, ByVal b As Long, ByVal A As Long) As Long
+Public Function ARGB(ByVal R As Long, ByVal G As Long, ByVal B As Long, ByVal A As Long) As Long
         
     Dim c As Long
         
     If A > 127 Then
         A = A - 128
         c = A * 2 ^ 24 Or &H80000000
-        c = c Or r * 2 ^ 16
-        c = c Or g * 2 ^ 8
-        c = c Or b
+        c = c Or R * 2 ^ 16
+        c = c Or G * 2 ^ 8
+        c = c Or B
     Else
         c = A * 2 ^ 24
-        c = c Or r * 2 ^ 16
-        c = c Or g * 2 ^ 8
-        c = c Or b
+        c = c Or R * 2 ^ 16
+        c = c Or G * 2 ^ 8
+        c = c Or B
     End If
     
     ARGB = c
@@ -528,7 +528,7 @@ End Sub
 '**************************************************************
 Public Sub DibujarMiniMapa()
 Dim map_x, map_y, Capas As Byte
-Dim LoopC As Long
+Dim loopc As Long
     For map_y = YMinMapSize To YMaxMapSize
         For map_x = XMinMapSize To XMaxMapSize
             For Capas = 1 To 2
@@ -550,15 +550,15 @@ Dim LoopC As Long
     Next map_y
     
     If frmMain.chkOptMinimap(0).value = 1 Then
-        For LoopC = 1 To LastChar
-            If CharList(LoopC).Active = 1 Then
-                MapData(CharList(LoopC).Pos.X, CharList(LoopC).Pos.Y).CharIndex = LoopC
-                If CharList(LoopC).Heading <> 0 And frmMain.chkOptMinimap(0).value = 1 Then
-                    SetPixel frmMain.Minimap.hdc, 0 + CharList(LoopC).Pos.X, 0 + CharList(LoopC).Pos.Y, RGB(0, 255, 0)
-                    SetPixel frmMain.Minimap.hdc, 0 + CharList(LoopC).Pos.X, 1 + CharList(LoopC).Pos.Y, RGB(0, 255, 0)
+        For loopc = 1 To LastChar
+            If CharList(loopc).Active = 1 Then
+                MapData(CharList(loopc).Pos.X, CharList(loopc).Pos.Y).CharIndex = loopc
+                If CharList(loopc).Heading <> 0 And frmMain.chkOptMinimap(0).value = 1 Then
+                    SetPixel frmMain.Minimap.hdc, 0 + CharList(loopc).Pos.X, 0 + CharList(loopc).Pos.Y, RGB(0, 255, 0)
+                    SetPixel frmMain.Minimap.hdc, 0 + CharList(loopc).Pos.X, 1 + CharList(loopc).Pos.Y, RGB(0, 255, 0)
                 End If
             End If
-        Next LoopC
+        Next loopc
     End If
    
     frmMain.Minimap.Refresh

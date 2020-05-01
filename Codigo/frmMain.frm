@@ -4978,8 +4978,8 @@ Call Resolucion
                 Next
             Next
             MapInfo.Changed = 1
+            UserPos.Y = 12
 
-            
         Case 1 'Oeste
         
         Norte = 0
@@ -5027,7 +5027,7 @@ Call Resolucion
                 Next
             Next
             MapInfo.Changed = 1
-
+            UserPos.X = 85
                         
         Case 2 'Este
         
@@ -5076,7 +5076,7 @@ Call Resolucion
                 Next
             Next
             MapInfo.Changed = 1
-
+            UserPos.X = 21
                         
         Case 3 'Norte
         
@@ -5124,7 +5124,7 @@ Call Resolucion
                 Next
             Next
             MapInfo.Changed = 1
-
+            UserPos.Y = 88
     End Select
     
     Call modEdicion.Bloquear_Bordes(1)
@@ -5132,6 +5132,16 @@ Call Resolucion
 End Sub
 
 
+'Private Sub cQuitarLuz_Click()
+''*************************************************
+''Author: Lorwik
+''*************************************************
+'    If cQuitarLuz.value Then
+'        cInsertarLuz.Enabled = False
+'    Else
+'        cInsertarLuz.Enabled = True
+'    End If
+'End Sub
 
 Private Sub cUnionManual_Click()
 '*************************************************
@@ -6179,12 +6189,12 @@ Private Sub mnuNuevoMapa_Click()
 'Last modified: 20/05/06
 '*************************************************
 On Error Resume Next
-Dim LoopC As Integer
+Dim loopc As Integer
 
 DeseaGuardarMapa Dialog.FileName
 
-For LoopC = 0 To frmMain.MapPest.count
-    frmMain.MapPest(LoopC).Visible = False
+For loopc = 0 To frmMain.MapPest.count
+    frmMain.MapPest(loopc).Visible = False
 Next
 
 frmMain.Dialog.FileName = Empty

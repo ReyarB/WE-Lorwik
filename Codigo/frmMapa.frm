@@ -193,16 +193,16 @@ Private Sub ActualizarMapa() ' modificar ReyarB
   For i = 0 To 99
     Mapa(i).Stretch = True
     'App.Path & "\Recursos\Graficos\MiniMapa
-    If Len(Dir("C:\Users\Administrador\Desktop\AO1024\WE-Lorwik\Recursos\MiniMapa\" & i + 1 & ".bmp", vbNormal)) > 0 Then
-      Set Mapa(i).Picture = LoadPicture("C:\Users\Administrador\Desktop\AO1024\WE-Lorwik\Recursos\MiniMapa\" & i + 1 & ".bmp")
+    If Len(Dir(App.Path & "\Recursos\MiniMapa\" & i + 1 & ".bmp", vbNormal)) > 0 Then
+      Set Mapa(i).Picture = LoadPicture(App.Path & "\Recursos\MiniMapa\" & i + 1 & ".bmp")
     Else
-     Set Mapa(i).Picture = LoadPicture("C:\Users\Administrador\Desktop\AO1024\WE-Lorwik\Recursos\MiniMapa\no.bmp")
+     Set Mapa(i).Picture = LoadPicture(App.Path & "\Recursos\MiniMapa\no.bmp")
     End If
   Next i
 End Sub
 
 Private Sub Mapa_Click(index As Integer)
-  If Len(Dir("C:\Users\Administrador\Desktop\AO1024\WE-Lorwik\Conversor\Mapas CSM" & index + 1 & ".csm", vbNormal)) > 0 Then
+  If Len(Dir(App.Path & "\Conversor\Mapas CSM" & index + 1 & ".csm", vbNormal)) > 0 Then
     Call modMapIO.NuevoMapa
     Call modMapIO.Cargar_CSM("Mapa" & index + 1 & ".csm")
     Call ActualizarMapa

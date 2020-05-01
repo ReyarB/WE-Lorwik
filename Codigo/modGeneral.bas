@@ -91,9 +91,9 @@ If HotKeysAllow = False Then Exit Sub
     
     
     If GetKeyState(vbKeyUp) < 0 Then
-        If UserPos.Y < 1 Then Exit Sub ' 10
+        If UserPos.Y < 13 Then Exit Sub ' 10
         If LegalPos(UserPos.X, UserPos.Y - 1) And WalkMode = True Then
-            If dLastWalk + 25 > GetTickCount Then Exit Sub
+            If dLastWalk + 50 > GetTickCount Then Exit Sub
             UserPos.Y = UserPos.Y - 1
             MoveCharbyPos UserCharIndex, UserPos.X, UserPos.Y
             dLastWalk = GetTickCount
@@ -108,7 +108,7 @@ If HotKeysAllow = False Then Exit Sub
     If GetKeyState(vbKeyRight) < 0 Then
         If UserPos.X > XMaxMapSize Then Exit Sub ' 89
         If LegalPos(UserPos.X + 1, UserPos.Y) And WalkMode = True Then
-            If dLastWalk + 25 > GetTickCount Then Exit Sub
+            If dLastWalk + 50 > GetTickCount Then Exit Sub
             UserPos.X = UserPos.X + 1
             MoveCharbyPos UserCharIndex, UserPos.X, UserPos.Y
             dLastWalk = GetTickCount
@@ -123,7 +123,7 @@ If HotKeysAllow = False Then Exit Sub
     If GetKeyState(vbKeyDown) < 0 Then
         If UserPos.Y > XMaxMapSize Then Exit Sub ' 92
         If LegalPos(UserPos.X, UserPos.Y + 1) And WalkMode = True Then
-            If dLastWalk + 25 > GetTickCount Then Exit Sub
+            If dLastWalk + 50 > GetTickCount Then Exit Sub
             UserPos.Y = UserPos.Y + 1
             MoveCharbyPos UserCharIndex, UserPos.X, UserPos.Y
             dLastWalk = GetTickCount
@@ -136,9 +136,9 @@ If HotKeysAllow = False Then Exit Sub
     End If
 
     If GetKeyState(vbKeyLeft) < 0 Then
-        If UserPos.X < 1 Then Exit Sub ' 12
+        If UserPos.X < 20 Then Exit Sub ' 12 Ver porque no se mueve si bajo de este valor ReyarB
         If LegalPos(UserPos.X - 1, UserPos.Y) And WalkMode = True Then
-            If dLastWalk + 25 > GetTickCount Then Exit Sub
+            If dLastWalk + 50 > GetTickCount Then Exit Sub
             UserPos.X = UserPos.X - 1
             MoveCharbyPos UserCharIndex, UserPos.X, UserPos.Y
             dLastWalk = GetTickCount
