@@ -51,6 +51,298 @@ Begin VB.Form frmMain
       TabIndex        =   2
       Top             =   3360
       Width           =   4455
+      Begin VB.Frame CopyBorder 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00000000&
+         ForeColor       =   &H00FFFFFF&
+         Height          =   3975
+         Left            =   120
+         TabIndex        =   99
+         Top             =   120
+         Visible         =   0   'False
+         Width           =   4095
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   2175
+            Index           =   1
+            Left            =   120
+            TabIndex        =   105
+            Top             =   960
+            Width           =   975
+            _ExtentX        =   1720
+            _ExtentY        =   3836
+            Caption         =   "Pegar mapa Oeste"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin VB.OptionButton OpcExit 
+            BackColor       =   &H80000007&
+            Caption         =   "Espejar hasta el exit "
+            ForeColor       =   &H8000000B&
+            Height          =   375
+            Left            =   1200
+            TabIndex        =   175
+            Top             =   1560
+            Value           =   -1  'True
+            Width           =   1815
+         End
+         Begin VB.OptionButton OpcBorde 
+            BackColor       =   &H80000012&
+            Caption         =   "Espejar con el borde"
+            ForeColor       =   &H8000000B&
+            Height          =   375
+            Left            =   1200
+            TabIndex        =   174
+            Top             =   2040
+            Width           =   1815
+         End
+         Begin VB.TextBox TXTArriba 
+            Alignment       =   2  'Center
+            Appearance      =   0  'Flat
+            BackColor       =   &H00000000&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00FFFFFF&
+            Height          =   285
+            Left            =   1680
+            TabIndex        =   103
+            Text            =   "180"
+            Top             =   960
+            Visible         =   0   'False
+            Width           =   615
+         End
+         Begin VB.TextBox TxTAbajo 
+            Alignment       =   2  'Center
+            Appearance      =   0  'Flat
+            BackColor       =   &H00000000&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00FFFFFF&
+            Height          =   285
+            Left            =   1680
+            TabIndex        =   102
+            Text            =   "180"
+            Top             =   2760
+            Visible         =   0   'False
+            Width           =   615
+         End
+         Begin VB.TextBox TxTDerecha 
+            Alignment       =   2  'Center
+            Appearance      =   0  'Flat
+            BackColor       =   &H00000000&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00FFFFFF&
+            Height          =   285
+            Left            =   3240
+            TabIndex        =   101
+            Text            =   "180"
+            Top             =   1440
+            Visible         =   0   'False
+            Width           =   615
+         End
+         Begin VB.TextBox TxTIzquierda 
+            Alignment       =   2  'Center
+            Appearance      =   0  'Flat
+            BackColor       =   &H00000000&
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00FFFFFF&
+            Height          =   285
+            Left            =   360
+            TabIndex        =   100
+            Text            =   "180"
+            Top             =   1440
+            Visible         =   0   'False
+            Width           =   615
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   735
+            Index           =   3
+            Left            =   120
+            TabIndex        =   104
+            Top             =   240
+            Width           =   3855
+            _ExtentX        =   6800
+            _ExtentY        =   1296
+            Caption         =   "Pegar en mapa Norte"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   2175
+            Index           =   2
+            Left            =   3000
+            TabIndex        =   106
+            Top             =   960
+            Width           =   975
+            _ExtentX        =   1720
+            _ExtentY        =   3836
+            Caption         =   "Pegar mapa Este"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   735
+            Index           =   0
+            Left            =   120
+            TabIndex        =   107
+            Top             =   3120
+            Width           =   3855
+            _ExtentX        =   6800
+            _ExtentY        =   1296
+            Caption         =   "Pegar mapa Sur"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H MemoriaAuxiliar 
+            Height          =   3615
+            Left            =   120
+            TabIndex        =   108
+            Top             =   240
+            Visible         =   0   'False
+            Width           =   3855
+            _ExtentX        =   6800
+            _ExtentY        =   6376
+            Caption         =   "Copiar bordes del mapa en memoria auxiliar"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   16744576
+         End
+         Begin VB.Label Label4 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Estos valores se miden en Tiles y JAMAS podran superar los 200 tiles o estar por debajo de 1 tiles."
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00FFFFFF&
+            Height          =   555
+            Left            =   480
+            TabIndex        =   110
+            Top             =   3360
+            Visible         =   0   'False
+            Width           =   3810
+         End
+         Begin VB.Label Label5 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "¡ATENCION!"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000000FF&
+            Height          =   195
+            Index           =   0
+            Left            =   360
+            TabIndex        =   109
+            Top             =   3120
+            Visible         =   0   'False
+            Width           =   1065
+         End
+      End
       Begin VB.ListBox lstParticle 
          BackColor       =   &H00000000&
          BeginProperty Font 
@@ -1856,298 +2148,6 @@ Begin VB.Form frmMain
             Width           =   3615
          End
       End
-      Begin VB.Frame CopyBorder 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00000000&
-         ForeColor       =   &H00FFFFFF&
-         Height          =   3975
-         Left            =   120
-         TabIndex        =   99
-         Top             =   240
-         Visible         =   0   'False
-         Width           =   4095
-         Begin VB.OptionButton OpcExit 
-            BackColor       =   &H80000007&
-            Caption         =   "Espejar hasta el exit "
-            ForeColor       =   &H8000000B&
-            Height          =   375
-            Left            =   1200
-            TabIndex        =   175
-            Top             =   1560
-            Value           =   -1  'True
-            Width           =   1815
-         End
-         Begin VB.OptionButton OpcBorde 
-            BackColor       =   &H80000012&
-            Caption         =   "Espejar con el borde"
-            ForeColor       =   &H8000000B&
-            Height          =   375
-            Left            =   1200
-            TabIndex        =   174
-            Top             =   2040
-            Width           =   1815
-         End
-         Begin VB.TextBox TXTArriba 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            BackColor       =   &H00000000&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00FFFFFF&
-            Height          =   285
-            Left            =   1680
-            TabIndex        =   103
-            Text            =   "180"
-            Top             =   960
-            Visible         =   0   'False
-            Width           =   615
-         End
-         Begin VB.TextBox TxTAbajo 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            BackColor       =   &H00000000&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00FFFFFF&
-            Height          =   285
-            Left            =   1680
-            TabIndex        =   102
-            Text            =   "180"
-            Top             =   2760
-            Visible         =   0   'False
-            Width           =   615
-         End
-         Begin VB.TextBox TxTDerecha 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            BackColor       =   &H00000000&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00FFFFFF&
-            Height          =   285
-            Left            =   3240
-            TabIndex        =   101
-            Text            =   "180"
-            Top             =   1440
-            Visible         =   0   'False
-            Width           =   615
-         End
-         Begin VB.TextBox TxTIzquierda 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            BackColor       =   &H00000000&
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00FFFFFF&
-            Height          =   285
-            Left            =   360
-            TabIndex        =   100
-            Text            =   "180"
-            Top             =   1440
-            Visible         =   0   'False
-            Width           =   615
-         End
-         Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   735
-            Index           =   3
-            Left            =   120
-            TabIndex        =   104
-            Top             =   240
-            Width           =   3855
-            _ExtentX        =   6800
-            _ExtentY        =   1296
-            Caption         =   "Pegar en mapa Norte"
-            CapAlign        =   2
-            BackStyle       =   2
-            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-               Name            =   "Times New Roman"
-               Size            =   9
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            cGradient       =   0
-            Mode            =   0
-            Value           =   0   'False
-            cBack           =   -2147483633
-         End
-         Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   2175
-            Index           =   2
-            Left            =   3000
-            TabIndex        =   106
-            Top             =   960
-            Width           =   975
-            _ExtentX        =   1720
-            _ExtentY        =   3836
-            Caption         =   "Pegar mapa Este"
-            CapAlign        =   2
-            BackStyle       =   2
-            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-               Name            =   "Times New Roman"
-               Size            =   9
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            cGradient       =   0
-            Mode            =   0
-            Value           =   0   'False
-            cBack           =   -2147483633
-         End
-         Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   735
-            Index           =   0
-            Left            =   120
-            TabIndex        =   107
-            Top             =   3120
-            Width           =   3855
-            _ExtentX        =   6800
-            _ExtentY        =   1296
-            Caption         =   "Pegar mapa Sur"
-            CapAlign        =   2
-            BackStyle       =   2
-            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-               Name            =   "Times New Roman"
-               Size            =   9
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            cGradient       =   0
-            Mode            =   0
-            Value           =   0   'False
-            cBack           =   -2147483633
-         End
-         Begin WorldEditor.lvButtons_H MemoriaAuxiliar 
-            Height          =   3615
-            Left            =   120
-            TabIndex        =   108
-            Top             =   240
-            Visible         =   0   'False
-            Width           =   3855
-            _ExtentX        =   6800
-            _ExtentY        =   6376
-            Caption         =   "Copiar bordes del mapa en memoria auxiliar"
-            CapAlign        =   2
-            BackStyle       =   2
-            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-               Name            =   "Times New Roman"
-               Size            =   9
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            cGradient       =   0
-            Mode            =   0
-            Value           =   0   'False
-            cBack           =   16744576
-         End
-         Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   2175
-            Index           =   1
-            Left            =   120
-            TabIndex        =   105
-            Top             =   960
-            Width           =   975
-            _ExtentX        =   1720
-            _ExtentY        =   3836
-            Caption         =   "Pegar mapa Oeste derecha"
-            CapAlign        =   2
-            BackStyle       =   2
-            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-               Name            =   "Times New Roman"
-               Size            =   9
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            cGradient       =   0
-            Mode            =   0
-            Value           =   0   'False
-            cBack           =   -2147483633
-         End
-         Begin VB.Label Label4 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Estos valores se miden en Tiles y JAMAS podran superar los 200 tiles o estar por debajo de 1 tiles."
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00FFFFFF&
-            Height          =   555
-            Left            =   480
-            TabIndex        =   110
-            Top             =   3360
-            Visible         =   0   'False
-            Width           =   3810
-         End
-         Begin VB.Label Label5 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "¡ATENCION!"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H000000FF&
-            Height          =   195
-            Index           =   0
-            Left            =   360
-            TabIndex        =   109
-            Top             =   3120
-            Visible         =   0   'False
-            Width           =   1065
-         End
-      End
       Begin VB.ListBox lListado 
          BackColor       =   &H80000012&
          BeginProperty Font 
@@ -3588,7 +3588,7 @@ Begin VB.Form frmMain
       _ExtentX        =   22675
       _ExtentY        =   2037
       _Version        =   393217
-      BackColor       =   0
+      BackColor       =   16777215
       ReadOnly        =   -1  'True
       ScrollBars      =   2
       DisableNoScroll =   -1  'True
@@ -6179,12 +6179,12 @@ Private Sub mnuNuevoMapa_Click()
 'Last modified: 20/05/06
 '*************************************************
 On Error Resume Next
-Dim loopc As Integer
+Dim LoopC As Integer
 
 DeseaGuardarMapa Dialog.FileName
 
-For loopc = 0 To frmMain.MapPest.count
-    frmMain.MapPest(loopc).Visible = False
+For LoopC = 0 To frmMain.MapPest.count
+    frmMain.MapPest(LoopC).Visible = False
 Next
 
 frmMain.Dialog.FileName = Empty

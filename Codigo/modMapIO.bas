@@ -205,7 +205,7 @@ Public Sub NuevoMapa()
 
     On Error Resume Next
     
-    Dim loopc As Integer
+    Dim LoopC As Integer
     Dim Y As Integer
     Dim X As Integer
     
@@ -219,8 +219,8 @@ Public Sub NuevoMapa()
     
     MapaCargado = False
     
-    For loopc = 0 To frmMain.MapPest.count - 1
-        frmMain.MapPest(loopc).Enabled = False
+    For LoopC = 0 To frmMain.MapPest.count - 1
+        frmMain.MapPest(LoopC).Enabled = False
     Next
     
     frmMain.MousePointer = 11
@@ -310,7 +310,7 @@ Public Sub MapaV2_Guardar(ByVal SaveAs As String, Optional ByVal Preguntar As Bo
 
     Dim FreeFileMap As Long
     Dim FreeFileInf As Long
-    Dim loopc       As Long
+    Dim LoopC       As Long
     Dim TempInt     As Integer
     Dim Y           As Long
     Dim X           As Long
@@ -400,15 +400,15 @@ Public Sub MapaV2_Guardar(ByVal SaveAs As String, Optional ByVal Preguntar As Bo
                     Put FreeFileMap, , .Graphic(1).GrhIndex
                 End If
                 
-                For loopc = 2 To 4
+                For LoopC = 2 To 4
                     
                     If MapaCargado_Integer Then
-                        If .Graphic(loopc).GrhIndex Then Put FreeFileMap, , .Graphic(loopc).GrhIndexIntg
+                        If .Graphic(LoopC).GrhIndex Then Put FreeFileMap, , .Graphic(LoopC).GrhIndexIntg
                     Else
-                        If .Graphic(loopc).GrhIndex Then Put FreeFileMap, , .Graphic(loopc).GrhIndex
+                        If .Graphic(LoopC).GrhIndex Then Put FreeFileMap, , .Graphic(LoopC).GrhIndex
                     End If
 
-                Next loopc
+                Next LoopC
                     
                 If .Trigger Then Put FreeFileMap, , .Trigger
                 
@@ -484,7 +484,7 @@ Public Sub MapaV2_Cargar(ByVal Map As String, Optional ByVal EsInteger As Boolea
 
     On Error Resume Next
 
-    Dim loopc       As Integer
+    Dim LoopC       As Integer
     Dim TempInt     As Integer
     Dim Body        As Integer
     Dim Head        As Integer
@@ -722,7 +722,7 @@ End Sub
 '
 ' @param Archivo Especifica el Path del archivo .DAT
 
-Public Sub MapInfo_Guardar(ByVal Archivo As String)
+Public Sub MapInfo_Guardar(ByVal archivo As String)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 28/05/06
@@ -732,22 +732,22 @@ Public Sub MapInfo_Guardar(ByVal Archivo As String)
         MapTitulo = NameMap_Save
     End If
 
-    Call WriteVar(Archivo, MapTitulo, "Name", MapInfo.name)
-    Call WriteVar(Archivo, MapTitulo, "MusicNum", MapInfo.Music)
-    Call WriteVar(Archivo, MapTitulo, "MagiaSinefecto", Val(MapInfo.MagiaSinEfecto))
-    Call WriteVar(Archivo, MapTitulo, "InviSinEfecto", Val(MapInfo.InviSinEfecto))
-    Call WriteVar(Archivo, MapTitulo, "ResuSinEfecto", Val(MapInfo.ResuSinEfecto))
-    Call WriteVar(Archivo, MapTitulo, "NoEncriptarMP", Val(MapInfo.NoEncriptarMP))
+    Call WriteVar(archivo, MapTitulo, "Name", MapInfo.name)
+    Call WriteVar(archivo, MapTitulo, "MusicNum", MapInfo.Music)
+    Call WriteVar(archivo, MapTitulo, "MagiaSinefecto", Val(MapInfo.MagiaSinEfecto))
+    Call WriteVar(archivo, MapTitulo, "InviSinEfecto", Val(MapInfo.InviSinEfecto))
+    Call WriteVar(archivo, MapTitulo, "ResuSinEfecto", Val(MapInfo.ResuSinEfecto))
+    Call WriteVar(archivo, MapTitulo, "NoEncriptarMP", Val(MapInfo.NoEncriptarMP))
 
-    Call WriteVar(Archivo, MapTitulo, "Terreno", MapInfo.Terreno)
-    Call WriteVar(Archivo, MapTitulo, "Zona", MapInfo.Zona)
-    Call WriteVar(Archivo, MapTitulo, "Restringir", MapInfo.Restringir)
-    Call WriteVar(Archivo, MapTitulo, "BackUp", Str(MapInfo.BackUp))
+    Call WriteVar(archivo, MapTitulo, "Terreno", MapInfo.Terreno)
+    Call WriteVar(archivo, MapTitulo, "Zona", MapInfo.Zona)
+    Call WriteVar(archivo, MapTitulo, "Restringir", MapInfo.Restringir)
+    Call WriteVar(archivo, MapTitulo, "BackUp", Str(MapInfo.BackUp))
 
     If MapInfo.PK Then
-        Call WriteVar(Archivo, MapTitulo, "Pk", "0")
+        Call WriteVar(archivo, MapTitulo, "Pk", "0")
     Else
-        Call WriteVar(Archivo, MapTitulo, "Pk", "1")
+        Call WriteVar(archivo, MapTitulo, "Pk", "1")
     End If
 End Sub
 
@@ -756,7 +756,7 @@ End Sub
 '
 ' @param Archivo Especifica el Path del archivo .DAT
 
-Public Sub MapInfo_Cargar(ByVal Archivo As String)
+Public Sub MapInfo_Cargar(ByVal archivo As String)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 02/06/06
@@ -764,25 +764,25 @@ Public Sub MapInfo_Cargar(ByVal Archivo As String)
 
 On Error Resume Next
     Dim Leer As New clsIniReader
-    Dim loopc As Integer
+    Dim LoopC As Integer
     Dim Path As String
     MapTitulo = Empty
     
-    If FileExist(Archivo, vbNormal) = False Then
-        Call AddtoRichTextBox(frmMain.StatTxt, "Error en el Mapa " & Archivo & ", no se ha encontrado al archivo .dat", 255, 0, 0)
+    If FileExist(archivo, vbNormal) = False Then
+        Call AddtoRichTextBox(frmMain.StatTxt, "Error en el Mapa " & archivo & ", no se ha encontrado al archivo .dat", 255, 0, 0)
      Exit Sub
     End If
     
-    Leer.Initialize Archivo
+    Leer.Initialize archivo
 
-    For loopc = Len(Archivo) To 1 Step -1
-        If mid(Archivo, loopc, 1) = "\" Then
-            Path = Left(Archivo, loopc)
+    For LoopC = Len(archivo) To 1 Step -1
+        If mid(archivo, LoopC, 1) = "\" Then
+            Path = Left(archivo, LoopC)
             Exit For
         End If
     Next
-    Archivo = Right(Archivo, Len(Archivo) - (Len(Path)))
-    MapTitulo = UCase(Left(Archivo, Len(Archivo) - 4))
+    archivo = Right(archivo, Len(archivo) - (Len(Path)))
+    MapTitulo = UCase(Left(archivo, Len(archivo) - 4))
 
     MapInfo.name = Leer.GetValue(MapTitulo, "Name")
     MapInfo.Music = Leer.GetValue(MapTitulo, "MusicNum")
@@ -850,29 +850,29 @@ Public Sub Pestañas(ByVal Map As String, ByVal formato As String)
 'Last modified: 28/05/06
 '*************************************************
 On Error Resume Next
-Dim loopc As Integer
+Dim LoopC As Integer
 
-For loopc = Len(Map) To 1 Step -1
-    If mid(Map, loopc, 1) = "\" Then
-        PATH_Save = Left(Map, loopc)
+For LoopC = Len(Map) To 1 Step -1
+    If mid(Map, LoopC, 1) = "\" Then
+        PATH_Save = Left(Map, LoopC)
         Exit For
     End If
 Next
 Map = Right(Map, Len(Map) - (Len(PATH_Save)))
-For loopc = Len(Left(Map, Len(Map) - 4)) To 1 Step -1
-    If IsNumeric(mid(Left(Map, Len(Map) - 4), loopc, 1)) = False Then
-        NumMap_Save = Right(Left(Map, Len(Map) - 4), Len(Left(Map, Len(Map) - 4)) - loopc)
-        NameMap_Save = Left(Map, loopc)
+For LoopC = Len(Left(Map, Len(Map) - 4)) To 1 Step -1
+    If IsNumeric(mid(Left(Map, Len(Map) - 4), LoopC, 1)) = False Then
+        NumMap_Save = Right(Left(Map, Len(Map) - 4), Len(Left(Map, Len(Map) - 4)) - LoopC)
+        NameMap_Save = Left(Map, LoopC)
         Exit For
     End If
 Next
-For loopc = (NumMap_Save - 7) To (NumMap_Save + 10)
-        If FileExist(PATH_Save & NameMap_Save & loopc & formato, vbArchive) = True Then
-            frmMain.MapPest(loopc - NumMap_Save + 7).Visible = True
-            frmMain.MapPest(loopc - NumMap_Save + 7).Enabled = True
-            frmMain.MapPest(loopc - NumMap_Save + 7).Caption = NameMap_Save & loopc
+For LoopC = (NumMap_Save - 7) To (NumMap_Save + 10)
+        If FileExist(PATH_Save & NameMap_Save & LoopC & formato, vbArchive) = True Then
+            frmMain.MapPest(LoopC - NumMap_Save + 7).Visible = True
+            frmMain.MapPest(LoopC - NumMap_Save + 7).Enabled = True
+            frmMain.MapPest(LoopC - NumMap_Save + 7).Caption = NameMap_Save & LoopC
         Else
-            frmMain.MapPest(loopc - NumMap_Save + 7).Visible = False
+            frmMain.MapPest(LoopC - NumMap_Save + 7).Visible = False
         End If
 Next
 End Sub
@@ -991,7 +991,7 @@ Open Map For Binary Access Read As fh
                 MapData(Objetos(i).X, Objetos(i).Y).OBJInfo.objindex = Objetos(i).objindex
                 MapData(Objetos(i).X, Objetos(i).Y).OBJInfo.Amount = Objetos(i).ObjAmmount
                 If MapData(Objetos(i).X, Objetos(i).Y).OBJInfo.objindex > NumOBJs Then
-                    InitGrh MapData(Objetos(i).X, Objetos(i).Y).ObjGrh, 20299
+                    InitGrh MapData(Objetos(i).X, Objetos(i).Y).ObjGrh, 23829
                 Else
                     InitGrh MapData(Objetos(i).X, Objetos(i).Y).ObjGrh, ObjData(MapData(Objetos(i).X, Objetos(i).Y).OBJInfo.objindex).GrhIndex
                 End If

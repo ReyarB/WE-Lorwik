@@ -1,72 +1,69 @@
 VERSION 5.00
 Begin VB.Form frmImpCliente 
    Caption         =   "Importar archivos nesesarios al Editor"
-   ClientHeight    =   6855
+   ClientHeight    =   5955
    ClientLeft      =   9210
    ClientTop       =   6405
    ClientWidth     =   5130
    Icon            =   "frmImpCliente.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   6855
+   ScaleHeight     =   5955
    ScaleWidth      =   5130
    Begin VB.CommandButton Command2 
       Caption         =   "Importar del Server"
       Height          =   375
       Left            =   2640
-      TabIndex        =   8
-      Top             =   840
+      TabIndex        =   6
+      Top             =   3720
       Width           =   2175
    End
    Begin VB.CommandButton Command1 
       Caption         =   "Importar del Cliente"
       Height          =   375
-      Left            =   2640
-      TabIndex        =   7
-      Top             =   240
-      Width           =   2175
-   End
-   Begin VB.DriveListBox Drive1 
-      Appearance      =   0  'Flat
-      Height          =   315
       Left            =   120
-      TabIndex        =   2
-      Top             =   240
-      Width           =   2295
+      TabIndex        =   5
+      Top             =   3720
+      Width           =   2175
    End
    Begin VB.DirListBox Dir1 
       Appearance      =   0  'Flat
-      Height          =   3915
+      Height          =   2790
       Left            =   120
       TabIndex        =   1
-      Top             =   1200
+      Top             =   720
       Width           =   2295
    End
    Begin VB.DirListBox Dir2 
       Appearance      =   0  'Flat
-      Height          =   3465
+      Height          =   2790
       Left            =   2640
       TabIndex        =   0
-      Top             =   1560
-      Visible         =   0   'False
+      Top             =   720
       Width           =   2295
    End
-   Begin VB.Label LblCliente 
-      Caption         =   "Seleccionar la carpeta Cliente    y luego la del Servidor "
-      Height          =   495
-      Left            =   120
-      TabIndex        =   6
-      Top             =   600
-      Width           =   2295
+   Begin VB.Label Label3 
+      Caption         =   "SERVIDOR"
+      Height          =   255
+      Left            =   3360
+      TabIndex        =   8
+      Top             =   480
+      Width           =   855
    End
    Begin VB.Label Label2 
-      Appearance      =   0  'Flat
-      Caption         =   "Disco:"
-      ForeColor       =   &H80000008&
+      Caption         =   "CLIENTE"
       Height          =   255
-      Left            =   120
-      TabIndex        =   5
-      Top             =   0
-      Width           =   2295
+      Left            =   840
+      TabIndex        =   7
+      Top             =   480
+      Width           =   855
+   End
+   Begin VB.Label LblCliente 
+      Caption         =   "Seleccionar la carpeta Cliente y Servidor luego Importar"
+      Height          =   255
+      Left            =   240
+      TabIndex        =   4
+      Top             =   120
+      Width           =   4575
    End
    Begin VB.Label Label6 
       Appearance      =   0  'Flat
@@ -74,8 +71,8 @@ Begin VB.Form frmImpCliente
       ForeColor       =   &H80000008&
       Height          =   255
       Left            =   120
-      TabIndex        =   4
-      Top             =   5280
+      TabIndex        =   3
+      Top             =   4320
       Width           =   1455
    End
    Begin VB.Label Label1 
@@ -83,8 +80,8 @@ Begin VB.Form frmImpCliente
       BorderStyle     =   1  'Fixed Single
       Height          =   1095
       Left            =   120
-      TabIndex        =   3
-      Top             =   5640
+      TabIndex        =   2
+      Top             =   4680
       Width           =   4935
    End
    Begin VB.Menu mnuMover 
@@ -104,38 +101,16 @@ Private Sub Command1_Click()
 Call mnuMover_Click
 End Sub
 
+Private Sub Command2_Click()
+Call mnuServer_Click
+End Sub
+
 Private Sub Form_Load()
 On Error Resume Next
 Move (Screen.Width - Width) \ 29, (Screen.Height - Height) \ 29 'Centra el formulario completamente
 End Sub
 
 
-
-
-Private Sub MnuSale_Click(index As Integer)
-Dim Ruta, Ruta1, X, z
-If MsgBox("Desea copiar los archivos del directorio:" + Chr$(10) + Dir1.Path + Chr$(10) + "A:" + Chr$(10) + Dir2.Path, 4 + 64 + 256, "Copiar archivos a otro directorio") = 6 Then
-On Error Resume Next
-If Right(Dir1.Path, 1) = "\" Then
-  Ruta = Dir1.Path & ""
- Else
-  Ruta = Dir1.Path & "\"
-End If
-If Right(Dir2.Path, 1) = "\" Then
-  Ruta1 = Dir2.Path & ""
- Else
-  Ruta1 = Dir2.Path & "\"
-End If
-
-Y = Ruta
-z = Ruta1
-result = xfilecopy("" & Y & "", "" & z & "", "*.*", Label1)
-If err Then MsgBox "No existe el directorio de fuente ni del directorio destino", 16, "¡No copie nada!"
-
-
-End If
-End
-End Sub
 
 Private Function xfilecopy(origen$, destino$, archivo$, informa As Label)
 ' Copia varios archivos de una carpeta a otra
@@ -195,22 +170,22 @@ If Right(Dir1.Path, 1) = "\" Then
  Else
   Ruta = Dir1.Path & "\"
 End If
-If Right(Dir2.Path, 1) = "\" Then
-  Ruta1 = Dir2.Path & ""
- Else
-  Ruta1 = Dir2.Path & "\"
-End If
+
 '**************Rutas origen******************
 Y = Ruta & "INIT\"
 wgraficos = Ruta & "Graficos\"
 wminimapa = Ruta & "Graficos\MiniMapa\"
 '*************Rutas destinos******************
-z = Ruta1 & "INIT\"
-wegraficos = Ruta1 & "Recursos\graficos\"
-weminimapa = Ruta1 & "Recursos\MiniMapa\"
+z = App.Path & "INIT\"
+wegraficos = App.Path & "Recursos\graficos\"
+weminimapa = App.Path & "Recursos\MiniMapa\"
 
 '*************copiado*************************
-result = xfilecopy("" & Y & "", "" & z & "", "*.ini", Label1)
+result = xfilecopy("" & Y & "", "" & z & "", "Graficos.ind", Label1)
+result = xfilecopy("" & Y & "", "" & z & "", "Cabezas.ind", Label1)
+result = xfilecopy("" & Y & "", "" & z & "", "Cuerpos.ind", Label1)
+result = xfilecopy("" & Y & "", "" & z & "", "Particulas.ini", Label1)
+result = xfilecopy("" & Y & "", "" & z & "", "Personajes.ind", Label1)
 result = xfilecopy("" & wgraficos & "", "" & wegraficos & "", "*.png", Label1)
 result = xfilecopy("" & wminimapa & "", "" & weminimapa & "", "*.bmp", Label1)
 
@@ -228,11 +203,7 @@ Dim wMapa, weMapa
 
 If MsgBox("Desea copiar los archivos del directorio:" + Chr$(10) + Dir1.Path + Chr$(10) + "A:" + Chr$(10) + Dir2.Path, 4 + 64 + 256, "Copiar archivos a otro directorio") = 6 Then
 On Error Resume Next
-If Right(Dir1.Path, 1) = "\" Then
-  Ruta = Dir1.Path & ""
- Else
-  Ruta = Dir1.Path & "\"
-End If
+
 If Right(Dir2.Path, 1) = "\" Then
   Ruta1 = Dir2.Path & ""
  Else
@@ -240,11 +211,11 @@ If Right(Dir2.Path, 1) = "\" Then
 End If
 '**************Rutas origen******************
 Y = Ruta & "Dat\"
-wMapa = Ruta & "Mundos\Alkon\"
+wMapa = Ruta1 & "Mundos\Alkon\"
 
 '*************Rutas destinos******************
 z = Ruta1 & "Recursos\Dat\"
-weMapa = Ruta1 & "Conversor\Mapas Long\"
+weMapa = App.Path & "Conversor\Mapas Long\"
 
 '*************copiado*************************
 result = xfilecopy("" & Y & "", "" & z & "", "NPCs.dat", Label1)

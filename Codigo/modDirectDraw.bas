@@ -80,7 +80,7 @@ On Error Resume Next
 '*****************************************************************
 'Sets up a grh. MUST be done before rendering
 '*****************************************************************
-If GrhIndex <= 0 Or GrhIndex > GrhCount Then GrhIndex = 20299
+If GrhIndex <= 0 Or GrhIndex > GrhCount Then GrhIndex = 23829
     Grh.GrhIndex = GrhIndex
     
     If Started = 2 Then
@@ -212,14 +212,14 @@ Function NextOpenChar() As Integer
 'Author: Unkwown
 'Last modified: 20/05/06
 '*************************************************
-Dim loopc As Integer
+Dim LoopC As Integer
 
-loopc = 1
-Do While CharList(loopc).Active
-    loopc = loopc + 1
+LoopC = 1
+Do While CharList(LoopC).Active
+    LoopC = LoopC + 1
 Loop
 
-NextOpenChar = loopc
+NextOpenChar = LoopC
 
 End Function
 
@@ -489,21 +489,21 @@ PixelPos = (TilePixelWidth * X) - TilePixelWidth
 
 End Function
 
-Public Function ARGB(ByVal R As Long, ByVal G As Long, ByVal B As Long, ByVal A As Long) As Long
+Public Function ARGB(ByVal r As Long, ByVal g As Long, ByVal b As Long, ByVal A As Long) As Long
         
     Dim c As Long
         
     If A > 127 Then
         A = A - 128
         c = A * 2 ^ 24 Or &H80000000
-        c = c Or R * 2 ^ 16
-        c = c Or G * 2 ^ 8
-        c = c Or B
+        c = c Or r * 2 ^ 16
+        c = c Or g * 2 ^ 8
+        c = c Or b
     Else
         c = A * 2 ^ 24
-        c = c Or R * 2 ^ 16
-        c = c Or G * 2 ^ 8
-        c = c Or B
+        c = c Or r * 2 ^ 16
+        c = c Or g * 2 ^ 8
+        c = c Or b
     End If
     
     ARGB = c
@@ -522,13 +522,13 @@ Sub DrawGrhtoHdc(picX As PictureBox, Grh As Long, ByVal X As Integer, ByVal Y As
     'D3DDevice.Clear 0, ByVal 0, D3DCLEAR_TARGET, 0, 1#, 0
     Draw_GrhIndex Grh, X, Y, LightIluminado()
     D3DDevice.EndScene
-    D3DDevice.Present destRect, ByVal 0, picX.hwnd, ByVal 0
+    D3DDevice.Present destRect, ByVal 0, picX.hWnd, ByVal 0
 End Sub
 
 '**************************************************************
 Public Sub DibujarMiniMapa()
 Dim map_x, map_y, Capas As Byte
-Dim loopc As Long
+Dim LoopC As Long
     For map_y = YMinMapSize To YMaxMapSize
         For map_x = XMinMapSize To XMaxMapSize
             For Capas = 1 To 2
@@ -550,15 +550,15 @@ Dim loopc As Long
     Next map_y
     
     If frmMain.chkOptMinimap(0).value = 1 Then
-        For loopc = 1 To LastChar
-            If CharList(loopc).Active = 1 Then
-                MapData(CharList(loopc).Pos.X, CharList(loopc).Pos.Y).CharIndex = loopc
-                If CharList(loopc).Heading <> 0 And frmMain.chkOptMinimap(0).value = 1 Then
-                    SetPixel frmMain.Minimap.hdc, 0 + CharList(loopc).Pos.X, 0 + CharList(loopc).Pos.Y, RGB(0, 255, 0)
-                    SetPixel frmMain.Minimap.hdc, 0 + CharList(loopc).Pos.X, 1 + CharList(loopc).Pos.Y, RGB(0, 255, 0)
+        For LoopC = 1 To LastChar
+            If CharList(LoopC).Active = 1 Then
+                MapData(CharList(LoopC).Pos.X, CharList(LoopC).Pos.Y).CharIndex = LoopC
+                If CharList(LoopC).Heading <> 0 And frmMain.chkOptMinimap(0).value = 1 Then
+                    SetPixel frmMain.Minimap.hdc, 0 + CharList(LoopC).Pos.X, 0 + CharList(LoopC).Pos.Y, RGB(0, 255, 0)
+                    SetPixel frmMain.Minimap.hdc, 0 + CharList(LoopC).Pos.X, 1 + CharList(LoopC).Pos.Y, RGB(0, 255, 0)
                 End If
             End If
-        Next loopc
+        Next LoopC
     End If
    
     frmMain.Minimap.Refresh
