@@ -176,9 +176,9 @@ Y = Ruta & "INIT\"
 wgraficos = Ruta & "Graficos\"
 wminimapa = Ruta & "Graficos\MiniMapa\"
 '*************Rutas destinos******************
-z = App.Path & "INIT\"
-wegraficos = App.Path & "Recursos\graficos\"
-weminimapa = App.Path & "Recursos\MiniMapa\"
+z = App.Path & "\INIT\"
+wegraficos = App.Path & "\Recursos\graficos\"
+weminimapa = App.Path & "\Recursos\MiniMapa\"
 
 '*************copiado*************************
 result = xfilecopy("" & Y & "", "" & z & "", "Graficos.ind", Label1)
@@ -214,8 +214,8 @@ Y = Ruta & "Dat\"
 wMapa = Ruta1 & "Mundos\Alkon\"
 
 '*************Rutas destinos******************
-z = Ruta1 & "Recursos\Dat\"
-weMapa = App.Path & "Conversor\Mapas Long\"
+z = App.Path & "\Recursos\Dat\"
+weMapa = App.Path & "\Conversor\Mapas Long\"
 
 '*************copiado*************************
 result = xfilecopy("" & Y & "", "" & z & "", "NPCs.dat", Label1)
