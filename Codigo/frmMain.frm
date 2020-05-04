@@ -62,6 +62,110 @@ Begin VB.Form frmMain
          Visible         =   0   'False
          Width           =   4095
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   495
+            Index           =   5
+            Left            =   2040
+            TabIndex        =   189
+            Top             =   2040
+            Width           =   855
+            _ExtentX        =   1508
+            _ExtentY        =   873
+            Caption         =   "mapa 2"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   495
+            Index           =   6
+            Left            =   1200
+            TabIndex        =   190
+            Top             =   2520
+            Width           =   855
+            _ExtentX        =   1508
+            _ExtentY        =   873
+            Caption         =   "mapa 3"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   495
+            Index           =   7
+            Left            =   2040
+            TabIndex        =   191
+            Top             =   2520
+            Width           =   855
+            _ExtentX        =   1508
+            _ExtentY        =   873
+            Caption         =   "mapa 4"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   495
+            Index           =   4
+            Left            =   1200
+            TabIndex        =   188
+            Top             =   2040
+            Width           =   855
+            _ExtentX        =   1508
+            _ExtentY        =   873
+            Caption         =   "mapa 1"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
             Height          =   2175
             Index           =   1
             Left            =   120
@@ -94,7 +198,7 @@ Begin VB.Form frmMain
             Height          =   375
             Left            =   1200
             TabIndex        =   175
-            Top             =   1560
+            Top             =   1080
             Value           =   -1  'True
             Width           =   1815
          End
@@ -105,7 +209,7 @@ Begin VB.Form frmMain
             Height          =   375
             Left            =   1200
             TabIndex        =   174
-            Top             =   2040
+            Top             =   1560
             Width           =   1815
          End
          Begin VB.TextBox TXTArriba 
@@ -341,6 +445,488 @@ Begin VB.Form frmMain
             Top             =   3120
             Visible         =   0   'False
             Width           =   1065
+         End
+      End
+      Begin VB.Frame cLuces 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00000000&
+         Caption         =   "Luces"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
+         Height          =   4155
+         Left            =   120
+         TabIndex        =   122
+         Top             =   120
+         Visible         =   0   'False
+         Width           =   4095
+         Begin VB.Frame Frame4 
+            BackColor       =   &H80000007&
+            BorderStyle     =   0  'None
+            Height          =   1455
+            Left            =   2520
+            TabIndex        =   181
+            Top             =   240
+            Width           =   1455
+            Begin WorldEditor.lvButtons_H lvButtons_H5 
+               Height          =   255
+               Index           =   0
+               Left            =   120
+               TabIndex        =   182
+               Top             =   360
+               Width           =   495
+               _ExtentX        =   873
+               _ExtentY        =   450
+               CapAlign        =   2
+               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+                  Name            =   "Tahoma"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               cGradient       =   0
+               Mode            =   0
+               Value           =   0   'False
+               cBack           =   255
+            End
+            Begin WorldEditor.lvButtons_H lvButtons_H5 
+               Height          =   255
+               Index           =   1
+               Left            =   720
+               TabIndex        =   183
+               Top             =   360
+               Width           =   495
+               _ExtentX        =   873
+               _ExtentY        =   450
+               CapAlign        =   2
+               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+                  Name            =   "Tahoma"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               cGradient       =   0
+               Mode            =   0
+               Value           =   0   'False
+               cBack           =   65535
+            End
+            Begin WorldEditor.lvButtons_H lvButtons_H5 
+               Height          =   255
+               Index           =   2
+               Left            =   720
+               TabIndex        =   184
+               Top             =   1080
+               Width           =   495
+               _ExtentX        =   873
+               _ExtentY        =   450
+               CapAlign        =   2
+               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+                  Name            =   "Tahoma"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               cGradient       =   0
+               Mode            =   0
+               Value           =   0   'False
+               cBack           =   12632256
+            End
+            Begin WorldEditor.lvButtons_H lvButtons_H5 
+               Height          =   255
+               Index           =   3
+               Left            =   120
+               TabIndex        =   185
+               Top             =   1080
+               Width           =   495
+               _ExtentX        =   873
+               _ExtentY        =   450
+               CapAlign        =   2
+               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+                  Name            =   "Tahoma"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               cGradient       =   0
+               Mode            =   0
+               Value           =   0   'False
+               cBack           =   16711935
+            End
+            Begin WorldEditor.lvButtons_H lvButtons_H5 
+               Height          =   255
+               Index           =   4
+               Left            =   720
+               TabIndex        =   186
+               Top             =   720
+               Width           =   495
+               _ExtentX        =   873
+               _ExtentY        =   450
+               CapAlign        =   2
+               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+                  Name            =   "Tahoma"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               cGradient       =   0
+               Mode            =   0
+               Value           =   0   'False
+               cBack           =   16777215
+            End
+            Begin WorldEditor.lvButtons_H lvButtons_H5 
+               Height          =   255
+               Index           =   5
+               Left            =   120
+               TabIndex        =   187
+               Top             =   720
+               Width           =   495
+               _ExtentX        =   873
+               _ExtentY        =   450
+               CapAlign        =   2
+               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+                  Name            =   "Tahoma"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               cGradient       =   0
+               Mode            =   0
+               Value           =   0   'False
+               cBack           =   16776960
+            End
+         End
+         Begin VB.Frame Frame2 
+            BackColor       =   &H00000000&
+            Caption         =   "Rango"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00FFFFFF&
+            Height          =   660
+            Left            =   600
+            TabIndex        =   127
+            Top             =   1080
+            Width           =   1380
+            Begin VB.TextBox cRango 
+               Appearance      =   0  'Flat
+               BackColor       =   &H00000000&
+               BeginProperty Font 
+                  Name            =   "Arial"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               ForeColor       =   &H80000014&
+               Height          =   315
+               Left            =   105
+               TabIndex        =   128
+               Text            =   "5"
+               Top             =   240
+               Width           =   555
+            End
+            Begin VB.Label Label3 
+               BackStyle       =   0  'Transparent
+               Caption         =   "(1 al 50)"
+               ForeColor       =   &H00FFFFFF&
+               Height          =   255
+               Left            =   720
+               TabIndex        =   129
+               Top             =   270
+               Width           =   615
+            End
+         End
+         Begin VB.Frame RGBCOLOR 
+            BackColor       =   &H00000000&
+            Caption         =   "RGB"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00FFFFFF&
+            Height          =   690
+            Left            =   600
+            TabIndex        =   123
+            Top             =   360
+            Width           =   1680
+            Begin VB.TextBox R 
+               Appearance      =   0  'Flat
+               BackColor       =   &H80000012&
+               BeginProperty Font 
+                  Name            =   "Arial"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               ForeColor       =   &H80000014&
+               Height          =   315
+               Left            =   105
+               TabIndex        =   126
+               Text            =   "200"
+               Top             =   270
+               Width           =   450
+            End
+            Begin VB.TextBox B 
+               Appearance      =   0  'Flat
+               BackColor       =   &H80000012&
+               BeginProperty Font 
+                  Name            =   "Arial"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               ForeColor       =   &H80000014&
+               Height          =   315
+               Left            =   1095
+               TabIndex        =   125
+               Text            =   "14"
+               Top             =   270
+               Width           =   450
+            End
+            Begin VB.TextBox G 
+               Appearance      =   0  'Flat
+               BackColor       =   &H80000012&
+               BeginProperty Font 
+                  Name            =   "Arial"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               ForeColor       =   &H80000014&
+               Height          =   315
+               Left            =   600
+               TabIndex        =   124
+               Text            =   "235"
+               Top             =   270
+               Width           =   450
+            End
+         End
+         Begin WorldEditor.lvButtons_H cInsertarLuz 
+            Height          =   360
+            Left            =   2160
+            TabIndex        =   135
+            Top             =   1800
+            Width           =   1665
+            _ExtentX        =   2937
+            _ExtentY        =   635
+            Caption         =   "Insertar Luz"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   1
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H cQuitarLuz 
+            Height          =   360
+            Left            =   360
+            TabIndex        =   136
+            Top             =   1800
+            Width           =   1665
+            _ExtentX        =   2937
+            _ExtentY        =   635
+            Caption         =   "Quitar Luz"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   1
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin VB.Frame Frame3 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00000000&
+            Caption         =   "Luz Base"
+            ForeColor       =   &H00FFFFFF&
+            Height          =   1335
+            Left            =   120
+            TabIndex        =   130
+            Top             =   2760
+            Width           =   3855
+            Begin WorldEditor.lvButtons_H lvButtons_H1 
+               Height          =   360
+               Left            =   360
+               TabIndex        =   131
+               Top             =   360
+               Width           =   1425
+               _ExtentX        =   2514
+               _ExtentY        =   635
+               Caption         =   "Mañana"
+               CapAlign        =   2
+               BackStyle       =   2
+               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+                  Name            =   "Times New Roman"
+                  Size            =   9
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               cGradient       =   0
+               Mode            =   1
+               Value           =   0   'False
+               cBack           =   8438015
+            End
+            Begin WorldEditor.lvButtons_H lvButtons_H2 
+               Height          =   360
+               Left            =   2040
+               TabIndex        =   132
+               Top             =   360
+               Width           =   1425
+               _ExtentX        =   2514
+               _ExtentY        =   635
+               Caption         =   "Dia"
+               CapAlign        =   2
+               BackStyle       =   2
+               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+                  Name            =   "Times New Roman"
+                  Size            =   9
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               cGradient       =   0
+               Mode            =   1
+               Value           =   0   'False
+               cBack           =   16777088
+            End
+            Begin WorldEditor.lvButtons_H lvButtons_H3 
+               Height          =   360
+               Left            =   360
+               TabIndex        =   133
+               Top             =   840
+               Width           =   1425
+               _ExtentX        =   2514
+               _ExtentY        =   635
+               Caption         =   "Tarde"
+               CapAlign        =   2
+               BackStyle       =   2
+               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+                  Name            =   "Times New Roman"
+                  Size            =   9
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               cGradient       =   0
+               Mode            =   1
+               Value           =   0   'False
+               cBack           =   8421504
+            End
+            Begin WorldEditor.lvButtons_H lvButtons_H4 
+               Height          =   360
+               Left            =   2040
+               TabIndex        =   134
+               Top             =   840
+               Width           =   1425
+               _ExtentX        =   2514
+               _ExtentY        =   635
+               Caption         =   "Noche"
+               CapAlign        =   2
+               BackStyle       =   2
+               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+                  Name            =   "Times New Roman"
+                  Size            =   9
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               cGradient       =   0
+               Mode            =   1
+               Value           =   0   'False
+               cBack           =   4210752
+            End
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Nota: Para quitar una luz ya guardada, insertar una luz encima y despues quitar."
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00FFFFFF&
+            Height          =   495
+            Left            =   360
+            TabIndex        =   137
+            Top             =   2280
+            Width           =   3615
          End
       End
       Begin VB.ListBox lstParticle 
@@ -1015,58 +1601,6 @@ Begin VB.Form frmMain
          _ExtentX        =   3836
          _ExtentY        =   661
          Caption         =   "&Quitar Trigger's"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cVerTriggers 
-         Height          =   375
-         Left            =   120
-         TabIndex        =   42
-         Top             =   3480
-         Visible         =   0   'False
-         Width           =   2175
-         _ExtentX        =   3836
-         _ExtentY        =   661
-         Caption         =   "&Mostrar Trigger's"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cInsertarTrigger 
-         Height          =   735
-         Left            =   2400
-         TabIndex        =   43
-         Top             =   3480
-         Visible         =   0   'False
-         Width           =   1815
-         _ExtentX        =   3201
-         _ExtentY        =   1296
-         Caption         =   "&Insertar Trigger"
          CapAlign        =   2
          BackStyle       =   2
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1819,335 +2353,6 @@ Begin VB.Form frmMain
          Value           =   0   'False
          cBack           =   -2147483633
       End
-      Begin VB.Frame cLuces 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00000000&
-         Caption         =   "Luces"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00FFFFFF&
-         Height          =   4155
-         Left            =   120
-         TabIndex        =   122
-         Top             =   120
-         Visible         =   0   'False
-         Width           =   4095
-         Begin VB.Frame Frame3 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00000000&
-            Caption         =   "Luz Base"
-            ForeColor       =   &H00FFFFFF&
-            Height          =   1335
-            Left            =   120
-            TabIndex        =   130
-            Top             =   2760
-            Width           =   3855
-            Begin WorldEditor.lvButtons_H lvButtons_H1 
-               Height          =   360
-               Left            =   360
-               TabIndex        =   131
-               Top             =   360
-               Width           =   1425
-               _ExtentX        =   2514
-               _ExtentY        =   635
-               Caption         =   "Mañana"
-               CapAlign        =   2
-               BackStyle       =   2
-               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-                  Name            =   "Times New Roman"
-                  Size            =   9
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               cGradient       =   0
-               Mode            =   1
-               Value           =   0   'False
-               cBack           =   8438015
-            End
-            Begin WorldEditor.lvButtons_H lvButtons_H2 
-               Height          =   360
-               Left            =   2040
-               TabIndex        =   132
-               Top             =   360
-               Width           =   1425
-               _ExtentX        =   2514
-               _ExtentY        =   635
-               Caption         =   "Dia"
-               CapAlign        =   2
-               BackStyle       =   2
-               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-                  Name            =   "Times New Roman"
-                  Size            =   9
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               cGradient       =   0
-               Mode            =   1
-               Value           =   0   'False
-               cBack           =   16777088
-            End
-            Begin WorldEditor.lvButtons_H lvButtons_H3 
-               Height          =   360
-               Left            =   360
-               TabIndex        =   133
-               Top             =   840
-               Width           =   1425
-               _ExtentX        =   2514
-               _ExtentY        =   635
-               Caption         =   "Tarde"
-               CapAlign        =   2
-               BackStyle       =   2
-               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-                  Name            =   "Times New Roman"
-                  Size            =   9
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               cGradient       =   0
-               Mode            =   1
-               Value           =   0   'False
-               cBack           =   8421504
-            End
-            Begin WorldEditor.lvButtons_H lvButtons_H4 
-               Height          =   360
-               Left            =   2040
-               TabIndex        =   134
-               Top             =   840
-               Width           =   1425
-               _ExtentX        =   2514
-               _ExtentY        =   635
-               Caption         =   "Noche"
-               CapAlign        =   2
-               BackStyle       =   2
-               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-                  Name            =   "Times New Roman"
-                  Size            =   9
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               cGradient       =   0
-               Mode            =   1
-               Value           =   0   'False
-               cBack           =   4210752
-            End
-         End
-         Begin VB.Frame Frame2 
-            BackColor       =   &H00000000&
-            Caption         =   "Rango"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00FFFFFF&
-            Height          =   660
-            Left            =   1320
-            TabIndex        =   127
-            Top             =   1080
-            Width           =   1380
-            Begin VB.TextBox cRango 
-               Appearance      =   0  'Flat
-               BackColor       =   &H00000000&
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H80000014&
-               Height          =   315
-               Left            =   105
-               TabIndex        =   128
-               Text            =   "5"
-               Top             =   240
-               Width           =   555
-            End
-            Begin VB.Label Label3 
-               BackStyle       =   0  'Transparent
-               Caption         =   "(1 al 50)"
-               ForeColor       =   &H00FFFFFF&
-               Height          =   255
-               Left            =   720
-               TabIndex        =   129
-               Top             =   270
-               Width           =   615
-            End
-         End
-         Begin VB.Frame RGBCOLOR 
-            BackColor       =   &H00000000&
-            Caption         =   "RGB"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00FFFFFF&
-            Height          =   690
-            Left            =   1200
-            TabIndex        =   123
-            Top             =   360
-            Width           =   1680
-            Begin VB.TextBox R 
-               Appearance      =   0  'Flat
-               BackColor       =   &H80000012&
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H80000014&
-               Height          =   315
-               Left            =   105
-               TabIndex        =   126
-               Text            =   "200"
-               Top             =   270
-               Width           =   450
-            End
-            Begin VB.TextBox B 
-               Appearance      =   0  'Flat
-               BackColor       =   &H80000012&
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H80000014&
-               Height          =   315
-               Left            =   1095
-               TabIndex        =   125
-               Text            =   "14"
-               Top             =   270
-               Width           =   450
-            End
-            Begin VB.TextBox G 
-               Appearance      =   0  'Flat
-               BackColor       =   &H80000012&
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H80000014&
-               Height          =   315
-               Left            =   720
-               TabIndex        =   124
-               Text            =   "235"
-               Top             =   270
-               Width           =   450
-            End
-         End
-         Begin WorldEditor.lvButtons_H cInsertarLuz 
-            Height          =   360
-            Left            =   2160
-            TabIndex        =   135
-            Top             =   1800
-            Width           =   1665
-            _ExtentX        =   2937
-            _ExtentY        =   635
-            Caption         =   "Insertar Luz"
-            CapAlign        =   2
-            BackStyle       =   2
-            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-               Name            =   "Times New Roman"
-               Size            =   9
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            cGradient       =   0
-            Mode            =   1
-            Value           =   0   'False
-            cBack           =   -2147483633
-         End
-         Begin WorldEditor.lvButtons_H cQuitarLuz 
-            Height          =   360
-            Left            =   360
-            TabIndex        =   136
-            Top             =   1800
-            Width           =   1665
-            _ExtentX        =   2937
-            _ExtentY        =   635
-            Caption         =   "Quitar Luz"
-            CapAlign        =   2
-            BackStyle       =   2
-            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-               Name            =   "Times New Roman"
-               Size            =   9
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            cGradient       =   0
-            Mode            =   1
-            Value           =   0   'False
-            cBack           =   -2147483633
-         End
-         Begin VB.Label Label1 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Nota: Para quitar una luz ya guardada, insertar una luz encima y despues quitar."
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00FFFFFF&
-            Height          =   495
-            Left            =   360
-            TabIndex        =   137
-            Top             =   2280
-            Width           =   3615
-         End
-      End
       Begin VB.ListBox lListado 
          BackColor       =   &H80000012&
          BeginProperty Font 
@@ -2181,6 +2386,58 @@ Begin VB.Form frmMain
          _ExtentX        =   6800
          _ExtentY        =   661
          Caption         =   "&Quitar Translados"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cVerTriggers 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   42
+         Top             =   3480
+         Visible         =   0   'False
+         Width           =   2175
+         _ExtentX        =   3836
+         _ExtentY        =   661
+         Caption         =   "&Mostrar Trigger's"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cInsertarTrigger 
+         Height          =   735
+         Left            =   2400
+         TabIndex        =   43
+         Top             =   3480
+         Visible         =   0   'False
+         Width           =   1815
+         _ExtentX        =   3201
+         _ExtentY        =   1296
+         Caption         =   "&Insertar Trigger"
          CapAlign        =   2
          BackStyle       =   2
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -3589,6 +3846,7 @@ Begin VB.Form frmMain
       _ExtentY        =   2037
       _Version        =   393217
       BackColor       =   16777215
+      Enabled         =   -1  'True
       ReadOnly        =   -1  'True
       ScrollBars      =   2
       DisableNoScroll =   -1  'True
@@ -4795,6 +5053,8 @@ End Sub
 
 
 
+
+
 Private Sub cQuitarLuz_Click()
 '*************************************************
 'Author: Lorwik
@@ -4807,7 +5067,7 @@ Private Sub cQuitarLuz_Click()
 End Sub
 Private Sub cmdAdd_Click()
 If cmdAdd.value = True Then
-    lstParticle.Enabled = False
+    'lstParticle.Enabled = False
     cmdDel.Enabled = False
     Call modPaneles.EstSelectPanel(8, True)
 Else
@@ -4866,6 +5126,10 @@ Private Sub COPIAR_GRH_Click(index As Integer)
     frmMain.COPIAR_GRH(1).Visible = False
     frmMain.COPIAR_GRH(2).Visible = False
     frmMain.COPIAR_GRH(3).Visible = False
+    frmMain.COPIAR_GRH(4).Visible = False
+    frmMain.COPIAR_GRH(5).Visible = False
+    frmMain.COPIAR_GRH(6).Visible = False
+    frmMain.COPIAR_GRH(7).Visible = False
     frmMain.OpcBorde.Visible = False
     frmMain.OpcExit.Visible = False
     
@@ -5125,6 +5389,67 @@ Call Resolucion
             Next
             MapInfo.Changed = 1
             UserPos.Y = 88
+            
+            
+        Case 4 'Mapa entero en posicion 1
+        
+            For Y = 1 To 100
+                For X = 1 To 100
+                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(1)
+                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(2)
+                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(3)
+                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(4)
+                    MapData(X, Y).OBJInfo.objindex = MapData_Adyacente(X, Y - TxTAbajo).OBJInfo.objindex
+                    MapData(X, Y).OBJInfo.Amount = MapData_Adyacente(X, Y - TxTAbajo).OBJInfo.Amount
+                    MapData(X, Y).ObjGrh.GrhIndex = MapData_Adyacente(X, Y - TxTAbajo).ObjGrh.GrhIndex
+                Next
+            Next
+            MapInfo.Changed = 1
+            
+        Case 5 'Mapa entero en posicion 2
+        
+            For Y = 100 To 200
+                For X = 1 To 100
+                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(1)
+                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(2)
+                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(3)
+                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(4)
+                    MapData(X, Y).OBJInfo.objindex = MapData_Adyacente(X, Y - TxTAbajo).OBJInfo.objindex
+                    MapData(X, Y).OBJInfo.Amount = MapData_Adyacente(X, Y - TxTAbajo).OBJInfo.Amount
+                    MapData(X, Y).ObjGrh.GrhIndex = MapData_Adyacente(X, Y - TxTAbajo).ObjGrh.GrhIndex
+                Next
+            Next
+            MapInfo.Changed = 1
+            
+        Case 5 'Mapa entero en posicion 3
+        
+            For Y = 1 To 100
+                For X = 100 To 200
+                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(1)
+                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(2)
+                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(3)
+                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(4)
+                    MapData(X, Y).OBJInfo.objindex = MapData_Adyacente(X, Y - TxTAbajo).OBJInfo.objindex
+                    MapData(X, Y).OBJInfo.Amount = MapData_Adyacente(X, Y - TxTAbajo).OBJInfo.Amount
+                    MapData(X, Y).ObjGrh.GrhIndex = MapData_Adyacente(X, Y - TxTAbajo).ObjGrh.GrhIndex
+                Next
+            Next
+            MapInfo.Changed = 1
+            
+        Case 6 'Mapa entero en posicion 4
+        
+            For Y = 100 To 200
+                For X = 100 To 200
+                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(1)
+                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(2)
+                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(3)
+                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(4)
+                    MapData(X, Y).OBJInfo.objindex = MapData_Adyacente(X, Y - TxTAbajo).OBJInfo.objindex
+                    MapData(X, Y).OBJInfo.Amount = MapData_Adyacente(X, Y - TxTAbajo).OBJInfo.Amount
+                    MapData(X, Y).ObjGrh.GrhIndex = MapData_Adyacente(X, Y - TxTAbajo).ObjGrh.GrhIndex
+                Next
+            Next
+            MapInfo.Changed = 1
     End Select
     
     Call modEdicion.Bloquear_Bordes(1)
@@ -5469,6 +5794,42 @@ Private Sub LvBAreas_Click(index As Integer)
     End Select
 End Sub
 
+Private Sub lvButtons_H5_Click(index As Integer)
+
+    Select Case index
+    
+        Case 0
+            R = 255
+            G = 0
+            B = 0
+        Case 1
+            R = 255
+            G = 255
+            B = 0
+        Case 2
+            R = 192
+            G = 192
+            B = 192
+        Case 3
+            R = 255
+            G = 0
+            B = 255
+        Case 4
+            R = 255
+            G = 255
+            B = 255
+        Case 5
+            R = 127
+            G = 255
+            B = 255
+
+    
+    End Select
+
+End Sub
+
+
+
 Private Sub LvBVerMapa_Click()
   If frmMapa.Visible Then
     frmMapa.Hide
@@ -5788,6 +6149,10 @@ On Error GoTo Error
     frmMain.COPIAR_GRH(1).Visible = True
     frmMain.COPIAR_GRH(2).Visible = True
     frmMain.COPIAR_GRH(3).Visible = True
+    frmMain.COPIAR_GRH(4).Visible = True
+    frmMain.COPIAR_GRH(5).Visible = True
+    frmMain.COPIAR_GRH(6).Visible = True
+    frmMain.COPIAR_GRH(7).Visible = True
     frmMain.OpcBorde.Visible = True
     frmMain.OpcExit.Visible = True
     

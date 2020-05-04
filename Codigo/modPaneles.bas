@@ -187,6 +187,10 @@ Public Sub VerFuncion(ByVal Numero As Byte, ByVal Ver As Boolean, Optional Norma
             frmMain.COPIAR_GRH(1).Visible = True
             frmMain.COPIAR_GRH(2).Visible = True
             frmMain.COPIAR_GRH(3).Visible = True
+            frmMain.COPIAR_GRH(4).Visible = True
+            frmMain.COPIAR_GRH(5).Visible = True
+            frmMain.COPIAR_GRH(6).Visible = True
+            frmMain.COPIAR_GRH(7).Visible = True
             frmMain.OpcBorde.Visible = True
             frmMain.OpcExit.Visible = True
 
