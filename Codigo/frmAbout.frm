@@ -40,6 +40,25 @@ Begin VB.Form frmAbout
       Value           =   0   'False
       cBack           =   -2147483633
    End
+   Begin VB.Label Label1 
+      BackColor       =   &H80000007&
+      Caption         =   "  Retoques finales por ReyarB"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   255
+      Left            =   720
+      TabIndex        =   9
+      Top             =   2040
+      Width           =   3135
+   End
    Begin VB.Label lblReMejorado 
       Alignment       =   2  'Center
       AutoSize        =   -1  'True
@@ -57,10 +76,10 @@ Begin VB.Form frmAbout
       ForeColor       =   &H00FFFF80&
       Height          =   210
       Index           =   5
-      Left            =   1005
+      Left            =   765
       TabIndex        =   8
       Top             =   1800
-      Width           =   2265
+      Width           =   3090
    End
    Begin VB.Label lblCred 
       Alignment       =   2  'Center

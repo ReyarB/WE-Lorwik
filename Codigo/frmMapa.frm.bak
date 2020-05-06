@@ -188,7 +188,7 @@ Private Sub Form_Load()
  Call ActualizarMapa
 End Sub
 
-Private Sub ActualizarMapa() ' modificar  no funciona ReyarB
+Private Sub ActualizarMapa() ' modificar ReyarB
   Dim i As Byte
   For i = 0 To 99
     Mapa(i).Stretch = True

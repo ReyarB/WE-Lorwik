@@ -88,16 +88,10 @@ If HotKeysAllow = False Then Exit Sub
         '    End If
         'End If
         '[/Loopzer]
-
-    Static timer As Long ' Agrego para se sea mas lento ver de 30 a 100 ReyarB
-        If GetTickCount - timer > 60 Then
-            timer = GetTickCount
-        Else
-            Exit Sub
-        End If
+    
     
     If GetKeyState(vbKeyUp) < 0 Then
-        If UserPos.Y < 1 Then Exit Sub
+        If UserPos.Y < 13 Then Exit Sub ' 10
         If LegalPos(UserPos.X, UserPos.Y - 1) And WalkMode = True Then
             If dLastWalk + 50 > GetTickCount Then Exit Sub
             UserPos.Y = UserPos.Y - 1
@@ -142,7 +136,7 @@ If HotKeysAllow = False Then Exit Sub
     End If
 
     If GetKeyState(vbKeyLeft) < 0 Then
-        If UserPos.X < 1 Then Exit Sub
+        If UserPos.X < 20 Then Exit Sub ' 12 Ver porque no se mueve si bajo de este valor ReyarB
         If LegalPos(UserPos.X - 1, UserPos.Y) And WalkMode = True Then
             If dLastWalk + 50 > GetTickCount Then Exit Sub
             UserPos.X = UserPos.X - 1
@@ -239,7 +233,7 @@ Private Sub CargarMapIni()
     End If
         
     MaxGrhs = Val(Leer.GetValue("INDEX", "MaxGrhs"))
-    If MaxGrhs < 1 Then MaxGrhs = 35000
+    If MaxGrhs < 1 Then MaxGrhs = 15000
         
     UserPos.X = 50
     UserPos.Y = 50
@@ -354,8 +348,8 @@ On Error Resume Next
     
     'Lorwik> Arrancamos en 100x100
 
-            XMaxMapSize = 200
-            YMaxMapSize = 200
+            XMaxMapSize = 100
+            YMaxMapSize = 100
     
     If Not Engine_Init Then ' 30/05/2006
         MsgBox "¡No se ha logrado iniciar el engine gráfico! Reinstale los últimos controladores de DirectX y actualize sus controladores de video.", vbCritical, "Saliendo"
@@ -467,7 +461,7 @@ Public Function RandomNumber(ByVal LowerBound As Variant, ByVal UpperBound As Va
 'Author: Unkwown
 'Last modified: 20/05/06
 '*************************************************
-Randomize timer
+Randomize Timer
 RandomNumber = (UpperBound - LowerBound) * Rnd + LowerBound
 End Function
 

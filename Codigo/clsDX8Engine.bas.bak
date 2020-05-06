@@ -445,7 +445,7 @@ Private Function CreateTLVertex(X As Single, Y As Single, z As Single, rhw As Si
 End Function
 
 Public Sub Engine_ActFPS()
-    If GetTickCount - lFrameTimer > 300 Then ' antes 1000
+    If GetTickCount - lFrameTimer > 1000 Then
         FPS = FramesPerSecCounter
         FramesPerSecCounter = 0
         lFrameTimer = GetTickCount
@@ -490,7 +490,7 @@ On Error Resume Next
     If Grh.GrhIndex = 0 Then Exit Sub
     
     If Grh.GrhIndex > GrhCount Or GrhData(Grh.GrhIndex).NumFrames = 0 And GrhData(Grh.GrhIndex).FileNum = 0 Then
-        Call InitGrh(Grh, 32179)' 23829
+        Call InitGrh(Grh, 32179)
         Call AddtoRichTextBox(frmMain.StatTxt, "Error en Grh. Posicion: X:" & map_x & " Y:" & map_y, 255, 0, 0)
     End If
     
@@ -823,13 +823,12 @@ Sub RenderScreen(ByVal tilex As Integer, ByVal tiley As Integer, ByVal PixelOffs
         MinY = YMinMapSize
     End If
     If MaxY > YMaxMapSize Then MaxY = YMaxMapSize
-
+    
     If MinX < XMinMapSize Then
         minXOffset = XMinMapSize - MinX
         MinX = XMinMapSize
     End If
     If MaxX > XMaxMapSize Then MaxX = XMaxMapSize
-
     
     'If we can, we render around the view area to make it smoother ReyarB ver error
     If screenminY > YMinMapSize Then

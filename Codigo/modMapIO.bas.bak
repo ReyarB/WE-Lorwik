@@ -205,7 +205,7 @@ Public Sub NuevoMapa()
 
     On Error Resume Next
     
-    Dim loopc As Integer
+    Dim LoopC As Integer
     Dim Y As Integer
     Dim X As Integer
     
@@ -219,8 +219,8 @@ Public Sub NuevoMapa()
     
     MapaCargado = False
     
-    For loopc = 0 To frmMain.MapPest.count - 1
-        frmMain.MapPest(loopc).Enabled = False
+    For LoopC = 0 To frmMain.MapPest.count - 1
+        frmMain.MapPest(LoopC).Enabled = False
     Next
     
     frmMain.MousePointer = 11
@@ -310,7 +310,7 @@ Public Sub MapaV2_Guardar(ByVal SaveAs As String, Optional ByVal Preguntar As Bo
 
     Dim FreeFileMap As Long
     Dim FreeFileInf As Long
-    Dim loopc       As Long
+    Dim LoopC       As Long
     Dim TempInt     As Integer
     Dim Y           As Long
     Dim X           As Long
@@ -400,15 +400,15 @@ Public Sub MapaV2_Guardar(ByVal SaveAs As String, Optional ByVal Preguntar As Bo
                     Put FreeFileMap, , .Graphic(1).GrhIndex
                 End If
                 
-                For loopc = 2 To 4
+                For LoopC = 2 To 4
                     
                     If MapaCargado_Integer Then
-                        If .Graphic(loopc).GrhIndex Then Put FreeFileMap, , .Graphic(loopc).GrhIndexIntg
+                        If .Graphic(LoopC).GrhIndex Then Put FreeFileMap, , .Graphic(LoopC).GrhIndexIntg
                     Else
-                        If .Graphic(loopc).GrhIndex Then Put FreeFileMap, , .Graphic(loopc).GrhIndex
+                        If .Graphic(LoopC).GrhIndex Then Put FreeFileMap, , .Graphic(LoopC).GrhIndex
                     End If
 
-                Next loopc
+                Next LoopC
                     
                 If .Trigger Then Put FreeFileMap, , .Trigger
                 
@@ -484,7 +484,7 @@ Public Sub MapaV2_Cargar(ByVal Map As String, Optional ByVal EsInteger As Boolea
 
     On Error Resume Next
 
-    Dim loopc       As Integer
+    Dim LoopC       As Integer
     Dim TempInt     As Integer
     Dim Body        As Integer
     Dim Head        As Integer
@@ -535,7 +535,7 @@ Public Sub MapaV2_Cargar(ByVal Map As String, Optional ByVal EsInteger As Boolea
     'Vamos a limpiar las luces y particulas del mapa anterior
     'Engine.Particle_Group_Remove_All
 
-    'Load arrays Ver ReyarB
+    'Load arrays
     For Y = YMinMapSize To YMaxMapSize
         For X = XMinMapSize To XMaxMapSize
             
@@ -764,7 +764,7 @@ Public Sub MapInfo_Cargar(ByVal archivo As String)
 
 On Error Resume Next
     Dim Leer As New clsIniReader
-    Dim loopc As Integer
+    Dim LoopC As Integer
     Dim Path As String
     MapTitulo = Empty
     
@@ -775,9 +775,9 @@ On Error Resume Next
     
     Leer.Initialize archivo
 
-    For loopc = Len(archivo) To 1 Step -1
-        If mid(archivo, loopc, 1) = "\" Then
-            Path = Left(archivo, loopc)
+    For LoopC = Len(archivo) To 1 Step -1
+        If mid(archivo, LoopC, 1) = "\" Then
+            Path = Left(archivo, LoopC)
             Exit For
         End If
     Next
@@ -850,29 +850,29 @@ Public Sub Pestañas(ByVal Map As String, ByVal formato As String)
 'Last modified: 28/05/06
 '*************************************************
 On Error Resume Next
-Dim loopc As Integer
+Dim LoopC As Integer
 
-For loopc = Len(Map) To 1 Step -1
-    If mid(Map, loopc, 1) = "\" Then
-        PATH_Save = Left(Map, loopc)
+For LoopC = Len(Map) To 1 Step -1
+    If mid(Map, LoopC, 1) = "\" Then
+        PATH_Save = Left(Map, LoopC)
         Exit For
     End If
 Next
 Map = Right(Map, Len(Map) - (Len(PATH_Save)))
-For loopc = Len(Left(Map, Len(Map) - 4)) To 1 Step -1
-    If IsNumeric(mid(Left(Map, Len(Map) - 4), loopc, 1)) = False Then
-        NumMap_Save = Right(Left(Map, Len(Map) - 4), Len(Left(Map, Len(Map) - 4)) - loopc)
-        NameMap_Save = Left(Map, loopc)
+For LoopC = Len(Left(Map, Len(Map) - 4)) To 1 Step -1
+    If IsNumeric(mid(Left(Map, Len(Map) - 4), LoopC, 1)) = False Then
+        NumMap_Save = Right(Left(Map, Len(Map) - 4), Len(Left(Map, Len(Map) - 4)) - LoopC)
+        NameMap_Save = Left(Map, LoopC)
         Exit For
     End If
 Next
-For loopc = (NumMap_Save - 7) To (NumMap_Save + 10)
-        If FileExist(PATH_Save & NameMap_Save & loopc & formato, vbArchive) = True Then
-            frmMain.MapPest(loopc - NumMap_Save + 7).Visible = True
-            frmMain.MapPest(loopc - NumMap_Save + 7).Enabled = True
-            frmMain.MapPest(loopc - NumMap_Save + 7).Caption = NameMap_Save & loopc
+For LoopC = (NumMap_Save - 7) To (NumMap_Save + 10)
+        If FileExist(PATH_Save & NameMap_Save & LoopC & formato, vbArchive) = True Then
+            frmMain.MapPest(LoopC - NumMap_Save + 7).Visible = True
+            frmMain.MapPest(LoopC - NumMap_Save + 7).Enabled = True
+            frmMain.MapPest(LoopC - NumMap_Save + 7).Caption = NameMap_Save & LoopC
         Else
-            frmMain.MapPest(loopc - NumMap_Save + 7).Visible = False
+            frmMain.MapPest(LoopC - NumMap_Save + 7).Visible = False
         End If
 Next
 End Sub
@@ -1332,5 +1332,3 @@ Public Sub Resolucion()
     MaxYBorder = YMaxMapSize - (ClienteHeight \ 2)
 
 End Sub
-
-
