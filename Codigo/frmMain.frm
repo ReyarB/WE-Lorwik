@@ -427,7 +427,7 @@ Begin VB.Form frmMain
          Begin VB.Label Label5 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "ï¿½ATENCION!"
+            Caption         =   "¡ATENCION!"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -816,7 +816,7 @@ Begin VB.Form frmMain
                Width           =   1425
                _ExtentX        =   2514
                _ExtentY        =   635
-               Caption         =   "Maï¿½ana"
+               Caption         =   "Mañana"
                CapAlign        =   2
                BackStyle       =   2
                BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -3301,7 +3301,7 @@ Begin VB.Form frmMain
          Width           =   3015
          _ExtentX        =   5318
          _ExtentY        =   661
-         Caption         =   "&Informaciï¿½n del Mapa"
+         Caption         =   "&Información del Mapa"
          CapAlign        =   2
          BackStyle       =   2
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -3384,7 +3384,7 @@ Begin VB.Form frmMain
       Begin VB.Label lblFVersion 
          BackStyle       =   0  'Transparent
          BorderStyle     =   1  'Fixed Single
-         Caption         =   "Versiï¿½n:"
+         Caption         =   "Versión:"
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   8.25
@@ -4449,36 +4449,36 @@ Begin VB.Form frmMain
       End
    End
    Begin VB.Menu mnuEdicion 
-      Caption         =   "&Ediciï¿½n"
+      Caption         =   "&Edición"
       Begin VB.Menu cmdampliacion 
          Caption         =   "Ampliar Mapa"
       End
       Begin VB.Menu mnuComo 
-         Caption         =   "ï¿½ Como seleccionar ? ---- Mantener SHIFT y arrastrar el cursor."
+         Caption         =   "¿ Como seleccionar ? ---- Mantener SHIFT y arrastrar el cursor."
          Enabled         =   0   'False
       End
       Begin VB.Menu mnuCortar 
-         Caption         =   "C&ortar Selecciï¿½n"
+         Caption         =   "C&ortar Selección"
          Shortcut        =   ^X
       End
       Begin VB.Menu mnuCopiar 
-         Caption         =   "&Copiar Selecciï¿½n"
+         Caption         =   "&Copiar Selección"
          Shortcut        =   ^C
       End
       Begin VB.Menu mnuPegar 
-         Caption         =   "&Pegar Selecciï¿½n"
+         Caption         =   "&Pegar Selección"
          Shortcut        =   ^V
       End
       Begin VB.Menu mnuBloquearS 
-         Caption         =   "&Bloquear Selecciï¿½n"
+         Caption         =   "&Bloquear Selección"
          Shortcut        =   ^B
       End
       Begin VB.Menu mnuRealizarOperacion 
-         Caption         =   "&Realizar Operaciï¿½n en Selecciï¿½n"
+         Caption         =   "&Realizar Operación en Selección"
          Shortcut        =   ^D
       End
       Begin VB.Menu mnuDeshacerPegado 
-         Caption         =   "Deshacer P&egado de Selecciï¿½n"
+         Caption         =   "Deshacer P&egado de Selección"
          Shortcut        =   ^S
       End
       Begin VB.Menu mnuLineEdicion0 
@@ -4493,7 +4493,7 @@ Begin VB.Form frmMain
          Checked         =   -1  'True
       End
       Begin VB.Menu mnuInfoMap 
-         Caption         =   "&Informaciï¿½n del Mapa"
+         Caption         =   "&Información del Mapa"
       End
       Begin VB.Menu mnuLineEdicion1 
          Caption         =   "-"
@@ -4594,14 +4594,14 @@ Begin VB.Form frmMain
          Caption         =   "Auto-Completar &Superficies"
       End
       Begin VB.Menu mnuAutoCapturarSuperficie 
-         Caption         =   "Auto-C&apturar informaciï¿½n de la Superficie"
+         Caption         =   "Auto-C&apturar información de la Superficie"
       End
       Begin VB.Menu mnuAutoCapturarTranslados 
-         Caption         =   "Auto-&Capturar informaciï¿½n de los Translados"
+         Caption         =   "Auto-&Capturar información de los Translados"
          Checked         =   -1  'True
       End
       Begin VB.Menu mnuAutoGuardarMapas 
-         Caption         =   "Configuraciï¿½n de Auto-&Guardar Mapas"
+         Caption         =   "Configuración de Auto-&Guardar Mapas"
       End
    End
    Begin VB.Menu mnuVer 
@@ -4766,7 +4766,7 @@ Begin VB.Form frmMain
          Caption         =   "-"
       End
       Begin VB.Menu mnuGuardarUltimaConfig 
-         Caption         =   "&Guardar Ultima Configuraciï¿½n"
+         Caption         =   "&Guardar Ultima Configuración"
       End
    End
    Begin VB.Menu mnuAyuda 
@@ -5411,7 +5411,7 @@ Call Resolucion
             
             
         Case 4 'Mapa entero en posicion 1
-        
+
             For Y = 1 To 100  ' borrado
                 For X = 1 To 100
 
@@ -5456,7 +5456,7 @@ Call Resolucion
             MapInfo.Changed = 1
             
         Case 5 'Mapa entero en posicion 2
-        
+
             For Y = 1 To 100  ' borrado
                 For X = 100 To 200
 
@@ -5506,7 +5506,7 @@ Call Resolucion
         Case 6 'Mapa entero en posicion 3
             For Y = 100 To 200  ' borrado
                 For X = 1 To 100
-        
+
                     'Quitar NPCs
                     If MapData(X, Y).NPCIndex > 0 Then
                         EraseChar MapData(X, Y).CharIndex
@@ -5551,7 +5551,7 @@ Call Resolucion
         Case 7 'Mapa entero en posicion 3
             For Y = 100 To 200  ' borrado
                 For X = 100 To 200
-        
+
                     'Quitar NPCs
                     If MapData(X, Y).NPCIndex > 0 Then
                         EraseChar MapData(X, Y).CharIndex
@@ -5920,7 +5920,7 @@ Private Sub LvBAreas_Click(index As Integer)
        IsNumeric(DY1.Text) = False Or _
        IsNumeric(DY2.Text) = False Then
     
-        Call MsgBox("Debes introducir valores nï¿½mericos. Estos pueden tener un mï¿½nimo de 1 y un mï¿½ximo de " & (YMinMapSize + XMinMapSize) / 2 & ".")
+        Call MsgBox("Debes introducir valores númericos. Estos pueden tener un mínimo de 1 y un máximo de " & (YMinMapSize + XMinMapSize) / 2 & ".")
     
        Exit Sub
     End If
@@ -6003,7 +6003,7 @@ If Len(Dialog.FileName) < 3 Then Exit Sub
     
     Call modMapIO.NuevoMapa
     
-    'Tambien podrï¿½ elegir CSM, pero no habra diferencia
+    'Tambien podrá elegir CSM, pero no habra diferencia
     If frmMain.Dialog.FilterIndex = 1 Then
         modMapIO.Cargar_CSM Dialog.FileName
     ElseIf frmMain.Dialog.FilterIndex = 2 Then
@@ -6063,7 +6063,7 @@ Private Sub OptX_Click(index As Integer)
 'Author: Lorwik
 'Last modified: 25/04/2020
 '*************************************************
-'Nota: Hay que cambiar muchas cosas, el engine cuando inicia hace calculos con el tamaï¿½o de los mapas
+'Nota: Hay que cambiar muchas cosas, el engine cuando inicia hace calculos con el tamaño de los mapas
 'ademas hay mas funciones que manejan estos datos, no basta con cambiar el XMax & YMax.
 
     Select Case index
@@ -6280,7 +6280,7 @@ Private Sub MapPest_Click(index As Integer)
             YMaxMapSize = 100
             OptX(0).value = True
         End If
-
+        
         Call modMapIO.NuevoMapa
         
         DoEvents
@@ -6545,7 +6545,7 @@ Private Sub mnuBloquearS_Click()
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
-Call modEdicion.Deshacer_Add("Bloquear Selecciï¿½n")
+Call modEdicion.Deshacer_Add("Bloquear Selección")
 Call BlockearSeleccion
 End Sub
 
@@ -6582,7 +6582,7 @@ Private Sub mnuCortar_Click()
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
-Call modEdicion.Deshacer_Add("Cortar Selecciï¿½n")
+Call modEdicion.Deshacer_Add("Cortar Selección")
 Call CortarSeleccion
 End Sub
 
@@ -6599,7 +6599,7 @@ Private Sub mnuDeshacerPegado_Click()
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
-Call modEdicion.Deshacer_Add("Deshacer Pegado de Selecciï¿½n")
+Call modEdicion.Deshacer_Add("Deshacer Pegado de Selección")
 Call DePegar
 End Sub
 
@@ -6790,7 +6790,7 @@ Private Sub mnuPegar_Click()
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
-Call modEdicion.Deshacer_Add("Pegar Selecciï¿½n")
+Call modEdicion.Deshacer_Add("Pegar Selección")
 Call PegarSeleccion
 End Sub
 
@@ -7013,7 +7013,7 @@ Private Sub mnuRealizarOperacion_Click()
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
-Call modEdicion.Deshacer_Add("Realizar Operaciï¿½n en Selecciï¿½n")
+Call modEdicion.Deshacer_Add("Realizar Operación en Selección")
 Call AccionSeleccion
 End Sub
 
@@ -7247,7 +7247,7 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 'Last modified: 24/11/08
 '*************************************************
 
-' Guardar configuraciï¿½n
+' Guardar configuración
 WriteVar IniPath & "WorldEditor.ini", "CONFIGURACION", "GuardarConfig", IIf(frmMain.mnuGuardarUltimaConfig.Checked = True, "1", "0")
 If frmMain.mnuGuardarUltimaConfig.Checked = True Then
     WriteVar IniPath & "WorldEditor.ini", "PATH", "UltimoMapa", Dialog.FileName
