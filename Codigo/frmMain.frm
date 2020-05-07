@@ -7292,6 +7292,7 @@ Dim X As Integer, y As Integer
           
         Next
     Next
+    Call BorrarBloqueos
 err:
 Debug.Print err.Description
 Debug.Print "error en pegarmapa"
@@ -7327,5 +7328,30 @@ Dim X As Integer, y As Integer
                 Next
             Next
 
+End Sub
+
+Private Sub BorrarBloqueos()
+Dim X As Integer
+Dim y As Integer
+    For X = XMinMapSize To XMaxMapSize
+        For y = YMinMapSize To YMaxMapSize
+        
+        If MapData(X, y).Graphic(2).GrhIndex > 0 Or _
+           MapData(X, y).Graphic(3).GrhIndex > 0 Or _
+           MapData(X, y).Graphic(4).GrhIndex > 0 Or _
+           MapData(X, y).OBJInfo.objindex > 0 Then GoTo Jump
+        
+        If X >= 13 And y >= 92 And y <= 109 Then MapData(X, y).blocked = 0
+        If X >= 89 And X <= 112 And y >= 10 Then MapData(X, y).blocked = 0
+'        If X >= 192 And X <= 208 And y >= 10 Then MapData(X, y).blocked = 0
+'        If X >= 10 And X <= 91 And y >= 182 And y <= 193 Then MapData(X, y).blocked = 0
+'        If X >= 109 And X <= 191 And y >= 188 And y <= 193 Then MapData(X, y).blocked = 0
+'        If X >= 209 And X <= 274 And y >= 195 And y <= 206 Then MapData(X, y).blocked = 0
+'        If X >= 109 And X <= 192 Then MapData(X, y).blocked = 0
+'        If y >= 182 And y <= 188 Then MapData(X, y).blocked = 0
+        
+Jump:
+        Next
+    Next
 End Sub
 
