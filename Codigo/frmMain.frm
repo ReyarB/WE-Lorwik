@@ -3846,7 +3846,6 @@ Begin VB.Form frmMain
       _ExtentY        =   2037
       _Version        =   393217
       BackColor       =   16777215
-      Enabled         =   -1  'True
       ReadOnly        =   -1  'True
       ScrollBars      =   2
       DisableNoScroll =   -1  'True
@@ -5409,27 +5408,27 @@ Call Resolucion
             Next
             MapInfo.Changed = 1
             UserPos.y = 88
-            
+                       
         Case 4 'Mapa entero en posicion 1
-
+        
             Call BorrarMapa(0, 0)
             Call PegarMapa(0, 0)
             MapInfo.Changed = 1
             
         Case 5 'Mapa entero en posicion 2
-
+        
             Call BorrarMapa(100, 0)
             Call PegarMapa(100, 0)
             MapInfo.Changed = 1
             
         Case 6 'Mapa entero en posicion 3
-
+        
             Call BorrarMapa(0, 100)
             Call PegarMapa(0, 100)
             MapInfo.Changed = 1
             
         Case 7 'Mapa entero en posicion 3
-
+        
             Call BorrarMapa(100, 100)
             Call PegarMapa(100, 100)
             MapInfo.Changed = 1
@@ -5906,8 +5905,8 @@ Private Sub OptX_Click(index As Integer)
 '*************************************************
 'Nota: Hay que cambiar muchas cosas, el engine cuando inicia hace calculos con el tama�o de los mapas
 'ademas hay mas funciones que manejan estos datos, no basta con cambiar el XMax & YMax.
-
-    Select Case index
+   Call Resolucion
+      Select Case index
     
         Case 0
             XMaxMapSize = 100
@@ -5929,7 +5928,7 @@ Private Sub OptX_Click(index As Integer)
             frmMain.COPIAR_GRH(7).Visible = True
         End If
     
-    End Select
+       End Select
 End Sub
 
 
