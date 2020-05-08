@@ -5108,7 +5108,9 @@ Private Sub cmdQuitarFunciones_Click()
 '*************************************************
 Call mnuQuitarFunciones_Click
 End Sub
-
+'*******************************************************
+'Ultima modificacion 08/05/2020 por ReyarB
+'*******************************************************
 Private Sub COPIAR_GRH_Click(index As Integer)
 
     Dim Y As Integer
@@ -5441,16 +5443,16 @@ Call Resolucion
 End Sub
 
 
-'Private Sub cQuitarLuz_Click()
+Private Sub cQuitarLuz_Click()
 ''*************************************************
 ''Author: Lorwik
 ''*************************************************
-'    If cQuitarLuz.value Then
-'        cInsertarLuz.Enabled = False
-'    Else
-'        cInsertarLuz.Enabled = True
-'    End If
-'End Sub
+    If cQuitarLuz.value Then
+        cInsertarLuz.Enabled = False
+    Else
+        cInsertarLuz.Enabled = True
+    End If
+End Sub
 
 Private Sub cUnionManual_Click()
 '*************************************************
@@ -5777,7 +5779,9 @@ Private Sub LvBAreas_Click(index As Integer)
             Call Superficie_Area(DX1.Text, DX2.Text, DY1.Text, DY2.Text, False)
     End Select
 End Sub
-
+'*****************************************************
+'Ultima modificacion 08/05/2020 por ReyarB
+'*****************************************************
 Private Sub lvButtons_H5_Click(index As Integer)
 
     Select Case index
@@ -6079,7 +6083,7 @@ Private Sub MapPest_Click(index As Integer)
 
     '*************************************************
     'Author: ^[GS]^
-    'Last modified: 20/05/06
+    'Ultima modificacion 08/05/2020 por ReyarB
     '*************************************************
     Dim formato As String
 
@@ -6145,7 +6149,9 @@ errhandler:
         Call MsgBox(err.Description)
 
 End Sub
-
+'******************************************
+'Ultima modificacion 08/05/2020 por ReyarB
+'*******************************************
 Private Sub MemoriaAuxiliar_Click()
 On Error GoTo Error
  
@@ -6193,7 +6199,7 @@ End Sub
 Private Sub mnuAbrirMapaNew_Click()
 '*************************************************
 'Author: Lorwik
-'Last modified: 04/11/2015
+'Ultima modificacion 08/05/2020 por ReyarB
 '*************************************************
 Dialog.CancelError = True
 On Error GoTo errhandler
@@ -6367,7 +6373,7 @@ End Sub
 Private Sub mnuBloquearBordes_Click()
 '*************************************************
 'Author: ^[GS]^
-'Last modified: 20/05/06
+'Ultima modificacion 08/05/2020 por ReyarB
 '*************************************************
 Call Resolucion
 Call modEdicion.Bloquear_Bordes(1)
@@ -6784,7 +6790,7 @@ End Sub
 Private Sub mnuQuitarSuperficieBordes_Click()
 '*************************************************
 'Author: ^[GS]^
-'Last modified: 20/05/06
+'Ultima modificacion 08/05/2020 por ReyarB
 '*************************************************
 Call Resolucion
 Call modEdicion.Quitar_Bordes
@@ -6852,7 +6858,7 @@ End Sub
 Private Sub mnuRealizarOperacion_Click()
 '*************************************************
 'Author: ^[GS]^
-'Last modified: 01/11/08
+'Ultima modificacion 08/05/2020 por ReyarB
 '*************************************************
 Call modEdicion.Deshacer_Add("Realizar Operaci�n en Selecci�n")
 Call AccionSeleccion

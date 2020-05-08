@@ -1219,7 +1219,7 @@ End Sub
 Private Sub mnuBasica_Click()
 '*************************************************
 'Author: ^[GS]^
-'Last modified: 20/05/06
+'Ultima modificacion 08/05/2020 por ReyarB
 '*************************************************
 'PosLim(0).Text = 189
 'PosLim(1).Text = 12
@@ -1275,7 +1275,7 @@ End Sub
 Private Sub PosLim_KeyPress(index As Integer, KeyAscii As Integer)
 '*************************************************
 'Author: ^[GS]^
-'Last modified: 20/05/06
+'Ultima modificacion 08/05/2020 por ReyarB
 '*************************************************
 
 If IsNumeric(Chr(KeyAscii)) = False And KeyAscii <> 8 Then

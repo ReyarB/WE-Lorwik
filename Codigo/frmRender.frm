@@ -215,7 +215,7 @@ Option Explicit
     ' Declaraciones del Api
       
     '*************************************************************
-    ' Función BitBlt para copiar la imagen del control en un picturebox
+    ' Funciï¿½n BitBlt para copiar la imagen del control en un picturebox
     Private Automatico As Boolean
     Private Declare Function BitBlt Lib "gdi32" ( _
         ByVal hDestDC As Long, _
@@ -228,7 +228,7 @@ Option Explicit
         ByVal ySrc As Long, _
         ByVal dwRop As Long) As Long
       
-    ' Recupera la imagen del área del control
+    ' Recupera la imagen del ï¿½rea del control
     Private Declare Function GetWindowDC Lib "user32" (ByVal hWnd As Long) As Long
 Private Sub Check1_Click()
     If Check1.value = False Then
@@ -285,12 +285,12 @@ End Sub
         destino.AutoRedraw = True
           
         On Error Resume Next
-        ' Si da error es por que el control está dentro de un Frame _
+        ' Si da error es por que el control estï¿½ dentro de un Frame _
           ya que  los Frame no tiene  dicha propiedad
         Escala_Anterior = Control.Container.ScaleMode
           
         If err.Number = 438 Then
-           ' Si el control está en un Frame, convierte la escala
+           ' Si el control estï¿½ en un Frame, convierte la escala
            ancho = ScaleX(Control.Width, vbTwips, vbPixels)
            alto = ScaleY(Control.Height, vbTwips, vbPixels)
         Else
@@ -302,9 +302,9 @@ End Sub
           
         ' limpia el error
         On Error GoTo 0
-        ' Captura el área de pantalla correspondiente al control
+        ' Captura el ï¿½rea de pantalla correspondiente al control
         hdc = GetWindowDC(Control.hWnd)
-        ' Copia esa área al picturebox
+        ' Copia esa ï¿½rea al picturebox
         BitBlt destino.hdc, 0, 0, ancho, alto, hdc, 0, 0, vbSrcCopy
         ' Convierte la imagen anterior en un Mapa de bits
         destino.Picture = destino.Image
@@ -313,7 +313,7 @@ End Sub
           
         On Error Resume Next
         If err.Number = 0 Then
-           ' Si el control no está en un  Frame, restaura la escala del contenedor
+           ' Si el control no estï¿½ en un  Frame, restaura la escala del contenedor
            Control.Container.ScaleMode = Escala_Anterior
         End If
           
@@ -322,7 +322,9 @@ End Sub
 Private Sub Command1_Click()
     Unload Me
 End Sub
-
+'******************************************************
+'Ultima modificacion 08/05/2020 por ReyarB
+'******************************************************
 Private Sub RenderizarMinimap_Click()
 frmRender.Height = 3000
 

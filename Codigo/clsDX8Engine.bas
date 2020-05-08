@@ -2,7 +2,7 @@ Attribute VB_Name = "ClsDX8Engine"
 '******************************************************************************************************************************************
 'Lorwik> Este modulo suele ser siempre un modulo clase, pero como hay ciertas variables que si o si deben de ir aqui _
 y que otros sistemas que se encuentran en otros modulos necesita consultarlos y dichas variables no se pueden poner como publicas _
-en un modulo de clase, opté por convertir todo el modulo de clase en un modulo normal.
+en un modulo de clase, optï¿½ por convertir todo el modulo de clase en un modulo normal.
 '******************************************************************************************************************************************
 
 Option Explicit
@@ -183,7 +183,7 @@ Private Type Map
     map_y_max As Long
     map_y_min As Long
     map_description As String
-    'Added by Juan Martín Sotuyo Dodero
+    'Added by Juan Martï¿½n Sotuyo Dodero
     base_light_color As Long
 End Type
 
@@ -302,12 +302,13 @@ On Local Error GoTo ErrorHandler
     TileBufferSize = 11
     TileBufferPixelOffsetX = (TileBufferSize - 1) * 32
     TileBufferPixelOffsetY = (TileBufferSize - 1) * 32
-    TilePixelWidth = 32 'Tamaño de tile
-    TilePixelHeight = 32 'Tamaño de tile
+    TilePixelWidth = 32 'Tamaï¿½o de tile
+    TilePixelHeight = 32 'Tamaï¿½o de tile
     engineBaseSpeed = 0.019  'Velocidad a la que va a correr el engine (modifica la velocidad de caminata)
     
     '***********************************
-    'Tamaño del mapa
+    'Tamaï¿½o del mapa
+    'Ultima modificacion 08/05/2020 por ReyarB
     '***********************************
     'MinXBorder = XMinMapSize + (Round(700 / 32) \ 2) '700 = Width render cliente
     'MaxXBorder = XMaxMapSize - (Round(700 / 32) \ 2)
@@ -443,7 +444,9 @@ Private Function CreateTLVertex(X As Single, Y As Single, z As Single, rhw As Si
     CreateTLVertex.tu = tu
     CreateTLVertex.tv = tv
 End Function
-
+'*************************************************
+'Ultima modificacion 08/05/2020 por ReyarB
+'*************************************************
 Public Sub Engine_ActFPS()
     If GetTickCount - lFrameTimer > 300 Then ' antes 1000
         FPS = FramesPerSecCounter
@@ -541,7 +544,7 @@ Private Sub Geometry_Create_Box(ByRef verts() As TLVERTEX, ByRef dest As RECT, B
 '**************************************************************
 'Crea el plano donde se desarrolla el juego y todo se dibuja.
 'Si jugamos con la configuracion de este sub, podremos provocar
-'ciertos efecto. (ejem: montañas, reflejos y sombras)
+'ciertos efecto. (ejem: montaï¿½as, reflejos y sombras)
 '
 ' * v1      * v3
 ' |\        |
@@ -663,7 +666,7 @@ Public Sub Device_Box_Textured_Render(ByVal GrhIndex As Long, ByVal dest_x As In
                                             ByVal src_height As Integer, ByRef rgb_list() As Long, ByVal src_x As Integer, _
                                             ByVal src_y As Integer, Optional ByVal alpha_blend As Boolean, Optional ByVal angle As Single, Optional alphabyte As Byte = 255)
 '**************************************************************
-'Author: Juan Martín Sotuyo Dodero
+'Author: Juan Martï¿½n Sotuyo Dodero
 'Last Modify Date: 2/12/2004
 'Just copies the Textures
 '**************************************************************
@@ -781,7 +784,7 @@ Sub RenderScreen(ByVal tilex As Integer, ByVal tiley As Integer, ByVal PixelOffs
 '**************************************************************
 'Author: Aaron Perkins
 'Last Modify Date: 8/14/2007
-'Last modified by: Juan Martín Sotuyo Dodero (Maraxus)
+'Last modified by: Juan Martï¿½n Sotuyo Dodero (Maraxus)
 'Renders everything to the viewport
 '**************************************************************
    
@@ -818,6 +821,9 @@ Sub RenderScreen(ByVal tilex As Integer, ByVal tiley As Integer, ByVal PixelOffs
     MaxX = screenmaxX + TileBufferSize
         
     'Make sure mins and maxs are allways in map bounds
+    '******************************************************
+    'Ultima modificacion 08/05/2020 por ReyarB
+    '******************************************************
     If MinY < XMinMapSize Then
         minYOffset = YMinMapSize - MinY
         MinY = YMinMapSize
@@ -964,7 +970,7 @@ For Y = MinY To MaxY
         End If
             
         If VerGrilla Then
-            Grh.GrhIndex = 2 ' Ver resultados ReyarB
+            Grh.GrhIndex = 2 ' Ver resultados Ultima modificacion 08/05/2020 por ReyarB
             Grh.FrameCounter = 1
             Grh.Started = 0
             Call Draw_Grh(Grh, _
@@ -1082,7 +1088,7 @@ End Sub
 Public Sub MapCapture(ByRef Format As Boolean)
           '*************************************************
           'Author: Torres Patricio(Pato)
-          'Last modified:12/03/11
+          'Ultima modificacion 08/05/2020 por ReyarB
           '*************************************************
           Dim D3DWindow As D3DPRESENT_PARAMETERS
           Dim Y As Byte     'Keeps track of where on map we are
@@ -1182,6 +1188,8 @@ Public Sub MapCapture(ByRef Format As Boolean)
                                                   Call Draw_Grh(.Graphic(3), (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 1, MapData(X, Y).light_value())
                                         End If
 
+                                        '************************************************
+                                        'Ultima modificacion 08/05/2020 por ReyarB
                                         '************************************************
                 
                                         'frmRender.pgbProgress.value = frmRender.pgbProgress.value + 1
@@ -1318,7 +1326,7 @@ End Function
 Public Function Particle_Group_Remove_All() As Boolean
 '*****************************************************************
 'Author: Aaron Perkins
-'Last Modify Date: 1/04/2003
+'Ultima modificacion 08/05/2020 por ReyarB
 '
 '*****************************************************************
     Dim index As Long
@@ -1415,7 +1423,7 @@ Private Sub Particle_Group_Make(ByVal particle_group_index As Long, ByVal map_x 
 'Modified by: Ryan Cain (Onezero)
 'Last Modify Date: 5/15/2003
 'Makes a new particle effect
-'Modified by Juan Martín Sotuyo Dodero
+'Modified by Juan Martï¿½n Sotuyo Dodero
 '*****************************************************************
     'Update array size
     If particle_group_index > particle_group_last Then
@@ -1505,7 +1513,7 @@ End Sub
 
 Public Function Particle_Type_Get(ByVal particle_Index As Long) As Long
 '*****************************************************************
-'Author: Juan Martín Sotuyo Dodero (juansotuyo@hotmail.com)
+'Author: Juan Martï¿½n Sotuyo Dodero (juansotuyo@hotmail.com)
 'Last Modify Date: 8/27/2003
 'Returns the stream type of a particle stream
 '*****************************************************************
@@ -1520,7 +1528,7 @@ Public Sub Particle_Group_Render(ByVal particle_group_index As Long, ByVal scree
 '*****************************************************************
 'Author: Aaron Perkins
 'Modified by: Ryan Cain (Onezero)
-'Modified by: Juan Martín Sotuyo Dodero
+'Modified by: Juan Martï¿½n Sotuyo Dodero
 'Last Modify Date: 5/15/2003
 'Renders a particle stream at a paticular screen point
 '*****************************************************************
@@ -1601,8 +1609,8 @@ Private Sub Particle_Render(ByRef temp_particle As Particle, ByVal screen_x As L
 '**************************************************************
 'Author: Aaron Perkins
 'Modified by: Ryan Cain (Onezero)
-'Modified by: Juan Martín Sotuyo Dodero
-'Last Modify Date: 5/15/2003
+'Modified by: Juan Martï¿½n Sotuyo Dodero
+'Ultima modificacion 08/05/2020 por ReyarB
 '**************************************************************
     If no_move = False Then
         If temp_particle.alive_counter = 0 Then
@@ -1720,7 +1728,7 @@ End Function
 
 Private Function Char_Check(ByVal char_index As Integer) As Boolean
 '**************************************************************
-'Author: Aaron Perkins - Modified by Juan Martín Sotuyo Dodero
+'Author: Aaron Perkins - Modified by Juan Martï¿½n Sotuyo Dodero
 'Last Modify Date: 1/04/2003
 '
 '**************************************************************

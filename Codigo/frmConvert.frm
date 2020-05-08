@@ -9,6 +9,7 @@ Begin VB.Form frmConvert
    ScaleHeight     =   2745
    ScaleWidth      =   6855
    StartUpPosition =   3  'Windows Default
+   'Ultima modificacion 08/05/2020 por ReyarB
    Begin VB.CheckBox Check2 
       Caption         =   "Automatizar proceso"
       Height          =   195
@@ -199,7 +200,9 @@ Private Sub Check1_Click()
         Automatico = True
     End If
 End Sub
-
+'************************************************
+'Ultima modificacion 08/05/2020 por ReyarB
+'************************************************
 Private Sub Command1_Click()
 Dim i As Integer
     If Automatico = False Then
