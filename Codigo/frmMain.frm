@@ -4829,7 +4829,7 @@ Private Sub PonerAlAzar(ByVal n As Integer, T As Byte)
 '*************************************************
 Dim objindex As Long
 Dim NPCIndex As Long
-Dim X, y, i
+Dim X, Y, i
 Dim Head As Integer
 Dim Body As Integer
 Dim Heading As Byte
@@ -4840,50 +4840,50 @@ modEdicion.Deshacer_Add "Aplicar " & IIf(T = 0, "Objetos", "NPCs") & " al Azar" 
 
 Do While i > 0
     X = CInt(RandomNumber(XMinMapSize, XMaxMapSize - 1))
-    y = CInt(RandomNumber(YMinMapSize, YMaxMapSize - 1))
+    Y = CInt(RandomNumber(YMinMapSize, YMaxMapSize - 1))
     
     Select Case T
         Case 0
-            If MapData(X, y).OBJInfo.objindex = 0 Then
+            If MapData(X, Y).OBJInfo.objindex = 0 Then
                   i = i - 1
                   If cInsertarBloqueo.value = True Then
-                    MapData(X, y).blocked = 1
+                    MapData(X, Y).blocked = 1
                   Else
-                    MapData(X, y).blocked = 0
+                    MapData(X, Y).blocked = 0
                   End If
                   If cNumFunc(2).Text > 0 Then
                       objindex = cNumFunc(2).Text
-                      InitGrh MapData(X, y).ObjGrh, ObjData(objindex).GrhIndex
-                      MapData(X, y).OBJInfo.objindex = objindex
-                      MapData(X, y).OBJInfo.Amount = Val(cCantFunc(2).Text)
+                      InitGrh MapData(X, Y).ObjGrh, ObjData(objindex).GrhIndex
+                      MapData(X, Y).OBJInfo.objindex = objindex
+                      MapData(X, Y).OBJInfo.Amount = Val(cCantFunc(2).Text)
                       Select Case ObjData(objindex).ObjType ' GS
                             Case 4, 8, 10, 22 ' Arboles, Carteles, Foros, Yacimientos
-                                MapData(X, y).Graphic(3) = MapData(X, y).ObjGrh
+                                MapData(X, Y).Graphic(3) = MapData(X, Y).ObjGrh
                       End Select
                   End If
             End If
         Case 1
-           If MapData(X, y).blocked = 0 Then
+           If MapData(X, Y).blocked = 0 Then
                   i = i - 1
                   If cNumFunc(T - 1).Text > 0 Then
                         NPCIndex = cNumFunc(T - 1).Text
                         Body = NpcData(NPCIndex).Body
                         Head = NpcData(NPCIndex).Head
                         Heading = NpcData(NPCIndex).Heading
-                        Call MakeChar(NextOpenChar(), Body, Head, Heading, CInt(X), CInt(y))
-                        MapData(X, y).NPCIndex = NPCIndex
+                        Call MakeChar(NextOpenChar(), Body, Head, Heading, CInt(X), CInt(Y))
+                        MapData(X, Y).NPCIndex = NPCIndex
                   End If
             End If
         Case 2
-           If MapData(X, y).blocked = 0 Then
+           If MapData(X, Y).blocked = 0 Then
                   i = i - 1
                   If cNumFunc(T - 1).Text >= 0 Then
                         NPCIndex = cNumFunc(T - 1).Text
                         Body = NpcData(NPCIndex).Body
                         Head = NpcData(NPCIndex).Head
                         Heading = NpcData(NPCIndex).Heading
-                        Call MakeChar(NextOpenChar(), Body, Head, Heading, CInt(X), CInt(y))
-                        MapData(X, y).NPCIndex = NPCIndex
+                        Call MakeChar(NextOpenChar(), Body, Head, Heading, CInt(X), CInt(Y))
+                        MapData(X, Y).NPCIndex = NPCIndex
                   End If
            End If
         End Select
@@ -5111,7 +5111,7 @@ End Sub
 
 Private Sub COPIAR_GRH_Click(index As Integer)
 
-    Dim y As Integer
+    Dim Y As Integer
     Dim X As Integer
     Dim An As Integer
     Dim Bn As Integer
@@ -5208,33 +5208,33 @@ Call Resolucion
         Call MapEspejo(Sur)
         
         
-            For y = 1 To An  ' borrado
+            For Y = 1 To An  ' borrado
                 For X = 1 To XMaxMapSize
                 
                     'Quitar NPCs
-                    If MapData(X, y).NPCIndex > 0 Then
-                        EraseChar MapData(X, y).CharIndex
-                        MapData(X, y).NPCIndex = 0
+                    If MapData(X, Y).NPCIndex > 0 Then
+                        EraseChar MapData(X, Y).CharIndex
+                        MapData(X, Y).NPCIndex = 0
                     End If
     
                     ' Quitar Objetos
-                    MapData(X, y).OBJInfo.objindex = 0
-                    MapData(X, y).OBJInfo.Amount = 0
-                    MapData(X, y).ObjGrh.GrhIndex = 0
+                    MapData(X, Y).OBJInfo.objindex = 0
+                    MapData(X, Y).OBJInfo.Amount = 0
+                    MapData(X, Y).ObjGrh.GrhIndex = 0
     
                     ' Quitar Triggers
-                    MapData(X, y).Trigger = 0
+                    MapData(X, Y).Trigger = 0
               
                     ' Quitar Graficos
-                    MapData(X, y).Graphic(1).GrhIndex = 0
-                    MapData(X, y).Graphic(2).GrhIndex = 0
-                    MapData(X, y).Graphic(3).GrhIndex = 0
-                    MapData(X, y).OBJInfo.objindex = 0
+                    MapData(X, Y).Graphic(1).GrhIndex = 0
+                    MapData(X, Y).Graphic(2).GrhIndex = 0
+                    MapData(X, Y).Graphic(3).GrhIndex = 0
+                    MapData(X, Y).OBJInfo.objindex = 0
 
                 Next
             Next
 
-            For y = 1 To An
+            For Y = 1 To An
                 For X = 1 To XMaxMapSize
                     MapData(X, Y).Graphic(1) = MapData_Adyacente(X, TXTArriba + Y).Graphic(1)
                     MapData(X, Y).Graphic(2) = MapData_Adyacente(X, TXTArriba + Y).Graphic(2)
@@ -5247,7 +5247,7 @@ Call Resolucion
                 Next
             Next
             MapInfo.Changed = 1
-            UserPos.y = 12
+            UserPos.Y = 12
 
         Case 1 'Oeste
         
@@ -5265,31 +5265,31 @@ Call Resolucion
         
         Call MapEspejo(Oeste)
         
-            For y = 1 To YMaxMapSize
+            For Y = 1 To YMaxMapSize
                 For X = Bn To XMaxMapSize
                     'Quitar NPCs
-                    If MapData(X, y).NPCIndex > 0 Then
-                        EraseChar MapData(X, y).CharIndex
-                        MapData(X, y).NPCIndex = 0
+                    If MapData(X, Y).NPCIndex > 0 Then
+                        EraseChar MapData(X, Y).CharIndex
+                        MapData(X, Y).NPCIndex = 0
                     End If
     
                     ' Quitar Objetos
-                    MapData(X, y).OBJInfo.objindex = 0
-                    MapData(X, y).OBJInfo.Amount = 0
-                    MapData(X, y).ObjGrh.GrhIndex = 0
+                    MapData(X, Y).OBJInfo.objindex = 0
+                    MapData(X, Y).OBJInfo.Amount = 0
+                    MapData(X, Y).ObjGrh.GrhIndex = 0
     
                     ' Quitar Triggers
-                    MapData(X, y).Trigger = 0
+                    MapData(X, Y).Trigger = 0
               
                     ' Quitar Graficos
-                    MapData(X, y).Graphic(1).GrhIndex = 0
-                    MapData(X, y).Graphic(2).GrhIndex = 0
-                    MapData(X, y).Graphic(3).GrhIndex = 0
-                    MapData(X, y).OBJInfo.objindex = 0
+                    MapData(X, Y).Graphic(1).GrhIndex = 0
+                    MapData(X, Y).Graphic(2).GrhIndex = 0
+                    MapData(X, Y).Graphic(3).GrhIndex = 0
+                    MapData(X, Y).OBJInfo.objindex = 0
                 Next
             Next
 
-            For y = 1 To YMaxMapSize
+            For Y = 1 To YMaxMapSize
                 For X = Bn To XMaxMapSize
                     MapData(X, Y).Graphic(1) = MapData_Adyacente(X - TxTDerecha, Y).Graphic(1)
                     MapData(X, Y).Graphic(2) = MapData_Adyacente(X - TxTDerecha, Y).Graphic(2)
@@ -5319,31 +5319,31 @@ Call Resolucion
         
         Call MapEspejo(Este)
 
-            For y = 1 To YMaxMapSize
+            For Y = 1 To YMaxMapSize
                 For X = 1 To Cn
                     'Quitar NPCs
-                    If MapData(X, y).NPCIndex > 0 Then
-                        EraseChar MapData(X, y).CharIndex
-                        MapData(X, y).NPCIndex = 0
+                    If MapData(X, Y).NPCIndex > 0 Then
+                        EraseChar MapData(X, Y).CharIndex
+                        MapData(X, Y).NPCIndex = 0
                     End If
     
                     ' Quitar Objetos
-                    MapData(X, y).OBJInfo.objindex = 0
-                    MapData(X, y).OBJInfo.Amount = 0
-                    MapData(X, y).ObjGrh.GrhIndex = 0
+                    MapData(X, Y).OBJInfo.objindex = 0
+                    MapData(X, Y).OBJInfo.Amount = 0
+                    MapData(X, Y).ObjGrh.GrhIndex = 0
     
                     ' Quitar Triggers
-                    MapData(X, y).Trigger = 0
+                    MapData(X, Y).Trigger = 0
               
                     ' Quitar Graficos
-                    MapData(X, y).Graphic(1).GrhIndex = 0
-                    MapData(X, y).Graphic(2).GrhIndex = 0
-                    MapData(X, y).Graphic(3).GrhIndex = 0
-                    MapData(X, y).OBJInfo.objindex = 0
+                    MapData(X, Y).Graphic(1).GrhIndex = 0
+                    MapData(X, Y).Graphic(2).GrhIndex = 0
+                    MapData(X, Y).Graphic(3).GrhIndex = 0
+                    MapData(X, Y).OBJInfo.objindex = 0
                 Next
             Next
 
-            For y = 1 To YMaxMapSize
+            For Y = 1 To YMaxMapSize
                 For X = 1 To Cn
                     MapData(X, Y).Graphic(1) = MapData_Adyacente(X + TxTIzquierda, Y).Graphic(1)
                     MapData(X, Y).Graphic(2) = MapData_Adyacente(X + TxTIzquierda, Y).Graphic(2)
@@ -5373,30 +5373,30 @@ Call Resolucion
         
         Call MapEspejo(Norte)
 
-            For y = Dn To YMaxMapSize
+            For Y = Dn To YMaxMapSize
                 For X = 1 To XMaxMapSize
                     'Quitar NPCs
-                    If MapData(X, y).NPCIndex > 0 Then
-                        EraseChar MapData(X, y).CharIndex
-                        MapData(X, y).NPCIndex = 0
+                    If MapData(X, Y).NPCIndex > 0 Then
+                        EraseChar MapData(X, Y).CharIndex
+                        MapData(X, Y).NPCIndex = 0
                     End If
     
                     ' Quitar Objetos
-                    MapData(X, y).OBJInfo.objindex = 0
-                    MapData(X, y).OBJInfo.Amount = 0
-                    MapData(X, y).ObjGrh.GrhIndex = 0
+                    MapData(X, Y).OBJInfo.objindex = 0
+                    MapData(X, Y).OBJInfo.Amount = 0
+                    MapData(X, Y).ObjGrh.GrhIndex = 0
     
                     ' Quitar Triggers
-                    MapData(X, y).Trigger = 0
+                    MapData(X, Y).Trigger = 0
               
                     ' Quitar Graficos
-                    MapData(X, y).Graphic(1).GrhIndex = 0
-                    MapData(X, y).Graphic(2).GrhIndex = 0
-                    MapData(X, y).Graphic(3).GrhIndex = 0
-                    MapData(X, y).OBJInfo.objindex = 0
+                    MapData(X, Y).Graphic(1).GrhIndex = 0
+                    MapData(X, Y).Graphic(2).GrhIndex = 0
+                    MapData(X, Y).Graphic(3).GrhIndex = 0
+                    MapData(X, Y).OBJInfo.objindex = 0
                 Next
             Next
-            For y = Dn To YMaxMapSize
+            For Y = Dn To YMaxMapSize
                 For X = 1 To XMaxMapSize
                     MapData(X, Y).Graphic(1) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(1)
                     MapData(X, Y).Graphic(2) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(2)
@@ -5408,7 +5408,7 @@ Call Resolucion
                 Next
             Next
             MapInfo.Changed = 1
-            UserPos.y = 88
+            UserPos.Y = 88
                        
         Case 4 'Mapa entero en posicion 1
         
@@ -5988,7 +5988,7 @@ Select Case UCase(Chr(KeyAscii))
 End Select
 End Sub
 
-Private Sub Form_MouseUp(Button As Integer, Shift As Integer, X As Single, y As Single)
+Private Sub Form_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
     'If Seleccionando Then CopiarSeleccion
 End Sub
 
@@ -6039,7 +6039,7 @@ End If
 
 End Sub
 
-Private Sub lListado_MouseDown(index As Integer, Button As Integer, Shift As Integer, X As Single, y As Single)
+Private Sub lListado_MouseDown(index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 29/05/06
@@ -6049,7 +6049,7 @@ If index = 3 And Button = 2 Then
 End If
 End Sub
 
-Private Sub lListado_MouseMove(index As Integer, Button As Integer, Shift As Integer, X As Single, y As Single)
+Private Sub lListado_MouseMove(index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 22/05/06
@@ -6178,14 +6178,14 @@ Error:
     Call AddtoRichTextBox(frmMain.StatTxt, "Error guardando mapa", 255, 0, 0)
 End Sub
 
-Private Sub minimap_MouseDown(Button As Integer, Shift As Integer, X As Single, y As Single)
+Private Sub minimap_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
     If X < 11 Then X = 11
     If X > 189 Then X = 189
-    If y < 10 Then y = 10
-    If y > 192 Then y = 192
+    If Y < 10 Then Y = 10
+    If Y > 192 Then Y = 192
     
     UserPos.X = X
-    UserPos.y = y
+    UserPos.Y = Y
     
     Call ActualizaMinimap
 End Sub
@@ -7016,7 +7016,7 @@ cVerTriggers.value = (cVerTriggers.value = False)
 mnuVerTriggers.Checked = cVerTriggers.value
 End Sub
 
-Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, y As Single)
+Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06 - GS
@@ -7028,7 +7028,7 @@ Dim tY As Integer
 
 If Not MapaCargado Then Exit Sub
 
-ConvertCPtoTP X, y, tX, tY
+ConvertCPtoTP X, Y, tX, tY
 
 'If Shift = 1 And Button = 2 Then PegarSeleccion tX, tY: Exit Sub
 If Shift = 1 And Button = 1 Then
@@ -7043,13 +7043,13 @@ End If
 
 End Sub
 
-Private Sub Renderer_MouseMove(Button As Integer, Shift As Integer, X As Single, y As Single)
-    Call Form_MouseMove(Button, Shift, X, y)
+Private Sub Renderer_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    Call Form_MouseMove(Button, Shift, X, Y)
     MouseX = X
-    MouseY = y
+    MouseY = Y
 End Sub
 
-Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, y As Single)
+Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06 - GS
@@ -7062,7 +7062,7 @@ Dim tY As Integer
 If Not MapaCargado Then Exit Sub
 HotKeysAllow = True
 
-ConvertCPtoTP X, y, tX, tY
+ConvertCPtoTP X, Y, tX, tY
 
 PosX = "X: " & tX & " - Y: " & tY
 
@@ -7077,8 +7077,8 @@ Else
 End If
 End Sub
 
-Private Sub Renderer_MouseDown(Button As Integer, Shift As Integer, X As Single, y As Single)
-    Call Form_MouseDown(Button, Shift, X, y)
+Private Sub Renderer_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    Call Form_MouseDown(Button, Shift, X, Y)
     Call DibujarMiniMapa
 End Sub
 
@@ -7102,7 +7102,7 @@ If frmMain.mnuGuardarUltimaConfig.Checked = True Then
     WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "Triggers", IIf(frmMain.mnuVerTriggers.Checked = True, "1", "0")
     WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "Grilla", IIf(frmMain.mnuVerGrilla.Checked = True, "1", "0")
     WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "Bloqueos", IIf(frmMain.mnuVerBloqueos.Checked = True, "1", "0")
-    WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "LastPos", UserPos.X & "-" & UserPos.y
+    WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "LastPos", UserPos.X & "-" & UserPos.Y
     WriteVar IniPath & "WorldEditor.ini", "CONFIGURACION", "UtilizarDeshacer", IIf(frmMain.mnuUtilizarDeshacer.Checked = True, "1", "0")
     WriteVar IniPath & "WorldEditor.ini", "CONFIGURACION", "AutoCapturarTrans", IIf(frmMain.mnuAutoCapturarTranslados.Checked = True, "1", "0")
     WriteVar IniPath & "WorldEditor.ini", "CONFIGURACION", "AutoCapturarSup", IIf(frmMain.mnuAutoCapturarSuperficie.Checked = True, "1", "0")
@@ -7176,40 +7176,40 @@ End Sub
 ' Lee los traslados del mapa y retorna los mapas adyacentes o cero si no tiene en esa direccion
 Private Sub LeerAdyacentes(ByRef Norte As Integer, ByRef Sur As Integer, ByRef Este As Integer, ByRef Oeste As Integer)
     Dim X As Integer
-    Dim y As Integer
+    Dim Y As Integer
 
     ' Norte
-    y = MinYBorder
+    Y = MinYBorder
     For X = (MinXBorder + 1) To (MaxXBorder - 1)
-        If MapData(X, y).TileExit.Map > 0 Then
-            Norte = MapData(X, y).TileExit.Map
+        If MapData(X, Y).TileExit.Map > 0 Then
+            Norte = MapData(X, Y).TileExit.Map
             Exit For
         End If
     Next
 
     ' Este
     X = MaxXBorder
-    For y = (MinYBorder + 1) To (MaxYBorder - 1)
-        If MapData(X, y).TileExit.Map > 0 Then
-            Este = MapData(X, y).TileExit.Map
+    For Y = (MinYBorder + 1) To (MaxYBorder - 1)
+        If MapData(X, Y).TileExit.Map > 0 Then
+            Este = MapData(X, Y).TileExit.Map
             Exit For
         End If
     Next
 
     ' Sur
-    y = MaxYBorder
+    Y = MaxYBorder
     For X = (MinXBorder + 1) To (MaxXBorder - 1)
-        If MapData(X, y).TileExit.Map > 0 Then
-            Sur = MapData(X, y).TileExit.Map
+        If MapData(X, Y).TileExit.Map > 0 Then
+            Sur = MapData(X, Y).TileExit.Map
             Exit For
         End If
     Next
 
     ' Oeste
     X = MinXBorder
-    For y = (MinYBorder + 1) To (MaxYBorder - 1)
-        If MapData(X, y).TileExit.Map > 0 Then
-            Oeste = MapData(X, y).TileExit.Map
+    For Y = (MinYBorder + 1) To (MaxYBorder - 1)
+        If MapData(X, Y).TileExit.Map > 0 Then
+            Oeste = MapData(X, Y).TileExit.Map
             Exit For
         End If
     Next
@@ -7263,29 +7263,29 @@ Private Sub PegarMapa(ByVal mX As Integer, ByVal mY As Integer)
 On Error GoTo err
 Dim OffsetX As Integer
 Dim OffsetY As Integer
-Dim X As Integer, y As Integer
+Dim X As Integer, Y As Integer
 
 
     OffsetX = X + mX
-    OffsetY = y + mY
+    OffsetY = Y + mY
 
     For X = 1 To 100
-        For y = 1 To 100
+        For Y = 1 To 100
         
             If OffsetX + X > 0 And OffsetX + X < 201 Then
-              If OffsetY + y > 0 And OffsetY + y < 201 Then
+              If OffsetY + Y > 0 And OffsetY + Y < 201 Then
               
-                With MapData(X + OffsetX, y + OffsetY)
+                With MapData(X + OffsetX, Y + OffsetY)
     
-                    .Graphic(1) = MapData_Adyacente(X, y).Graphic(1)
-                    .Graphic(2) = MapData_Adyacente(X, y).Graphic(2)
-                    .Graphic(3) = MapData_Adyacente(X, y).Graphic(3)
-                    .Graphic(4) = MapData_Adyacente(X, y).Graphic(4)
-                    .blocked = MapData_Adyacente(X, y).blocked
-                    .NPCIndex = MapData_Adyacente(X, y).NPCIndex
-                    .Trigger = MapData_Adyacente(X, y).Trigger
-                    .ObjGrh = MapData_Adyacente(X, y).ObjGrh
-                    .OBJInfo = MapData_Adyacente(X, y).OBJInfo
+                    .Graphic(1) = MapData_Adyacente(X, Y).Graphic(1)
+                    .Graphic(2) = MapData_Adyacente(X, Y).Graphic(2)
+                    .Graphic(3) = MapData_Adyacente(X, Y).Graphic(3)
+                    .Graphic(4) = MapData_Adyacente(X, Y).Graphic(4)
+                    .blocked = MapData_Adyacente(X, Y).blocked
+                    .NPCIndex = MapData_Adyacente(X, Y).NPCIndex
+                    .Trigger = MapData_Adyacente(X, Y).Trigger
+                    .ObjGrh = MapData_Adyacente(X, Y).ObjGrh
+                    .OBJInfo = MapData_Adyacente(X, Y).OBJInfo
                 End With
               End If
             End If
@@ -7301,29 +7301,29 @@ End Sub
 Private Sub BorrarMapa(ByVal mX As Integer, ByVal mY As Integer)
 Dim GrhNull As Grh
 Dim ObjectNull As Obj
-Dim X As Integer, y As Integer
+Dim X As Integer, Y As Integer
 
-            For y = 1 + mY To 100 + mY ' borrado
+            For Y = 1 + mY To 100 + mY ' borrado
                 For X = 1 + mX To 100 + mX
 
                     'Quitar NPCs
-                    If MapData(X, y).NPCIndex > 0 Then
-                        EraseChar MapData(X, y).CharIndex
-                        MapData(X, y).NPCIndex = 0
+                    If MapData(X, Y).NPCIndex > 0 Then
+                        EraseChar MapData(X, Y).CharIndex
+                        MapData(X, Y).NPCIndex = 0
                     End If
                     ' Quitar Objetos
-                    MapData(X, y).OBJInfo.objindex = 0
-                    MapData(X, y).OBJInfo.Amount = 0
-                    MapData(X, y).ObjGrh.GrhIndex = 0
+                    MapData(X, Y).OBJInfo.objindex = 0
+                    MapData(X, Y).OBJInfo.Amount = 0
+                    MapData(X, Y).ObjGrh.GrhIndex = 0
                     ' Quitar Triggers
-                    MapData(X, y).Trigger = 0
+                    MapData(X, Y).Trigger = 0
                     ' Quitar Bloqueos
-                    MapData(X, y).blocked = 0
+                    MapData(X, Y).blocked = 0
                     ' Quitar Graficos
-                    MapData(X, y).Graphic(1).GrhIndex = 0
-                    MapData(X, y).Graphic(2).GrhIndex = 0
-                    MapData(X, y).Graphic(3).GrhIndex = 0
-                    MapData(X, y).Graphic(4).GrhIndex = 0
+                    MapData(X, Y).Graphic(1).GrhIndex = 0
+                    MapData(X, Y).Graphic(2).GrhIndex = 0
+                    MapData(X, Y).Graphic(3).GrhIndex = 0
+                    MapData(X, Y).Graphic(4).GrhIndex = 0
                     
                 Next
             Next
@@ -7332,17 +7332,17 @@ End Sub
 
 Private Sub BorrarBloqueos()
 Dim X As Integer
-Dim y As Integer
+Dim Y As Integer
     For X = XMinMapSize To XMaxMapSize
-        For y = YMinMapSize To YMaxMapSize
+        For Y = YMinMapSize To YMaxMapSize
         
-        If MapData(X, y).Graphic(2).GrhIndex > 0 Or _
-           MapData(X, y).Graphic(3).GrhIndex > 0 Or _
-           MapData(X, y).Graphic(4).GrhIndex > 0 Or _
-           MapData(X, y).OBJInfo.objindex > 0 Then GoTo Jump
+        If MapData(X, Y).Graphic(2).GrhIndex > 0 Or _
+           MapData(X, Y).Graphic(3).GrhIndex > 0 Or _
+           MapData(X, Y).Graphic(4).GrhIndex > 0 Or _
+           MapData(X, Y).OBJInfo.objindex > 0 Then GoTo Jump
         
-        If X >= 13 And y >= 92 And y <= 109 Then MapData(X, y).blocked = 0
-        If X >= 89 And X <= 112 And y >= 10 Then MapData(X, y).blocked = 0
+        If X >= 13 And Y >= 92 And Y <= 109 Then MapData(X, Y).blocked = 0
+        If X >= 89 And X <= 112 And Y >= 10 Then MapData(X, Y).blocked = 0
 '        If X >= 192 And X <= 208 And y >= 10 Then MapData(X, y).blocked = 0
 '        If X >= 10 And X <= 91 And y >= 182 And y <= 193 Then MapData(X, y).blocked = 0
 '        If X >= 109 And X <= 191 And y >= 188 And y <= 193 Then MapData(X, y).blocked = 0

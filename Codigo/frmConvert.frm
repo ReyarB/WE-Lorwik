@@ -9,6 +9,14 @@ Begin VB.Form frmConvert
    ScaleHeight     =   2745
    ScaleWidth      =   6855
    StartUpPosition =   3  'Windows Default
+   Begin VB.CheckBox Check2 
+      Caption         =   "Automatizar proceso"
+      Height          =   195
+      Left            =   0
+      TabIndex        =   14
+      Top             =   0
+      Width           =   1815
+   End
    Begin VB.CommandButton Command2 
       Caption         =   "Convertir Long > CSM"
       Height          =   375
@@ -195,6 +203,7 @@ End Sub
 Private Sub Command1_Click()
 Dim i As Integer
     If Automatico = False Then
+        i = Text1.Text
         Call modMapIO.NuevoMapa
         Call MapaV2_Cargar(App.Path & "\Conversor\Mapas Integer\Mapa" & Text1.Text & ".map", True)
         Call MapaV2_Guardar(App.Path & "\Conversor\Mapas Long\Mapa" & Text1.Text & ".map")
@@ -234,3 +243,4 @@ Dim i As Integer
         Next i
     End If
 End Sub
+

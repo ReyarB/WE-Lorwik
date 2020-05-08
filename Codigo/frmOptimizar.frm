@@ -27,14 +27,16 @@ Begin VB.Form frmOptimizar
       Left            =   120
       TabIndex        =   4
       Top             =   1680
+      Value           =   1  'Checked
       Width           =   3375
    End
    Begin VB.CheckBox chkQuitarTodoBordes 
-      Caption         =   "Quitar NPCs, Objetos y Translados en los Bordes Exteriores"
+      Caption         =   "Quitar NPCs y Translados en los Bordes Exteriores"
       Height          =   375
       Left            =   120
       TabIndex        =   3
       Top             =   1200
+      Value           =   1  'Checked
       Width           =   3375
    End
    Begin VB.CheckBox chkQuitarTrigTrans 
@@ -127,7 +129,7 @@ Option Explicit
 Private Sub Optimizar()
 '*************************************************
 'Author: ^[GS]^
-'Last modified: 16/10/06
+'Last modified: 08/05/2020 Por ReyarB
 '*************************************************
 Dim Y As Integer
 Dim X As Integer
@@ -155,9 +157,9 @@ For Y = YMinMapSize To YMaxMapSize
                 MapData(X, Y).NPCIndex = 0
             End If
             ' Quitar Objetos
-            MapData(X, Y).OBJInfo.objindex = 0
-            MapData(X, Y).OBJInfo.Amount = 0
-            MapData(X, Y).ObjGrh.GrhIndex = 0
+'            MapData(X, Y).OBJInfo.objindex = 0
+'            MapData(X, Y).OBJInfo.Amount = 0
+'            MapData(X, Y).ObjGrh.GrhIndex = 0
             ' Quitar Translados
             MapData(X, Y).TileExit.Map = 0
             MapData(X, Y).TileExit.X = 0
@@ -214,9 +216,12 @@ End Sub
 Private Sub cOptimizar_Click()
 '*************************************************
 'Author: ^[GS]^
-'Last modified: 22/09/06
+'Last modified: 08/05/2020 por ReyarB
 '*************************************************
 Call Optimizar
+MapInfo.Changed = 1
+DoEvents
+Unload Me
 End Sub
 
 
