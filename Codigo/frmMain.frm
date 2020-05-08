@@ -5236,13 +5236,14 @@ Call Resolucion
 
             For y = 1 To An
                 For X = 1 To XMaxMapSize
-                    MapData(X, y).Graphic(1) = MapData_Adyacente(X, TXTArriba + y).Graphic(1)
-                    MapData(X, y).Graphic(2) = MapData_Adyacente(X, TXTArriba + y).Graphic(2)
-                    MapData(X, y).Graphic(3) = MapData_Adyacente(X, TXTArriba + y).Graphic(3)
-                    MapData(X, y).Graphic(4) = MapData_Adyacente(X, TXTArriba + y).Graphic(4)
-                    MapData(X, y).OBJInfo.objindex = MapData_Adyacente(X, TXTArriba + y).OBJInfo.objindex
-                    MapData(X, y).OBJInfo.Amount = MapData_Adyacente(X, TXTArriba + y).OBJInfo.Amount
-                    MapData(X, y).ObjGrh.GrhIndex = MapData_Adyacente(X, TXTArriba + y).ObjGrh.GrhIndex
+                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X, TXTArriba + Y).Graphic(1)
+                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X, TXTArriba + Y).Graphic(2)
+                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X, TXTArriba + Y).Graphic(3)
+                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X, TXTArriba + Y).Graphic(4)
+                    MapData(X, Y).Trigger = MapData_Adyacente(X, TXTArriba + Y).Trigger
+                    MapData(X, Y).ObjGrh = MapData_Adyacente(X, TXTArriba + Y).ObjGrh
+                    MapData(X, Y).OBJInfo = MapData_Adyacente(X, TXTArriba + Y).OBJInfo
+
                 Next
             Next
             MapInfo.Changed = 1
@@ -5290,13 +5291,13 @@ Call Resolucion
 
             For y = 1 To YMaxMapSize
                 For X = Bn To XMaxMapSize
-                    MapData(X, y).Graphic(1) = MapData_Adyacente(X - TxTDerecha, y).Graphic(1)
-                    MapData(X, y).Graphic(2) = MapData_Adyacente(X - TxTDerecha, y).Graphic(2)
-                    MapData(X, y).Graphic(3) = MapData_Adyacente(X - TxTDerecha, y).Graphic(3)
-                    MapData(X, y).Graphic(4) = MapData_Adyacente(X - TxTDerecha, y).Graphic(4)
-                    MapData(X, y).OBJInfo.objindex = MapData_Adyacente(X - TxTDerecha, y).OBJInfo.objindex
-                    MapData(X, y).OBJInfo.Amount = MapData_Adyacente(X - TxTDerecha, y).OBJInfo.Amount
-                    MapData(X, y).ObjGrh.GrhIndex = MapData_Adyacente(X - TxTDerecha, y).ObjGrh.GrhIndex
+                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X - TxTDerecha, Y).Graphic(1)
+                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X - TxTDerecha, Y).Graphic(2)
+                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X - TxTDerecha, Y).Graphic(3)
+                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X - TxTDerecha, Y).Graphic(4)
+                    MapData(X, Y).ObjGrh = MapData_Adyacente(X - TxTDerecha, Y).ObjGrh
+                    MapData(X, Y).OBJInfo = MapData_Adyacente(X - TxTDerecha, Y).OBJInfo
+
                 Next
             Next
             MapInfo.Changed = 1
@@ -5344,13 +5345,13 @@ Call Resolucion
 
             For y = 1 To YMaxMapSize
                 For X = 1 To Cn
-                    MapData(X, y).Graphic(1) = MapData_Adyacente(X + TxTIzquierda, y).Graphic(1)
-                    MapData(X, y).Graphic(2) = MapData_Adyacente(X + TxTIzquierda, y).Graphic(2)
-                    MapData(X, y).Graphic(3) = MapData_Adyacente(X + TxTIzquierda, y).Graphic(3)
-                    MapData(X, y).Graphic(4) = MapData_Adyacente(X + TxTIzquierda, y).Graphic(4)
-                    MapData(X, y).OBJInfo.objindex = MapData_Adyacente(X + TxTIzquierda, y).OBJInfo.objindex
-                    MapData(X, y).OBJInfo.Amount = MapData_Adyacente(X + TxTIzquierda, y).OBJInfo.Amount
-                    MapData(X, y).ObjGrh.GrhIndex = MapData_Adyacente(X + TxTIzquierda, y).ObjGrh.GrhIndex
+                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X + TxTIzquierda, Y).Graphic(1)
+                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X + TxTIzquierda, Y).Graphic(2)
+                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X + TxTIzquierda, Y).Graphic(3)
+                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X + TxTIzquierda, Y).Graphic(4)
+                    MapData(X, Y).ObjGrh = MapData_Adyacente(X + TxTIzquierda, Y).ObjGrh
+                    MapData(X, Y).OBJInfo = MapData_Adyacente(X + TxTIzquierda, Y).OBJInfo
+
                 Next
             Next
             MapInfo.Changed = 1
@@ -5397,13 +5398,13 @@ Call Resolucion
             Next
             For y = Dn To YMaxMapSize
                 For X = 1 To XMaxMapSize
-                    MapData(X, y).Graphic(1) = MapData_Adyacente(X, y - TxTAbajo).Graphic(1)
-                    MapData(X, y).Graphic(2) = MapData_Adyacente(X, y - TxTAbajo).Graphic(2)
-                    MapData(X, y).Graphic(3) = MapData_Adyacente(X, y - TxTAbajo).Graphic(3)
-                    MapData(X, y).Graphic(4) = MapData_Adyacente(X, y - TxTAbajo).Graphic(4)
-                    MapData(X, y).OBJInfo.objindex = MapData_Adyacente(X, y - TxTAbajo).OBJInfo.objindex
-                    MapData(X, y).OBJInfo.Amount = MapData_Adyacente(X, y - TxTAbajo).OBJInfo.Amount
-                    MapData(X, y).ObjGrh.GrhIndex = MapData_Adyacente(X, y - TxTAbajo).ObjGrh.GrhIndex
+                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(1)
+                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(2)
+                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(3)
+                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(4)
+                    MapData(X, Y).ObjGrh = MapData_Adyacente(X, Y - TxTAbajo).ObjGrh
+                    MapData(X, Y).OBJInfo = MapData_Adyacente(X, Y - TxTAbajo).OBJInfo
+
                 Next
             Next
             MapInfo.Changed = 1
