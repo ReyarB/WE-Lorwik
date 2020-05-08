@@ -5443,17 +5443,6 @@ Call Resolucion
 End Sub
 
 
-Private Sub cQuitarLuz_Click()
-''*************************************************
-''Author: Lorwik
-''*************************************************
-    If cQuitarLuz.value Then
-        cInsertarLuz.Enabled = False
-    Else
-        cInsertarLuz.Enabled = True
-    End If
-End Sub
-
 Private Sub cUnionManual_Click()
 '*************************************************
 'Author: ^[GS]^
