@@ -987,7 +987,7 @@ Sub ClickEdit(Button As Integer, tX As Integer, tY As Integer)
     
     If Button = vbRightButton Then
         ' Posicion
-        frmMain.StatTxt.Text = frmMain.StatTxt.Text & ENDL & ENDL & "Posición " & tX & "," & tY
+        frmMain.StatTxt.Text = frmMain.StatTxt.Text & ENDL & ENDL & "Posiciï¿½n " & tX & "," & tY
         
         ' Bloqueos
         If MapData(tX, tY).blocked = 1 Then frmMain.StatTxt.Text = frmMain.StatTxt.Text & " (BLOQ)"
@@ -1169,10 +1169,10 @@ Sub ClickEdit(Button As Integer, tX As Integer, tY As Integer)
             If Val(frmMain.tTMapa.Text) < 0 Or Val(frmMain.tTMapa.Text) > 9000 Then
                 MsgBox "Valor de Mapa invalido", vbCritical + vbOKOnly
                 Exit Sub
-            ElseIf Val(frmMain.tTX.Text) < 0 Or Val(frmMain.tTX.Text) > 200 Then
+            ElseIf Val(frmMain.tTX.Text) < 0 Or Val(frmMain.tTX.Text) > 300 Then
                 MsgBox "Valor de X invalido", vbCritical + vbOKOnly
                 Exit Sub
-            ElseIf Val(frmMain.tTY.Text) < 0 Or Val(frmMain.tTY.Text) > 200 Then
+            ElseIf Val(frmMain.tTY.Text) < 0 Or Val(frmMain.tTY.Text) > 300 Then
                 MsgBox "Valor de Y invalido", vbCritical + vbOKOnly
                 Exit Sub
             End If

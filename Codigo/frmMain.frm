@@ -3846,7 +3846,6 @@ Begin VB.Form frmMain
       _ExtentY        =   2037
       _Version        =   393217
       BackColor       =   16777215
-      Enabled         =   -1  'True
       ReadOnly        =   -1  'True
       ScrollBars      =   2
       DisableNoScroll =   -1  'True
@@ -4898,8 +4897,8 @@ Private Sub cAgregarFuncalAzar_Click(index As Integer)
 'Last modified: 20/05/06
 '*************************************************
 On Error Resume Next
-If IsNumeric(cCantFunc(index).Text) = False Or cCantFunc(index).Text > 200 Then
-    MsgBox "El Valor de Cantidad introducido no es soportado!" & vbCrLf & "El valor maximo es 200.", vbCritical
+If IsNumeric(cCantFunc(index).Text) = False Or cCantFunc(index).Text > 300 Then
+    MsgBox "El Valor de Cantidad introducido no es soportado!" & vbCrLf & "El valor maximo es 300.", vbCritical
     Exit Sub
 End If
 cAgregarFuncalAzar(index).Enabled = False
@@ -5914,8 +5913,8 @@ Private Sub OptX_Click(index As Integer)
         End If
         
         Case 1
-            XMaxMapSize = 200
-            YMaxMapSize = 200
+            XMaxMapSize = 300
+            YMaxMapSize = 300
         If frmMain.CopyBorder.Visible = True Then
             frmMain.COPIAR_GRH(4).Visible = True
             frmMain.COPIAR_GRH(5).Visible = True
@@ -6106,8 +6105,8 @@ Private Sub MapPest_Click(index As Integer)
 
         If FileSize(Dialog.FileName) > 200000 Then
             'MsgBox "File Size =" & FileSize(Dialog.FileName), vbInformation
-            XMaxMapSize = 200
-            YMaxMapSize = 200
+            XMaxMapSize = 300
+            YMaxMapSize = 300
             OptX(1).value = True
         Else
             'MsgBox "File Size =" & FileSize(Dialog.FileName), vbInformation
@@ -6152,7 +6151,7 @@ On Error GoTo Error
     frmMain.COPIAR_GRH(1).Visible = True
     frmMain.COPIAR_GRH(2).Visible = True
     frmMain.COPIAR_GRH(3).Visible = True
-    If XMaxMapSize = 200 Then
+    If XMaxMapSize = 300 Then
         frmMain.COPIAR_GRH(4).Visible = True
         frmMain.COPIAR_GRH(5).Visible = True
         frmMain.COPIAR_GRH(6).Visible = True
@@ -6206,8 +6205,8 @@ If Len(Dialog.FileName) < 3 Then Exit Sub
     
         If FileSize(Dialog.FileName) > 200000 Then
             'MsgBox "File Size =" & FileSize(Dialog.FileName), vbInformation
-            XMaxMapSize = 200
-            YMaxMapSize = 200
+            XMaxMapSize = 300
+            YMaxMapSize = 300
             OptX(1).value = True
         Else
             'MsgBox "File Size =" & FileSize(Dialog.FileName), vbInformation

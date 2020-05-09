@@ -187,7 +187,7 @@ Public Sub VerFuncion(ByVal Numero As Byte, ByVal Ver As Boolean, Optional Norma
             frmMain.COPIAR_GRH(1).Visible = True
             frmMain.COPIAR_GRH(2).Visible = True
             frmMain.COPIAR_GRH(3).Visible = True
-            If XMaxMapSize = 200 Then
+            If XMaxMapSize = 300 Then
                 frmMain.COPIAR_GRH(4).Visible = True
                 frmMain.COPIAR_GRH(5).Visible = True
                 frmMain.COPIAR_GRH(6).Visible = True
