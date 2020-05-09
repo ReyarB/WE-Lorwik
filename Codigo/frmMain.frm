@@ -55,22 +55,64 @@ Begin VB.Form frmMain
          Appearance      =   0  'Flat
          BackColor       =   &H00000000&
          ForeColor       =   &H00FFFFFF&
-         Height          =   3975
+         Height          =   5415
          Left            =   120
          TabIndex        =   99
          Top             =   120
          Visible         =   0   'False
          Width           =   4095
+         Begin VB.CommandButton cmdIrAlMapa 
+            Caption         =   "Ir al Mapa"
+            Height          =   375
+            Left            =   2520
+            TabIndex        =   199
+            Top             =   4920
+            Width           =   1335
+         End
+         Begin VB.TextBox TxtMapa 
+            Height          =   285
+            Left            =   1440
+            TabIndex        =   197
+            Text            =   "1"
+            Top             =   4920
+            Width           =   735
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   1455
+            Index           =   2
+            Left            =   3000
+            TabIndex        =   106
+            Top             =   960
+            Width           =   975
+            _ExtentX        =   1720
+            _ExtentY        =   2566
+            Caption         =   "Pegar mapa Este"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
             Height          =   375
             Index           =   8
-            Left            =   2400
+            Left            =   2280
             TabIndex        =   192
-            Top             =   1920
+            Top             =   3600
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
-            Caption         =   "mapa 1"
+            Caption         =   "3"
             CapAlign        =   2
             BackStyle       =   2
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -90,13 +132,13 @@ Begin VB.Form frmMain
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
             Height          =   375
             Index           =   9
-            Left            =   2400
+            Left            =   2280
             TabIndex        =   193
-            Top             =   2280
+            Top             =   3960
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
-            Caption         =   "mapa 1"
+            Caption         =   "6"
             CapAlign        =   2
             BackStyle       =   2
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -116,13 +158,13 @@ Begin VB.Form frmMain
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
             Height          =   375
             Index           =   10
-            Left            =   1200
+            Left            =   1080
             TabIndex        =   194
-            Top             =   2640
+            Top             =   4320
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
-            Caption         =   "mapa 1"
+            Caption         =   "7"
             CapAlign        =   2
             BackStyle       =   2
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -142,13 +184,13 @@ Begin VB.Form frmMain
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
             Height          =   375
             Index           =   11
-            Left            =   1800
+            Left            =   1680
             TabIndex        =   195
-            Top             =   2640
+            Top             =   4320
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
-            Caption         =   "mapa 1"
+            Caption         =   "8"
             CapAlign        =   2
             BackStyle       =   2
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -168,13 +210,13 @@ Begin VB.Form frmMain
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
             Height          =   375
             Index           =   12
-            Left            =   2400
+            Left            =   2280
             TabIndex        =   196
-            Top             =   2640
+            Top             =   4320
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
-            Caption         =   "mapa 1"
+            Caption         =   "9"
             CapAlign        =   2
             BackStyle       =   2
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -194,13 +236,13 @@ Begin VB.Form frmMain
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
             Height          =   375
             Index           =   5
-            Left            =   1800
+            Left            =   1680
             TabIndex        =   189
-            Top             =   1920
+            Top             =   3600
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
-            Caption         =   "mapa 2"
+            Caption         =   "2"
             CapAlign        =   2
             BackStyle       =   2
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -220,13 +262,13 @@ Begin VB.Form frmMain
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
             Height          =   375
             Index           =   6
-            Left            =   1200
+            Left            =   1080
             TabIndex        =   190
-            Top             =   2280
+            Top             =   3960
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
-            Caption         =   "mapa 3"
+            Caption         =   "4"
             CapAlign        =   2
             BackStyle       =   2
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -246,13 +288,13 @@ Begin VB.Form frmMain
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
             Height          =   375
             Index           =   7
-            Left            =   1800
+            Left            =   1680
             TabIndex        =   191
-            Top             =   2280
+            Top             =   3960
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
-            Caption         =   "mapa 4"
+            Caption         =   "5"
             CapAlign        =   2
             BackStyle       =   2
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -272,13 +314,13 @@ Begin VB.Form frmMain
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
             Height          =   375
             Index           =   4
-            Left            =   1200
+            Left            =   1080
             TabIndex        =   188
-            Top             =   1920
+            Top             =   3600
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
-            Caption         =   "mapa 1"
+            Caption         =   "1"
             CapAlign        =   2
             BackStyle       =   2
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -296,14 +338,14 @@ Begin VB.Form frmMain
             cBack           =   -2147483633
          End
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   2175
+            Height          =   1455
             Index           =   1
             Left            =   120
             TabIndex        =   105
             Top             =   960
             Width           =   975
             _ExtentX        =   1720
-            _ExtentY        =   3836
+            _ExtentY        =   2566
             Caption         =   "Pegar mapa Oeste"
             CapAlign        =   2
             BackStyle       =   2
@@ -328,7 +370,7 @@ Begin VB.Form frmMain
             Height          =   375
             Left            =   1200
             TabIndex        =   175
-            Top             =   1080
+            Top             =   1320
             Value           =   -1  'True
             Width           =   1815
          End
@@ -339,7 +381,7 @@ Begin VB.Form frmMain
             Height          =   375
             Left            =   1200
             TabIndex        =   174
-            Top             =   1440
+            Top             =   1680
             Width           =   1815
          End
          Begin VB.TextBox TXTArriba 
@@ -487,7 +529,7 @@ Begin VB.Form frmMain
             Index           =   0
             Left            =   120
             TabIndex        =   107
-            Top             =   3120
+            Top             =   2400
             Width           =   3855
             _ExtentX        =   6800
             _ExtentY        =   1296
@@ -509,14 +551,14 @@ Begin VB.Form frmMain
             cBack           =   -2147483633
          End
          Begin WorldEditor.lvButtons_H MemoriaAuxiliar 
-            Height          =   3615
+            Height          =   2895
             Left            =   120
             TabIndex        =   108
             Top             =   240
             Visible         =   0   'False
             Width           =   3855
             _ExtentX        =   6800
-            _ExtentY        =   6376
+            _ExtentY        =   5106
             Caption         =   "Copiar bordes del mapa en memoria auxiliar"
             CapAlign        =   2
             BackStyle       =   2
@@ -534,9 +576,19 @@ Begin VB.Form frmMain
             Value           =   0   'False
             cBack           =   16744576
          End
-         Begin VB.Label Label4 
+         Begin VB.Label lblIrMapa 
+            BackColor       =   &H80000007&
+            Caption         =   "Ir al Mapa"
+            ForeColor       =   &H8000000B&
+            Height          =   255
+            Left            =   360
+            TabIndex        =   198
+            Top             =   4920
+            Width           =   855
+         End
+         Begin VB.Label lvlMapaCompleto 
             BackStyle       =   0  'Transparent
-            Caption         =   "Estos valores se miden en Tiles y JAMAS podran superar los 200 tiles o estar por debajo de 1 tiles."
+            Caption         =   "Pegar mapa completo en Zona n�"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -548,11 +600,10 @@ Begin VB.Form frmMain
             EndProperty
             ForeColor       =   &H00FFFFFF&
             Height          =   555
-            Left            =   480
+            Left            =   240
             TabIndex        =   110
-            Top             =   3360
-            Visible         =   0   'False
-            Width           =   3810
+            Top             =   3240
+            Width           =   1770
          End
          Begin VB.Label Label5 
             AutoSize        =   -1  'True
@@ -2963,7 +3014,7 @@ Begin VB.Form frmMain
       Width           =   2295
       Begin VB.OptionButton OptX 
          BackColor       =   &H00FFFFFF&
-         Caption         =   "200 x 200 (agrandado)"
+         Caption         =   "300 x 300 (agrandado)"
          Height          =   195
          Index           =   1
          Left            =   120
@@ -5183,7 +5234,10 @@ End Sub
 
 
 
-
+Private Sub cmdIrAlMapa_Click()
+NumMap_Save = 7
+Call MapPest_Click(TxtMapa)
+End Sub
 
 Private Sub cQuitarLuz_Click()
 '*************************************************
@@ -5267,6 +5321,7 @@ Private Sub COPIAR_GRH_Click(index As Integer)
     frmMain.COPIAR_GRH(10).Visible = False
     frmMain.COPIAR_GRH(11).Visible = False
     frmMain.COPIAR_GRH(12).Visible = False
+    frmMain.lvlMapaCompleto.Visible = False
     frmMain.OpcBorde.Visible = False
     frmMain.OpcExit.Visible = False
     
@@ -6084,6 +6139,8 @@ Private Sub OptX_Click(index As Integer)
             frmMain.COPIAR_GRH(10).Visible = False
             frmMain.COPIAR_GRH(11).Visible = False
             frmMain.COPIAR_GRH(12).Visible = False
+            frmMain.lvlMapaCompleto.Visible = False
+        
         End If
         
         Case 1
@@ -6099,6 +6156,8 @@ Private Sub OptX_Click(index As Integer)
             frmMain.COPIAR_GRH(10).Visible = True
             frmMain.COPIAR_GRH(11).Visible = True
             frmMain.COPIAR_GRH(12).Visible = True
+            frmMain.lvlMapaCompleto.Visible = True
+            
         End If
     
        End Select
@@ -6340,6 +6399,7 @@ On Error GoTo Error
         frmMain.COPIAR_GRH(10).Visible = True
         frmMain.COPIAR_GRH(11).Visible = True
         frmMain.COPIAR_GRH(12).Visible = True
+        frmMain.lvlMapaCompleto.Visible = True
     Else
         frmMain.COPIAR_GRH(4).Visible = False
         frmMain.COPIAR_GRH(5).Visible = False
@@ -6350,6 +6410,7 @@ On Error GoTo Error
         frmMain.COPIAR_GRH(10).Visible = False
         frmMain.COPIAR_GRH(11).Visible = False
         frmMain.COPIAR_GRH(12).Visible = False
+        frmMain.lvlMapaCompleto.Visible = False
     End If
 
     frmMain.OpcBorde.Visible = True

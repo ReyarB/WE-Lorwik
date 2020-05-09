@@ -197,6 +197,7 @@ Public Sub VerFuncion(ByVal Numero As Byte, ByVal Ver As Boolean, Optional Norma
                 frmMain.COPIAR_GRH(10).Visible = True
                 frmMain.COPIAR_GRH(11).Visible = True
                 frmMain.COPIAR_GRH(12).Visible = True
+                frmMain.lvlMapaCompleto.Visible = True
             Else
                 frmMain.COPIAR_GRH(4).Visible = False
                 frmMain.COPIAR_GRH(5).Visible = False
@@ -207,6 +208,7 @@ Public Sub VerFuncion(ByVal Numero As Byte, ByVal Ver As Boolean, Optional Norma
                 frmMain.COPIAR_GRH(10).Visible = False
                 frmMain.COPIAR_GRH(11).Visible = False
                 frmMain.COPIAR_GRH(12).Visible = False
+                frmMain.lvlMapaCompleto.Visible = False
             End If
             frmMain.OpcBorde.Visible = True
             frmMain.OpcExit.Visible = True
