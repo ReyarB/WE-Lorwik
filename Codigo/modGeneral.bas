@@ -234,7 +234,7 @@ Private Sub CargarMapIni()
     IniPath = App.Path & "\"
 
     If FileExist(IniPath & "WorldEditor.ini", vbArchive) = False Then
-        MsgBox "Falta el archivo 'WorldEditor.ini' de configuraciï¿½n.", vbInformation
+        MsgBox "Falta el archivo 'WorldEditor.ini' de configuración.", vbInformation
         End
     End If
         
@@ -262,13 +262,13 @@ Private Sub CargarMapIni()
     DirGraficos = IniPath & "Recursos\Graficos\"
     Debug.Print DirGraficos
     If FileExist(DirGraficos, vbDirectory) = False Then
-        MsgBox "ï¿½Faltan los graficos!", vbCritical + vbOKOnly
+        MsgBox "¡Faltan los graficos!", vbCritical + vbOKOnly
         End
     End If
     
     DirIndex = IniPath & "Recursos\INIT\"
     If FileExist(DirIndex, vbDirectory) = False Then
-        MsgBox "ï¿½Falta el archivo Scripts.DRAG!", vbCritical + vbOKOnly
+        MsgBox "¡Falta el archivo Scripts.DRAG!", vbCritical + vbOKOnly
         End
     End If
     
@@ -303,14 +303,14 @@ Private Sub CargarMapIni()
     frmMain.cVerTriggers.value = frmMain.mnuVerTriggers.Checked
     frmMain.cVerBloqueos.value = frmMain.mnuVerBloqueos.Checked
     
-    ' Tamaï¿½o de visualizacion
+    ' Tamaño de visualizacion
     PantallaX = Val(Leer.GetValue("MOSTRAR", "PantallaX"))
     PantallaY = Val(Leer.GetValue("MOSTRAR", "PantallaY"))
     If PantallaX > 23 Or PantallaX <= 2 Then PantallaX = 23
     If PantallaY > 32 Or PantallaY <= 2 Then PantallaY = 32
     
     ' [GS] 02/10/06
-    ' Tamaï¿½o de visualizacion en el cliente
+    ' Tamaño de visualizacion en el cliente
     ClienteHeight = Val(Leer.GetValue("MOSTRAR", "ClienteHeight"))
     ClienteWidth = Val(Leer.GetValue("MOSTRAR", "ClienteWidth"))
     If ClienteHeight <= 0 Then ClienteHeight = 13
@@ -358,7 +358,7 @@ On Error Resume Next
             YMaxMapSize = 300
     
     If Not Engine_Init Then ' 30/05/2006
-        MsgBox "ï¿½No se ha logrado iniciar el engine grï¿½fico! Reinstale los ï¿½ltimos controladores de DirectX y actualize sus controladores de video.", vbCritical, "Saliendo"
+        MsgBox "¡No se ha logrado iniciar el engine gráfico! Reinstale los últimos controladores de DirectX y actualize sus controladores de video.", vbCritical, "Saliendo"
         End
     End If
     DoEvents
@@ -374,7 +374,7 @@ On Error Resume Next
         
     'End If
     frmCargando.SetFocus
-    frmCargando.X.Caption = "Iniciando Ventana de Ediciï¿½n..."
+    frmCargando.X.Caption = "Iniciando Ventana de Edición..."
     DoEvents
     frmCargando.Hide
     frmMain.Show
@@ -499,7 +499,7 @@ Sub AddtoRichTextBox(ByRef RichTextBox As RichTextBox, ByVal Text As String, Opt
 'Text box MUST be multiline and have a 3D
 'apperance!
 'Pablo (ToxicWaste) 01/26/2007 : Now the list refeshes properly.
-'Juan Martï¿½n Sotuyo Dodero (Maraxus) 03/29/2007 : Replaced ToxicWaste's code for extra performance.
+'Juan Martín Sotuyo Dodero (Maraxus) 03/29/2007 : Replaced ToxicWaste's code for extra performance.
 '******************************************r
     With RichTextBox
         If Len(.Text) > 1000 Then
