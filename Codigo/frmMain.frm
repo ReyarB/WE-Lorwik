@@ -62,14 +62,144 @@ Begin VB.Form frmMain
          Visible         =   0   'False
          Width           =   4095
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   495
+            Height          =   375
+            Index           =   8
+            Left            =   2400
+            TabIndex        =   192
+            Top             =   1920
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
+            Caption         =   "mapa 1"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   375
+            Index           =   9
+            Left            =   2400
+            TabIndex        =   193
+            Top             =   2280
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
+            Caption         =   "mapa 1"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   375
+            Index           =   10
+            Left            =   1200
+            TabIndex        =   194
+            Top             =   2640
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
+            Caption         =   "mapa 1"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   375
+            Index           =   11
+            Left            =   1800
+            TabIndex        =   195
+            Top             =   2640
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
+            Caption         =   "mapa 1"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   375
+            Index           =   12
+            Left            =   2400
+            TabIndex        =   196
+            Top             =   2640
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
+            Caption         =   "mapa 1"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   375
             Index           =   5
-            Left            =   2040
+            Left            =   1800
             TabIndex        =   189
-            Top             =   2040
-            Width           =   855
-            _ExtentX        =   1508
-            _ExtentY        =   873
+            Top             =   1920
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
             Caption         =   "mapa 2"
             CapAlign        =   2
             BackStyle       =   2
@@ -88,14 +218,14 @@ Begin VB.Form frmMain
             cBack           =   -2147483633
          End
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   495
+            Height          =   375
             Index           =   6
             Left            =   1200
             TabIndex        =   190
-            Top             =   2520
-            Width           =   855
-            _ExtentX        =   1508
-            _ExtentY        =   873
+            Top             =   2280
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
             Caption         =   "mapa 3"
             CapAlign        =   2
             BackStyle       =   2
@@ -114,14 +244,14 @@ Begin VB.Form frmMain
             cBack           =   -2147483633
          End
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   495
+            Height          =   375
             Index           =   7
-            Left            =   2040
+            Left            =   1800
             TabIndex        =   191
-            Top             =   2520
-            Width           =   855
-            _ExtentX        =   1508
-            _ExtentY        =   873
+            Top             =   2280
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
             Caption         =   "mapa 4"
             CapAlign        =   2
             BackStyle       =   2
@@ -140,14 +270,14 @@ Begin VB.Form frmMain
             cBack           =   -2147483633
          End
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   495
+            Height          =   375
             Index           =   4
             Left            =   1200
             TabIndex        =   188
-            Top             =   2040
-            Width           =   855
-            _ExtentX        =   1508
-            _ExtentY        =   873
+            Top             =   1920
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
             Caption         =   "mapa 1"
             CapAlign        =   2
             BackStyle       =   2
@@ -209,7 +339,7 @@ Begin VB.Form frmMain
             Height          =   375
             Left            =   1200
             TabIndex        =   174
-            Top             =   1560
+            Top             =   1440
             Width           =   1815
          End
          Begin VB.TextBox TXTArriba 
@@ -3846,6 +3976,7 @@ Begin VB.Form frmMain
       _ExtentY        =   2037
       _Version        =   393217
       BackColor       =   16777215
+      Enabled         =   -1  'True
       ReadOnly        =   -1  'True
       ScrollBars      =   2
       DisableNoScroll =   -1  'True
@@ -5131,6 +5262,11 @@ Private Sub COPIAR_GRH_Click(index As Integer)
     frmMain.COPIAR_GRH(5).Visible = False
     frmMain.COPIAR_GRH(6).Visible = False
     frmMain.COPIAR_GRH(7).Visible = False
+    frmMain.COPIAR_GRH(8).Visible = False
+    frmMain.COPIAR_GRH(9).Visible = False
+    frmMain.COPIAR_GRH(10).Visible = False
+    frmMain.COPIAR_GRH(11).Visible = False
+    frmMain.COPIAR_GRH(12).Visible = False
     frmMain.OpcBorde.Visible = False
     frmMain.OpcExit.Visible = False
     
@@ -5424,17 +5560,50 @@ Call Resolucion
             Call PegarMapa(100, 0)
             MapInfo.Changed = 1
             
-        Case 6 'Mapa entero en posicion 3
+        Case 8 'Mapa entero en posicion 3
+        
+            Call BorrarMapa(200, 0)
+            Call PegarMapa(200, 0)
+            MapInfo.Changed = 1
+            
+        Case 6 'Mapa entero en posicion 4
         
             Call BorrarMapa(0, 100)
             Call PegarMapa(0, 100)
             MapInfo.Changed = 1
             
-        Case 7 'Mapa entero en posicion 3
+        Case 7 'Mapa entero en posicion 5
         
             Call BorrarMapa(100, 100)
             Call PegarMapa(100, 100)
             MapInfo.Changed = 1
+            
+        Case 9 'Mapa entero en posicion 6
+        
+            Call BorrarMapa(200, 100)
+            Call PegarMapa(200, 100)
+            MapInfo.Changed = 1
+        MapInfo.Changed = 1
+        
+        Case 10 'Mapa entero en posicion 7
+        
+            Call BorrarMapa(0, 200)
+            Call PegarMapa(0, 200)
+            MapInfo.Changed = 1
+            
+        Case 11 'Mapa entero en posicion 8
+        
+            Call BorrarMapa(100, 200)
+            Call PegarMapa(100, 200)
+            MapInfo.Changed = 1
+            
+        Case 12 'Mapa entero en posicion 9
+        
+            Call BorrarMapa(200, 200)
+            Call PegarMapa(200, 200)
+            MapInfo.Changed = 1
+        MapInfo.Changed = 1
+
             
     End Select
     
@@ -5910,6 +6079,11 @@ Private Sub OptX_Click(index As Integer)
             frmMain.COPIAR_GRH(5).Visible = False
             frmMain.COPIAR_GRH(6).Visible = False
             frmMain.COPIAR_GRH(7).Visible = False
+            frmMain.COPIAR_GRH(8).Visible = False
+            frmMain.COPIAR_GRH(9).Visible = False
+            frmMain.COPIAR_GRH(10).Visible = False
+            frmMain.COPIAR_GRH(11).Visible = False
+            frmMain.COPIAR_GRH(12).Visible = False
         End If
         
         Case 1
@@ -5920,6 +6094,11 @@ Private Sub OptX_Click(index As Integer)
             frmMain.COPIAR_GRH(5).Visible = True
             frmMain.COPIAR_GRH(6).Visible = True
             frmMain.COPIAR_GRH(7).Visible = True
+            frmMain.COPIAR_GRH(8).Visible = True
+            frmMain.COPIAR_GRH(9).Visible = True
+            frmMain.COPIAR_GRH(10).Visible = True
+            frmMain.COPIAR_GRH(11).Visible = True
+            frmMain.COPIAR_GRH(12).Visible = True
         End If
     
        End Select
@@ -6156,11 +6335,21 @@ On Error GoTo Error
         frmMain.COPIAR_GRH(5).Visible = True
         frmMain.COPIAR_GRH(6).Visible = True
         frmMain.COPIAR_GRH(7).Visible = True
+        frmMain.COPIAR_GRH(8).Visible = True
+        frmMain.COPIAR_GRH(9).Visible = True
+        frmMain.COPIAR_GRH(10).Visible = True
+        frmMain.COPIAR_GRH(11).Visible = True
+        frmMain.COPIAR_GRH(12).Visible = True
     Else
         frmMain.COPIAR_GRH(4).Visible = False
         frmMain.COPIAR_GRH(5).Visible = False
         frmMain.COPIAR_GRH(6).Visible = False
         frmMain.COPIAR_GRH(7).Visible = False
+        frmMain.COPIAR_GRH(8).Visible = False
+        frmMain.COPIAR_GRH(9).Visible = False
+        frmMain.COPIAR_GRH(10).Visible = False
+        frmMain.COPIAR_GRH(11).Visible = False
+        frmMain.COPIAR_GRH(12).Visible = False
     End If
 
     frmMain.OpcBorde.Visible = True
@@ -7267,8 +7456,8 @@ Dim X As Integer, Y As Integer
     For X = 1 To 100
         For Y = 1 To 100
         
-            If OffsetX + X > 0 And OffsetX + X < 201 Then
-              If OffsetY + Y > 0 And OffsetY + Y < 201 Then
+            If OffsetX + X > 0 And OffsetX + X < 301 Then
+              If OffsetY + Y > 0 And OffsetY + Y < 301 Then
               
                 With MapData(X + OffsetX, Y + OffsetY)
     
