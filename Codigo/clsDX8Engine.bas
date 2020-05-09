@@ -493,7 +493,7 @@ On Error Resume Next
     If Grh.GrhIndex = 0 Then Exit Sub
     
     If Grh.GrhIndex > GrhCount Or GrhData(Grh.GrhIndex).NumFrames = 0 And GrhData(Grh.GrhIndex).FileNum = 0 Then
-        Call InitGrh(Grh, 32179)' 23829
+        Call InitGrh(Grh, 32179) ' 23829
         Call AddtoRichTextBox(frmMain.StatTxt, "Error en Grh. Posicion: X:" & map_x & " Y:" & map_y, 255, 0, 0)
     End If
     
@@ -1116,8 +1116,8 @@ Public Sub MapCapture(ByRef Format As Boolean)
                 re.Right = 6400
                 frmRender.picMap.Height = 1000
                 frmRender.picMap.Width = 1000
-                frmRender.Height = 16000
-                frmRender.Width = 16000
+                frmRender.Height = 24000
+                frmRender.Width = 24000
                 
             Case 1 'Modificado por ReyarB para generar minimapas
                 re.Left = 0
@@ -1126,7 +1126,7 @@ Public Sub MapCapture(ByRef Format As Boolean)
                 re.Right = 3200
                 frmRender.picMap.Height = 100
                 frmRender.picMap.Width = 100
-                frmRender.Height = 6000
+                frmRender.Height = 3000
                 frmRender.Width = 12000
         End Select
 

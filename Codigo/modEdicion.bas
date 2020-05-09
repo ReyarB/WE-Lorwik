@@ -1169,10 +1169,10 @@ Sub ClickEdit(Button As Integer, tX As Integer, tY As Integer)
             If Val(frmMain.tTMapa.Text) < 0 Or Val(frmMain.tTMapa.Text) > 9000 Then
                 MsgBox "Valor de Mapa invalido", vbCritical + vbOKOnly
                 Exit Sub
-            ElseIf Val(frmMain.tTX.Text) < 0 Or Val(frmMain.tTX.Text) > 200 Then
+            ElseIf Val(frmMain.tTX.Text) < 0 Or Val(frmMain.tTX.Text) > 300 Then
                 MsgBox "Valor de X invalido", vbCritical + vbOKOnly
                 Exit Sub
-            ElseIf Val(frmMain.tTY.Text) < 0 Or Val(frmMain.tTY.Text) > 200 Then
+            ElseIf Val(frmMain.tTY.Text) < 0 Or Val(frmMain.tTY.Text) > 300 Then
                 MsgBox "Valor de Y invalido", vbCritical + vbOKOnly
                 Exit Sub
             End If
