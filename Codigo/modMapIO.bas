@@ -866,7 +866,7 @@ For loopc = Len(Left(Map, Len(Map) - 4)) To 1 Step -1
         Exit For
     End If
 Next
-For loopc = (NumMap_Save - 7) To (NumMap_Save + 10)
+For loopc = (NumMap_Save - 7) To (NumMap_Save + 8)
         If FileExist(PATH_Save & NameMap_Save & loopc & formato, vbArchive) = True Then
             frmMain.MapPest(loopc - NumMap_Save + 7).Visible = True
             frmMain.MapPest(loopc - NumMap_Save + 7).Enabled = True
