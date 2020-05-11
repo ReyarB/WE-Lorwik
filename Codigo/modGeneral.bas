@@ -352,10 +352,10 @@ On Error Resume Next
     
     frmCargando.X.Caption = "Indexando Cargado de Imagenes..."
     
-    'Lorwik> Arrancamos en 300x300
+    'Lorwik> Arrancamos en 200x200
 
-            XMaxMapSize = 300
-            YMaxMapSize = 300
+            XMaxMapSize = 200
+            YMaxMapSize = 200
     
     If Not Engine_Init Then ' 30/05/2006
         MsgBox "¡No se ha logrado iniciar el engine gráfico! Reinstale los últimos controladores de DirectX y actualize sus controladores de video.", vbCritical, "Saliendo"
