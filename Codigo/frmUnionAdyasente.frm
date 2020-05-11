@@ -1292,7 +1292,7 @@ Private Sub PosLim_KeyUp(index As Integer, KeyCode As Integer, Shift As Integer)
 '*************************************************
 On Error Resume Next
 If LenB(PosLim(index).Text) = 0 Then PosLim(index).Text = 1
-If PosLim(index).Text > 200 Then PosLim(index) = 200 'ReyarB prueba 1
+If PosLim(index).Text > XMaxMapSize Then PosLim(index) = XMaxMapSize 'ReyarB prueba 1
 If PosLim(index).Text < 1 Then PosLim(index) = 1
 
 Dim Y As Integer

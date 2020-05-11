@@ -55,22 +55,199 @@ Begin VB.Form frmMain
          Appearance      =   0  'Flat
          BackColor       =   &H00000000&
          ForeColor       =   &H00FFFFFF&
-         Height          =   3975
+         Height          =   5415
          Left            =   120
          TabIndex        =   99
          Top             =   120
          Visible         =   0   'False
          Width           =   4095
+         Begin VB.CommandButton cmdIrAlMapa 
+            Caption         =   "Ir al Mapa"
+            Height          =   375
+            Left            =   2520
+            TabIndex        =   199
+            Top             =   4920
+            Width           =   1335
+         End
+         Begin VB.TextBox TxtMapa 
+            Height          =   285
+            Left            =   1440
+            TabIndex        =   197
+            Text            =   "1"
+            Top             =   4920
+            Width           =   735
+         End
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   495
+            Height          =   1455
+            Index           =   2
+            Left            =   3000
+            TabIndex        =   106
+            Top             =   960
+            Width           =   975
+            _ExtentX        =   1720
+            _ExtentY        =   2566
+            Caption         =   "Pegar mapa Este"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   375
+            Index           =   8
+            Left            =   2520
+            TabIndex        =   192
+            Top             =   3600
+            Visible         =   0   'False
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
+            Caption         =   "3"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   375
+            Index           =   9
+            Left            =   2520
+            TabIndex        =   193
+            Top             =   3960
+            Visible         =   0   'False
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
+            Caption         =   "6"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   375
+            Index           =   10
+            Left            =   1320
+            TabIndex        =   194
+            Top             =   4320
+            Visible         =   0   'False
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
+            Caption         =   "7"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   375
+            Index           =   11
+            Left            =   1920
+            TabIndex        =   195
+            Top             =   4320
+            Visible         =   0   'False
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
+            Caption         =   "8"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   375
+            Index           =   12
+            Left            =   2520
+            TabIndex        =   196
+            Top             =   4320
+            Visible         =   0   'False
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
+            Caption         =   "9"
+            CapAlign        =   2
+            BackStyle       =   2
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Times New Roman"
+               Size            =   9
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            cGradient       =   0
+            Mode            =   0
+            Value           =   0   'False
+            cBack           =   -2147483633
+         End
+         Begin WorldEditor.lvButtons_H COPIAR_GRH 
+            Height          =   375
             Index           =   5
-            Left            =   2040
+            Left            =   1920
             TabIndex        =   189
-            Top             =   2040
-            Width           =   855
-            _ExtentX        =   1508
-            _ExtentY        =   873
-            Caption         =   "mapa 2"
+            Top             =   3600
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
+            Caption         =   "2"
             CapAlign        =   2
             BackStyle       =   2
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -88,15 +265,15 @@ Begin VB.Form frmMain
             cBack           =   -2147483633
          End
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   495
+            Height          =   375
             Index           =   6
-            Left            =   1200
+            Left            =   1320
             TabIndex        =   190
-            Top             =   2520
-            Width           =   855
-            _ExtentX        =   1508
-            _ExtentY        =   873
-            Caption         =   "mapa 3"
+            Top             =   3960
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
+            Caption         =   "3"
             CapAlign        =   2
             BackStyle       =   2
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -114,15 +291,15 @@ Begin VB.Form frmMain
             cBack           =   -2147483633
          End
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   495
+            Height          =   375
             Index           =   7
-            Left            =   2040
+            Left            =   1920
             TabIndex        =   191
-            Top             =   2520
-            Width           =   855
-            _ExtentX        =   1508
-            _ExtentY        =   873
-            Caption         =   "mapa 4"
+            Top             =   3960
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
+            Caption         =   "4"
             CapAlign        =   2
             BackStyle       =   2
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -140,15 +317,15 @@ Begin VB.Form frmMain
             cBack           =   -2147483633
          End
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   495
+            Height          =   375
             Index           =   4
-            Left            =   1200
+            Left            =   1320
             TabIndex        =   188
-            Top             =   2040
-            Width           =   855
-            _ExtentX        =   1508
-            _ExtentY        =   873
-            Caption         =   "mapa 1"
+            Top             =   3600
+            Width           =   495
+            _ExtentX        =   873
+            _ExtentY        =   661
+            Caption         =   "1"
             CapAlign        =   2
             BackStyle       =   2
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -166,14 +343,14 @@ Begin VB.Form frmMain
             cBack           =   -2147483633
          End
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   2175
+            Height          =   1455
             Index           =   1
             Left            =   120
             TabIndex        =   105
             Top             =   960
             Width           =   975
             _ExtentX        =   1720
-            _ExtentY        =   3836
+            _ExtentY        =   2566
             Caption         =   "Pegar mapa Oeste"
             CapAlign        =   2
             BackStyle       =   2
@@ -198,7 +375,7 @@ Begin VB.Form frmMain
             Height          =   375
             Left            =   1200
             TabIndex        =   175
-            Top             =   1080
+            Top             =   1320
             Value           =   -1  'True
             Width           =   1815
          End
@@ -209,7 +386,7 @@ Begin VB.Form frmMain
             Height          =   375
             Left            =   1200
             TabIndex        =   174
-            Top             =   1560
+            Top             =   1680
             Width           =   1815
          End
          Begin VB.TextBox TXTArriba 
@@ -327,37 +504,11 @@ Begin VB.Form frmMain
             cBack           =   -2147483633
          End
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
-            Height          =   2175
-            Index           =   2
-            Left            =   3000
-            TabIndex        =   106
-            Top             =   960
-            Width           =   975
-            _ExtentX        =   1720
-            _ExtentY        =   3836
-            Caption         =   "Pegar mapa Este"
-            CapAlign        =   2
-            BackStyle       =   2
-            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-               Name            =   "Times New Roman"
-               Size            =   9
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            cGradient       =   0
-            Mode            =   0
-            Value           =   0   'False
-            cBack           =   -2147483633
-         End
-         Begin WorldEditor.lvButtons_H COPIAR_GRH 
             Height          =   735
             Index           =   0
             Left            =   120
             TabIndex        =   107
-            Top             =   3120
+            Top             =   2400
             Width           =   3855
             _ExtentX        =   6800
             _ExtentY        =   1296
@@ -379,14 +530,14 @@ Begin VB.Form frmMain
             cBack           =   -2147483633
          End
          Begin WorldEditor.lvButtons_H MemoriaAuxiliar 
-            Height          =   3615
+            Height          =   2895
             Left            =   120
             TabIndex        =   108
             Top             =   240
             Visible         =   0   'False
             Width           =   3855
             _ExtentX        =   6800
-            _ExtentY        =   6376
+            _ExtentY        =   5106
             Caption         =   "Copiar bordes del mapa en memoria auxiliar"
             CapAlign        =   2
             BackStyle       =   2
@@ -404,9 +555,19 @@ Begin VB.Form frmMain
             Value           =   0   'False
             cBack           =   16744576
          End
-         Begin VB.Label Label4 
+         Begin VB.Label lblIrMapa 
+            BackColor       =   &H80000007&
+            Caption         =   "Ir al Mapa"
+            ForeColor       =   &H8000000B&
+            Height          =   255
+            Left            =   360
+            TabIndex        =   198
+            Top             =   4920
+            Width           =   855
+         End
+         Begin VB.Label lvlMapaCompleto 
             BackStyle       =   0  'Transparent
-            Caption         =   "Estos valores se miden en Tiles y JAMAS podran superar los 200 tiles o estar por debajo de 1 tiles."
+            Caption         =   "Pegar mapa completo en Zona Nº"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -418,16 +579,15 @@ Begin VB.Form frmMain
             EndProperty
             ForeColor       =   &H00FFFFFF&
             Height          =   555
-            Left            =   480
+            Left            =   240
             TabIndex        =   110
-            Top             =   3360
-            Visible         =   0   'False
-            Width           =   3810
+            Top             =   3240
+            Width           =   1770
          End
          Begin VB.Label Label5 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "�ATENCION!"
+            Caption         =   "ï¿½ATENCION!"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -440,11 +600,11 @@ Begin VB.Form frmMain
             ForeColor       =   &H000000FF&
             Height          =   195
             Index           =   0
-            Left            =   360
+            Left            =   2400
             TabIndex        =   109
-            Top             =   3120
+            Top             =   3240
             Visible         =   0   'False
-            Width           =   1065
+            Width           =   1425
          End
       End
       Begin VB.Frame cLuces 
@@ -816,7 +976,7 @@ Begin VB.Form frmMain
                Width           =   1425
                _ExtentX        =   2514
                _ExtentY        =   635
-               Caption         =   "Ma�ana"
+               Caption         =   "Maï¿½ana"
                CapAlign        =   2
                BackStyle       =   2
                BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2832,13 +2992,22 @@ Begin VB.Form frmMain
       Top             =   12840
       Width           =   2295
       Begin VB.OptionButton OptX 
+         Caption         =   "300 x 300 (Continete)"
+         Height          =   255
+         Index           =   2
+         Left            =   120
+         TabIndex        =   200
+         Top             =   720
+         Width           =   2175
+      End
+      Begin VB.OptionButton OptX 
          BackColor       =   &H00FFFFFF&
          Caption         =   "200 x 200 (agrandado)"
          Height          =   195
          Index           =   1
          Left            =   120
          TabIndex        =   172
-         Top             =   720
+         Top             =   480
          Value           =   -1  'True
          Width           =   2055
       End
@@ -2849,7 +3018,7 @@ Begin VB.Form frmMain
          Index           =   0
          Left            =   120
          TabIndex        =   171
-         Top             =   360
+         Top             =   240
          Width           =   1695
       End
    End
@@ -3254,9 +3423,9 @@ Begin VB.Form frmMain
       ForeColor       =   &H80000008&
       Height          =   3000
       Left            =   120
-      ScaleHeight     =   198
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   200
+      ScaleHeight     =   300
+      ScaleMode       =   0  'User
+      ScaleWidth      =   300
       TabIndex        =   97
       Top             =   30
       Width           =   3023
@@ -3269,10 +3438,10 @@ Begin VB.Form frmMain
       End
       Begin VB.Shape Shape1 
          BorderColor     =   &H00FFFFFF&
-         Height          =   2850
-         Left            =   75
-         Top             =   75
-         Width           =   2850
+         Height          =   2895
+         Left            =   45
+         Top             =   45
+         Width           =   2895
       End
    End
    Begin VB.Frame Frame1 
@@ -3301,7 +3470,7 @@ Begin VB.Form frmMain
          Width           =   3015
          _ExtentX        =   5318
          _ExtentY        =   661
-         Caption         =   "&Informaci�n del Mapa"
+         Caption         =   "&Informaciï¿½n del Mapa"
          CapAlign        =   2
          BackStyle       =   2
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -3384,7 +3553,7 @@ Begin VB.Form frmMain
       Begin VB.Label lblFVersion 
          BackStyle       =   0  'Transparent
          BorderStyle     =   1  'Fixed Single
-         Caption         =   "Versi�n:"
+         Caption         =   "Versiï¿½n:"
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   8.25
@@ -4450,36 +4619,36 @@ Begin VB.Form frmMain
       End
    End
    Begin VB.Menu mnuEdicion 
-      Caption         =   "&Edici�n"
+      Caption         =   "&Ediciï¿½n"
       Begin VB.Menu cmdampliacion 
          Caption         =   "Ampliar Mapa"
       End
       Begin VB.Menu mnuComo 
-         Caption         =   "� Como seleccionar ? ---- Mantener SHIFT y arrastrar el cursor."
+         Caption         =   "ï¿½ Como seleccionar ? ---- Mantener SHIFT y arrastrar el cursor."
          Enabled         =   0   'False
       End
       Begin VB.Menu mnuCortar 
-         Caption         =   "C&ortar Selecci�n"
+         Caption         =   "C&ortar Selecciï¿½n"
          Shortcut        =   ^X
       End
       Begin VB.Menu mnuCopiar 
-         Caption         =   "&Copiar Selecci�n"
+         Caption         =   "&Copiar Selecciï¿½n"
          Shortcut        =   ^C
       End
       Begin VB.Menu mnuPegar 
-         Caption         =   "&Pegar Selecci�n"
+         Caption         =   "&Pegar Selecciï¿½n"
          Shortcut        =   ^V
       End
       Begin VB.Menu mnuBloquearS 
-         Caption         =   "&Bloquear Selecci�n"
+         Caption         =   "&Bloquear Selecciï¿½n"
          Shortcut        =   ^B
       End
       Begin VB.Menu mnuRealizarOperacion 
-         Caption         =   "&Realizar Operaci�n en Selecci�n"
+         Caption         =   "&Realizar Operaciï¿½n en Selecciï¿½n"
          Shortcut        =   ^D
       End
       Begin VB.Menu mnuDeshacerPegado 
-         Caption         =   "Deshacer P&egado de Selecci�n"
+         Caption         =   "Deshacer P&egado de Selecciï¿½n"
          Shortcut        =   ^S
       End
       Begin VB.Menu mnuLineEdicion0 
@@ -4494,7 +4663,7 @@ Begin VB.Form frmMain
          Checked         =   -1  'True
       End
       Begin VB.Menu mnuInfoMap 
-         Caption         =   "&Informaci�n del Mapa"
+         Caption         =   "&Informaciï¿½n del Mapa"
       End
       Begin VB.Menu mnuLineEdicion1 
          Caption         =   "-"
@@ -4595,14 +4764,14 @@ Begin VB.Form frmMain
          Caption         =   "Auto-Completar &Superficies"
       End
       Begin VB.Menu mnuAutoCapturarSuperficie 
-         Caption         =   "Auto-C&apturar informaci�n de la Superficie"
+         Caption         =   "Auto-C&apturar informaciï¿½n de la Superficie"
       End
       Begin VB.Menu mnuAutoCapturarTranslados 
-         Caption         =   "Auto-&Capturar informaci�n de los Translados"
+         Caption         =   "Auto-&Capturar informaciï¿½n de los Translados"
          Checked         =   -1  'True
       End
       Begin VB.Menu mnuAutoGuardarMapas 
-         Caption         =   "Configuraci�n de Auto-&Guardar Mapas"
+         Caption         =   "Configuraciï¿½n de Auto-&Guardar Mapas"
       End
    End
    Begin VB.Menu mnuVer 
@@ -4767,7 +4936,7 @@ Begin VB.Form frmMain
          Caption         =   "-"
       End
       Begin VB.Menu mnuGuardarUltimaConfig 
-         Caption         =   "&Guardar Ultima Configuraci�n"
+         Caption         =   "&Guardar Ultima Configuraciï¿½n"
       End
    End
    Begin VB.Menu mnuAyuda 
@@ -4830,7 +4999,7 @@ Private Sub PonerAlAzar(ByVal n As Integer, T As Byte)
 '*************************************************
 Dim objindex As Long
 Dim NPCIndex As Long
-Dim X, Y, i
+Dim X, y, i
 Dim Head As Integer
 Dim Body As Integer
 Dim Heading As Byte
@@ -4841,50 +5010,50 @@ modEdicion.Deshacer_Add "Aplicar " & IIf(T = 0, "Objetos", "NPCs") & " al Azar" 
 
 Do While i > 0
     X = CInt(RandomNumber(XMinMapSize, XMaxMapSize - 1))
-    Y = CInt(RandomNumber(YMinMapSize, YMaxMapSize - 1))
+    y = CInt(RandomNumber(YMinMapSize, YMaxMapSize - 1))
     
     Select Case T
         Case 0
-            If MapData(X, Y).OBJInfo.objindex = 0 Then
+            If MapData(X, y).OBJInfo.objindex = 0 Then
                   i = i - 1
                   If cInsertarBloqueo.value = True Then
-                    MapData(X, Y).blocked = 1
+                    MapData(X, y).blocked = 1
                   Else
-                    MapData(X, Y).blocked = 0
+                    MapData(X, y).blocked = 0
                   End If
                   If cNumFunc(2).Text > 0 Then
                       objindex = cNumFunc(2).Text
-                      InitGrh MapData(X, Y).ObjGrh, ObjData(objindex).GrhIndex
-                      MapData(X, Y).OBJInfo.objindex = objindex
-                      MapData(X, Y).OBJInfo.Amount = Val(cCantFunc(2).Text)
+                      InitGrh MapData(X, y).ObjGrh, ObjData(objindex).GrhIndex
+                      MapData(X, y).OBJInfo.objindex = objindex
+                      MapData(X, y).OBJInfo.Amount = Val(cCantFunc(2).Text)
                       Select Case ObjData(objindex).ObjType ' GS
                             Case 4, 8, 10, 22 ' Arboles, Carteles, Foros, Yacimientos
-                                MapData(X, Y).Graphic(3) = MapData(X, Y).ObjGrh
+                                MapData(X, y).Graphic(3) = MapData(X, y).ObjGrh
                       End Select
                   End If
             End If
         Case 1
-           If MapData(X, Y).blocked = 0 Then
+           If MapData(X, y).blocked = 0 Then
                   i = i - 1
                   If cNumFunc(T - 1).Text > 0 Then
                         NPCIndex = cNumFunc(T - 1).Text
                         Body = NpcData(NPCIndex).Body
                         Head = NpcData(NPCIndex).Head
                         Heading = NpcData(NPCIndex).Heading
-                        Call MakeChar(NextOpenChar(), Body, Head, Heading, CInt(X), CInt(Y))
-                        MapData(X, Y).NPCIndex = NPCIndex
+                        Call MakeChar(NextOpenChar(), Body, Head, Heading, CInt(X), CInt(y))
+                        MapData(X, y).NPCIndex = NPCIndex
                   End If
             End If
         Case 2
-           If MapData(X, Y).blocked = 0 Then
+           If MapData(X, y).blocked = 0 Then
                   i = i - 1
                   If cNumFunc(T - 1).Text >= 0 Then
                         NPCIndex = cNumFunc(T - 1).Text
                         Body = NpcData(NPCIndex).Body
                         Head = NpcData(NPCIndex).Head
                         Heading = NpcData(NPCIndex).Heading
-                        Call MakeChar(NextOpenChar(), Body, Head, Heading, CInt(X), CInt(Y))
-                        MapData(X, Y).NPCIndex = NPCIndex
+                        Call MakeChar(NextOpenChar(), Body, Head, Heading, CInt(X), CInt(y))
+                        MapData(X, y).NPCIndex = NPCIndex
                   End If
            End If
         End Select
@@ -4898,7 +5067,7 @@ Private Sub cAgregarFuncalAzar_Click(index As Integer)
 'Last modified: 20/05/06
 '*************************************************
 On Error Resume Next
-If IsNumeric(cCantFunc(index).Text) = False Or cCantFunc(index).Text > 200 Then
+If IsNumeric(cCantFunc(index).Text) = False Or cCantFunc(index).Text > 200 Then ' ver ReyarB
     MsgBox "El Valor de Cantidad introducido no es soportado!" & vbCrLf & "El valor maximo es 200.", vbCritical
     Exit Sub
 End If
@@ -5053,7 +5222,10 @@ End Sub
 
 
 
-
+Private Sub cmdIrAlMapa_Click()
+NumMap_Save = 7
+Call MapPest_Click(TxtMapa)
+End Sub
 
 Private Sub cQuitarLuz_Click()
 '*************************************************
@@ -5114,7 +5286,7 @@ End Sub
 '*******************************************************
 Private Sub COPIAR_GRH_Click(index As Integer)
 
-    Dim Y As Integer
+    Dim y As Integer
     Dim X As Integer
     Dim An As Integer
     Dim Bn As Integer
@@ -5132,6 +5304,12 @@ Private Sub COPIAR_GRH_Click(index As Integer)
     frmMain.COPIAR_GRH(5).Visible = False
     frmMain.COPIAR_GRH(6).Visible = False
     frmMain.COPIAR_GRH(7).Visible = False
+    frmMain.COPIAR_GRH(8).Visible = False
+    frmMain.COPIAR_GRH(9).Visible = False
+    frmMain.COPIAR_GRH(10).Visible = False
+    frmMain.COPIAR_GRH(11).Visible = False
+    frmMain.COPIAR_GRH(12).Visible = False
+    frmMain.lvlMapaCompleto.Visible = False
     frmMain.OpcBorde.Visible = False
     frmMain.OpcExit.Visible = False
     
@@ -5211,46 +5389,46 @@ Call Resolucion
         Call MapEspejo(Sur)
         
         
-            For Y = 1 To An  ' borrado
+            For y = 1 To An  ' borrado
                 For X = 1 To XMaxMapSize
                 
                     'Quitar NPCs
-                    If MapData(X, Y).NPCIndex > 0 Then
-                        EraseChar MapData(X, Y).CharIndex
-                        MapData(X, Y).NPCIndex = 0
+                    If MapData(X, y).NPCIndex > 0 Then
+                        EraseChar MapData(X, y).CharIndex
+                        MapData(X, y).NPCIndex = 0
                     End If
     
                     ' Quitar Objetos
-                    MapData(X, Y).OBJInfo.objindex = 0
-                    MapData(X, Y).OBJInfo.Amount = 0
-                    MapData(X, Y).ObjGrh.GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
+                    MapData(X, y).OBJInfo.Amount = 0
+                    MapData(X, y).ObjGrh.GrhIndex = 0
     
                     ' Quitar Triggers
-                    MapData(X, Y).Trigger = 0
+                    MapData(X, y).Trigger = 0
               
                     ' Quitar Graficos
-                    MapData(X, Y).Graphic(1).GrhIndex = 0
-                    MapData(X, Y).Graphic(2).GrhIndex = 0
-                    MapData(X, Y).Graphic(3).GrhIndex = 0
-                    MapData(X, Y).OBJInfo.objindex = 0
+                    MapData(X, y).Graphic(1).GrhIndex = 0
+                    MapData(X, y).Graphic(2).GrhIndex = 0
+                    MapData(X, y).Graphic(3).GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
 
                 Next
             Next
 
-            For Y = 1 To An
+            For y = 1 To An
                 For X = 1 To XMaxMapSize
-                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X, TXTArriba + Y).Graphic(1)
-                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X, TXTArriba + Y).Graphic(2)
-                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X, TXTArriba + Y).Graphic(3)
-                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X, TXTArriba + Y).Graphic(4)
-                    MapData(X, Y).Trigger = MapData_Adyacente(X, TXTArriba + Y).Trigger
-                    MapData(X, Y).ObjGrh = MapData_Adyacente(X, TXTArriba + Y).ObjGrh
-                    MapData(X, Y).OBJInfo = MapData_Adyacente(X, TXTArriba + Y).OBJInfo
+                    MapData(X, y).Graphic(1) = MapData_Adyacente(X, TXTArriba + y).Graphic(1)
+                    MapData(X, y).Graphic(2) = MapData_Adyacente(X, TXTArriba + y).Graphic(2)
+                    MapData(X, y).Graphic(3) = MapData_Adyacente(X, TXTArriba + y).Graphic(3)
+                    MapData(X, y).Graphic(4) = MapData_Adyacente(X, TXTArriba + y).Graphic(4)
+                    MapData(X, y).Trigger = MapData_Adyacente(X, TXTArriba + y).Trigger
+                    MapData(X, y).ObjGrh = MapData_Adyacente(X, TXTArriba + y).ObjGrh
+                    MapData(X, y).OBJInfo = MapData_Adyacente(X, TXTArriba + y).OBJInfo
 
                 Next
             Next
             MapInfo.Changed = 1
-            UserPos.Y = 12
+            UserPos.y = 12
 
         Case 1 'Oeste
         
@@ -5268,38 +5446,38 @@ Call Resolucion
         
         Call MapEspejo(Oeste)
         
-            For Y = 1 To YMaxMapSize
+            For y = 1 To YMaxMapSize
                 For X = Bn To XMaxMapSize
                     'Quitar NPCs
-                    If MapData(X, Y).NPCIndex > 0 Then
-                        EraseChar MapData(X, Y).CharIndex
-                        MapData(X, Y).NPCIndex = 0
+                    If MapData(X, y).NPCIndex > 0 Then
+                        EraseChar MapData(X, y).CharIndex
+                        MapData(X, y).NPCIndex = 0
                     End If
     
                     ' Quitar Objetos
-                    MapData(X, Y).OBJInfo.objindex = 0
-                    MapData(X, Y).OBJInfo.Amount = 0
-                    MapData(X, Y).ObjGrh.GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
+                    MapData(X, y).OBJInfo.Amount = 0
+                    MapData(X, y).ObjGrh.GrhIndex = 0
     
                     ' Quitar Triggers
-                    MapData(X, Y).Trigger = 0
+                    MapData(X, y).Trigger = 0
               
                     ' Quitar Graficos
-                    MapData(X, Y).Graphic(1).GrhIndex = 0
-                    MapData(X, Y).Graphic(2).GrhIndex = 0
-                    MapData(X, Y).Graphic(3).GrhIndex = 0
-                    MapData(X, Y).OBJInfo.objindex = 0
+                    MapData(X, y).Graphic(1).GrhIndex = 0
+                    MapData(X, y).Graphic(2).GrhIndex = 0
+                    MapData(X, y).Graphic(3).GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
                 Next
             Next
 
-            For Y = 1 To YMaxMapSize
+            For y = 1 To YMaxMapSize
                 For X = Bn To XMaxMapSize
-                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X - TxTDerecha, Y).Graphic(1)
-                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X - TxTDerecha, Y).Graphic(2)
-                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X - TxTDerecha, Y).Graphic(3)
-                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X - TxTDerecha, Y).Graphic(4)
-                    MapData(X, Y).ObjGrh = MapData_Adyacente(X - TxTDerecha, Y).ObjGrh
-                    MapData(X, Y).OBJInfo = MapData_Adyacente(X - TxTDerecha, Y).OBJInfo
+                    MapData(X, y).Graphic(1) = MapData_Adyacente(X - TxTDerecha, y).Graphic(1)
+                    MapData(X, y).Graphic(2) = MapData_Adyacente(X - TxTDerecha, y).Graphic(2)
+                    MapData(X, y).Graphic(3) = MapData_Adyacente(X - TxTDerecha, y).Graphic(3)
+                    MapData(X, y).Graphic(4) = MapData_Adyacente(X - TxTDerecha, y).Graphic(4)
+                    MapData(X, y).ObjGrh = MapData_Adyacente(X - TxTDerecha, y).ObjGrh
+                    MapData(X, y).OBJInfo = MapData_Adyacente(X - TxTDerecha, y).OBJInfo
 
                 Next
             Next
@@ -5322,38 +5500,38 @@ Call Resolucion
         
         Call MapEspejo(Este)
 
-            For Y = 1 To YMaxMapSize
+            For y = 1 To YMaxMapSize
                 For X = 1 To Cn
                     'Quitar NPCs
-                    If MapData(X, Y).NPCIndex > 0 Then
-                        EraseChar MapData(X, Y).CharIndex
-                        MapData(X, Y).NPCIndex = 0
+                    If MapData(X, y).NPCIndex > 0 Then
+                        EraseChar MapData(X, y).CharIndex
+                        MapData(X, y).NPCIndex = 0
                     End If
     
                     ' Quitar Objetos
-                    MapData(X, Y).OBJInfo.objindex = 0
-                    MapData(X, Y).OBJInfo.Amount = 0
-                    MapData(X, Y).ObjGrh.GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
+                    MapData(X, y).OBJInfo.Amount = 0
+                    MapData(X, y).ObjGrh.GrhIndex = 0
     
                     ' Quitar Triggers
-                    MapData(X, Y).Trigger = 0
+                    MapData(X, y).Trigger = 0
               
                     ' Quitar Graficos
-                    MapData(X, Y).Graphic(1).GrhIndex = 0
-                    MapData(X, Y).Graphic(2).GrhIndex = 0
-                    MapData(X, Y).Graphic(3).GrhIndex = 0
-                    MapData(X, Y).OBJInfo.objindex = 0
+                    MapData(X, y).Graphic(1).GrhIndex = 0
+                    MapData(X, y).Graphic(2).GrhIndex = 0
+                    MapData(X, y).Graphic(3).GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
                 Next
             Next
 
-            For Y = 1 To YMaxMapSize
+            For y = 1 To YMaxMapSize
                 For X = 1 To Cn
-                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X + TxTIzquierda, Y).Graphic(1)
-                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X + TxTIzquierda, Y).Graphic(2)
-                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X + TxTIzquierda, Y).Graphic(3)
-                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X + TxTIzquierda, Y).Graphic(4)
-                    MapData(X, Y).ObjGrh = MapData_Adyacente(X + TxTIzquierda, Y).ObjGrh
-                    MapData(X, Y).OBJInfo = MapData_Adyacente(X + TxTIzquierda, Y).OBJInfo
+                    MapData(X, y).Graphic(1) = MapData_Adyacente(X + TxTIzquierda, y).Graphic(1)
+                    MapData(X, y).Graphic(2) = MapData_Adyacente(X + TxTIzquierda, y).Graphic(2)
+                    MapData(X, y).Graphic(3) = MapData_Adyacente(X + TxTIzquierda, y).Graphic(3)
+                    MapData(X, y).Graphic(4) = MapData_Adyacente(X + TxTIzquierda, y).Graphic(4)
+                    MapData(X, y).ObjGrh = MapData_Adyacente(X + TxTIzquierda, y).ObjGrh
+                    MapData(X, y).OBJInfo = MapData_Adyacente(X + TxTIzquierda, y).OBJInfo
 
                 Next
             Next
@@ -5376,42 +5554,42 @@ Call Resolucion
         
         Call MapEspejo(Norte)
 
-            For Y = Dn To YMaxMapSize
+            For y = Dn To YMaxMapSize
                 For X = 1 To XMaxMapSize
                     'Quitar NPCs
-                    If MapData(X, Y).NPCIndex > 0 Then
-                        EraseChar MapData(X, Y).CharIndex
-                        MapData(X, Y).NPCIndex = 0
+                    If MapData(X, y).NPCIndex > 0 Then
+                        EraseChar MapData(X, y).CharIndex
+                        MapData(X, y).NPCIndex = 0
                     End If
     
                     ' Quitar Objetos
-                    MapData(X, Y).OBJInfo.objindex = 0
-                    MapData(X, Y).OBJInfo.Amount = 0
-                    MapData(X, Y).ObjGrh.GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
+                    MapData(X, y).OBJInfo.Amount = 0
+                    MapData(X, y).ObjGrh.GrhIndex = 0
     
                     ' Quitar Triggers
-                    MapData(X, Y).Trigger = 0
+                    MapData(X, y).Trigger = 0
               
                     ' Quitar Graficos
-                    MapData(X, Y).Graphic(1).GrhIndex = 0
-                    MapData(X, Y).Graphic(2).GrhIndex = 0
-                    MapData(X, Y).Graphic(3).GrhIndex = 0
-                    MapData(X, Y).OBJInfo.objindex = 0
+                    MapData(X, y).Graphic(1).GrhIndex = 0
+                    MapData(X, y).Graphic(2).GrhIndex = 0
+                    MapData(X, y).Graphic(3).GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
                 Next
             Next
-            For Y = Dn To YMaxMapSize
+            For y = Dn To YMaxMapSize
                 For X = 1 To XMaxMapSize
-                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(1)
-                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(2)
-                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(3)
-                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(4)
-                    MapData(X, Y).ObjGrh = MapData_Adyacente(X, Y - TxTAbajo).ObjGrh
-                    MapData(X, Y).OBJInfo = MapData_Adyacente(X, Y - TxTAbajo).OBJInfo
+                    MapData(X, y).Graphic(1) = MapData_Adyacente(X, y - TxTAbajo).Graphic(1)
+                    MapData(X, y).Graphic(2) = MapData_Adyacente(X, y - TxTAbajo).Graphic(2)
+                    MapData(X, y).Graphic(3) = MapData_Adyacente(X, y - TxTAbajo).Graphic(3)
+                    MapData(X, y).Graphic(4) = MapData_Adyacente(X, y - TxTAbajo).Graphic(4)
+                    MapData(X, y).ObjGrh = MapData_Adyacente(X, y - TxTAbajo).ObjGrh
+                    MapData(X, y).OBJInfo = MapData_Adyacente(X, y - TxTAbajo).OBJInfo
 
                 Next
             Next
             MapInfo.Changed = 1
-            UserPos.Y = 88
+            UserPos.y = 88
                        
         Case 4 'Mapa entero en posicion 1
         
@@ -5425,17 +5603,50 @@ Call Resolucion
             Call PegarMapa(100, 0)
             MapInfo.Changed = 1
             
-        Case 6 'Mapa entero en posicion 3
+        Case 8 'Mapa entero en posicion 3
+        
+            Call BorrarMapa(200, 0)
+            Call PegarMapa(200, 0)
+            MapInfo.Changed = 1
+            
+        Case 6 'Mapa entero en posicion 4
         
             Call BorrarMapa(0, 100)
             Call PegarMapa(0, 100)
             MapInfo.Changed = 1
             
-        Case 7 'Mapa entero en posicion 3
+        Case 7 'Mapa entero en posicion 5
         
             Call BorrarMapa(100, 100)
             Call PegarMapa(100, 100)
             MapInfo.Changed = 1
+            
+        Case 9 'Mapa entero en posicion 6
+        
+            Call BorrarMapa(200, 100)
+            Call PegarMapa(200, 100)
+            MapInfo.Changed = 1
+        MapInfo.Changed = 1
+        
+        Case 10 'Mapa entero en posicion 7
+        
+            Call BorrarMapa(0, 200)
+            Call PegarMapa(0, 200)
+            MapInfo.Changed = 1
+            
+        Case 11 'Mapa entero en posicion 8
+        
+            Call BorrarMapa(100, 200)
+            Call PegarMapa(100, 200)
+            MapInfo.Changed = 1
+            
+        Case 12 'Mapa entero en posicion 9
+        
+            Call BorrarMapa(200, 200)
+            Call PegarMapa(200, 200)
+            MapInfo.Changed = 1
+        MapInfo.Changed = 1
+
             
     End Select
     
@@ -5753,7 +5964,7 @@ Private Sub LvBAreas_Click(index As Integer)
        IsNumeric(DY1.Text) = False Or _
        IsNumeric(DY2.Text) = False Then
     
-        Call MsgBox("Debes introducir valores n�mericos. Estos pueden tener un m�nimo de 1 y un m�ximo de " & (YMinMapSize + XMinMapSize) / 2 & ".")
+        Call MsgBox("Debes introducir valores nï¿½mericos. Estos pueden tener un mï¿½nimo de 1 y un mï¿½ximo de " & (YMinMapSize + XMinMapSize) / 2 & ".")
     
        Exit Sub
     End If
@@ -5838,7 +6049,7 @@ If Len(Dialog.FileName) < 3 Then Exit Sub
     
     Call modMapIO.NuevoMapa
     
-    'Tambien podr� elegir CSM, pero no habra diferencia
+    'Tambien podrï¿½ elegir CSM, pero no habra diferencia
     If frmMain.Dialog.FilterIndex = 1 Then
         modMapIO.Cargar_CSM Dialog.FileName
     ElseIf frmMain.Dialog.FilterIndex = 2 Then
@@ -5898,7 +6109,7 @@ Private Sub OptX_Click(index As Integer)
 'Author: Lorwik
 'Last modified: 25/04/2020
 '*************************************************
-'Nota: Hay que cambiar muchas cosas, el engine cuando inicia hace calculos con el tama�o de los mapas
+'Nota: Hay que cambiar muchas cosas, el engine cuando inicia hace calculos con el tamaï¿½o de los mapas
 'ademas hay mas funciones que manejan estos datos, no basta con cambiar el XMax & YMax.
    Call Resolucion
       Select Case index
@@ -5906,21 +6117,51 @@ Private Sub OptX_Click(index As Integer)
         Case 0
             XMaxMapSize = 100
             YMaxMapSize = 100
-        If frmMain.CopyBorder.Visible = True Then
-            frmMain.COPIAR_GRH(4).Visible = False
-            frmMain.COPIAR_GRH(5).Visible = False
-            frmMain.COPIAR_GRH(6).Visible = False
-            frmMain.COPIAR_GRH(7).Visible = False
-        End If
+            frmMain.Minimap.ScaleHeight = 100
+            frmMain.Minimap.ScaleWidth = 100
+            If frmMain.CopyBorder.Visible = True Then
+                frmMain.COPIAR_GRH(4).Visible = False
+                frmMain.COPIAR_GRH(5).Visible = False
+                frmMain.COPIAR_GRH(6).Visible = False
+                frmMain.COPIAR_GRH(7).Visible = False
+                frmMain.COPIAR_GRH(8).Visible = False
+                frmMain.COPIAR_GRH(9).Visible = False
+                frmMain.COPIAR_GRH(10).Visible = False
+                frmMain.COPIAR_GRH(11).Visible = False
+                frmMain.COPIAR_GRH(12).Visible = False
+                frmMain.lvlMapaCompleto.Visible = False
+            
+            End If
         
         Case 1
             XMaxMapSize = 200
             YMaxMapSize = 200
+            frmMain.Minimap.ScaleHeight = 200
+            frmMain.Minimap.ScaleWidth = 200
+            If frmMain.CopyBorder.Visible = True Then
+                frmMain.COPIAR_GRH(4).Visible = True
+                frmMain.COPIAR_GRH(5).Visible = True
+                frmMain.COPIAR_GRH(6).Visible = True
+                frmMain.COPIAR_GRH(7).Visible = True
+            End If
+
+        Case 2
+            XMaxMapSize = 300
+            YMaxMapSize = 300
+            frmMain.Minimap.ScaleHeight = 300
+            frmMain.Minimap.ScaleWidth = 300
         If frmMain.CopyBorder.Visible = True Then
             frmMain.COPIAR_GRH(4).Visible = True
             frmMain.COPIAR_GRH(5).Visible = True
             frmMain.COPIAR_GRH(6).Visible = True
             frmMain.COPIAR_GRH(7).Visible = True
+            frmMain.COPIAR_GRH(8).Visible = True
+            frmMain.COPIAR_GRH(9).Visible = True
+            frmMain.COPIAR_GRH(10).Visible = True
+            frmMain.COPIAR_GRH(11).Visible = True
+            frmMain.COPIAR_GRH(12).Visible = True
+            frmMain.lvlMapaCompleto.Visible = True
+            
         End If
     
        End Select
@@ -5982,7 +6223,7 @@ Select Case UCase(Chr(KeyAscii))
 End Select
 End Sub
 
-Private Sub Form_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Form_MouseUp(Button As Integer, Shift As Integer, X As Single, y As Single)
     'If Seleccionando Then CopiarSeleccion
 End Sub
 
@@ -6033,7 +6274,7 @@ End If
 
 End Sub
 
-Private Sub lListado_MouseDown(index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub lListado_MouseDown(index As Integer, Button As Integer, Shift As Integer, X As Single, y As Single)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 29/05/06
@@ -6043,7 +6284,7 @@ If index = 3 And Button = 2 Then
 End If
 End Sub
 
-Private Sub lListado_MouseMove(index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub lListado_MouseMove(index As Integer, Button As Integer, Shift As Integer, X As Single, y As Single)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 22/05/06
@@ -6104,11 +6345,16 @@ Private Sub MapPest_Click(index As Integer)
 
         Dialog.FileName = PATH_Save & NameMap_Save & (index + NumMap_Save - 7) & formato
 
-        If FileSize(Dialog.FileName) > 200000 Then
+        If FileSize(Dialog.FileName) > 300000 Then
             'MsgBox "File Size =" & FileSize(Dialog.FileName), vbInformation
-            XMaxMapSize = 200
-            YMaxMapSize = 200
-            OptX(1).value = True
+            XMaxMapSize = 300
+            YMaxMapSize = 300
+            OptX(2).value = True
+        ElseIf FileSize(Dialog.FileName) > 200000 And FileSize(Dialog.FileName) < 300000 Then
+                'MsgBox "File Size =" & FileSize(Dialog.FileName), vbInformation
+                XMaxMapSize = 200
+                YMaxMapSize = 200
+                OptX(1).value = True
         Else
             'MsgBox "File Size =" & FileSize(Dialog.FileName), vbInformation
             XMaxMapSize = 100
@@ -6117,6 +6363,7 @@ Private Sub MapPest_Click(index As Integer)
         End If
         
         Call modMapIO.NuevoMapa
+        
         
         DoEvents
         Select Case frmMain.Dialog.FilterIndex
@@ -6132,7 +6379,7 @@ Private Sub MapPest_Click(index As Integer)
         EngineRun = True
         
     End If
-    
+Call ActualizaMinimap
         Exit Sub
     
 errhandler:
@@ -6157,11 +6404,17 @@ On Error GoTo Error
         frmMain.COPIAR_GRH(5).Visible = True
         frmMain.COPIAR_GRH(6).Visible = True
         frmMain.COPIAR_GRH(7).Visible = True
-    Else
+    ElseIf XMaxMapSize = 300 Then
         frmMain.COPIAR_GRH(4).Visible = False
         frmMain.COPIAR_GRH(5).Visible = False
         frmMain.COPIAR_GRH(6).Visible = False
         frmMain.COPIAR_GRH(7).Visible = False
+        frmMain.COPIAR_GRH(8).Visible = False
+        frmMain.COPIAR_GRH(9).Visible = False
+        frmMain.COPIAR_GRH(10).Visible = False
+        frmMain.COPIAR_GRH(11).Visible = False
+        frmMain.COPIAR_GRH(12).Visible = False
+        frmMain.lvlMapaCompleto.Visible = False
     End If
 
     frmMain.OpcBorde.Visible = True
@@ -6173,18 +6426,31 @@ On Error GoTo Error
 Error:
     Call AddtoRichTextBox(frmMain.StatTxt, "Error guardando mapa", 255, 0, 0)
 End Sub
-
-Private Sub minimap_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    If X < 11 Then X = 11
-    If X > 189 Then X = 189
-    If Y < 10 Then Y = 10
-    If Y > 192 Then Y = 192
+'*************************************************
+'Author: ^[GS]^
+'Modificado el 10/05/2020 por ReyarB
+'*************************************************
+Private Sub minimap_MouseDown(Button As Integer, Shift As Integer, X As Single, y As Single)
+If X < MinXBorder Then X = MinXBorder '11
+If X > MaxXBorder Then X = MaxXBorder '89
+If y < MinYBorder Then y = MinYBorder '10
+If y > MaxYBorder Then y = MaxYBorder '92
     
     UserPos.X = X
-    UserPos.Y = Y
+    UserPos.y = y
     
     Call ActualizaMinimap
 End Sub
+
+Private Sub minimap_MouseMove(Button As Integer, Shift As Integer, X As Single, y As Single)
+'*************************************************
+'Author: ^[GS]^
+'Modificado el 10/05/2020 por ReyarB
+'*************************************************
+MiRadarX = X
+MiRadarY = y
+End Sub
+
 
 Private Sub mnuAbrirMapaNew_Click()
 '*************************************************
@@ -6204,18 +6470,23 @@ If Len(Dialog.FileName) < 3 Then Exit Sub
         Call modGeneral.ToggleWalkMode
     End If
     
-        If FileSize(Dialog.FileName) > 200000 Then
+        If FileSize(Dialog.FileName) > 300000 Then
             'MsgBox "File Size =" & FileSize(Dialog.FileName), vbInformation
-            XMaxMapSize = 200
-            YMaxMapSize = 200
-            OptX(1).value = True
+            XMaxMapSize = 300
+            YMaxMapSize = 300
+            OptX(2).value = True
+        ElseIf FileSize(Dialog.FileName) > 200000 And FileSize(Dialog.FileName) < 300000 Then
+                'MsgBox "File Size =" & FileSize(Dialog.FileName), vbInformation
+                XMaxMapSize = 200
+                YMaxMapSize = 200
+                OptX(1).value = True
         Else
             'MsgBox "File Size =" & FileSize(Dialog.FileName), vbInformation
             XMaxMapSize = 100
             YMaxMapSize = 100
             OptX(0).value = True
         End If
-    
+           
     
     Call modMapIO.NuevoMapa
     If frmMain.Dialog.FilterIndex = 1 Then
@@ -6382,7 +6653,7 @@ Private Sub mnuBloquearS_Click()
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
-Call modEdicion.Deshacer_Add("Bloquear Selecci�n")
+Call modEdicion.Deshacer_Add("Bloquear Selecciï¿½n")
 Call BlockearSeleccion
 End Sub
 
@@ -6419,7 +6690,7 @@ Private Sub mnuCortar_Click()
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
-Call modEdicion.Deshacer_Add("Cortar Selecci�n")
+Call modEdicion.Deshacer_Add("Cortar Selecciï¿½n")
 Call CortarSeleccion
 End Sub
 
@@ -6436,7 +6707,7 @@ Private Sub mnuDeshacerPegado_Click()
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
-Call modEdicion.Deshacer_Add("Deshacer Pegado de Selecci�n")
+Call modEdicion.Deshacer_Add("Deshacer Pegado de Selecciï¿½n")
 Call DePegar
 End Sub
 
@@ -6518,6 +6789,7 @@ Private Sub mnuInsertarTransladosAdyasentes_Click()
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
+Call Resolucion
 frmUnionAdyacente.Show
 End Sub
 
@@ -6627,7 +6899,7 @@ Private Sub mnuPegar_Click()
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
-Call modEdicion.Deshacer_Add("Pegar Selecci�n")
+Call modEdicion.Deshacer_Add("Pegar Selecciï¿½n")
 Call PegarSeleccion
 End Sub
 
@@ -6850,7 +7122,7 @@ Private Sub mnuRealizarOperacion_Click()
 'Author: ^[GS]^
 'Ultima modificacion 08/05/2020 por ReyarB
 '*************************************************
-Call modEdicion.Deshacer_Add("Realizar Operaci�n en Selecci�n")
+Call modEdicion.Deshacer_Add("Realizar Operaciï¿½n en Selecciï¿½n")
 Call AccionSeleccion
 End Sub
 
@@ -7012,7 +7284,7 @@ cVerTriggers.value = (cVerTriggers.value = False)
 mnuVerTriggers.Checked = cVerTriggers.value
 End Sub
 
-Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, y As Single)
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06 - GS
@@ -7024,7 +7296,7 @@ Dim tY As Integer
 
 If Not MapaCargado Then Exit Sub
 
-ConvertCPtoTP X, Y, tX, tY
+ConvertCPtoTP X, y, tX, tY
 
 'If Shift = 1 And Button = 2 Then PegarSeleccion tX, tY: Exit Sub
 If Shift = 1 And Button = 1 Then
@@ -7039,13 +7311,13 @@ End If
 
 End Sub
 
-Private Sub Renderer_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    Call Form_MouseMove(Button, Shift, X, Y)
+Private Sub Renderer_MouseMove(Button As Integer, Shift As Integer, X As Single, y As Single)
+    Call Form_MouseMove(Button, Shift, X, y)
     MouseX = X
-    MouseY = Y
+    MouseY = y
 End Sub
 
-Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, y As Single)
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06 - GS
@@ -7058,7 +7330,7 @@ Dim tY As Integer
 If Not MapaCargado Then Exit Sub
 HotKeysAllow = True
 
-ConvertCPtoTP X, Y, tX, tY
+ConvertCPtoTP X, y, tX, tY
 
 PosX = "X: " & tX & " - Y: " & tY
 
@@ -7073,8 +7345,8 @@ Else
 End If
 End Sub
 
-Private Sub Renderer_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    Call Form_MouseDown(Button, Shift, X, Y)
+Private Sub Renderer_MouseDown(Button As Integer, Shift As Integer, X As Single, y As Single)
+    Call Form_MouseDown(Button, Shift, X, y)
     Call DibujarMiniMapa
 End Sub
 
@@ -7084,7 +7356,7 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 'Last modified: 24/11/08
 '*************************************************
 
-' Guardar configuraci�n
+' Guardar configuraciï¿½n
 WriteVar IniPath & "WorldEditor.ini", "CONFIGURACION", "GuardarConfig", IIf(frmMain.mnuGuardarUltimaConfig.Checked = True, "1", "0")
 If frmMain.mnuGuardarUltimaConfig.Checked = True Then
     WriteVar IniPath & "WorldEditor.ini", "PATH", "UltimoMapa", Dialog.FileName
@@ -7098,7 +7370,7 @@ If frmMain.mnuGuardarUltimaConfig.Checked = True Then
     WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "Triggers", IIf(frmMain.mnuVerTriggers.Checked = True, "1", "0")
     WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "Grilla", IIf(frmMain.mnuVerGrilla.Checked = True, "1", "0")
     WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "Bloqueos", IIf(frmMain.mnuVerBloqueos.Checked = True, "1", "0")
-    WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "LastPos", UserPos.X & "-" & UserPos.Y
+    WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "LastPos", UserPos.X & "-" & UserPos.y
     WriteVar IniPath & "WorldEditor.ini", "CONFIGURACION", "UtilizarDeshacer", IIf(frmMain.mnuUtilizarDeshacer.Checked = True, "1", "0")
     WriteVar IniPath & "WorldEditor.ini", "CONFIGURACION", "AutoCapturarTrans", IIf(frmMain.mnuAutoCapturarTranslados.Checked = True, "1", "0")
     WriteVar IniPath & "WorldEditor.ini", "CONFIGURACION", "AutoCapturarSup", IIf(frmMain.mnuAutoCapturarSuperficie.Checked = True, "1", "0")
@@ -7172,40 +7444,40 @@ End Sub
 ' Lee los traslados del mapa y retorna los mapas adyacentes o cero si no tiene en esa direccion
 Private Sub LeerAdyacentes(ByRef Norte As Integer, ByRef Sur As Integer, ByRef Este As Integer, ByRef Oeste As Integer)
     Dim X As Integer
-    Dim Y As Integer
+    Dim y As Integer
 
     ' Norte
-    Y = MinYBorder
+    y = MinYBorder
     For X = (MinXBorder + 1) To (MaxXBorder - 1)
-        If MapData(X, Y).TileExit.Map > 0 Then
-            Norte = MapData(X, Y).TileExit.Map
+        If MapData(X, y).TileExit.Map > 0 Then
+            Norte = MapData(X, y).TileExit.Map
             Exit For
         End If
     Next
 
     ' Este
     X = MaxXBorder
-    For Y = (MinYBorder + 1) To (MaxYBorder - 1)
-        If MapData(X, Y).TileExit.Map > 0 Then
-            Este = MapData(X, Y).TileExit.Map
+    For y = (MinYBorder + 1) To (MaxYBorder - 1)
+        If MapData(X, y).TileExit.Map > 0 Then
+            Este = MapData(X, y).TileExit.Map
             Exit For
         End If
     Next
 
     ' Sur
-    Y = MaxYBorder
+    y = MaxYBorder
     For X = (MinXBorder + 1) To (MaxXBorder - 1)
-        If MapData(X, Y).TileExit.Map > 0 Then
-            Sur = MapData(X, Y).TileExit.Map
+        If MapData(X, y).TileExit.Map > 0 Then
+            Sur = MapData(X, y).TileExit.Map
             Exit For
         End If
     Next
 
     ' Oeste
     X = MinXBorder
-    For Y = (MinYBorder + 1) To (MaxYBorder - 1)
-        If MapData(X, Y).TileExit.Map > 0 Then
-            Oeste = MapData(X, Y).TileExit.Map
+    For y = (MinYBorder + 1) To (MaxYBorder - 1)
+        If MapData(X, y).TileExit.Map > 0 Then
+            Oeste = MapData(X, y).TileExit.Map
             Exit For
         End If
     Next
@@ -7259,29 +7531,29 @@ Private Sub PegarMapa(ByVal mX As Integer, ByVal mY As Integer)
 On Error GoTo err
 Dim OffsetX As Integer
 Dim OffsetY As Integer
-Dim X As Integer, Y As Integer
+Dim X As Integer, y As Integer
 
 
     OffsetX = X + mX
-    OffsetY = Y + mY
+    OffsetY = y + mY
 
     For X = 1 To 100
-        For Y = 1 To 100
+        For y = 1 To 100
         
-            If OffsetX + X > 0 And OffsetX + X < 201 Then
-              If OffsetY + Y > 0 And OffsetY + Y < 201 Then
+            If OffsetX + X > 0 And OffsetX + X < 301 Then
+              If OffsetY + y > 0 And OffsetY + y < 301 Then
               
-                With MapData(X + OffsetX, Y + OffsetY)
+                With MapData(X + OffsetX, y + OffsetY)
     
-                    .Graphic(1) = MapData_Adyacente(X, Y).Graphic(1)
-                    .Graphic(2) = MapData_Adyacente(X, Y).Graphic(2)
-                    .Graphic(3) = MapData_Adyacente(X, Y).Graphic(3)
-                    .Graphic(4) = MapData_Adyacente(X, Y).Graphic(4)
-                    .blocked = MapData_Adyacente(X, Y).blocked
-                    .NPCIndex = MapData_Adyacente(X, Y).NPCIndex
-                    .Trigger = MapData_Adyacente(X, Y).Trigger
-                    .ObjGrh = MapData_Adyacente(X, Y).ObjGrh
-                    .OBJInfo = MapData_Adyacente(X, Y).OBJInfo
+                    .Graphic(1) = MapData_Adyacente(X, y).Graphic(1)
+                    .Graphic(2) = MapData_Adyacente(X, y).Graphic(2)
+                    .Graphic(3) = MapData_Adyacente(X, y).Graphic(3)
+                    .Graphic(4) = MapData_Adyacente(X, y).Graphic(4)
+                    .blocked = MapData_Adyacente(X, y).blocked
+                    .NPCIndex = MapData_Adyacente(X, y).NPCIndex
+                    .Trigger = MapData_Adyacente(X, y).Trigger
+                    .ObjGrh = MapData_Adyacente(X, y).ObjGrh
+                    .OBJInfo = MapData_Adyacente(X, y).OBJInfo
                 End With
               End If
             End If
@@ -7297,29 +7569,29 @@ End Sub
 Private Sub BorrarMapa(ByVal mX As Integer, ByVal mY As Integer)
 Dim GrhNull As Grh
 Dim ObjectNull As Obj
-Dim X As Integer, Y As Integer
+Dim X As Integer, y As Integer
 
-            For Y = 1 + mY To 100 + mY ' borrado
+            For y = 1 + mY To 100 + mY ' borrado
                 For X = 1 + mX To 100 + mX
 
                     'Quitar NPCs
-                    If MapData(X, Y).NPCIndex > 0 Then
-                        EraseChar MapData(X, Y).CharIndex
-                        MapData(X, Y).NPCIndex = 0
+                    If MapData(X, y).NPCIndex > 0 Then
+                        EraseChar MapData(X, y).CharIndex
+                        MapData(X, y).NPCIndex = 0
                     End If
                     ' Quitar Objetos
-                    MapData(X, Y).OBJInfo.objindex = 0
-                    MapData(X, Y).OBJInfo.Amount = 0
-                    MapData(X, Y).ObjGrh.GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
+                    MapData(X, y).OBJInfo.Amount = 0
+                    MapData(X, y).ObjGrh.GrhIndex = 0
                     ' Quitar Triggers
-                    MapData(X, Y).Trigger = 0
+                    MapData(X, y).Trigger = 0
                     ' Quitar Bloqueos
-                    MapData(X, Y).blocked = 0
+                    MapData(X, y).blocked = 0
                     ' Quitar Graficos
-                    MapData(X, Y).Graphic(1).GrhIndex = 0
-                    MapData(X, Y).Graphic(2).GrhIndex = 0
-                    MapData(X, Y).Graphic(3).GrhIndex = 0
-                    MapData(X, Y).Graphic(4).GrhIndex = 0
+                    MapData(X, y).Graphic(1).GrhIndex = 0
+                    MapData(X, y).Graphic(2).GrhIndex = 0
+                    MapData(X, y).Graphic(3).GrhIndex = 0
+                    MapData(X, y).Graphic(4).GrhIndex = 0
                     
                 Next
             Next
@@ -7328,19 +7600,20 @@ End Sub
 
 Private Sub BorrarBloqueos()
 Dim X As Integer
-Dim Y As Integer
+Dim y As Integer
     For X = XMinMapSize To XMaxMapSize
-        For Y = YMinMapSize To YMaxMapSize
+        For y = YMinMapSize To YMaxMapSize
         
-        If MapData(X, Y).Graphic(2).GrhIndex > 0 Or _
-           MapData(X, Y).Graphic(3).GrhIndex > 0 Or _
-           MapData(X, Y).Graphic(4).GrhIndex > 0 Or _
-           MapData(X, Y).OBJInfo.objindex > 0 Then GoTo Jump
+        If MapData(X, y).Graphic(2).GrhIndex > 0 Or _
+           MapData(X, y).Graphic(3).GrhIndex > 0 Or _
+           MapData(X, y).Graphic(4).GrhIndex > 0 Or _
+           MapData(X, y).OBJInfo.objindex > 0 Then GoTo Jump
         
-        If X >= 13 And Y >= 92 And Y <= 109 Then MapData(X, Y).blocked = 0
-        If X >= 89 And X <= 112 And Y >= 10 Then MapData(X, Y).blocked = 0
-'        If X >= 192 And X <= 208 And y >= 10 Then MapData(X, y).blocked = 0
-'        If X >= 10 And X <= 91 And y >= 182 And y <= 193 Then MapData(X, y).blocked = 0
+        If X >= 13 And y >= 92 And y <= 109 Then MapData(X, y).blocked = 0
+        If X >= 89 And X <= 112 And y >= 10 Then MapData(X, y).blocked = 0
+'        If X >= 192 And X <= 211 And y >= 10 Then MapData(X, y).blocked = 0
+'        If X >= 13 And X <= 92 And y >= 192 And y <= 193 Then MapData(X, y).blocked = 0
+
 '        If X >= 109 And X <= 191 And y >= 188 And y <= 193 Then MapData(X, y).blocked = 0
 '        If X >= 209 And X <= 274 And y >= 195 And y <= 206 Then MapData(X, y).blocked = 0
 '        If X >= 109 And X <= 192 Then MapData(X, y).blocked = 0

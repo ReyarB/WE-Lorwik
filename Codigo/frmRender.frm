@@ -322,6 +322,7 @@ End Sub
 Private Sub Command1_Click()
     Unload Me
 End Sub
+
 '******************************************************
 'Ultima modificacion 08/05/2020 por ReyarB
 '******************************************************

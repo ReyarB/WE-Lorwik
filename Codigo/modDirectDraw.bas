@@ -564,7 +564,31 @@ Dim loopc As Long
     frmMain.Minimap.Refresh
 End Sub
 Public Sub ActualizaMinimap()
-    frmMain.UserArea.Left = UserPos.X - 9
-    frmMain.UserArea.Top = UserPos.Y - 8
+'*************************************************
+'Author: ^[GS]^
+'Ultima modificacion 10-05-2020 ReyarB
+'*************************************************
+
+On Error Resume Next
+Dim loopc As Integer
+
+frmMain.UserArea.Move ((UserPos.X) - 8), ((UserPos.y) - 8)
+frmMain.Minimap.Cls
+
+For loopc = 1 To LastChar
+    If CharList(loopc).Active = 1 Then
+        MapData(CharList(loopc).Pos.X, CharList(loopc).Pos.y).CharIndex = loopc
+        If CharList(loopc).Heading <> 0 Then
+            frmMain.Minimap.ForeColor = vbGreen
+            frmMain.Minimap.Line (0 + CharList(loopc).Pos.X, 0 + CharList(loopc).Pos.y)-(2 + CharList(loopc).Pos.X, 0 + CharList(loopc).Pos.y)
+            frmMain.Minimap.Line (0 + CharList(loopc).Pos.X, 1 + CharList(loopc).Pos.y)-(2 + CharList(loopc).Pos.X, 1 + CharList(loopc).Pos.y)
+        End If
+    End If
+Next loopc
+
+bRefreshRadar = False
+' ver ReyarB
+'    frmMain.UserArea.Left = UserPos.X - 9
+'    frmMain.UserArea.Top = UserPos.y - 8
 End Sub
 '***********************************************************
