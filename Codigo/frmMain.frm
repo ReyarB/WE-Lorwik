@@ -500,9 +500,9 @@ Begin VB.Form frmMain
          End
          Begin WorldEditor.lvButtons_H COPIAR_GRH 
             Height          =   2175
-            Index           =   2
+            Index           =   1000
             Left            =   3000
-            TabIndex        =   106
+            TabIndex        =   200
             Top             =   960
             Width           =   975
             _ExtentX        =   1720
@@ -4027,7 +4027,6 @@ Begin VB.Form frmMain
       _ExtentY        =   2037
       _Version        =   393217
       BackColor       =   16777215
-      Enabled         =   -1  'True
       ReadOnly        =   -1  'True
       ScrollBars      =   2
       DisableNoScroll =   -1  'True
@@ -7600,3 +7599,28 @@ Jump:
     Next
 End Sub
 
+Private Sub Form_Resize()
+'***********************************************
+'Autor: Lorwik
+'Fecha: 11/05/2020
+'Descripcion: Ajusta los controles cuando se redimensiona la ventana
+'***********************************************
+
+    Me.Renderer.Width = Me.Width / 24
+    Me.Renderer.Height = Me.Height / 25
+    
+    StatTxt.Top = Me.Renderer.Height + 75
+    StatTxt.Width = Me.Renderer.Width - 255
+    
+    FraFormatoDel.Top = Me.Renderer.Height + 75
+    FraFormatoDel.Left = Me.Renderer.Width - 16
+
+    Picture2.Top = Me.Renderer.Height + 75
+    Picture2.Left = Me.Renderer.Width + 100
+    Picture1.Top = Me.Renderer.Height + 80
+    Picture1.Left = Me.Renderer.Width + 150
+
+    'Modificamos los parametros del engine
+    SetHalfWindowTileHeight (frmMain.Renderer.ScaleHeight)
+    SetHalfWindowTileWidth (frmMain.Renderer.ScaleWidth)
+End Sub

@@ -1758,3 +1758,18 @@ End Function
 ''''''''''''''''''''''''/[PARTICULAS]''''''''''''''''''''''''''''''
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+'***********************************************
+'Autor: Lorwik
+'Fecha: 11/05/2020
+'Descripcion: Ajusta los controles cuando se redimensiona la ventana
+'***********************************************
+
+
+Public Function SetHalfWindowTileHeight(ByVal Height As Integer)
+    HalfWindowTileHeight = (Height / 32) \ 2
+End Function
+    
+Public Function SetHalfWindowTileWidth(ByVal Width As Integer)
+    HalfWindowTileWidth = (Width / 32) \ 2
+End Function
