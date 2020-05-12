@@ -15,7 +15,7 @@ Private base_tile_size As Integer
 Private Type Particle
     friction As Single
     X As Single
-    Y As Single
+    y As Single
     vector_x As Single
     vector_y As Single
     angle As Single
@@ -271,8 +271,8 @@ On Local Error GoTo ErrorHandler
         .Windowed = True
         .SwapEffect = D3DSWAPEFFECT_COPY
         .BackBufferFormat = DispMode.Format
-        .BackBufferWidth = 6400
-        .BackBufferHeight = 6400
+        .BackBufferWidth = 3200 * 3
+        .BackBufferHeight = 3200 * 3
         .EnableAutoDepthStencil = 1
         .AutoDepthStencilFormat = D3DFMT_D16
         .hDeviceWindow = frmMain.Renderer.hWnd
@@ -328,7 +328,7 @@ On Local Error GoTo ErrorHandler
     ReDim MapData2(XMinMapSize To XMaxMapSize, YMinMapSize To YMaxMapSize) As MapBlock
     
     UserPos.X = 50
-    UserPos.Y = 50
+    UserPos.y = 50
     
     Call SurfaceDB.Init(D3DX, D3DDevice, General_Get_Free_Ram_Bytes)
     
@@ -431,12 +431,12 @@ Public Sub Engine_Deinit()
     End
 End Sub
 
-Private Function CreateTLVertex(X As Single, Y As Single, z As Single, rhw As Single, color As Long, Specular As Long, tu As Single, tv As Single) As TLVERTEX
+Private Function CreateTLVertex(X As Single, y As Single, z As Single, rhw As Single, color As Long, Specular As Long, tu As Single, tv As Single) As TLVERTEX
 '*****************************************************
 '****** Coded by Menduz (lord.yo.wo@gmail.com) *******
 '*****************************************************
     CreateTLVertex.X = X
-    CreateTLVertex.Y = Y
+    CreateTLVertex.y = y
     CreateTLVertex.z = z
     CreateTLVertex.rhw = rhw
     CreateTLVertex.color = color
@@ -455,13 +455,13 @@ Public Sub Engine_ActFPS()
     End If
 End Sub
 
-Function InMapBounds(X As Integer, Y As Integer) As Boolean
+Function InMapBounds(X As Integer, y As Integer) As Boolean
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06
 '*************************************************
 
-If X < XMinMapSize Or X > XMaxMapSize Or Y < YMinMapSize Or Y > YMaxMapSize Then
+If X < XMinMapSize Or X > XMaxMapSize Or y < YMinMapSize Or y > YMaxMapSize Then
     InMapBounds = False
     Exit Function
 End If
@@ -470,20 +470,20 @@ InMapBounds = True
 
 End Function
 
-Public Sub Draw_GrhIndex(ByVal grh_index As Integer, ByVal X As Integer, ByVal Y As Integer, ByRef Light() As Long)
+Public Sub Draw_GrhIndex(ByVal grh_index As Integer, ByVal X As Integer, ByVal y As Integer, ByRef Light() As Long)
 '********************************************
 'Dibuja desde un GrhIndex que le indiquemos
 '********************************************
     If grh_index <= 0 Then Exit Sub
     
     Device_Box_Textured_Render grh_index, _
-        X, Y, _
+        X, y, _
         GrhData(grh_index).pixelWidth, GrhData(grh_index).pixelHeight, _
         Light, _
         GrhData(grh_index).sX, GrhData(grh_index).sY
 End Sub
 
-Private Sub Draw_Grh(ByRef Grh As Grh, ByVal X As Integer, ByVal Y As Integer, ByVal Center As Byte, ByVal Animate As Byte, ByRef Light() As Long, Optional ByVal Alpha As Boolean, Optional ByVal map_x As Integer = 1, Optional ByVal map_y As Integer = 1, Optional ByVal angle As Single, Optional Transp As Byte = 255)
+Private Sub Draw_Grh(ByRef Grh As Grh, ByVal X As Integer, ByVal y As Integer, ByVal Center As Byte, ByVal Animate As Byte, ByRef Light() As Long, Optional ByVal Alpha As Boolean, Optional ByVal map_x As Integer = 1, Optional ByVal map_y As Integer = 1, Optional ByVal angle As Single, Optional Transp As Byte = 255)
 '**********************************************************
 'Dibuja desde un Grh, pero primero hay que iniciar el Grh
 '**********************************************************
@@ -524,12 +524,12 @@ On Error Resume Next
         End If
 
         If GrhData(Grh.GrhIndex).TileHeight <> 1 Then
-            Y = Y - Int(GrhData(CurrentGrhIndex).TileHeight * 32) + 32
+            y = y - Int(GrhData(CurrentGrhIndex).TileHeight * 32) + 32
         End If
     End If
 
     Device_Box_Textured_Render CurrentGrhIndex, _
-        X, Y, _
+        X, y, _
         GrhData(CurrentGrhIndex).pixelWidth, GrhData(CurrentGrhIndex).pixelHeight, _
         Light, _
         GrhData(CurrentGrhIndex).sX, GrhData(CurrentGrhIndex).sY, _
@@ -645,7 +645,7 @@ Private Sub Geometry_Create_Box(ByRef verts() As TLVERTEX, ByRef dest As RECT, B
  
 End Sub
 
-Private Function Geometry_Create_TLVertex(ByVal X As Single, ByVal Y As Single, ByVal z As Single, _
+Private Function Geometry_Create_TLVertex(ByVal X As Single, ByVal y As Single, ByVal z As Single, _
                                             ByVal rhw As Single, ByVal color As Long, ByVal Specular As Long, tu As Single, _
                                             ByVal tv As Single) As TLVERTEX
 '**************************************************************
@@ -653,7 +653,7 @@ Private Function Geometry_Create_TLVertex(ByVal X As Single, ByVal Y As Single, 
 'Last Modify Date: 10/07/2002
 '**************************************************************
     Geometry_Create_TLVertex.X = X
-    Geometry_Create_TLVertex.Y = Y
+    Geometry_Create_TLVertex.y = y
     Geometry_Create_TLVertex.z = z
     Geometry_Create_TLVertex.rhw = rhw
     Geometry_Create_TLVertex.color = color
@@ -769,15 +769,15 @@ Sub ShowNextFrame()
         End If
             
         '****** Move screen Up and Down if needed ******
-        If AddtoUserPos.Y <> 0 Then
-            OffsetCounterY = OffsetCounterY - ScrollPixelsPerFrameY * AddtoUserPos.Y * timerTicksPerFrame
-            If Abs(OffsetCounterY) >= Abs(32 * AddtoUserPos.Y) Then
+        If AddtoUserPos.y <> 0 Then
+            OffsetCounterY = OffsetCounterY - ScrollPixelsPerFrameY * AddtoUserPos.y * timerTicksPerFrame
+            If Abs(OffsetCounterY) >= Abs(32 * AddtoUserPos.y) Then
                 OffsetCounterY = 0
-                AddtoUserPos.Y = 0
+                AddtoUserPos.y = 0
             End If
         End If
         
-        Call RenderScreen(UserPos.X - AddtoUserPos.X, UserPos.Y - AddtoUserPos.Y, OffsetCounterX, OffsetCounterY)
+        Call RenderScreen(UserPos.X - AddtoUserPos.X, UserPos.y - AddtoUserPos.y, OffsetCounterX, OffsetCounterY)
 End Sub
 
 Sub RenderScreen(ByVal tilex As Integer, ByVal tiley As Integer, ByVal PixelOffsetX As Byte, ByVal PixelOffsetY As Byte)
@@ -788,7 +788,7 @@ Sub RenderScreen(ByVal tilex As Integer, ByVal tiley As Integer, ByVal PixelOffs
 'Renders everything to the viewport
 '**************************************************************
    
-    Dim Y                   As Integer     'Keeps track of where on map we are
+    Dim y                   As Integer     'Keeps track of where on map we are
     Dim X                   As Integer     'Keeps track of where on map we are
     Dim screenminY          As Integer  'Start Y pos on current screen
     Dim screenmaxY          As Integer  'End Y pos on current screen
@@ -857,19 +857,19 @@ Sub RenderScreen(ByVal tilex As Integer, ByVal tiley As Integer, ByVal PixelOffs
     GenerarVista
     
     'Draw floor layer
-    For Y = screenminY To screenmaxY
+    For y = screenminY To screenmaxY
         For X = screenminX To screenmaxX
             'Layer 1 **********************************
-            If InMapBounds(X, Y) Then
-                If MapData(X, Y).Graphic(1).GrhIndex And VerCapa1 Then
-                    Call Draw_Grh(MapData(X, Y).Graphic(1), _
+            If InMapBounds(X, y) Then
+                If MapData(X, y).Graphic(1).GrhIndex And VerCapa1 Then
+                    Call Draw_Grh(MapData(X, y).Graphic(1), _
                             (ScreenX - 1) * 32 + PixelOffsetX, _
                             (ScreenY - 1) * 32 + PixelOffsetY, _
-                            0, 1, MapData(X, Y).light_value, X, Y)
+                            0, 1, MapData(X, y).light_value, X, y)
                 End If
                 
-                If MapData(X, Y).Graphic(2).GrhIndex <> 0 And VerCapa2 Then
-                    Call Draw_Grh(MapData(X, Y).Graphic(2), (ScreenX - 1) * 32 + PixelOffsetX, (ScreenY - 1) * 32 + PixelOffsetY, 1, 1, MapData(X, Y).light_value, , X, Y)
+                If MapData(X, y).Graphic(2).GrhIndex <> 0 And VerCapa2 Then
+                    Call Draw_Grh(MapData(X, y).Graphic(2), (ScreenX - 1) * 32 + PixelOffsetX, (ScreenY - 1) * 32 + PixelOffsetY, 1, 1, MapData(X, y).light_value, , X, y)
                 End If
             End If
             '******************************************
@@ -879,35 +879,35 @@ Sub RenderScreen(ByVal tilex As Integer, ByVal tiley As Integer, ByVal PixelOffs
         'Reset ScreenX to original value and increment ScreenY
         ScreenX = ScreenX - X + screenminX
         ScreenY = ScreenY + 1
-    Next Y
+    Next y
     
 
     ScreenY = minYOffset - TileBufferSize
-    For Y = MinY To MaxY
+    For y = MinY To MaxY
         ScreenX = minXOffset - TileBufferSize
         For X = MinX To MaxX
-            If InMapBounds(X, Y) Then
+            If InMapBounds(X, y) Then
                 PixelOffsetXTemp = ScreenX * 32 + PixelOffsetX
                 PixelOffsetYTemp = ScreenY * 32 + PixelOffsetY
-                With MapData(X, Y)
+                With MapData(X, y)
                     '******************************************
     
                     'Object Layer **********************************
                     If .ObjGrh.GrhIndex <> 0 And VerObjetos Then
                         Call Draw_Grh(.ObjGrh, _
-                                PixelOffsetXTemp, PixelOffsetYTemp, 1, 1, MapData(X, Y).light_value, , X, Y)
+                                PixelOffsetXTemp, PixelOffsetYTemp, 1, 1, MapData(X, y).light_value, , X, y)
                     End If
                     
                     'Char layer ************************************
                     If .CharIndex <> 0 And VerNpcs Then
-                        Call CharRender(.CharIndex, PixelOffsetXTemp, PixelOffsetYTemp, X, Y)
+                        Call CharRender(.CharIndex, PixelOffsetXTemp, PixelOffsetYTemp, X, y)
                     End If
                     '*************************************************
        
                     'Layer 3 *****************************************
                     If .Graphic(3).GrhIndex <> 0 And VerCapa3 Then
                         Call Draw_Grh(.Graphic(3), _
-                                PixelOffsetXTemp, PixelOffsetYTemp, 1, 1, MapData(X, Y).light_value, , X, Y)
+                                PixelOffsetXTemp, PixelOffsetYTemp, 1, 1, MapData(X, y).light_value, , X, y)
                     End If
                     '************************************************
     
@@ -916,57 +916,57 @@ Sub RenderScreen(ByVal tilex As Integer, ByVal tiley As Integer, ByVal PixelOffs
             ScreenX = ScreenX + 1
         Next X
         ScreenY = ScreenY + 1
-    Next Y
+    Next y
     ScreenY = minYOffset - 5
     
         'Particulas ************************************************
     ScreenY = minYOffset - TileBufferSize
-        For Y = MinY To MaxY
+        For y = MinY To MaxY
             ScreenX = minXOffset - TileBufferSize
                 For X = MinX To MaxX
                     'Particulas**************************************
-                        If MapData(X, Y).particle_group_index Then _
-                            Particle_Group_Render MapData(X, Y).particle_group_index, ScreenX * 32 + PixelOffsetX, ScreenY * 32 + PixelOffsetY
+                        If MapData(X, y).particle_group_index Then _
+                            Particle_Group_Render MapData(X, y).particle_group_index, ScreenX * 32 + PixelOffsetX, ScreenY * 32 + PixelOffsetY
                     '************************************************
                 ScreenX = ScreenX + 1
             Next X
         ScreenY = ScreenY + 1
-    Next Y
+    Next y
     '***********************************************************
 
 'Draw blocked tiles and grid
 ScreenY = minYOffset - TileBufferSize
-For Y = MinY To MaxY
+For y = MinY To MaxY
     ScreenX = minXOffset - TileBufferSize
     For X = MinX To MaxX
     
         'Layer 4 **********************************
-        If MapData(X, Y).Graphic(4).GrhIndex And VerCapa4 And Not bTecho Then
-            Call Draw_Grh(MapData(X, Y).Graphic(4), _
+        If MapData(X, y).Graphic(4).GrhIndex And VerCapa4 And Not bTecho Then
+            Call Draw_Grh(MapData(X, y).Graphic(4), _
                 ScreenX * 32 + PixelOffsetX, _
                 ScreenY * 32 + PixelOffsetY, _
-                1, 1, MapData(X, Y).light_value, , X, Y)
+                1, 1, MapData(X, y).light_value, , X, y)
         End If
         '**********************************
-        If MapData(X, Y).TileExit.Map <> 0 And VerTranslados Then
+        If MapData(X, y).TileExit.Map <> 0 And VerTranslados Then
             Grh.GrhIndex = 3
             Grh.FrameCounter = 1
             Grh.Started = 0
             Call Draw_Grh(Grh, _
                 ScreenX * 32 + PixelOffsetX, _
                 ScreenY * 32 + PixelOffsetY, _
-                1, 1, LightIluminado(), True, X, Y)
+                1, 1, LightIluminado(), True, X, y)
         End If
         
         'Show blocked tiles
-        If VerBlockeados And MapData(X, Y).blocked = 1 Then
+        If VerBlockeados And MapData(X, y).blocked = 1 Then
             Grh.GrhIndex = 4
             Grh.FrameCounter = 1
             Grh.Started = 0
             Call Draw_Grh(Grh, _
                 ScreenX * 32 + PixelOffsetX, _
                 ScreenY * 32 + PixelOffsetY, _
-                1, 1, LightIluminado(), , X, Y)
+                1, 1, LightIluminado(), , X, y)
         End If
             
         If VerGrilla Then
@@ -976,25 +976,25 @@ For Y = MinY To MaxY
             Call Draw_Grh(Grh, _
                 ScreenX * 32 + PixelOffsetX, _
                 ScreenY * 32 + PixelOffsetY, _
-                1, 1, LightIluminado(), , X, Y)
+                1, 1, LightIluminado(), , X, y)
         End If
                       
         If VerTriggers Then '4978
-            If MapData(X, Y).Trigger > 0 Then _
+            If MapData(X, y).Trigger > 0 Then _
                 Texto.Engine_Text_Draw ScreenX * 32 + PixelOffsetX, _
-                        ScreenY * 32 + PixelOffsetY, MapData(X, Y).Trigger, vbWhite, , , 3
+                        ScreenY * 32 + PixelOffsetY, MapData(X, y).Trigger, vbWhite, , , 3
         End If
             
         If Seleccionando Then
-                If X >= SeleccionIX And Y >= SeleccionIY Then
-                    If X <= SeleccionFX And Y <= SeleccionFY Then
+                If X >= SeleccionIX And y >= SeleccionIY Then
+                    If X <= SeleccionFX And y <= SeleccionFY Then
                         Grh.GrhIndex = 23828
                         Grh.FrameCounter = 1
                         Grh.Started = 0
                         Call Draw_Grh(Grh, _
                         ScreenX * 32 + PixelOffsetX, _
                         ScreenY * 32 + PixelOffsetY, _
-                        1, 1, MapData(X, Y).light_value, , X, Y)
+                        1, 1, MapData(X, y).light_value, , X, y)
                     End If
                 End If
         End If
@@ -1002,11 +1002,11 @@ For Y = MinY To MaxY
         ScreenX = ScreenX + 1
     Next X
     ScreenY = ScreenY + 1
-Next Y
+Next y
  
 End Sub
 
-Private Sub CharRender(ByVal CharIndex As Long, ByVal PixelOffsetX As Integer, ByVal PixelOffsetY As Integer, ByVal X As Byte, ByVal Y As Byte)
+Private Sub CharRender(ByVal CharIndex As Long, ByVal PixelOffsetX As Integer, ByVal PixelOffsetY As Integer, ByVal X As Byte, ByVal y As Byte)
 '*******************************************************
 'Esto forma parte del RenderScreen.
 'Dibuja todo aquello que tenga cuerpo (por asi decirlo)
@@ -1041,7 +1041,7 @@ Private Sub CharRender(ByVal CharIndex As Long, ByVal PixelOffsetX As Integer, B
             
             'If needed, move up and down
             If .scrollDirectionY <> 0 Then
-                .MoveOffset.Y = .MoveOffset.Y + ScrollPixelsPerFrameY * Sgn(.scrollDirectionY) * timerTicksPerFrame
+                .MoveOffset.y = .MoveOffset.y + ScrollPixelsPerFrameY * Sgn(.scrollDirectionY) * timerTicksPerFrame
                 
                 'Start animations
 'TODO : Este parche es para evita los uncornos exploten al moverse!! REVER!!!
@@ -1052,9 +1052,9 @@ Private Sub CharRender(ByVal CharIndex As Long, ByVal PixelOffsetX As Integer, B
                 moved = True
                 
                 'Check if we already got there
-                If (Sgn(.scrollDirectionY) = 1 And .MoveOffset.Y >= 0) Or _
-                        (Sgn(.scrollDirectionY) = -1 And .MoveOffset.Y <= 0) Then
-                    .MoveOffset.Y = 0
+                If (Sgn(.scrollDirectionY) = 1 And .MoveOffset.y >= 0) Or _
+                        (Sgn(.scrollDirectionY) = -1 And .MoveOffset.y <= 0) Then
+                    .MoveOffset.y = 0
                     .scrollDirectionY = 0
                 End If
             End If
@@ -1071,13 +1071,13 @@ Private Sub CharRender(ByVal CharIndex As Long, ByVal PixelOffsetX As Integer, B
         End If
         
         PixelOffsetX = PixelOffsetX + .MoveOffset.X
-        PixelOffsetY = PixelOffsetY + .MoveOffset.Y
+        PixelOffsetY = PixelOffsetY + .MoveOffset.y
            
         movSpeed = 1.3
 
         'Dibujamos el cuerpo
         If .Body.Walk(.Heading).GrhIndex Then _
-            Call Draw_Grh(.Body.Walk(.Heading), PixelOffsetX, PixelOffsetY, 1, 1, LightIluminado(), , X, Y)
+            Call Draw_Grh(.Body.Walk(.Heading), PixelOffsetX, PixelOffsetY, 1, 1, LightIluminado(), , X, y)
         'Dibujamos la Cabeza
         'If .Head Then _
             Call Draw_Grh(.Head.Head(.Heading), PixelOffsetX + .Body.HeadOffset.X, PixelOffsetY + .Body.HeadOffset.Y, 1, 0, LightIluminado(), , X, Y)
@@ -1091,7 +1091,7 @@ Public Sub MapCapture(ByRef Format As Boolean)
           'Ultima modificacion 08/05/2020 por ReyarB
           '*************************************************
           Dim D3DWindow As D3DPRESENT_PARAMETERS
-          Dim Y As Byte     'Keeps track of where on map we are
+          Dim y As Byte     'Keeps track of where on map we are
           Dim X As Byte     'Keeps track of where on map we are
           
           Dim RX As Long
@@ -1138,19 +1138,19 @@ Public Sub MapCapture(ByRef Format As Boolean)
             D3DDevice.BeginScene
           'Draw floor layer
 
-          For Y = 1 To YMaxMapSize
+          For y = 1 To YMaxMapSize
                     For X = 1 To XMaxMapSize
                     
                               RX = X - 1
-                              RY = Y - 1
+                              RY = y - 1
                               
                               PosX = (RX - 1) * 32 + TilePixelWidth
                               PosY = (RY - 1) * 32 + TilePixelHeight
             
                               'Layer 1 **********************************
                               
-                              If (MapData(X, Y).Graphic(1).GrhIndex <> 0) And VerCapa1 Then
-                                Call Draw_Grh(MapData(X, Y).Graphic(1), PosX, PosY, 1, 1, MapData(X, Y).light_value())
+                              If (MapData(X, y).Graphic(1).GrhIndex <> 0) And VerCapa1 Then
+                                Call Draw_Grh(MapData(X, y).Graphic(1), PosX, PosY, 1, 1, MapData(X, y).light_value())
                               End If
 
                               '******************************************
@@ -1159,8 +1159,8 @@ Public Sub MapCapture(ByRef Format As Boolean)
             
                               'Layer 2 **********************************
 
-                              If (MapData(X, Y).Graphic(2).GrhIndex <> 0) And VerCapa2 Then
-                                Call Draw_Grh(MapData(X, Y).Graphic(2), PosX, PosY, 1, 1, MapData(X, Y).light_value())
+                              If (MapData(X, y).Graphic(2).GrhIndex <> 0) And VerCapa2 Then
+                                Call Draw_Grh(MapData(X, y).Graphic(2), PosX, PosY, 1, 1, MapData(X, y).light_value())
                               End If
 
                               '******************************************
@@ -1170,13 +1170,13 @@ Public Sub MapCapture(ByRef Format As Boolean)
 
                     
                               PixelOffsetXTemp = (X - 1) * 32 + TilePixelWidth
-                              PixelOffsetYTemp = (Y - 1) * 32 + TilePixelHeight
+                              PixelOffsetYTemp = (y - 1) * 32 + TilePixelHeight
             
-                              With MapData(X, Y)
+                              With MapData(X, y)
                                         'Object Layer **********************************
 
                                         If (.ObjGrh.GrhIndex <> 0) And VerObjetos Then
-                                                  Call Draw_Grh(.ObjGrh, (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 1, MapData(X, Y).light_value())
+                                                  Call Draw_Grh(.ObjGrh, (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 1, MapData(X, y).light_value())
                                         End If
 
                                         '***********************************************
@@ -1185,7 +1185,7 @@ Public Sub MapCapture(ByRef Format As Boolean)
                                           'Layer 3 *****************************************
 
                                         If (.Graphic(3).GrhIndex <> 0) And VerCapa3 Then
-                                                  Call Draw_Grh(.Graphic(3), (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 1, MapData(X, Y).light_value())
+                                                  Call Draw_Grh(.Graphic(3), (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 1, MapData(X, y).light_value())
                                         End If
 
                                         '************************************************
@@ -1204,12 +1204,12 @@ Public Sub MapCapture(ByRef Format As Boolean)
         
                                 Select Case Format
                                     Case 0
-                                       With MapData(X, Y)
+                                       With MapData(X, y)
                                                 'Layer 4 **********************************
         
                                                 If (.Graphic(4).GrhIndex <> 0) And VerCapa4 Then
                                                           'Draw
-                                                          Call Draw_Grh(.Graphic(4), (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 1, MapData(X, Y).light_value())
+                                                          Call Draw_Grh(.Graphic(4), (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 1, MapData(X, y).light_value())
                                                 End If
         
                                                 '**********************************
@@ -1217,7 +1217,7 @@ Public Sub MapCapture(ByRef Format As Boolean)
                                                 'frmRender.pgbProgress.value = frmRender.pgbProgress.value + 1
                                       End With
                                     Case 1
-                                      With MapData(X, Y)
+                                      With MapData(X, y)
                                       
                                                 'PixelOffsetXTemp = (X - 1) * 32 + TilePixelWidth
                                                 'PixelOffsetYTemp = (Y - 1) * 32 + TilePixelHeight
@@ -1229,7 +1229,7 @@ Public Sub MapCapture(ByRef Format As Boolean)
                                                 If (.TileExit.Map <> 0) And VerTranslados Then
                                                           Grh.GrhIndex = 3
         
-                                                          Call Draw_Grh(Grh, (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 0, MapData(X, Y).light_value())
+                                                          Call Draw_Grh(Grh, (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 0, MapData(X, y).light_value())
                                                 End If
         
                                                 'Show blocked tiles
@@ -1237,7 +1237,7 @@ Public Sub MapCapture(ByRef Format As Boolean)
                                                 If (.blocked = 1) And VerBlockeados Then
                                                           Grh.GrhIndex = 4
         
-                                                          Call Draw_Grh(Grh, (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 0, MapData(X, Y).light_value())
+                                                          Call Draw_Grh(Grh, (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 0, MapData(X, y).light_value())
                                                 End If
         
                                                 '******************************************
@@ -1252,7 +1252,7 @@ Public Sub MapCapture(ByRef Format As Boolean)
 
                       D3DDevice.Present re, ByVal 0, frmRender.picMap.hWnd, ByVal 0
                     Next X
-          Next Y
+          Next y
           
         D3DDevice.EndScene
         D3DDevice.Present re, ByVal 0, frmRender.picMap.hWnd, ByVal 0
@@ -1618,13 +1618,13 @@ Private Sub Particle_Render(ByRef temp_particle As Particle, ByVal screen_x As L
             InitGrh temp_particle.Grh, grh_index, alpha_blend
             If Radio = 0 Then
                 temp_particle.X = RandomNumber(X1, X2)
-                temp_particle.Y = RandomNumber(Y1, Y2)
+                temp_particle.y = RandomNumber(Y1, Y2)
             Else
                 temp_particle.X = (RandomNumber(X1, X2) + Radio) + Radio * Cos(PI * 2 * index / count)
-                temp_particle.Y = (RandomNumber(Y1, Y2) + Radio) + Radio * Sin(PI * 2 * index / count)
+                temp_particle.y = (RandomNumber(Y1, Y2) + Radio) + Radio * Sin(PI * 2 * index / count)
             End If
             temp_particle.X = RandomNumber(X1, X2) - (base_tile_size \ 2)
-            temp_particle.Y = RandomNumber(Y1, Y2) - (base_tile_size \ 2)
+            temp_particle.y = RandomNumber(Y1, Y2) - (base_tile_size \ 2)
             temp_particle.vector_x = RandomNumber(vecx1, vecx2)
             temp_particle.vector_y = RandomNumber(vecy1, vecy2)
             temp_particle.angle = angle
@@ -1635,7 +1635,7 @@ Private Sub Particle_Render(ByRef temp_particle As Particle, ByVal screen_x As L
             'Do gravity
             If gravity = True Then
                 temp_particle.vector_y = temp_particle.vector_y + grav_strength
-                If temp_particle.Y > 0 Then
+                If temp_particle.y > 0 Then
                     'bounce
                     temp_particle.vector_y = bounce_strength
                 End If
@@ -1652,7 +1652,7 @@ Private Sub Particle_Render(ByRef temp_particle As Particle, ByVal screen_x As L
         
         'Add in vector
         temp_particle.X = temp_particle.X + (temp_particle.vector_x \ temp_particle.friction)
-        temp_particle.Y = temp_particle.Y + (temp_particle.vector_y \ temp_particle.friction)
+        temp_particle.y = temp_particle.y + (temp_particle.vector_y \ temp_particle.friction)
     
         'decrement counter
          temp_particle.alive_counter = temp_particle.alive_counter - 1
@@ -1660,11 +1660,11 @@ Private Sub Particle_Render(ByRef temp_particle As Particle, ByVal screen_x As L
     
 'Draw it
     If temp_particle.Grh.GrhIndex Then
-        Draw_Grh temp_particle.Grh, temp_particle.X + screen_x, temp_particle.Y + screen_y, 1, 1, rgb_list(), alpha_blend, , , temp_particle.Grh.angle
+        Draw_Grh temp_particle.Grh, temp_particle.X + screen_x, temp_particle.y + screen_y, 1, 1, rgb_list(), alpha_blend, , , temp_particle.Grh.angle
     End If
     
     If temp_particle.Grh.GrhIndex Then
-        Draw_Grh temp_particle.Grh, temp_particle.X + screen_x, temp_particle.Y + screen_y, 1, 1, rgb_list(), alpha_blend, , , temp_particle.Grh.angle
+        Draw_Grh temp_particle.Grh, temp_particle.X + screen_x, temp_particle.y + screen_y, 1, 1, rgb_list(), alpha_blend, , , temp_particle.Grh.angle
     End If
 End Sub
 

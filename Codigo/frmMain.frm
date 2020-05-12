@@ -567,7 +567,7 @@ Begin VB.Form frmMain
          End
          Begin VB.Label lvlMapaCompleto 
             BackStyle       =   0  'Transparent
-            Caption         =   "Pegar mapa completo en Zona Nº"
+            Caption         =   "Pegar mapa completo en Zona N�"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -587,7 +587,7 @@ Begin VB.Form frmMain
          Begin VB.Label Label5 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "ï¿½ATENCION!"
+            Caption         =   "�ATENCION!"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   8.25
@@ -604,7 +604,7 @@ Begin VB.Form frmMain
             TabIndex        =   109
             Top             =   3240
             Visible         =   0   'False
-            Width           =   1425
+            Width           =   1065
          End
       End
       Begin VB.Frame cLuces 
@@ -3470,7 +3470,7 @@ Begin VB.Form frmMain
          Width           =   3015
          _ExtentX        =   5318
          _ExtentY        =   661
-         Caption         =   "&Informaciï¿½n del Mapa"
+         Caption         =   "&Informaci�n del Mapa"
          CapAlign        =   2
          BackStyle       =   2
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -3553,7 +3553,7 @@ Begin VB.Form frmMain
       Begin VB.Label lblFVersion 
          BackStyle       =   0  'Transparent
          BorderStyle     =   1  'Fixed Single
-         Caption         =   "Versiï¿½n:"
+         Caption         =   "Versi�n:"
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   8.25
@@ -4015,7 +4015,6 @@ Begin VB.Form frmMain
       _ExtentY        =   2037
       _Version        =   393217
       BackColor       =   16777215
-      Enabled         =   -1  'True
       ReadOnly        =   -1  'True
       ScrollBars      =   2
       DisableNoScroll =   -1  'True
@@ -4619,36 +4618,36 @@ Begin VB.Form frmMain
       End
    End
    Begin VB.Menu mnuEdicion 
-      Caption         =   "&Ediciï¿½n"
+      Caption         =   "&Edici�n"
       Begin VB.Menu cmdampliacion 
          Caption         =   "Ampliar Mapa"
       End
       Begin VB.Menu mnuComo 
-         Caption         =   "ï¿½ Como seleccionar ? ---- Mantener SHIFT y arrastrar el cursor."
+         Caption         =   "� Como seleccionar ? ---- Mantener SHIFT y arrastrar el cursor."
          Enabled         =   0   'False
       End
       Begin VB.Menu mnuCortar 
-         Caption         =   "C&ortar Selecciï¿½n"
+         Caption         =   "C&ortar Selecci�n"
          Shortcut        =   ^X
       End
       Begin VB.Menu mnuCopiar 
-         Caption         =   "&Copiar Selecciï¿½n"
+         Caption         =   "&Copiar Selecci�n"
          Shortcut        =   ^C
       End
       Begin VB.Menu mnuPegar 
-         Caption         =   "&Pegar Selecciï¿½n"
+         Caption         =   "&Pegar Selecci�n"
          Shortcut        =   ^V
       End
       Begin VB.Menu mnuBloquearS 
-         Caption         =   "&Bloquear Selecciï¿½n"
+         Caption         =   "&Bloquear Selecci�n"
          Shortcut        =   ^B
       End
       Begin VB.Menu mnuRealizarOperacion 
-         Caption         =   "&Realizar Operaciï¿½n en Selecciï¿½n"
+         Caption         =   "&Realizar Operaci�n en Selecc�n"
          Shortcut        =   ^D
       End
       Begin VB.Menu mnuDeshacerPegado 
-         Caption         =   "Deshacer P&egado de Selecciï¿½n"
+         Caption         =   "Deshacer P&egado de Selecci�n"
          Shortcut        =   ^S
       End
       Begin VB.Menu mnuLineEdicion0 
@@ -4663,7 +4662,7 @@ Begin VB.Form frmMain
          Checked         =   -1  'True
       End
       Begin VB.Menu mnuInfoMap 
-         Caption         =   "&Informaciï¿½n del Mapa"
+         Caption         =   "&Informaci�n del Mapa"
       End
       Begin VB.Menu mnuLineEdicion1 
          Caption         =   "-"
@@ -4764,14 +4763,14 @@ Begin VB.Form frmMain
          Caption         =   "Auto-Completar &Superficies"
       End
       Begin VB.Menu mnuAutoCapturarSuperficie 
-         Caption         =   "Auto-C&apturar informaciï¿½n de la Superficie"
+         Caption         =   "Auto-C&apturar informaci�n de la Superficie"
       End
       Begin VB.Menu mnuAutoCapturarTranslados 
-         Caption         =   "Auto-&Capturar informaciï¿½n de los Translados"
+         Caption         =   "Auto-&Capturar informaci�n de los Translados"
          Checked         =   -1  'True
       End
       Begin VB.Menu mnuAutoGuardarMapas 
-         Caption         =   "Configuraciï¿½n de Auto-&Guardar Mapas"
+         Caption         =   "Configuraci�n de Auto-&Guardar Mapas"
       End
    End
    Begin VB.Menu mnuVer 
@@ -4936,7 +4935,7 @@ Begin VB.Form frmMain
          Caption         =   "-"
       End
       Begin VB.Menu mnuGuardarUltimaConfig 
-         Caption         =   "&Guardar Ultima Configuraciï¿½n"
+         Caption         =   "&Guardar Ultima Configurac�n"
       End
    End
    Begin VB.Menu mnuAyuda 
