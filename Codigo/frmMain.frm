@@ -3431,10 +3431,10 @@ Begin VB.Form frmMain
       Width           =   3023
       Begin VB.Shape UserArea 
          BorderColor     =   &H80000004&
-         Height          =   225
+         Height          =   297
          Left            =   1320
          Top             =   1440
-         Width           =   300
+         Width           =   400
       End
       Begin VB.Shape Shape1 
          BorderColor     =   &H00FFFFFF&
@@ -4015,6 +4015,7 @@ Begin VB.Form frmMain
       _ExtentY        =   2037
       _Version        =   393217
       BackColor       =   16777215
+      Enabled         =   -1  'True
       ReadOnly        =   -1  'True
       ScrollBars      =   2
       DisableNoScroll =   -1  'True
@@ -6118,6 +6119,8 @@ Private Sub OptX_Click(index As Integer)
             YMaxMapSize = 100
             frmMain.Minimap.ScaleHeight = 100
             frmMain.Minimap.ScaleWidth = 100
+            frmMain.UserArea.Height = 30
+            frmMain.UserArea.Width = 40
             If frmMain.CopyBorder.Visible = True Then
                 frmMain.COPIAR_GRH(4).Visible = False
                 frmMain.COPIAR_GRH(5).Visible = False
@@ -6137,6 +6140,8 @@ Private Sub OptX_Click(index As Integer)
             YMaxMapSize = 200
             frmMain.Minimap.ScaleHeight = 200
             frmMain.Minimap.ScaleWidth = 200
+            frmMain.UserArea.Height = 20
+            frmMain.UserArea.Width = 30
             If frmMain.CopyBorder.Visible = True Then
                 frmMain.COPIAR_GRH(4).Visible = True
                 frmMain.COPIAR_GRH(5).Visible = True

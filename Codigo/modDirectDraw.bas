@@ -571,9 +571,8 @@ Public Sub ActualizaMinimap()
 
 On Error Resume Next
 Dim loopc As Integer
-
-frmMain.UserArea.Move UserPos.X, UserPos.y
-frmMain.Minimap.Cls
+    frmMain.UserArea.Move UserPos.X - 20, UserPos.y - 15
+    frmMain.Minimap.Cls
 
 For loopc = 1 To LastChar
     If CharList(loopc).Active = 1 Then
