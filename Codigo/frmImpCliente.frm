@@ -1,18 +1,18 @@
 VERSION 5.00
 Begin VB.Form frmImpCliente 
    Caption         =   "Importar archivos nesesarios al Editor"
-   ClientHeight    =   5955
+   ClientHeight    =   6390
    ClientLeft      =   10725
    ClientTop       =   6030
    ClientWidth     =   8160
    Icon            =   "frmImpCliente.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   5955
+   ScaleHeight     =   6390
    ScaleWidth      =   8160
    Begin VB.CommandButton Command2 
       Caption         =   "Importar del Server"
       Height          =   375
-      Left            =   5160
+      Left            =   5040
       TabIndex        =   6
       Top             =   3720
       Width           =   2175
@@ -20,7 +20,7 @@ Begin VB.Form frmImpCliente
    Begin VB.CommandButton Command1 
       Caption         =   "Importar del Cliente"
       Height          =   375
-      Left            =   120
+      Left            =   720
       TabIndex        =   5
       Top             =   3720
       Width           =   2175
