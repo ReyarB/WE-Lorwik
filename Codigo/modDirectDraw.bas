@@ -11,10 +11,10 @@ Sub ConvertCPtoTP(ByVal viewPortX As Integer, ByVal viewPortY As Integer, ByRef 
 'Converts where the mouse is in the main window to a tile position. MUST be called eveytime the mouse moves.
 '******************************************
     tX = UserPos.X + viewPortX \ 32 - frmMain.Renderer.ScaleWidth \ 64
-    tY = UserPos.y + viewPortY \ 32 - frmMain.Renderer.ScaleHeight \ 64
+    tY = UserPos.Y + viewPortY \ 32 - frmMain.Renderer.ScaleHeight \ 64
 End Sub
 
-Sub MakeChar(CharIndex As Integer, Body As Integer, Head As Integer, Heading As Byte, X As Integer, y As Integer)
+Sub MakeChar(CharIndex As Integer, Body As Integer, Head As Integer, Heading As Byte, X As Integer, Y As Integer)
 '*************************************************
 'Author: Unkwown
 'Last modified: 28/05/06 by GS
@@ -33,17 +33,17 @@ On Error Resume Next
     'Reset moving stats
     CharList(CharIndex).Moving = 0
     CharList(CharIndex).MoveOffset.X = 0
-    CharList(CharIndex).MoveOffset.y = 0
+    CharList(CharIndex).MoveOffset.Y = 0
     
     'Update position
     CharList(CharIndex).Pos.X = X
-    CharList(CharIndex).Pos.y = y
+    CharList(CharIndex).Pos.Y = Y
     
     'Make active
     CharList(CharIndex).Active = 1
     
     'Plot on map
-    MapData(X, y).CharIndex = CharIndex
+    MapData(X, Y).CharIndex = CharIndex
     
     bRefreshRadar = True ' GS
 
@@ -66,7 +66,7 @@ If CharIndex = LastChar Then
     Loop
 End If
 
-MapData(CharList(CharIndex).Pos.X, CharList(CharIndex).Pos.y).CharIndex = 0
+MapData(CharList(CharIndex).Pos.X, CharList(CharIndex).Pos.Y).CharIndex = 0
 
 'Update NumChars
 NumChars = NumChars - 1
@@ -113,12 +113,12 @@ Sub MoveCharbyHead(CharIndex As Integer, nHeading As Byte)
 Dim addx As Integer
 Dim addy As Integer
 Dim X As Integer
-Dim y As Integer
+Dim Y As Integer
 Dim nX As Integer
 Dim nY As Integer
 
 X = CharList(CharIndex).Pos.X
-y = CharList(CharIndex).Pos.y
+Y = CharList(CharIndex).Pos.Y
 
 'Figure out which way to move
 Select Case nHeading
@@ -138,15 +138,15 @@ Select Case nHeading
 End Select
 
 nX = X + addx
-nY = y + addy
+nY = Y + addy
 
 MapData(nX, nY).CharIndex = CharIndex
 CharList(CharIndex).Pos.X = nX
-CharList(CharIndex).Pos.y = nY
-MapData(X, y).CharIndex = 0
+CharList(CharIndex).Pos.Y = nY
+MapData(X, Y).CharIndex = 0
 
 CharList(CharIndex).MoveOffset.X = -1 * (TilePixelWidth * addx)
-CharList(CharIndex).MoveOffset.y = -1 * (TilePixelHeight * addy)
+CharList(CharIndex).MoveOffset.Y = -1 * (TilePixelHeight * addy)
 
 CharList(CharIndex).Moving = 1
 CharList(CharIndex).Heading = nHeading
@@ -159,7 +159,7 @@ Sub MoveCharbyPos(CharIndex As Integer, nX As Integer, nY As Integer)
 'Last modified: 28/05/06 by GS
 '*************************************************
     Dim X As Integer
-    Dim y As Integer
+    Dim Y As Integer
     Dim addx As Integer
     Dim addy As Integer
     Dim nHeading As Byte
@@ -167,10 +167,10 @@ Sub MoveCharbyPos(CharIndex As Integer, nX As Integer, nY As Integer)
     With CharList(CharIndex)
         
         X = .Pos.X
-        y = .Pos.y
+        Y = .Pos.Y
         
         addx = nX - X
-        addy = nY - y
+        addy = nY - Y
         
         If Sgn(addx) = 1 Then
             nHeading = EAST
@@ -190,11 +190,11 @@ Sub MoveCharbyPos(CharIndex As Integer, nX As Integer, nY As Integer)
         
         MapData(nX, nY).CharIndex = CharIndex
         .Pos.X = nX
-        .Pos.y = nY
-        MapData(X, y).CharIndex = 0
+        .Pos.Y = nY
+        MapData(X, Y).CharIndex = 0
         
         .MoveOffset.X = -1 * (TilePixelWidth * addx)
-        .MoveOffset.y = -1 * (TilePixelHeight * addy)
+        .MoveOffset.Y = -1 * (TilePixelHeight * addy)
         
         .Moving = 1
         .Heading = nHeading
@@ -223,7 +223,7 @@ NextOpenChar = loopc
 
 End Function
 
-Function LegalPos(X As Integer, y As Integer) As Boolean
+Function LegalPos(X As Integer, Y As Integer) As Boolean
 '*************************************************
 'Author: Unkwown
 'Last modified: 28/05/06 - GS
@@ -232,22 +232,22 @@ Function LegalPos(X As Integer, y As Integer) As Boolean
 LegalPos = True
 
 'Check to see if its out of bounds
-If X - 12 < YMinMapSize Or X - 12 > XMaxMapSize Or y - 9 < YMinMapSize Or y - 9 > YMaxMapSize Then
+If X - 12 < YMinMapSize Or X - 12 > XMaxMapSize Or Y - 9 < YMinMapSize Or Y - 9 > YMaxMapSize Then
     LegalPos = False
     Exit Function
 End If
 
 If X > XMaxMapSize Or X < XMinMapSize Then Exit Function
-If y > YMaxMapSize Or y < YMinMapSize Then Exit Function
+If Y > YMaxMapSize Or Y < YMinMapSize Then Exit Function
 
 'Check to see if its blocked
-If MapData(X, y).blocked = 1 Then
+If MapData(X, Y).blocked = 1 Then
     LegalPos = False
     Exit Function
 End If
 
 'Check for character
-If MapData(X, y).CharIndex > 0 Then
+If MapData(X, Y).CharIndex > 0 Then
     LegalPos = False
     Exit Function
 End If
@@ -257,13 +257,13 @@ End Function
 
 
 
-Function InMapLegalBounds(X As Integer, y As Integer) As Boolean
+Function InMapLegalBounds(X As Integer, Y As Integer) As Boolean
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06
 '*************************************************
 
-If X < MinXBorder Or X > MaxXBorder Or y < MinYBorder Or y > MaxYBorder Then
+If X < MinXBorder Or X > MaxXBorder Or Y < MinYBorder Or Y > MaxYBorder Then
     InMapLegalBounds = False
     Exit Function
 End If
@@ -279,11 +279,11 @@ Public Sub DePegar()
 'Last modified: 21/11/07
 '*************************************************
     Dim X As Integer
-    Dim y As Integer
+    Dim Y As Integer
 
     For X = 0 To DeSeleccionAncho - 1
-        For y = 0 To DeSeleccionAlto - 1
-             MapData(X + DeSeleccionOX, y + DeSeleccionOY) = DeSeleccionMap(X, y)
+        For Y = 0 To DeSeleccionAlto - 1
+             MapData(X + DeSeleccionOX, Y + DeSeleccionOY) = DeSeleccionMap(X, Y)
         Next
     Next
 End Sub
@@ -301,7 +301,7 @@ On Error GoTo errhandler:
     UltimoX = SobreX
     UltimoY = SobreY
     Dim X As Integer
-    Dim y As Integer
+    Dim Y As Integer
     DeSeleccionAncho = SeleccionAncho
     DeSeleccionAlto = SeleccionAlto
     DeSeleccionOX = SobreX
@@ -309,12 +309,12 @@ On Error GoTo errhandler:
     ReDim DeSeleccionMap(DeSeleccionAncho, DeSeleccionAlto) As MapBlock
     
     For X = 0 To DeSeleccionAncho - 1
-        For y = 0 To DeSeleccionAlto - 1
+        For Y = 0 To DeSeleccionAlto - 1
             If X <= MaxXBorder Then
               If X >= 0 Then
-                If y <= MaxYBorder Then
-                  If y >= 0 Then
-                    DeSeleccionMap(X, y) = MapData(X + SobreX, y + SobreY)
+                If Y <= MaxYBorder Then
+                  If Y >= 0 Then
+                    DeSeleccionMap(X, Y) = MapData(X + SobreX, Y + SobreY)
                   End If
                 End If
               End If
@@ -323,12 +323,12 @@ On Error GoTo errhandler:
         Next
     Next
     For X = 0 To SeleccionAncho - 1
-        For y = 0 To SeleccionAlto - 1
+        For Y = 0 To SeleccionAlto - 1
             If X <= MaxXBorder Then
               If X >= 0 Then
-                If y <= MaxYBorder Then
-                  If y >= 0 Then
-                 MapData(X + SobreX, y + SobreY) = SeleccionMap(X, y)
+                If Y <= MaxYBorder Then
+                  If Y >= 0 Then
+                 MapData(X + SobreX, Y + SobreY) = SeleccionMap(X, Y)
               End If
                 End If
               End If
@@ -346,7 +346,7 @@ On Error GoTo errhandler:
 'Last modified: 21/11/07
 '*************************************************
     Dim X As Integer
-    Dim y As Integer
+    Dim Y As Integer
     SeleccionAncho = Abs(SeleccionIX - SeleccionFX) + 1
     SeleccionAlto = Abs(SeleccionIY - SeleccionFY) + 1
     DeSeleccionAncho = SeleccionAncho
@@ -356,13 +356,13 @@ On Error GoTo errhandler:
     Dim DeSeleccionMap() As MapBlock
     ReDim DeSeleccionMap(DeSeleccionAncho, DeSeleccionAlto) As MapBlock
     For X = 0 To SeleccionAncho - 1
-        For y = 0 To SeleccionAlto - 1
-            DeSeleccionMap(X, y) = MapData(X + SeleccionIX, y + SeleccionIY)
+        For Y = 0 To SeleccionAlto - 1
+            DeSeleccionMap(X, Y) = MapData(X + SeleccionIX, Y + SeleccionIY)
         Next
     Next
     For X = 0 To SeleccionAncho - 1
-        For y = 0 To SeleccionAlto - 1
-           ClickEdit vbLeftButton, SeleccionIX + X, SeleccionIY + y
+        For Y = 0 To SeleccionAlto - 1
+           ClickEdit vbLeftButton, SeleccionIX + X, SeleccionIY + Y
         Next
     Next
     Seleccionando = False
@@ -376,7 +376,7 @@ Public Sub BlockearSeleccion()
 'Last modified: 21/11/07
 '*************************************************
     Dim X As Integer
-    Dim y As Integer
+    Dim Y As Integer
     Dim Vacio As MapBlock
     SeleccionAncho = Abs(SeleccionIX - SeleccionFX) + 1
     SeleccionAlto = Abs(SeleccionIY - SeleccionFY) + 1
@@ -387,16 +387,16 @@ Public Sub BlockearSeleccion()
     ReDim DeSeleccionMap(DeSeleccionAncho, DeSeleccionAlto) As MapBlock
     
     For X = 0 To SeleccionAncho - 1
-        For y = 0 To SeleccionAlto - 1
-            DeSeleccionMap(X, y) = MapData(X + SeleccionIX, y + SeleccionIY)
+        For Y = 0 To SeleccionAlto - 1
+            DeSeleccionMap(X, Y) = MapData(X + SeleccionIX, Y + SeleccionIY)
         Next
     Next
     For X = 0 To SeleccionAncho - 1
-        For y = 0 To SeleccionAlto - 1
-             If MapData(X + SeleccionIX, y + SeleccionIY).blocked = 1 Then
-                MapData(X + SeleccionIX, y + SeleccionIY).blocked = 0
+        For Y = 0 To SeleccionAlto - 1
+             If MapData(X + SeleccionIX, Y + SeleccionIY).blocked = 1 Then
+                MapData(X + SeleccionIX, Y + SeleccionIY).blocked = 0
              Else
-                MapData(X + SeleccionIX, y + SeleccionIY).blocked = 1
+                MapData(X + SeleccionIX, Y + SeleccionIY).blocked = 1
             End If
         Next
     Next
@@ -409,7 +409,7 @@ Public Sub CortarSeleccion()
 '*************************************************
     CopiarSeleccion
     Dim X As Integer
-    Dim y As Integer
+    Dim Y As Integer
     Dim Vacio As MapBlock
     DeSeleccionAncho = SeleccionAncho
     DeSeleccionAlto = SeleccionAlto
@@ -418,13 +418,13 @@ Public Sub CortarSeleccion()
     ReDim DeSeleccionMap(DeSeleccionAncho, DeSeleccionAlto) As MapBlock
     
     For X = 0 To SeleccionAncho - 1
-        For y = 0 To SeleccionAlto - 1
-            DeSeleccionMap(X, y) = MapData(X + SeleccionIX, y + SeleccionIY)
+        For Y = 0 To SeleccionAlto - 1
+            DeSeleccionMap(X, Y) = MapData(X + SeleccionIX, Y + SeleccionIY)
         Next
     Next
     For X = 0 To SeleccionAncho - 1
-        For y = 0 To SeleccionAlto - 1
-             MapData(X + SeleccionIX, y + SeleccionIY) = Vacio
+        For Y = 0 To SeleccionAlto - 1
+             MapData(X + SeleccionIX, Y + SeleccionIY) = Vacio
         Next
     Next
     Seleccionando = False
@@ -436,14 +436,14 @@ Public Sub CopiarSeleccion()
 '*************************************************
     'podria usar copy mem , pero por las dudas no XD
     Dim X As Integer
-    Dim y As Integer
+    Dim Y As Integer
     Seleccionando = False
     SeleccionAncho = Abs(SeleccionIX - SeleccionFX) + 1
     SeleccionAlto = Abs(SeleccionIY - SeleccionFY) + 1
     ReDim SeleccionMap(SeleccionAncho, SeleccionAlto) As MapBlock
     For X = 0 To SeleccionAncho - 1
-        For y = 0 To SeleccionAlto - 1
-            SeleccionMap(X, y) = MapData(X + SeleccionIX, y + SeleccionIY)
+        For Y = 0 To SeleccionAlto - 1
+            SeleccionMap(X, Y) = MapData(X + SeleccionIX, Y + SeleccionIY)
         Next
     Next
 End Sub
@@ -467,7 +467,7 @@ Public Sub GenerarVista()
     
 End Sub
 
-Function HayUserAbajo(X As Integer, y As Integer, GrhIndex) As Boolean
+Function HayUserAbajo(X As Integer, Y As Integer, GrhIndex) As Boolean
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06
@@ -475,8 +475,8 @@ Function HayUserAbajo(X As Integer, y As Integer, GrhIndex) As Boolean
 HayUserAbajo = _
     CharList(UserCharIndex).Pos.X >= X - (GrhData(GrhIndex).TileWidth \ 2) _
 And CharList(UserCharIndex).Pos.X <= X + (GrhData(GrhIndex).TileWidth \ 2) _
-And CharList(UserCharIndex).Pos.y >= y - (GrhData(GrhIndex).TileHeight - 1) _
-And CharList(UserCharIndex).Pos.y <= y
+And CharList(UserCharIndex).Pos.Y >= Y - (GrhData(GrhIndex).TileHeight - 1) _
+And CharList(UserCharIndex).Pos.Y <= Y
 End Function
 
 Function PixelPos(X As Integer) As Integer
@@ -510,7 +510,7 @@ Public Function ARGB(ByVal R As Long, ByVal G As Long, ByVal B As Long, ByVal A 
 
 End Function
 
-Sub DrawGrhtoHdc(picX As PictureBox, Grh As Long, ByVal X As Integer, ByVal y As Integer)
+Sub DrawGrhtoHdc(picX As PictureBox, Grh As Long, ByVal X As Integer, ByVal Y As Integer)
     Dim destRect As RECT
     
     destRect.Bottom = picX.ScaleHeight / 16
@@ -520,7 +520,7 @@ Sub DrawGrhtoHdc(picX As PictureBox, Grh As Long, ByVal X As Integer, ByVal y As
     
     D3DDevice.BeginScene
     'D3DDevice.Clear 0, ByVal 0, D3DCLEAR_TARGET, 0, 1#, 0
-    Draw_GrhIndex Grh, X, y, LightIluminado()
+    Draw_GrhIndex Grh, X, Y, LightIluminado()
     D3DDevice.EndScene
     D3DDevice.Present destRect, ByVal 0, picX.hWnd, ByVal 0
 End Sub
@@ -528,22 +528,23 @@ End Sub
 '**************************************************************
 Public Sub DibujarMiniMapa()
 Dim map_x, map_y, Capas As Byte
+frmMain.Minimap.Picture = LoadPicture(App.Path & "\Renderizados\" & NumMap_Save & ".bmp")
 Dim loopc As Long
-    For map_y = YMinMapSize To YMaxMapSize
-        For map_x = XMinMapSize To XMaxMapSize
+    For map_y = 1 To 100
+        For map_x = 1 To 100
             For Capas = 1 To 2
-                If MapData(map_x, map_y).Graphic(Capas).GrhIndex > 0 Then
-                    SetPixel frmMain.Minimap.hdc, map_x - 1, map_y - 1, GrhData(MapData(map_x, map_y).Graphic(Capas).GrhIndex).MiniMap_color
-                End If
+'                If MapData(map_x, map_y).Graphic(Capas).GrhIndex > 0 Then
+'                    SetPixel frmMain.Minimap.hdc, map_x - 1, map_y - 1, GrhData(MapData(map_x, map_y).Graphic(Capas).GrhIndex).MiniMap_color
+'                End If
                 If MapData(map_x, map_y).Graphic(4).GrhIndex > 0 And frmMain.chkOptMinimap(2).value = 1 Then
-                    SetPixel frmMain.Minimap.hdc, map_x - 1, map_y - 1, GrhData(MapData(map_x, map_y).Graphic(4).GrhIndex).MiniMap_color
+                    SetPixel frmMain.Minimap.hdc, map_x * 2 - 1, map_y * 2 - 1, GrhData(MapData(map_x, map_y).Graphic(4).GrhIndex).MiniMap_color
                 End If
                 If MapData(map_x, map_y).blocked = 1 And frmMain.chkOptMinimap(3).value = 1 Then
-                    SetPixel frmMain.Minimap.hdc, map_x - 1, map_y - 1, RGB(255, 0, 0)
+                    SetPixel frmMain.Minimap.hdc, map_x * 2 - 1, map_y * 2 - 1, RGB(255, 0, 0)
                 End If
                 If MapData(map_x, map_y).ObjGrh.GrhIndex <> 0 And frmMain.chkOptMinimap(1).value = 1 Then
-                    SetPixel frmMain.Minimap.hdc, map_x - 1, map_y - 1, RGB(51, 196, 255)
-                    SetPixel frmMain.Minimap.hdc, map_x - 2, map_y - 2, RGB(51, 196, 255)
+                    SetPixel frmMain.Minimap.hdc, map_x * 2 - 1, map_y * 2 - 1, RGB(51, 196, 255)
+                    SetPixel frmMain.Minimap.hdc, map_x * 2 - 2, map_y * 2 - 2, RGB(51, 196, 255)
                 End If
             Next Capas
         Next map_x
@@ -552,16 +553,17 @@ Dim loopc As Long
     If frmMain.chkOptMinimap(0).value = 1 Then
         For loopc = 1 To LastChar
             If CharList(loopc).Active = 1 Then
-                MapData(CharList(loopc).Pos.X, CharList(loopc).Pos.y).CharIndex = loopc
+                MapData(CharList(loopc).Pos.X, CharList(loopc).Pos.Y).CharIndex = loopc
                 If CharList(loopc).Heading <> 0 And frmMain.chkOptMinimap(0).value = 1 Then
-                    SetPixel frmMain.Minimap.hdc, 0 + CharList(loopc).Pos.X, 0 + CharList(loopc).Pos.y, RGB(0, 255, 0)
-                    SetPixel frmMain.Minimap.hdc, 0 + CharList(loopc).Pos.X, 1 + CharList(loopc).Pos.y, RGB(0, 255, 0)
+                    SetPixel frmMain.Minimap.hdc, 0 + CharList(loopc).Pos.X * 2, 0 + CharList(loopc).Pos.Y * 2, RGB(0, 255, 0)
+                    SetPixel frmMain.Minimap.hdc, 0 + CharList(loopc).Pos.X * 2, 1 + CharList(loopc).Pos.Y * 2, RGB(0, 255, 0)
                 End If
             End If
         Next loopc
     End If
    
     frmMain.Minimap.Refresh
+    
 End Sub
 Public Sub ActualizaMinimap()
 '*************************************************
@@ -571,23 +573,23 @@ Public Sub ActualizaMinimap()
 
 On Error Resume Next
 Dim loopc As Integer
-    frmMain.UserArea.Move UserPos.X - 20, UserPos.y - 15
+    frmMain.UserArea.Move UserPos.X - 20, UserPos.Y - 15
     frmMain.Minimap.Cls
 
 For loopc = 1 To LastChar
     If CharList(loopc).Active = 1 Then
-        MapData(CharList(loopc).Pos.X, CharList(loopc).Pos.y).CharIndex = loopc
+        MapData(CharList(loopc).Pos.X, CharList(loopc).Pos.Y).CharIndex = loopc
         If CharList(loopc).Heading <> 0 Then
             frmMain.Minimap.ForeColor = vbGreen
-            frmMain.Minimap.Line (0 + CharList(loopc).Pos.X, 0 + CharList(loopc).Pos.y)-(2 + CharList(loopc).Pos.X, 0 + CharList(loopc).Pos.y)
-            frmMain.Minimap.Line (0 + CharList(loopc).Pos.X, 1 + CharList(loopc).Pos.y)-(2 + CharList(loopc).Pos.X, 1 + CharList(loopc).Pos.y)
+            frmMain.Minimap.Line (0 + CharList(loopc).Pos.X, 0 + CharList(loopc).Pos.Y)-(2 + CharList(loopc).Pos.X, 0 + CharList(loopc).Pos.Y)
+            frmMain.Minimap.Line (0 + CharList(loopc).Pos.X, 1 + CharList(loopc).Pos.Y)-(2 + CharList(loopc).Pos.X, 1 + CharList(loopc).Pos.Y)
         End If
     End If
 Next loopc
 
 bRefreshRadar = False
 ' ver ReyarB
-'    frmMain.UserArea.Left = UserPos.X - 9
-'    frmMain.UserArea.Top = UserPos.y - 8
+'    frmMain.UserArea.Left = UserPos.X - 20
+'    frmMain.UserArea.Top = UserPos.Y - 15
 End Sub
 '***********************************************************

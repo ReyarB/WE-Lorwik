@@ -71,7 +71,6 @@ Public Function LoadGrhData() As Boolean
                     
                     .TileHeight = GrhData(.Frames(1)).TileHeight
                     If .TileHeight <= 0 Then GoTo ErrorHandler
-                    
                 Else
                     'Read in normal GRH data
                     Get handle, , .FileNum
@@ -94,13 +93,9 @@ Public Function LoadGrhData() As Boolean
                     .TileHeight = .pixelHeight / TilePixelWidth
                     
                     .Frames(1) = Grh
-
                 End If
-
             End With
-
         End If
-
     Wend
     
     Close handle

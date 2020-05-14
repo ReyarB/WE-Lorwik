@@ -15,13 +15,25 @@ Begin VB.Form frmRender
    ScaleMode       =   3  'Pixel
    ScaleWidth      =   800
    ShowInTaskbar   =   0   'False
+   Begin VB.CommandButton MinimapaWE 
+      Caption         =   "Minimapa para WE"
+      Height          =   375
+      Left            =   8160
+      TabIndex        =   16
+      Top             =   2280
+      Width           =   2175
+   End
    Begin VB.PictureBox picMap 
+      Appearance      =   0  'Flat
       AutoRedraw      =   -1  'True
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
       Height          =   1500
       Left            =   120
-      ScaleHeight     =   9.639
+      ScaleHeight     =   10.041
       ScaleMode       =   0  'User
-      ScaleWidth      =   9.639
+      ScaleWidth      =   10.041
       TabIndex        =   1
       Top             =   840
       Width           =   1500
@@ -30,6 +42,7 @@ Begin VB.Form frmRender
       Height          =   285
       Left            =   6960
       TabIndex        =   15
+      Text            =   "1"
       Top             =   1440
       Width           =   615
    End
@@ -45,13 +58,14 @@ Begin VB.Form frmRender
       Height          =   285
       Left            =   9960
       TabIndex        =   6
+      Text            =   "2"
       Top             =   1440
       Visible         =   0   'False
       Width           =   615
    End
    Begin VB.CommandButton RenderizarMinimap 
-      Caption         =   "Renderizar Minimap"
-      Height          =   375
+      Caption         =   "Renderizar Minimap para Mundo"
+      Height          =   615
       Left            =   9000
       TabIndex        =   5
       Top             =   240
@@ -59,15 +73,15 @@ Begin VB.Form frmRender
    End
    Begin VB.CommandButton Command1 
       Caption         =   "Salir"
-      Height          =   375
+      Height          =   615
       Left            =   10920
       TabIndex        =   4
       Top             =   240
       Width           =   975
    End
    Begin VB.CommandButton cmdAceptar 
-      Caption         =   "Renderizar"
-      Height          =   375
+      Caption         =   "Renderizar para Mundo"
+      Height          =   615
       Left            =   7440
       TabIndex        =   2
       Top             =   240
@@ -246,30 +260,7 @@ Private Sub Check1_Click()
     End If
 End Sub
 
-Private Sub cmdAceptar_Click()
-    frmRender.Height = 13000
-    Dim i As Integer
 
-    If Automatico = False Then
-    i = Text1.Text
-    If FileExist(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map", vbNormal) = True Then
-        Call modMapIO.NuevoMapa
-        Call MapaV2_Cargar(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map")
-        Call MapCapture(0)
-        Info.Caption = "Minimapas renderizados correctamente!"
-        End If
-    Else
-        For i = Text1.Text To Text2.Text
-            If FileExist(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map", vbNormal) = True Then
-                Call modMapIO.NuevoMapa
-                Call MapaV2_Cargar(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map")
-                Call MapCapture(0)
-                Info.Caption = "Mapa" & i & " renderizado correctamente!"
-            End If
-        Next i
-    End If
-
-End Sub
     '*************************************************************
       
     ' Sub que copia la imagen del control en un picturebox
@@ -306,6 +297,7 @@ End Sub
         hdc = GetWindowDC(Control.hWnd)
         ' Copia esa área al picturebox
         BitBlt destino.hdc, 0, 0, ancho, alto, hdc, 0, 0, vbSrcCopy
+        'BitBlt destino.hdc, 10, 10, ancho, alto, hdc, 10, 10, vbSrcCopy
         ' Convierte la imagen anterior en un Mapa de bits
         destino.Picture = destino.Image
         ' Borra la imagen ya que ahora usa el Picture
@@ -322,6 +314,30 @@ End Sub
 Private Sub Command1_Click()
     Unload Me
 End Sub
+Private Sub cmdAceptar_Click()
+    frmRender.Height = 4000
+    Dim i As Integer
+
+    If Automatico = False Then
+        i = Text1.Text
+            If FileExist(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map", vbNormal) = True Then
+                Call modMapIO.NuevoMapa
+                Call MapaV2_Cargar(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map")
+                Call MapCapture(0)
+                Info.Caption = "Minimapas renderizados correctamente!"
+                End If
+    Else
+        For i = Text1.Text To Text2.Text
+            If FileExist(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map", vbNormal) = True Then
+                Call modMapIO.NuevoMapa
+                Call MapaV2_Cargar(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map")
+                Call MapCapture(0)
+                Info.Caption = "Mapa" & i & " renderizado correctamente!"
+            End If
+        Next i
+    End If
+
+End Sub
 
 '******************************************************
 'Ultima modificacion 08/05/2020 por ReyarB
@@ -332,13 +348,13 @@ frmRender.Height = 3000
 Dim i As Integer
 
     If Automatico = False Then
-    i = Text1.Text
-    If FileExist(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map", vbNormal) = True Then
-        Call modMapIO.NuevoMapa
-        Call MapaV2_Cargar(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map")
-        Call MapCapture(1)
-        Info.Caption = "Minimapas renderizados correctamente!"
-        End If
+        i = Text1.Text
+            If FileExist(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map", vbNormal) = True Then
+                Call modMapIO.NuevoMapa
+                Call MapaV2_Cargar(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map")
+                Call MapCapture(1)
+                Info.Caption = "Minimapas renderizados correctamente!"
+            End If
     Else
         For i = Text1.Text To Text2.Text
             If FileExist(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map", vbNormal) = True Then
@@ -350,3 +366,29 @@ Dim i As Integer
         Next i
     End If
 End Sub
+Private Sub MinimapaWE_Click()
+frmRender.Height = 4000
+
+Dim i As Integer
+
+    If Automatico = False Then
+        i = Text1.Text
+            If FileExist(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map", vbNormal) = True Then
+                Call modMapIO.NuevoMapa
+                Call MapaV2_Cargar(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map")
+                Call MapCapture(2)
+                Info.Caption = "Minimapas renderizados correctamente!"
+            End If
+    Else
+        For i = Text1.Text To Text2.Text
+            If FileExist(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map", vbNormal) = True Then
+                Call modMapIO.NuevoMapa
+                Call MapaV2_Cargar(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map")
+                Call MapCapture(2)
+                Info.Caption = "Mapa" & i & " renderizado correctamente!"
+            End If
+        Next i
+    End If
+End Sub
+
+

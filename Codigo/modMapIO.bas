@@ -706,7 +706,18 @@ Public Sub MapaV2_Cargar(ByVal Map As String, Optional ByVal EsInteger As Boolea
         CurMap = ReturnNumberFromString(Map)
         
         Call DibujarMiniMapa
-    
+' *****************************************************************************
+' Renderizado mapa 200x200 ****************************************************
+' *****************************************************************************
+        
+        If frmMain.chkRenderizarAl.value = 1 Then
+            frmRender.Show
+            MapCapture (0)
+            frmRender.Hide
+        End If
+ ' *****************************************************************************
+' Renderizado mapa 200x200 ****************************************************
+' *****************************************************************************
     End With
     
     MapaCargado = True
