@@ -1125,18 +1125,6 @@ Public Sub MapCapture(ByRef Format As Boolean)
                 frmRender.Width = 12000
                 BY = 1
                 BX = 1
-
-'                re.Left = 0
-'                re.Top = 0
-'                re.Bottom = 80 * 32
-'                re.Right = 74 * 32
-'                frmRender.picMap.Height = 200
-'                frmRender.picMap.Width = 200
-'                frmRender.Height = 4000
-'                frmRender.Width = 12000
-'                BY = 10
-'                BX = 13
-                
                 
             Case 1 'Modificado por ReyarB para generar minimapas
                 re.Left = 0
@@ -1149,18 +1137,6 @@ Public Sub MapCapture(ByRef Format As Boolean)
                 frmRender.Width = 12000
                 BY = 10
                 BX = 13
-
-            Case 2 ' Minimapa WE
-                re.Left = 0
-                re.Top = 0
-                re.Bottom = 3200
-                re.Right = 3200
-                frmRender.picMap.Height = 200
-                frmRender.picMap.Width = 200
-                frmRender.Height = 4000
-                frmRender.Width = 12000
-                BY = 1
-                BX = 1
 
         End Select
 
@@ -1302,9 +1278,6 @@ Public Sub MapCapture(ByRef Format As Boolean)
             SavePicture frmRender.picMap, App.Path & "\Renderizados\" & NumMap_Save & ".bmp"
             Case 1
             SavePicture frmRender.picMap, App.Path & "\Recursos\MiniMapa\" & NumMap_Save & ".bmp"
-            Case 2
-            SavePicture frmRender.picMap, App.Path & "\Renderizados\MiniMapa\" & NumMap_Save & ".bmp"
-        
         End Select
 
 

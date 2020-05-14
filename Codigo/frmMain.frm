@@ -244,6 +244,7 @@ Begin VB.Form frmMain
             Left            =   1920
             TabIndex        =   189
             Top             =   3600
+            Visible         =   0   'False
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
@@ -270,6 +271,7 @@ Begin VB.Form frmMain
             Left            =   1320
             TabIndex        =   190
             Top             =   3960
+            Visible         =   0   'False
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
@@ -296,6 +298,7 @@ Begin VB.Form frmMain
             Left            =   1920
             TabIndex        =   191
             Top             =   3960
+            Visible         =   0   'False
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
@@ -322,6 +325,7 @@ Begin VB.Form frmMain
             Left            =   1320
             TabIndex        =   188
             Top             =   3600
+            Visible         =   0   'False
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
@@ -3199,7 +3203,6 @@ Begin VB.Form frmMain
          Left            =   120
          TabIndex        =   141
          Top             =   2280
-         Value           =   1  'Checked
          Width           =   1095
       End
       Begin WorldEditor.lvButtons_H LvBOpcion 
@@ -4016,7 +4019,6 @@ Begin VB.Form frmMain
       _ExtentY        =   2037
       _Version        =   393217
       BackColor       =   16777215
-      Enabled         =   -1  'True
       ReadOnly        =   -1  'True
       ScrollBars      =   2
       DisableNoScroll =   -1  'True

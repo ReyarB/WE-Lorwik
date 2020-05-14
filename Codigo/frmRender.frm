@@ -15,14 +15,6 @@ Begin VB.Form frmRender
    ScaleMode       =   3  'Pixel
    ScaleWidth      =   800
    ShowInTaskbar   =   0   'False
-   Begin VB.CommandButton MinimapaWE 
-      Caption         =   "Minimapa para WE"
-      Height          =   375
-      Left            =   8160
-      TabIndex        =   16
-      Top             =   2280
-      Width           =   2175
-   End
    Begin VB.PictureBox picMap 
       Appearance      =   0  'Flat
       AutoRedraw      =   -1  'True
@@ -80,7 +72,7 @@ Begin VB.Form frmRender
       Width           =   975
    End
    Begin VB.CommandButton cmdAceptar 
-      Caption         =   "Renderizar para Mundo"
+      Caption         =   "Renderizar WE"
       Height          =   615
       Left            =   7440
       TabIndex        =   2
@@ -361,30 +353,6 @@ Dim i As Integer
                 Call modMapIO.NuevoMapa
                 Call MapaV2_Cargar(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map")
                 Call MapCapture(1)
-                Info.Caption = "Mapa" & i & " renderizado correctamente!"
-            End If
-        Next i
-    End If
-End Sub
-Private Sub MinimapaWE_Click()
-frmRender.Height = 4000
-
-Dim i As Integer
-
-    If Automatico = False Then
-        i = Text1.Text
-            If FileExist(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map", vbNormal) = True Then
-                Call modMapIO.NuevoMapa
-                Call MapaV2_Cargar(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map")
-                Call MapCapture(2)
-                Info.Caption = "Minimapas renderizados correctamente!"
-            End If
-    Else
-        For i = Text1.Text To Text2.Text
-            If FileExist(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map", vbNormal) = True Then
-                Call modMapIO.NuevoMapa
-                Call MapaV2_Cargar(App.Path & "\Conversor\Mapas Long\Mapa" & i & ".map")
-                Call MapCapture(2)
                 Info.Caption = "Mapa" & i & " renderizado correctamente!"
             End If
         Next i

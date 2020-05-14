@@ -710,11 +710,11 @@ Public Sub MapaV2_Cargar(ByVal Map As String, Optional ByVal EsInteger As Boolea
 ' Renderizado mapa 200x200 ****************************************************
 ' *****************************************************************************
         
-        If frmMain.chkRenderizarAl.value = 1 Then
-            frmRender.Show
-            MapCapture (0)
-            frmRender.Hide
-        End If
+'        If frmMain.chkRenderizarAl.value = 1 Then
+'            frmRender.Show
+'            MapCapture (0)
+'            frmRender.Hide
+'        End If
  ' *****************************************************************************
 ' Renderizado mapa 200x200 ****************************************************
 ' *****************************************************************************
