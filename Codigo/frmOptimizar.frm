@@ -1,9 +1,4 @@
 VERSION 5.00
-
-'***************************************
-'Ultima modificacion 08/05/2020 por ReyarB
-'***************************************
-
 Begin VB.Form frmOptimizar 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Optimizar Mapa"
@@ -131,7 +126,7 @@ Attribute VB_Exposed = False
 Option Explicit
 
 
-Private Sub Optimizar()
+Public Sub Optimizar()
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 08/05/2020 Por ReyarB

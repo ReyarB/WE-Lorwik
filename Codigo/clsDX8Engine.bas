@@ -1079,13 +1079,13 @@ Private Sub CharRender(ByVal CharIndex As Long, ByVal PixelOffsetX As Integer, B
         If .Body.Walk(.Heading).GrhIndex Then _
             Call Draw_Grh(.Body.Walk(.Heading), PixelOffsetX, PixelOffsetY, 1, 1, LightIluminado(), , X, Y)
         'Dibujamos la Cabeza
-        'If .Head Then _
+        If .Head.Head(.Heading).GrhIndex Then _
             Call Draw_Grh(.Head.Head(.Heading), PixelOffsetX + .Body.HeadOffset.X, PixelOffsetY + .Body.HeadOffset.Y, 1, 0, LightIluminado(), , X, Y)
-
+    
     End With
 End Sub
 
-Public Sub MapCapture(ByRef Format As Boolean)
+Public Sub MapCapture(ByRef Format As Integer)
           '*************************************************
           'Author: Torres Patricio(Pato)
           'Ultima modificacion 08/05/2020 por ReyarB
@@ -1093,10 +1093,6 @@ Public Sub MapCapture(ByRef Format As Boolean)
           Dim D3DWindow As D3DPRESENT_PARAMETERS
           Dim Y As Byte     'Keeps track of where on map we are
           Dim X As Byte     'Keeps track of where on map we are
-          Dim BY As Byte
-          Dim BX As Byte
-          Dim BYm As Byte
-          Dim BXm As Byte
           
           Dim RX As Long
           Dim RY As Long
@@ -1108,17 +1104,19 @@ Public Sub MapCapture(ByRef Format As Boolean)
           Dim PixelOffsetYTemp As Integer 'For centering grhs
           
           Dim Grh As Grh      'Temp Grh for show tile and blocked
+                BY = 0
+                BX = 0
 
         Static re As RECT
-    
+        
         Select Case Format
         
             Case 0 ' configuracion original Lorwik
             
                 re.Left = 0
                 re.Top = 0
-                re.Bottom = 100 * 32
-                re.Right = 100 * 32
+                re.Bottom = XMaxMapSize * 32
+                re.Right = YMaxMapSize * 32
                 frmRender.picMap.Height = 200
                 frmRender.picMap.Width = 200
                 frmRender.Height = 4000
@@ -1127,6 +1125,18 @@ Public Sub MapCapture(ByRef Format As Boolean)
                 BX = 1
                 
             Case 1 'Modificado por ReyarB para generar minimapas
+                re.Left = 0
+                re.Top = 0
+                re.Bottom = 100 * 32
+                re.Right = 100 * 32
+                frmRender.picMap.Height = 100
+                frmRender.picMap.Width = 100
+                frmRender.Height = 3000
+                frmRender.Width = 12000
+                BY = 1
+                BX = 1
+                
+            Case 2 'Modificado por ReyarB para generar minimapas
                 re.Left = 0
                 re.Top = 0
                 re.Bottom = 80 * 32
@@ -1148,122 +1158,104 @@ Public Sub MapCapture(ByRef Format As Boolean)
             D3DDevice.BeginScene
           'Draw floor layer
 
-          For Y = BY To YMaxMapSize - BY
-                    For X = BX To XMaxMapSize - BX
+        For Y = BY To YMaxMapSize
+            For X = BX To XMaxMapSize
                               
-                              RY = Y - BY
-                              RX = X - BX
+                RY = Y - BY
+                RX = X - BX
                               
-                              PosX = (RX - 1) * 32 + TilePixelWidth
-                              PosY = (RY - 1) * 32 + TilePixelHeight
-            
-                              'Layer 1 **********************************
+                PosX = (RX - 1) * 32 + TilePixelWidth
+                PosY = (RY - 1) * 32 + TilePixelHeight
+                                          
+                'Layer 1 **********************************
                               
-                              If (MapData(X, Y).Graphic(1).GrhIndex <> 0) And VerCapa1 Then
-                                Call Draw_Grh(MapData(X, Y).Graphic(1), PosX, PosY, 1, 1, MapData(X, Y).light_value())
-                              End If
+                If (MapData(X, Y).Graphic(1).GrhIndex <> 0) And VerCapa1 Then
+                    Call Draw_Grh(MapData(X, Y).Graphic(1), PosX, PosY, 1, 1, MapData(X, Y).light_value())
+                End If
 
-                              '******************************************
+        '******************************************
             
-                              'frmRender.pgbProgress.value = frmRender.pgbProgress.value + 1
+        'frmRender.pgbProgress.value = frmRender.pgbProgress.value + 1
             
-                              'Layer 2 **********************************
+        'Layer 2 **********************************
 
-                              If (MapData(X, Y).Graphic(2).GrhIndex <> 0) And VerCapa2 Then
-                                Call Draw_Grh(MapData(X, Y).Graphic(2), PosX, PosY, 1, 1, MapData(X, Y).light_value())
-                              End If
+            If (MapData(X, Y).Graphic(2).GrhIndex <> 0) And VerCapa2 Then
+                Call Draw_Grh(MapData(X, Y).Graphic(2), PosX, PosY, 1, 1, MapData(X, Y).light_value())
+            End If
 
-                              '******************************************
+        '******************************************
             
-                              'frmRender.pgbProgress.value = frmRender.pgbProgress.value + 1
+        'frmRender.pgbProgress.value = frmRender.pgbProgress.value + 1
 
-
-                    
-                              PixelOffsetXTemp = (X - 1) * 32 + TilePixelWidth
-                              PixelOffsetYTemp = (Y - 1) * 32 + TilePixelHeight
+        PixelOffsetXTemp = (X - 1) * 32 + TilePixelWidth
+        PixelOffsetYTemp = (Y - 1) * 32 + TilePixelHeight
             
-                              With MapData(X, Y)
-                                        'Object Layer **********************************
+        With MapData(X, Y)
+        'Object Layer **********************************
 
-                                        If (.ObjGrh.GrhIndex <> 0) And VerObjetos Then
-                                                  Call Draw_Grh(.ObjGrh, (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 1, MapData(X, Y).light_value())
-                                        End If
+        If (.ObjGrh.GrhIndex <> 0) And VerObjetos Then
+            Call Draw_Grh(.ObjGrh, (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 1, MapData(X, Y).light_value())
+        End If
 
-                                        '***********************************************
-                            Select Case Format
-                            Case 0
-                                          'Layer 3 *****************************************
+        '***********************************************
+        Select Case Format
+            Case 0
+        'Layer 3 *****************************************
 
-                                        If (.Graphic(3).GrhIndex <> 0) And VerCapa3 Then
-                                                  Call Draw_Grh(.Graphic(3), (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 1, MapData(X, Y).light_value())
-                                        End If
+                If (.Graphic(3).GrhIndex <> 0) And VerCapa3 Then
+                    Call Draw_Grh(.Graphic(3), (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 1, MapData(X, Y).light_value())
+                End If
 
-                                        '************************************************
-                                        'Ultima modificacion 08/05/2020 por ReyarB
-                                        '************************************************
+        '************************************************
+        'Ultima modificacion 08/05/2020 por ReyarB
+        '************************************************
                 
-                                        'frmRender.pgbProgress.value = frmRender.pgbProgress.value + 1
-                            Case 1
+        'frmRender.pgbProgress.value = frmRender.pgbProgress.value + 1
+            Case 1
  
-                            End Select
+        End Select
                 
-
-
-                              End With
+        End With
 
         
-                                Select Case Format
-                                    Case 0
-                                       With MapData(X, Y)
-                                                'Layer 4 **********************************
+        Select Case Format
+            Case 0
+                With MapData(X, Y)
+                    'Layer 4 **********************************
+                    If (.Graphic(4).GrhIndex <> 0) And VerCapa4 Then
+                    'Draw
+                        Call Draw_Grh(.Graphic(4), (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 1, MapData(X, Y).light_value())
+                    End If
         
-                                                If (.Graphic(4).GrhIndex <> 0) And VerCapa4 Then
-                                                          'Draw
-                                                          Call Draw_Grh(.Graphic(4), (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 1, MapData(X, Y).light_value())
-                                                End If
+                    '**********************************
+                    'frmRender.pgbProgress.value = frmRender.pgbProgress.value + 1
+                End With
+            Case 1
+                With MapData(X, Y)
+                    'PixelOffsetXTemp = (X - 1) * 32 + TilePixelWidth
+                    'PixelOffsetYTemp = (Y - 1) * 32 + TilePixelHeight
+                    '**********************************
+                        Grh.FrameCounter = 1
+                        Grh.Started = 0
+                    If (.TileExit.Map <> 0) And VerTranslados Then
+                        Grh.GrhIndex = 3
+                        Call Draw_Grh(Grh, (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 0, MapData(X, Y).light_value())
+                    End If
+            
+                    'Show blocked tiles
+                    If (.blocked = 1) And VerBlockeados Then
+                       Grh.GrhIndex = 4
+                       Call Draw_Grh(Grh, (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 0, MapData(X, Y).light_value())
+                    End If
         
-                                                '**********************************
-                        
-                                                'frmRender.pgbProgress.value = frmRender.pgbProgress.value + 1
-                                      End With
-                                    Case 1
-                                      With MapData(X, Y)
-                                      
-                                                'PixelOffsetXTemp = (X - 1) * 32 + TilePixelWidth
-                                                'PixelOffsetYTemp = (Y - 1) * 32 + TilePixelHeight
-        
-                                                '**********************************
-                                                Grh.FrameCounter = 1
-                                                Grh.Started = 0
-        
-                                                If (.TileExit.Map <> 0) And VerTranslados Then
-                                                          Grh.GrhIndex = 3
-        
-                                                          Call Draw_Grh(Grh, (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 0, MapData(X, Y).light_value())
-                                                End If
-        
-                                                'Show blocked tiles
-        
-                                                If (.blocked = 1) And VerBlockeados Then
-                                                          Grh.GrhIndex = 4
-        
-                                                          Call Draw_Grh(Grh, (RX - 1) * 32 + TilePixelWidth, (RY - 1) * 32 + TilePixelHeight, 1, 0, MapData(X, Y).light_value())
-                                                End If
-        
-                                                '******************************************
-        
-                                               ' frmRender.pgbProgress.value = frmRender.pgbProgress.value + 1
-                                      End With
-                                End Select
-
-
-       
-
-
-                      D3DDevice.Present re, ByVal 0, frmRender.picMap.hWnd, ByVal 0
-                      
-                    Next X
-          Next Y
+                '******************************************
+                ' frmRender.pgbProgress.value = frmRender.pgbProgress.value + 1
+                End With
+        End Select
+     
+        D3DDevice.Present re, ByVal 0, frmRender.picMap.hWnd, ByVal 0
+            Next X
+        Next Y
           
         D3DDevice.EndScene
         D3DDevice.Present re, ByVal 0, frmRender.picMap.hWnd, ByVal 0
@@ -1275,9 +1267,12 @@ Public Sub MapCapture(ByRef Format As Boolean)
         
         Select Case Format
             Case 0
-            SavePicture frmRender.picMap, App.Path & "\Renderizados\" & NumMap_Save & ".bmp"
+                SavePicture frmRender.picMap, App.Path & "\Renderizados\" & NumMap_Save & ".bmp"
             Case 1
-            SavePicture frmRender.picMap, App.Path & "\Recursos\MiniMapa\" & NumMap_Save & ".bmp"
+                SavePicture frmRender.picMap, App.Path & "\Recursos\Graficos\MiniMapa\" & NumMap_Save & ".bmp"
+            Case 2
+                SavePicture frmRender.picMap, App.Path & "\Renderizados\Minimapa\" & NumMap_Save & ".bmp"
+
         End Select
 
 
@@ -1763,6 +1758,20 @@ Public Function Map_In_Bounds(ByVal map_x As Long, ByVal map_y As Long) As Boole
     End If
    
     Map_In_Bounds = True
+End Function
+'***********************************************
+'Autor: Lorwik
+'Fecha: 11/05/2020
+'Descripcion: Ajusta los controles cuando se redimensiona la ventana
+'***********************************************
+Public Function SetHalfWindowTileHeight(ByVal Height As Integer)
+    HalfWindowTileHeight = (Height / 32) \ 2
+
+End Function
+
+Public Function SetHalfWindowTileWidth(ByVal Width As Integer)
+    HalfWindowTileWidth = (Width / 32) \ 2
+
 End Function
 
 

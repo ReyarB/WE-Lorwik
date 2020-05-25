@@ -155,6 +155,10 @@ Public Sub GuardarMapa(Optional Path As String)
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
+Call frmOptimizar.Optimizar
+
+Call Resolucion
+Call modEdicion.Bloquear_Bordes(1)
 
 frmMain.Dialog.CancelError = True
 On Error GoTo errhandler
@@ -710,11 +714,11 @@ Public Sub MapaV2_Cargar(ByVal Map As String, Optional ByVal EsInteger As Boolea
 ' Renderizado mapa 200x200 ****************************************************
 ' *****************************************************************************
         
-'        If frmMain.chkRenderizarAl.value = 1 Then
-'            frmRender.Show
-'            MapCapture (0)
-'            frmRender.Hide
-'        End If
+        If frmMain.chkRenderizarAl.value = 1 Then
+            frmRender.Show
+            MapCapture (0)
+            frmRender.Hide
+        End If
  ' *****************************************************************************
 ' Renderizado mapa 200x200 ****************************************************
 ' *****************************************************************************
@@ -744,7 +748,7 @@ Public Sub MapInfo_Guardar(ByVal archivo As String)
     End If
 
     Call WriteVar(archivo, MapTitulo, "Name", MapInfo.name)
-    Call WriteVar(archivo, MapTitulo, "MusicNum", MapInfo.Music)
+    Call WriteVar(archivo, MapTitulo, "MusicNumMp3", MapInfo.Music)
     Call WriteVar(archivo, MapTitulo, "MagiaSinefecto", Val(MapInfo.MagiaSinEfecto))
     Call WriteVar(archivo, MapTitulo, "InviSinEfecto", Val(MapInfo.InviSinEfecto))
     Call WriteVar(archivo, MapTitulo, "ResuSinEfecto", Val(MapInfo.ResuSinEfecto))
@@ -796,7 +800,7 @@ On Error Resume Next
     MapTitulo = UCase(Left(archivo, Len(archivo) - 4))
 
     MapInfo.name = Leer.GetValue(MapTitulo, "Name")
-    MapInfo.Music = Leer.GetValue(MapTitulo, "MusicNum")
+    MapInfo.Music = Leer.GetValue(MapTitulo, "MusicNumMp3")
     MapInfo.MagiaSinEfecto = Val(Leer.GetValue(MapTitulo, "MagiaSinEfecto"))
     MapInfo.InviSinEfecto = Val(Leer.GetValue(MapTitulo, "InviSinEfecto"))
     MapInfo.ResuSinEfecto = Val(Leer.GetValue(MapTitulo, "ResuSinEfecto"))

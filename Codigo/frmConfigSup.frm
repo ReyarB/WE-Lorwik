@@ -5,8 +5,8 @@ Begin VB.Form frmConfigSup
    BorderStyle     =   0  'None
    Caption         =   "Configuración Avanzada de Superficie "
    ClientHeight    =   1395
-   ClientLeft      =   3600
-   ClientTop       =   13920
+   ClientLeft      =   10845
+   ClientTop       =   12255
    ClientWidth     =   3915
    Icon            =   "frmConfigSup.frx":0000
    LinkTopic       =   "Form1"

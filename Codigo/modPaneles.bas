@@ -148,6 +148,7 @@ Public Sub VerFuncion(ByVal Numero As Byte, ByVal Ver As Boolean, Optional Norma
             frmMain.cAgregarFuncalAzar(Numero - 3).Visible = Ver
             frmMain.lCantFunc(Numero - 3).Visible = Ver
             frmMain.cCantFunc(Numero - 3).Visible = Ver
+            frmMain.PreviewNPCs.Visible = Ver
         Case 4 ' NPCs Hostiles
             'frmMain.lListado(1).Visible = Ver
             'frmMain.cFiltro(1).Visible = Ver
@@ -170,14 +171,14 @@ Public Sub VerFuncion(ByVal Numero As Byte, ByVal Ver As Boolean, Optional Norma
             frmMain.cAgregarFuncalAzar(Numero - 3).Visible = Ver
             frmMain.lCantFunc(Numero - 3).Visible = Ver
             frmMain.cCantFunc(Numero - 3).Visible = Ver
+            frmMain.PreviewObj.Visible = Ver
         Case 6 ' Triggers
             frmMain.cQuitarTrigger.Visible = Ver
             frmMain.cInsertarTrigger.Visible = Ver
             frmMain.cVerTriggers.Visible = Ver
             frmMain.lListado(4).Visible = Ver
         Case 7 'Copiar Bordes
-                       On Error GoTo Error
- 
+                       On Error GoTo error
             MapData_Adyacente = MapData
             
             frmMain.CopyBorder.Visible = Ver
@@ -214,7 +215,7 @@ Public Sub VerFuncion(ByVal Numero As Byte, ByVal Ver As Boolean, Optional Norma
             
             Call AddtoRichTextBox(frmMain.StatTxt, "Mapa copiado a la memoria", 0, 255, 0)
             Exit Sub
-Error:
+error:
             Call AddtoRichTextBox(frmMain.StatTxt, "Error guardando mapa", 255, 0, 0)
 
         Case 8 'Particulas
@@ -322,11 +323,86 @@ End If
 
 End Function
 
+Public Function DameNPCsIndex(ByVal GrhIn As Integer) As Integer
+'*************************************************
+'Author: Unkwown
+'Last modified: 20/05/06
+'*************************************************
+
+DameNPCsIndex = NpcData(GrhIn).Body
+
+'    frmConfigSup.MOSAICO.value = vbUnchecked
+'    frmConfigSup.mAncho.Text = "0"
+'    frmConfigSup.mLargo.Text = "0"
+
+End Function
+Public Function DameOBJIndex(ByVal GrhIn As Integer) As Integer
+'*************************************************
+'Author: Unkwown
+'Last modified: 20/05/06
+'*************************************************
+
+DameOBJIndex = ObjData(GrhIn).GrhIndex
+
+'    frmConfigSup.MOSAICO.value = vbUnchecked
+'    frmConfigSup.mAncho.Text = "0"
+'    frmConfigSup.mLargo.Text = "0"
+
+End Function
+Public Sub fPreviewNPCs(ByVal GrhIn As Integer)
+'*************************************************
+'Author: Unkwown
+'Last modified: 22/05/06
+'*************************************************
+
+If Val(GrhIn) < 1 Then
+  frmMain.cNumFunc(2).Text = MaxGrhs
+  Exit Sub
+End If
+
+If Val(GrhIn) > MaxGrhs Then
+  frmMain.cNumFunc(2).Text = 1
+  Exit Sub
+End If
+
+'Change CurrentGrh
+CurrentGrh.GrhIndex = GrhIn
+CurrentGrh.Started = 1
+CurrentGrh.FrameCounter = 1
+CurrentGrh.Speed = GrhData(CurrentGrh.GrhIndex).Speed
+
+End Sub
+Public Sub fPreviewObj(ByVal GrhIn As Integer)
+'*************************************************
+'Author: Unkwown
+'Last modified: 22/05/06
+'*************************************************
+
+If Val(GrhIn) < 1 Then
+  frmMain.cNumFunc(2).Text = MaxGrhs
+  Exit Sub
+End If
+
+If Val(GrhIn) > MaxGrhs Then
+  frmMain.cNumFunc(2).Text = 1
+  Exit Sub
+End If
+
+'Change CurrentGrh
+CurrentGrh.GrhIndex = GrhIn
+CurrentGrh.Started = 1
+CurrentGrh.FrameCounter = 1
+CurrentGrh.Speed = GrhData(CurrentGrh.GrhIndex).Speed
+
+End Sub
+
 Public Sub fPreviewGrh(ByVal GrhIn As Integer)
 '*************************************************
 'Author: Unkwown
 'Last modified: 22/05/06
 '*************************************************
+Dim X As Byte
+Dim Y As Byte
 
 If Val(GrhIn) < 1 Then
   frmMain.cGrh.Text = MaxGrhs
@@ -337,6 +413,20 @@ If Val(GrhIn) > MaxGrhs Then
   frmMain.cGrh.Text = 1
   Exit Sub
 End If
+
+'If frmConfigSup.MOSAICO.value = vbChecked Then
+'    For Y = 1 To MAlto
+'        For X = 1 To mAncho
+'            'Change CurrentGrh
+'            InitGrh CurrentGrh(X, Y), GrhIn
+'
+'            GrhIn = GrhIn + 1
+'        Next X
+'    Next Y
+'Else
+'    InitGrh CurrentGrh(0), GrhIn
+'End If
+
 
 'Change CurrentGrh
 CurrentGrh.GrhIndex = GrhIn
@@ -392,4 +482,58 @@ If CurrentGrh.GrhIndex = 0 Then Exit Sub
     End If
 End Sub
 
+Public Sub VistaPreviaDeObj()
+'*************************************************
+'Author: ^[GS]^
+'Modificado 15/05/2020 ReyarB
+'*************************************************
+Dim SR As RECT, DR As RECT
+D3DDevice.Clear 0, ByVal 0, D3DCLEAR_TARGET, 0, 1#, 0
+If CurrentGrh.GrhIndex = 0 Then Exit Sub
+        DR.Left = 0
+        DR.Top = 0
+        DR.Bottom = (GrhData(CurrentGrh.GrhIndex).pixelHeight)
+        DR.Right = (GrhData(CurrentGrh.GrhIndex).pixelWidth)
+        SR.Left = GrhData(CurrentGrh.GrhIndex).sX
+        SR.Top = GrhData(CurrentGrh.GrhIndex).sY
+        SR.Bottom = SR.Top + (GrhData(CurrentGrh.GrhIndex).pixelHeight)
+        SR.Right = SR.Left + (GrhData(CurrentGrh.GrhIndex).pixelWidth)
+        Call DrawGrhtoHdc(frmMain.PreviewObj, CurrentGrh.GrhIndex, 1, 1)
+End Sub
 
+Public Sub VistaPreviaDeNPCs()
+'*************************************************
+'Author: ^[GS]^
+'Last modified: 19/05/2020 ReyarB
+'*************************************************
+Dim SR As RECT, DR As RECT
+D3DDevice.Clear 0, ByVal 0, D3DCLEAR_TARGET, 0, 1#, 0
+If CurrentGrh.GrhIndex = 0 Then Exit Sub
+
+        DR.Left = 0
+        DR.Top = 0
+        DR.Bottom = (GrhData(CurrentGrh.GrhIndex).pixelHeight)
+        DR.Right = (GrhData(CurrentGrh.GrhIndex).pixelWidth)
+        SR.Left = GrhData(CurrentGrh.GrhIndex).sX
+        SR.Top = GrhData(CurrentGrh.GrhIndex).sY
+        SR.Bottom = SR.Top + (GrhData(CurrentGrh.GrhIndex).pixelHeight)
+        SR.Right = SR.Left + (GrhData(CurrentGrh.GrhIndex).pixelWidth)
+        Call DrawGrhtoHdc(frmMain.PreviewNPCs, CurrentGrh.GrhIndex, 1, 1)
+
+End Sub
+'*************************************************
+'Author: ^[GS]^
+'Last modified: 19/05/2020 ReyarB
+'*************************************************
+'Public Sub ActualizarMosaico()
+'If frmConfigSup.MOSAICO.value = vbChecked Then
+'    mAncho = Val(frmConfigSup.mAncho)
+'    MAlto = Val(frmConfigSup.mLargo)
+'
+'    ReDim CurrentGrh(1 To mAncho, 1 To MAlto) As Grh
+'Else
+'    ReDim CurrentGrh(0) As Grh
+'End If
+'
+'Call fPreviewGrh(frmMain.cGrh.Text)
+'End Sub

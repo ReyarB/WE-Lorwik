@@ -365,7 +365,9 @@ On Error Resume Next
         NpcData(NPC).Body = Val(Leer.GetValue("NPC" & NPC, "Body"))
         NpcData(NPC).Head = Val(Leer.GetValue("NPC" & NPC, "Head"))
         NpcData(NPC).Heading = Val(Leer.GetValue("NPC" & NPC, "Heading"))
-        If LenB(NpcData(NPC).name) <> 0 Then frmMain.lListado(1).AddItem NpcData(NPC).name & " - #" & NPC
+        If LenB(NpcData(NPC).name) <> 0 Then
+            frmMain.lListado(1).AddItem NpcData(NPC).name & " - #" & NPC
+        End If
     Next
     'MsgBox "  "
     'Trabajando = "Dats\NPCs-HOSTILES.dat"
@@ -424,7 +426,7 @@ Public Sub CargarParticulas()
     
     On Error GoTo ErrorHandler
     
-    Dim LoopC      As Long
+    Dim loopc      As Long
     Dim i          As Long
     Dim GrhListing As String
     Dim TempSet    As String
@@ -439,47 +441,47 @@ Public Sub CargarParticulas()
     'resize StreamData array
     ReDim StreamData(1 To TotalStreams) As Stream
     
-    For LoopC = 1 To TotalStreams
+    For loopc = 1 To TotalStreams
 
-        With StreamData(LoopC)
+        With StreamData(loopc)
         
-            .name = Leer.GetValue(Val(LoopC), "Name")
+            .name = Leer.GetValue(Val(loopc), "Name")
         
-            Call frmMain.lstParticle.AddItem(LoopC & "-" & .name)
+            Call frmMain.lstParticle.AddItem(loopc & "-" & .name)
         
-            .NumOfParticles = Leer.GetValue(Val(LoopC), "NumOfParticles")
-            .X1 = Leer.GetValue(Val(LoopC), "X1")
-            .Y1 = Leer.GetValue(Val(LoopC), "Y1")
-            .X2 = Leer.GetValue(Val(LoopC), "X2")
-            .Y2 = Leer.GetValue(Val(LoopC), "Y2")
-            .angle = Leer.GetValue(Val(LoopC), "Angle")
-            .vecx1 = Leer.GetValue(Val(LoopC), "VecX1")
-            .vecx2 = Leer.GetValue(Val(LoopC), "VecX2")
-            .vecy1 = Leer.GetValue(Val(LoopC), "VecY1")
-            .vecy2 = Leer.GetValue(Val(LoopC), "VecY2")
-            .life1 = Leer.GetValue(Val(LoopC), "Life1")
-            .life2 = Leer.GetValue(Val(LoopC), "Life2")
-            .friction = Leer.GetValue(Val(LoopC), "Friction")
-            .spin = Leer.GetValue(Val(LoopC), "Spin")
-            .spin_speedL = Leer.GetValue(Val(LoopC), "Spin_SpeedL")
-            .spin_speedH = Leer.GetValue(Val(LoopC), "Spin_SpeedH")
-            .AlphaBlend = Leer.GetValue(Val(LoopC), "AlphaBlend")
-            .gravity = Leer.GetValue(Val(LoopC), "Gravity")
-            .grav_strength = Leer.GetValue(Val(LoopC), "Grav_Strength")
-            .bounce_strength = Leer.GetValue(Val(LoopC), "Bounce_Strength")
-            .XMove = Leer.GetValue(Val(LoopC), "XMove")
-            .YMove = Leer.GetValue(Val(LoopC), "YMove")
-            .move_x1 = Leer.GetValue(Val(LoopC), "move_x1")
-            .move_x2 = Leer.GetValue(Val(LoopC), "move_x2")
-            .move_y1 = Leer.GetValue(Val(LoopC), "move_y1")
-            .move_y2 = Leer.GetValue(Val(LoopC), "move_y2")
-            .Radio = Val(Leer.GetValue(Val(LoopC), "Radio"))
-            .life_counter = Leer.GetValue(Val(LoopC), "life_counter")
-            .Speed = Val(Leer.GetValue(Val(LoopC), "Speed"))
-            .NumGrhs = Leer.GetValue(Val(LoopC), "NumGrhs")
+            .NumOfParticles = Leer.GetValue(Val(loopc), "NumOfParticles")
+            .X1 = Leer.GetValue(Val(loopc), "X1")
+            .Y1 = Leer.GetValue(Val(loopc), "Y1")
+            .X2 = Leer.GetValue(Val(loopc), "X2")
+            .Y2 = Leer.GetValue(Val(loopc), "Y2")
+            .angle = Leer.GetValue(Val(loopc), "Angle")
+            .vecx1 = Leer.GetValue(Val(loopc), "VecX1")
+            .vecx2 = Leer.GetValue(Val(loopc), "VecX2")
+            .vecy1 = Leer.GetValue(Val(loopc), "VecY1")
+            .vecy2 = Leer.GetValue(Val(loopc), "VecY2")
+            .life1 = Leer.GetValue(Val(loopc), "Life1")
+            .life2 = Leer.GetValue(Val(loopc), "Life2")
+            .friction = Leer.GetValue(Val(loopc), "Friction")
+            .spin = Leer.GetValue(Val(loopc), "Spin")
+            .spin_speedL = Leer.GetValue(Val(loopc), "Spin_SpeedL")
+            .spin_speedH = Leer.GetValue(Val(loopc), "Spin_SpeedH")
+            .AlphaBlend = Leer.GetValue(Val(loopc), "AlphaBlend")
+            .gravity = Leer.GetValue(Val(loopc), "Gravity")
+            .grav_strength = Leer.GetValue(Val(loopc), "Grav_Strength")
+            .bounce_strength = Leer.GetValue(Val(loopc), "Bounce_Strength")
+            .XMove = Leer.GetValue(Val(loopc), "XMove")
+            .YMove = Leer.GetValue(Val(loopc), "YMove")
+            .move_x1 = Leer.GetValue(Val(loopc), "move_x1")
+            .move_x2 = Leer.GetValue(Val(loopc), "move_x2")
+            .move_y1 = Leer.GetValue(Val(loopc), "move_y1")
+            .move_y2 = Leer.GetValue(Val(loopc), "move_y2")
+            .Radio = Val(Leer.GetValue(Val(loopc), "Radio"))
+            .life_counter = Leer.GetValue(Val(loopc), "life_counter")
+            .Speed = Val(Leer.GetValue(Val(loopc), "Speed"))
+            .NumGrhs = Leer.GetValue(Val(loopc), "NumGrhs")
            
             ReDim .grh_list(1 To .NumGrhs)
-            GrhListing = Leer.GetValue(Val(LoopC), "Grh_List")
+            GrhListing = Leer.GetValue(Val(loopc), "Grh_List")
            
             For i = 1 To .NumGrhs
                 .grh_list(i) = ReadField(Str(i), GrhListing, 44)
@@ -488,7 +490,7 @@ Public Sub CargarParticulas()
             .grh_list(i - 1) = .grh_list(i - 1)
 
             For ColorSet = 1 To 4
-                TempSet = Leer.GetValue(Val(LoopC), "ColorSet" & ColorSet)
+                TempSet = Leer.GetValue(Val(loopc), "ColorSet" & ColorSet)
                 .colortint(ColorSet - 1).R = ReadField(1, TempSet, 44)
                 .colortint(ColorSet - 1).G = ReadField(2, TempSet, 44)
                 .colortint(ColorSet - 1).B = ReadField(3, TempSet, 44)
@@ -496,7 +498,7 @@ Public Sub CargarParticulas()
         
         End With
         
-    Next LoopC
+    Next loopc
 
     Set Leer = Nothing
     
@@ -509,7 +511,7 @@ ErrorHandler:
         Select Case err.Number
         
             Case 9
-                Call MsgBox("Se han encontrado valores invalidos en el Particulas.ini - Index: " & LoopC)
+                Call MsgBox("Se han encontrado valores invalidos en el Particulas.ini - Index: " & loopc)
                 Exit Sub
                 
             Case 53

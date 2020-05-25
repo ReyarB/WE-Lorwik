@@ -124,10 +124,10 @@ Begin VB.Form frmMapInfo
    End
    Begin WorldEditor.lvButtons_H cmdCerrar 
       Height          =   375
-      Left            =   2640
+      Left            =   1920
       TabIndex        =   14
       Top             =   4320
-      Width           =   1695
+      Width           =   2415
       _extentx        =   2990
       _extenty        =   661
       caption         =   "&Cerrar"
@@ -418,7 +418,7 @@ Begin VB.Form frmMapInfo
       Width           =   1455
    End
    Begin VB.Label Label2 
-      Caption         =   "Musica:"
+      Caption         =   "Musica Mp3:"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   8.25
@@ -493,7 +493,7 @@ Private Sub chkMapBackup_LostFocus()
 'Last modified: 20/05/06
 '*************************************************
 MapInfo.BackUp = chkMapBackup.value
-MapInfo.Changed = 1
+
 End Sub
 
 Private Sub chkMapMagiaSinEfecto_LostFocus()
@@ -502,7 +502,7 @@ Private Sub chkMapMagiaSinEfecto_LostFocus()
 'Last modified: 20/05/06
 '*************************************************
 MapInfo.MagiaSinEfecto = chkMapMagiaSinEfecto.value
-MapInfo.Changed = 1
+
 End Sub
 
 Private Sub chkMapInviSinEfecto_LostFocus()
@@ -511,7 +511,6 @@ Private Sub chkMapInviSinEfecto_LostFocus()
 'Last modified:
 '*************************************************
 MapInfo.InviSinEfecto = chkMapInviSinEfecto.value
-MapInfo.Changed = 1
 
 End Sub
 
@@ -521,7 +520,6 @@ Private Sub chkMapnpc_LostFocus()
 'Last modified: 28/08/2010
 '*************************************************
 MapInfo.SePuedeDomar = ChkMapNpc.value
-MapInfo.Changed = 1
  
 End Sub
 
@@ -531,7 +529,6 @@ Private Sub chkMapResuSinEfecto_LostFocus()
 'Last modified:
 '*************************************************
 MapInfo.ResuSinEfecto = chkMapResuSinEfecto.value
-MapInfo.Changed = 1
 
 End Sub
 
@@ -541,7 +538,7 @@ Private Sub chkMapNoEncriptarMP_LostFocus()
 'Last modified: 20/05/06
 '*************************************************
 MapInfo.NoEncriptarMP = chkMapNoEncriptarMP.value
-MapInfo.Changed = 1
+
 End Sub
 
 Private Sub chkMapPK_LostFocus()
@@ -550,7 +547,7 @@ Private Sub chkMapPK_LostFocus()
 'Last modified: 20/05/06
 '*************************************************
 MapInfo.PK = chkMapPK.value
-MapInfo.Changed = 1
+
 End Sub
 
 Private Sub cmdCerrar_Click()
@@ -558,8 +555,10 @@ Private Sub cmdCerrar_Click()
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
+MapInfo.Changed = 1
 Me.Hide
 End Sub
+
 
 Private Sub cmdMusica_Click()
 '*************************************************
@@ -580,13 +579,18 @@ If UnloadMode = vbFormControlMenu Then
 End If
 End Sub
 
+Private Sub lvButtons_H1_Click()
+'MapInfo.Changed = 1
+Me.Hide
+End Sub
+
 Private Sub TxtAmbient_Change()
 '*************************************************
 'Author: Lorwik
 'Last modified: 10/08/14
 '*************************************************
-MapInfo.ambient = TxtAmbient.text
-MapInfo.Changed = 1
+MapInfo.ambient = TxtAmbient.Text
+
 End Sub
 
 Private Sub txtMapMusica_LostFocus()
@@ -594,9 +598,9 @@ Private Sub txtMapMusica_LostFocus()
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
-MapInfo.Music = txtMapMusica.text
+MapInfo.Music = txtMapMusica.Text
 frmMain.lblMapMusica.Caption = MapInfo.Music
-MapInfo.Changed = 1
+
 End Sub
 
 Private Sub txtMapVersion_LostFocus()
@@ -604,9 +608,9 @@ Private Sub txtMapVersion_LostFocus()
 'Author: ^[GS]^
 'Last modified: 29/05/06
 '*************************************************
-MapInfo.MapVersion = txtMapVersion.text
+MapInfo.MapVersion = txtMapVersion.Text
 frmMain.lblMapVersion.Caption = MapInfo.MapVersion
-MapInfo.Changed = 1
+
 End Sub
 
 Private Sub txtMapNombre_LostFocus()
@@ -614,17 +618,16 @@ Private Sub txtMapNombre_LostFocus()
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
-MapInfo.name = txtMapNombre.text
+MapInfo.name = txtMapNombre.Text
 frmMain.lblMapNombre.Caption = MapInfo.name
-MapInfo.Changed = 1
+
 End Sub
 Private Sub txtlvlminimo_LostFocus()
 '*************************************************
 'Author: Lorwik
 'Last modified: 13/09/11
 '*************************************************
-MapInfo.lvlMinimo = TxtlvlMinimo.text
-MapInfo.Changed = 1
+MapInfo.lvlMinimo = TxtlvlMinimo.Text
 End Sub
 Private Sub txtMapRestringir_KeyPress(KeyAscii As Integer)
 '*************************************************
@@ -639,8 +642,8 @@ Private Sub txtMapRestringir_LostFocus()
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
-MapInfo.Restringir = txtMapRestringir.text
-MapInfo.Changed = 1
+MapInfo.Restringir = txtMapRestringir.Text
+
 End Sub
 
 Private Sub txtMapTerreno_KeyPress(KeyAscii As Integer)
@@ -656,8 +659,8 @@ Private Sub txtMapTerreno_LostFocus()
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
-MapInfo.Terreno = txtMapTerreno.text
-MapInfo.Changed = 1
+MapInfo.Terreno = txtMapTerreno.Text
+
 End Sub
 
 Private Sub txtMapZona_KeyPress(KeyAscii As Integer)
@@ -673,6 +676,6 @@ Private Sub txtMapZona_LostFocus()
 'Author: ^[GS]^
 'Last modified: 20/05/06
 '*************************************************
-MapInfo.Zona = txtMapZona.text
-MapInfo.Changed = 1
+MapInfo.Zona = txtMapZona.Text
+
 End Sub

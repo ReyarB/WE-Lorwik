@@ -14,7 +14,12 @@ Sub ConvertCPtoTP(ByVal viewPortX As Integer, ByVal viewPortY As Integer, ByRef 
     tY = UserPos.Y + viewPortY \ 32 - frmMain.Renderer.ScaleHeight \ 64
 End Sub
 
-Sub MakeChar(CharIndex As Integer, Body As Integer, Head As Integer, Heading As Byte, X As Integer, Y As Integer)
+Sub MakeChar(CharIndex As Integer, _
+             Body As Integer, _
+             Head As Integer, _
+             Heading As Byte, _
+             X As Integer, _
+             Y As Integer)
 '*************************************************
 'Author: Unkwown
 'Last modified: 28/05/06 by GS
@@ -27,7 +32,7 @@ On Error Resume Next
     
     'Update head, body, ect.
     CharList(CharIndex).Body = BodyData(Body)
-    CharList(CharIndex).Head = Head
+    CharList(CharIndex).Head = HeadData(Head)
     CharList(CharIndex).Heading = Heading
     
     'Reset moving stats
@@ -522,7 +527,7 @@ Sub DrawGrhtoHdc(picX As PictureBox, Grh As Long, ByVal X As Integer, ByVal Y As
     'D3DDevice.Clear 0, ByVal 0, D3DCLEAR_TARGET, 0, 1#, 0
     Draw_GrhIndex Grh, X, Y, LightIluminado()
     D3DDevice.EndScene
-    D3DDevice.Present destRect, ByVal 0, picX.hWnd, ByVal 0
+    D3DDevice.Present destRect, ByVal 0, picX.hwnd, ByVal 0
 End Sub
 
 '**************************************************************
@@ -530,21 +535,21 @@ Public Sub DibujarMiniMapa()
 Dim map_x, map_y, Capas As Byte
 frmMain.Minimap.Picture = LoadPicture(App.Path & "\Renderizados\" & NumMap_Save & ".bmp")
 Dim loopc As Long
-    For map_y = 1 To 100
-        For map_x = 1 To 100
+    For map_y = 1 To YMaxMapSize
+        For map_x = 1 To XMaxMapSize
             For Capas = 1 To 2
 '                If MapData(map_x, map_y).Graphic(Capas).GrhIndex > 0 Then
 '                    SetPixel frmMain.Minimap.hdc, map_x - 1, map_y - 1, GrhData(MapData(map_x, map_y).Graphic(Capas).GrhIndex).MiniMap_color
 '                End If
                 If MapData(map_x, map_y).Graphic(4).GrhIndex > 0 And frmMain.chkOptMinimap(2).value = 1 Then
-                    SetPixel frmMain.Minimap.hdc, map_x * 2 - 1, map_y * 2 - 1, GrhData(MapData(map_x, map_y).Graphic(4).GrhIndex).MiniMap_color
+                    SetPixel frmMain.Minimap.hdc, map_x - 1, map_y - 1, GrhData(MapData(map_x, map_y).Graphic(4).GrhIndex).MiniMap_color
                 End If
                 If MapData(map_x, map_y).blocked = 1 And frmMain.chkOptMinimap(3).value = 1 Then
-                    SetPixel frmMain.Minimap.hdc, map_x * 2 - 1, map_y * 2 - 1, RGB(255, 0, 0)
+                    SetPixel frmMain.Minimap.hdc, map_x - 1, map_y - 1, RGB(255, 0, 0)
                 End If
                 If MapData(map_x, map_y).ObjGrh.GrhIndex <> 0 And frmMain.chkOptMinimap(1).value = 1 Then
-                    SetPixel frmMain.Minimap.hdc, map_x * 2 - 1, map_y * 2 - 1, RGB(51, 196, 255)
-                    SetPixel frmMain.Minimap.hdc, map_x * 2 - 2, map_y * 2 - 2, RGB(51, 196, 255)
+                    SetPixel frmMain.Minimap.hdc, map_x - 1, map_y - 1, RGB(51, 196, 255)
+                    SetPixel frmMain.Minimap.hdc, map_x - 2, map_y - 2, RGB(51, 196, 255)
                 End If
             Next Capas
         Next map_x
@@ -555,8 +560,8 @@ Dim loopc As Long
             If CharList(loopc).Active = 1 Then
                 MapData(CharList(loopc).Pos.X, CharList(loopc).Pos.Y).CharIndex = loopc
                 If CharList(loopc).Heading <> 0 And frmMain.chkOptMinimap(0).value = 1 Then
-                    SetPixel frmMain.Minimap.hdc, 0 + CharList(loopc).Pos.X * 2, 0 + CharList(loopc).Pos.Y * 2, RGB(0, 255, 0)
-                    SetPixel frmMain.Minimap.hdc, 0 + CharList(loopc).Pos.X * 2, 1 + CharList(loopc).Pos.Y * 2, RGB(0, 255, 0)
+                    SetPixel frmMain.Minimap.hdc, 0 + CharList(loopc).Pos.X, 0 + CharList(loopc).Pos.Y, RGB(0, 255, 0)
+                    SetPixel frmMain.Minimap.hdc, 0 + CharList(loopc).Pos.X, 1 + CharList(loopc).Pos.Y, RGB(0, 255, 0)
                 End If
             End If
         Next loopc

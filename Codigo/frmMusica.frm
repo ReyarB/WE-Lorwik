@@ -228,14 +228,14 @@ End Sub
 ' Selecciona una nueva Musica del listado
 '
 
-Private Sub fleMusicas_Click()
-'*************************************************
-'Author: ^[GS]^
-'Last modified: 20/05/06
-'*************************************************
-'MidiActual = fleMusicas.List(fleMusicas.listIndex)
-'CargarMIDI fleMusicas.Path & "\" & fleMusicas.List(fleMusicas.listIndex)
+'Private Sub fleMusicas_Click()
+''*************************************************
+''Author: ^[GS]^
+''Last modified: 20/05/06
+''*************************************************
+'MidiActual = fleMusicas.List(fleMusicas.ListIndex)
+'CargarMIDI fleMusicas.Path & "\" & fleMusicas.List(fleMusicas.ListIndex)
 'cmdAplicarYCerrar.Enabled = True
 'If Play = False Then cmdEscuchar.Enabled = True
-End Sub
+'End Sub
 

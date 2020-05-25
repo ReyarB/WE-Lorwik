@@ -136,7 +136,7 @@ Public Sub GenerateContra(ByVal Contra As String, Optional Modo As Byte = 0)
 
     On Error Resume Next
 
-    Dim LoopC As Byte
+    Dim loopc As Byte
 
     If Modo = 0 Then
         Erase GrhDatContra
@@ -149,17 +149,17 @@ Public Sub GenerateContra(ByVal Contra As String, Optional Modo As Byte = 0)
         If Modo = 0 Then
             ReDim GrhDatContra(Len(Contra) - 1)
 
-            For LoopC = 0 To UBound(GrhDatContra)
-                GrhDatContra(LoopC) = Asc(mid$(Contra, LoopC + 1, 1))
-            Next LoopC
+            For loopc = 0 To UBound(GrhDatContra)
+                GrhDatContra(loopc) = Asc(mid$(Contra, loopc + 1, 1))
+            Next loopc
 
             GrhUsaContra = True
         ElseIf Modo = 1 Then
             ReDim MapsDatContra(Len(Contra) - 1)
 
-            For LoopC = 0 To UBound(MapsDatContra)
-                MapsDatContra(LoopC) = Asc(mid$(Contra, LoopC + 1, 1))
-            Next LoopC
+            For loopc = 0 To UBound(MapsDatContra)
+                MapsDatContra(loopc) = Asc(mid$(Contra, loopc + 1, 1))
+            Next loopc
 
             MapsUsaContra = True
 
@@ -353,7 +353,7 @@ Private Function Get_InfoHeader(ByRef ResourcePath As String, _
         
     'Check the file for validity
     If LOF(ResourceFile) <> FileHead.lngFileSize Then
-        MsgBox "Archivo de recursos da?ado. " & ResourceFilePath, , "Error"
+        MsgBox "Archivo de recursos dañado. " & ResourceFilePath, , "Error"
         Close ResourceFile
         Exit Function
 
@@ -371,7 +371,7 @@ Private Function Get_InfoHeader(ByRef ResourcePath As String, _
 errhandler:
     Close ResourceFile
     
-    Call MsgBox("Error al intentar leer el archivo " & ResourceFilePath & ". Raz?n: " & err.Number & " : " & err.Description, vbOKOnly, "Error")
+    Call MsgBox("Error al intentar leer el archivo " & ResourceFilePath & ". Razón: " & err.Number & " : " & err.Description, vbOKOnly, "Error")
 
 End Function
 
@@ -393,7 +393,7 @@ Private Sub Compress_Data(ByRef data() As Byte, Optional Modo As Byte = 0)
 
     Dim BufTemp()  As Byte
 
-    Dim LoopC      As Long
+    Dim loopc      As Long
     
     Dimensions = UBound(data) + 1
     
@@ -417,9 +417,9 @@ Private Sub Compress_Data(ByRef data() As Byte, Optional Modo As Byte = 0)
     If Modo = 0 And GrhUsaContra = True Then
         If UBound(GrhDatContra) <= UBound(data) And UBound(GrhDatContra) <> 0 Then
 
-            For LoopC = 0 To UBound(GrhDatContra)
-                data(LoopC) = data(LoopC) Xor GrhDatContra(LoopC)
-            Next LoopC
+            For loopc = 0 To UBound(GrhDatContra)
+                data(loopc) = data(loopc) Xor GrhDatContra(loopc)
+            Next loopc
 
         End If
 
@@ -427,9 +427,9 @@ Private Sub Compress_Data(ByRef data() As Byte, Optional Modo As Byte = 0)
 
         If UBound(MapsDatContra) <= UBound(data) And UBound(MapsDatContra) <> 0 Then
 
-            For LoopC = 0 To UBound(MapsDatContra)
-                data(LoopC) = data(LoopC) Xor MapsDatContra(LoopC)
-            Next LoopC
+            For loopc = 0 To UBound(MapsDatContra)
+                data(loopc) = data(loopc) Xor MapsDatContra(loopc)
+            Next loopc
 
         End If
 
@@ -456,7 +456,7 @@ Private Sub Decompress_Data(ByRef data() As Byte, _
     '*****************************************************************
     Dim BufTemp() As Byte
 
-    Dim LoopC     As Integer
+    Dim loopc     As Integer
     
     ReDim BufTemp(OrigSize - 1)
     
@@ -464,9 +464,9 @@ Private Sub Decompress_Data(ByRef data() As Byte, _
     If Modo = 0 And GrhUsaContra = True Then
         If UBound(GrhDatContra) <= UBound(data) And UBound(GrhDatContra) <> 0 Then
 
-            For LoopC = 0 To UBound(GrhDatContra)
-                data(LoopC) = data(LoopC) Xor GrhDatContra(LoopC)
-            Next LoopC
+            For loopc = 0 To UBound(GrhDatContra)
+                data(loopc) = data(loopc) Xor GrhDatContra(loopc)
+            Next loopc
 
         End If
 
@@ -474,9 +474,9 @@ Private Sub Decompress_Data(ByRef data() As Byte, _
 
         If UBound(MapsDatContra) <= UBound(data) And UBound(MapsDatContra) <> 0 Then
 
-            For LoopC = 0 To UBound(MapsDatContra)
-                data(LoopC) = data(LoopC) Xor MapsDatContra(LoopC)
-            Next LoopC
+            For loopc = 0 To UBound(MapsDatContra)
+                data(loopc) = data(loopc) Xor MapsDatContra(loopc)
+            Next loopc
 
         End If
 
@@ -529,7 +529,7 @@ Public Function Compress_Files(ByRef SourcePath As String, _
 
     Dim InfoHead()     As INFOHEADER
 
-    Dim LoopC          As Long
+    Dim loopc          As Long
 
     On Local Error GoTo errhandler
 
@@ -626,13 +626,13 @@ Public Function Compress_Files(ByRef SourcePath As String, _
     Seek OutputFile, FileHead.lngFileSize + 1
         
     ' Process every file!
-    For LoopC = 0 To FileHead.lngNumFiles - 1
+    For loopc = 0 To FileHead.lngNumFiles - 1
               
         SourceFile = FreeFile()
-        Open SourcePath & InfoHead(LoopC).strFileName For Binary Access Read Lock Write As SourceFile
+        Open SourcePath & InfoHead(loopc).strFileName For Binary Access Read Lock Write As SourceFile
                 
         'Find out how large the file is and resize the data array appropriately
-        InfoHead(LoopC).lngFileSizeUncompressed = LOF(SourceFile)
+        InfoHead(loopc).lngFileSizeUncompressed = LOF(SourceFile)
         ReDim SourceData(LOF(SourceFile) - 1)
                 
         'Get the data from the file
@@ -644,7 +644,7 @@ Public Function Compress_Files(ByRef SourcePath As String, _
         'Store it in the resource file
         Put OutputFile, , SourceData
                 
-        With InfoHead(LoopC)
+        With InfoHead(loopc)
             'Set up the info headers
             .lngFileSize = UBound(SourceData) + 1
             .lngFileStart = FileHead.lngFileSize + 1
@@ -661,7 +661,7 @@ Public Function Compress_Files(ByRef SourcePath As String, _
         'Update progress bar
         If Not prgBar Is Nothing Then prgBar.value = prgBar.value + 1
         DoEvents
-    Next LoopC
+    Next loopc
         
     'Store the headers in the file
     Seek OutputFile, 1
@@ -798,7 +798,7 @@ Public Function Extract_Files(ByRef ResourcePath As String, _
     'Last Modify Date: 17/07/2012 - ^[GS]^
     'Extracts all files from a resource file
     '*****************************************************************
-    Dim LoopC            As Long
+    Dim loopc            As Long
 
     Dim ResourceFile     As Integer
 
@@ -831,7 +831,7 @@ Public Function Extract_Files(ByRef ResourcePath As String, _
     
     'Check the file for validity
     If LOF(ResourceFile) <> FileHead.lngFileSize Then
-        Call MsgBox("Archivo de recursos da?ado. " & ResourceFilePath, , "Error")
+        Call MsgBox("Archivo de recursos dañado. " & ResourceFilePath, , "Error")
         Close ResourceFile
         Exit Function
 
@@ -844,10 +844,10 @@ Public Function Extract_Files(ByRef ResourcePath As String, _
     Get ResourceFile, , InfoHead
         
     'Check if there is enough hard drive space to extract all files
-    For LoopC = 0 To UBound(InfoHead)
+    For loopc = 0 To UBound(InfoHead)
             
-        RequiredSpace = RequiredSpace + InfoHead(LoopC).lngFileSizeUncompressed
-    Next LoopC
+        RequiredSpace = RequiredSpace + InfoHead(loopc).lngFileSizeUncompressed
+    Next loopc
         
     If RequiredSpace >= General_Drive_Get_Free_Bytes(Left$(App.Path, 3)) Then
         Erase InfoHead
@@ -867,20 +867,20 @@ Public Function Extract_Files(ByRef ResourcePath As String, _
     End If
     
     'Extract all of the files from the binary file
-    For LoopC = 0 To UBound(InfoHead)
+    For loopc = 0 To UBound(InfoHead)
 
         'Extract this file
-        If Extract_File(ResourcePath, InfoHead(LoopC), SourceData) Then
+        If Extract_File(ResourcePath, InfoHead(loopc), SourceData) Then
 
             'Destroy file if it previuosly existed
-            If FileExist(OutputPath & InfoHead(LoopC).strFileName, vbNormal) Then
-                Call Kill(OutputPath & InfoHead(LoopC).strFileName)
+            If FileExist(OutputPath & InfoHead(loopc).strFileName, vbNormal) Then
+                Call Kill(OutputPath & InfoHead(loopc).strFileName)
 
             End If
             
             'Save it!
             OutputFile = FreeFile()
-            Open OutputPath & InfoHead(LoopC).strFileName For Binary As OutputFile
+            Open OutputPath & InfoHead(loopc).strFileName For Binary As OutputFile
             Put OutputFile, , SourceData
             Close OutputFile
             
@@ -889,7 +889,7 @@ Public Function Extract_Files(ByRef ResourcePath As String, _
             Erase SourceData
             Erase InfoHead
             
-            Call MsgBox("No se pudo extraer el archivo " & InfoHead(LoopC).strFileName, vbOKOnly, "Error")
+            Call MsgBox("No se pudo extraer el archivo " & InfoHead(loopc).strFileName, vbOKOnly, "Error")
             Exit Function
 
         End If
@@ -897,7 +897,7 @@ Public Function Extract_Files(ByRef ResourcePath As String, _
         'Update progress bar
         If Not prgBar Is Nothing Then prgBar.value = prgBar.value + 1
         DoEvents
-    Next LoopC
+    Next loopc
     
     Erase InfoHead
     Extract_Files = True
@@ -1203,7 +1203,7 @@ Public Function Make_Patch(ByRef NewResourcePath As String, _
 
     'Check the file for validity
     If LOF(OldResourceFile) <> OldFileHead.lngFileSize Then
-        Call MsgBox("Archivo de recursos anterior da?ado. " & OldResourceFilePath, , "Error")
+        Call MsgBox("Archivo de recursos anterior dañado. " & OldResourceFilePath, , "Error")
         Close OldResourceFile
         Exit Function
 
@@ -1218,7 +1218,7 @@ Public Function Make_Patch(ByRef NewResourcePath As String, _
 
     'Check the file for validity
     If LOF(NewResourceFile) <> NewFileHead.lngFileSize Then
-        Call MsgBox("Archivo de recursos anterior da?ado. " & NewResourceFilePath, , "Error")
+        Call MsgBox("Archivo de recursos anterior dañado. " & NewResourceFilePath, , "Error")
         Close NewResourceFile
         Close OldResourceFile
         Exit Function
@@ -1471,7 +1471,7 @@ Public Function Apply_Patch(ByRef ResourcePath As String, _
 
     'Check the file for validity
     If LOF(ResourceFile) <> FileHead.lngFileSize Then
-        Call MsgBox("Archivo de recursos anterior da?ado. " & ResourceFilePath, , "Error")
+        Call MsgBox("Archivo de recursos anterior dañado. " & ResourceFilePath, , "Error")
         Close ResourceFile
         Exit Function
 

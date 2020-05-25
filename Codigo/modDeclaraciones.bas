@@ -198,6 +198,10 @@ Public MapaCargado As Boolean
 Public cFPS As Long
 Public dTiempoGT As Double
 Public dLastWalk As Double
+Public DespX As Integer
+Public DespY As Integer
+Public mAncho As Byte
+Public MAlto As Byte
 
 'Hold info about each map
 Public Type MapInfo
@@ -325,7 +329,7 @@ Public Type Char
     Pos As Position
 
     Body As tBodyData
-    Head As Integer
+    Head As tHeadData
     
     Moving As Byte
     MoveOffset As Position
@@ -375,7 +379,7 @@ Public Light As New clsLight
 Public Type TLVERTEX
     X As Single
     Y As Single
-    Z As Single
+    z As Single
     rhw As Single
     color As Long
     Specular As Long
@@ -386,7 +390,7 @@ End Type
 Public Type TLVERTEX2
     X As Single
     Y As Single
-    Z As Single
+    z As Single
     rhw As Single
     color As Long
     Specular As Long
@@ -516,3 +520,8 @@ Public Declare Function GetTickCount Lib "kernel32" () As Long
 'SetPixel utilizada por minimapa
 Public Declare Function SetPixel Lib "gdi32" (ByVal hdc As Long, ByVal X As Long, ByVal Y As Long, ByVal crColor As Long) As Long
 
+' tamaño para render de minimapas
+Public BY As Integer
+Public BX As Integer
+Public BYm As Integer
+Public BXm As Integer
