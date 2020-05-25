@@ -1,10 +1,11 @@
 VERSION 5.00
 Begin VB.Form frmMapa 
    AutoRedraw      =   -1  'True
+   BackColor       =   &H80000008&
    Caption         =   "frmMapa"
    ClientHeight    =   15045
-   ClientLeft      =   2130
-   ClientTop       =   900
+   ClientLeft      =   2775
+   ClientTop       =   450
    ClientWidth     =   24015
    BeginProperty Font 
       Name            =   "Tahoma"
