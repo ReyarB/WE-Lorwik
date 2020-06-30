@@ -155,6 +155,7 @@ Public Sub GuardarMapa(Optional Path As String)
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
+
 Call frmOptimizar.Optimizar
 
 Call Resolucion
@@ -169,10 +170,12 @@ If LenB(Path) = 0 Then
     If LenB(Path) = 0 Then Exit Sub
 End If
 
-If frmMain.Dialog.FilterIndex = 1 Then
+If frmMain.Dialog.FilterIndex = 2 Then
     Call Save_CSM(Path)
-ElseIf frmMain.Dialog.FilterIndex = 2 Then
+ElseIf frmMain.Dialog.FilterIndex = 1 Then
     Call MapaV2_Guardar(Path)
+        
+    
 End If
 
 errhandler:
@@ -270,7 +273,7 @@ Public Sub NuevoMapa()
     Next Y
     
     MapInfo.MapVersion = 0
-    MapInfo.name = "Nuevo Mapa"
+    MapInfo.Name = "Nuevo Mapa"
     MapInfo.Music = 0
     MapInfo.PK = True
     MapInfo.MagiaSinEfecto = 0
@@ -321,8 +324,8 @@ Public Sub MapaV2_Guardar(ByVal SaveAs As String, Optional ByVal Preguntar As Bo
     Dim ByFlags     As Byte
 
     If FileExist(SaveAs, vbNormal) = True Then
-        
-        If Preguntar Then
+    
+    If frmConvert.Check2.value = 0 Then
             If MsgBox("¿Desea sobrescribir " & SaveAs & "?", vbCritical + vbYesNo) = vbNo Then
                 Exit Sub
             Else
@@ -395,6 +398,16 @@ Public Sub MapaV2_Guardar(ByVal SaveAs As String, Optional ByVal Preguntar As Bo
                 If .Trigger Then ByFlags = ByFlags Or 16
                 
                 If .particle_group_index Then ByFlags = ByFlags Or 32
+                    
+'                If MapData(X, Y).light_index Then
+'                    Put FreeFileMap, , Lights(MapData(X, Y).light_index).Range
+'                    R = Lights(MapData(X, Y).light_index).RGBCOLOR.R
+'                    G = Lights(MapData(X, Y).light_index).RGBCOLOR.G
+'                    B = Lights(MapData(X, Y).light_index).RGBCOLOR.B
+'                    Put FreeFileMap, , R
+'                    Put FreeFileMap, , G
+'                    Put FreeFileMap, , B
+'                End If
                     
                 Put FreeFileMap, , ByFlags
                     
@@ -538,7 +551,7 @@ Public Sub MapaV2_Cargar(ByVal Map As String, Optional ByVal EsInteger As Boolea
 
     'Vamos a limpiar las luces y particulas del mapa anterior
     'Engine.Particle_Group_Remove_All
-
+    
     'Load arrays Ver ReyarB
     For Y = YMinMapSize To YMaxMapSize
         For X = XMinMapSize To XMaxMapSize
@@ -627,6 +640,7 @@ Public Sub MapaV2_Cargar(ByVal Map As String, Optional ByVal EsInteger As Boolea
                     MapData(X, Y).particle_group_index = General_Particle_Create(TempInt, X, Y, -1)
                     MapData(X, Y).particle_Index = TempInt
                 End If
+                
             
                 'Cargamos el archivo ".INF"
                 Get FreeFileInf, , ByFlags
@@ -737,7 +751,7 @@ End Sub
 '
 ' @param Archivo Especifica el Path del archivo .DAT
 
-Public Sub MapInfo_Guardar(ByVal archivo As String)
+Public Sub MapInfo_Guardar(ByVal Archivo As String)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 28/05/06
@@ -747,22 +761,22 @@ Public Sub MapInfo_Guardar(ByVal archivo As String)
         MapTitulo = NameMap_Save
     End If
 
-    Call WriteVar(archivo, MapTitulo, "Name", MapInfo.name)
-    Call WriteVar(archivo, MapTitulo, "MusicNumMp3", MapInfo.Music)
-    Call WriteVar(archivo, MapTitulo, "MagiaSinefecto", Val(MapInfo.MagiaSinEfecto))
-    Call WriteVar(archivo, MapTitulo, "InviSinEfecto", Val(MapInfo.InviSinEfecto))
-    Call WriteVar(archivo, MapTitulo, "ResuSinEfecto", Val(MapInfo.ResuSinEfecto))
-    Call WriteVar(archivo, MapTitulo, "NoEncriptarMP", Val(MapInfo.NoEncriptarMP))
+    Call WriteVar(Archivo, MapTitulo, "Name", MapInfo.Name)
+    Call WriteVar(Archivo, MapTitulo, "MusicNumMp3", MapInfo.Music)
+    Call WriteVar(Archivo, MapTitulo, "MagiaSinefecto", Val(MapInfo.MagiaSinEfecto))
+    Call WriteVar(Archivo, MapTitulo, "InviSinEfecto", Val(MapInfo.InviSinEfecto))
+    Call WriteVar(Archivo, MapTitulo, "ResuSinEfecto", Val(MapInfo.ResuSinEfecto))
+    Call WriteVar(Archivo, MapTitulo, "NoEncriptarMP", Val(MapInfo.NoEncriptarMP))
 
-    Call WriteVar(archivo, MapTitulo, "Terreno", MapInfo.Terreno)
-    Call WriteVar(archivo, MapTitulo, "Zona", MapInfo.Zona)
-    Call WriteVar(archivo, MapTitulo, "Restringir", MapInfo.Restringir)
-    Call WriteVar(archivo, MapTitulo, "BackUp", Str(MapInfo.BackUp))
+    Call WriteVar(Archivo, MapTitulo, "Terreno", MapInfo.Terreno)
+    Call WriteVar(Archivo, MapTitulo, "Zona", MapInfo.Zona)
+    Call WriteVar(Archivo, MapTitulo, "Restringir", MapInfo.Restringir)
+    Call WriteVar(Archivo, MapTitulo, "BackUp", Str(MapInfo.BackUp))
 
     If MapInfo.PK Then
-        Call WriteVar(archivo, MapTitulo, "Pk", "0")
+        Call WriteVar(Archivo, MapTitulo, "Pk", "0")
     Else
-        Call WriteVar(archivo, MapTitulo, "Pk", "1")
+        Call WriteVar(Archivo, MapTitulo, "Pk", "1")
     End If
 End Sub
 
@@ -771,7 +785,7 @@ End Sub
 '
 ' @param Archivo Especifica el Path del archivo .DAT
 
-Public Sub MapInfo_Cargar(ByVal archivo As String)
+Public Sub MapInfo_Cargar(ByVal Archivo As String)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 02/06/06
@@ -783,23 +797,23 @@ On Error Resume Next
     Dim Path As String
     MapTitulo = Empty
     
-    If FileExist(archivo, vbNormal) = False Then
-        Call AddtoRichTextBox(frmMain.StatTxt, "Error en el Mapa " & archivo & ", no se ha encontrado al archivo .dat", 255, 0, 0)
+    If FileExist(Archivo, vbNormal) = False Then
+        Call AddtoRichTextBox(frmMain.StatTxt, "Error en el Mapa " & Archivo & ", no se ha encontrado al archivo .dat", 255, 0, 0)
      Exit Sub
     End If
     
-    Leer.Initialize archivo
+    Leer.Initialize Archivo
 
-    For loopc = Len(archivo) To 1 Step -1
-        If mid(archivo, loopc, 1) = "\" Then
-            Path = Left(archivo, loopc)
+    For loopc = Len(Archivo) To 1 Step -1
+        If mid(Archivo, loopc, 1) = "\" Then
+            Path = Left(Archivo, loopc)
             Exit For
         End If
     Next
-    archivo = Right(archivo, Len(archivo) - (Len(Path)))
-    MapTitulo = UCase(Left(archivo, Len(archivo) - 4))
+    Archivo = Right(Archivo, Len(Archivo) - (Len(Path)))
+    MapTitulo = UCase(Left(Archivo, Len(Archivo) - 4))
 
-    MapInfo.name = Leer.GetValue(MapTitulo, "Name")
+    MapInfo.Name = Leer.GetValue(MapTitulo, "Name")
     MapInfo.Music = Leer.GetValue(MapTitulo, "MusicNumMp3")
     MapInfo.MagiaSinEfecto = Val(Leer.GetValue(MapTitulo, "MagiaSinEfecto"))
     MapInfo.InviSinEfecto = Val(Leer.GetValue(MapTitulo, "InviSinEfecto"))
@@ -833,7 +847,7 @@ Public Sub MapInfo_Actualizar()
 
 On Error Resume Next
     ' Mostrar en Formularios
-    frmMapInfo.txtMapNombre.Text = MapInfo.name
+    frmMapInfo.txtMapNombre.Text = MapInfo.Name
     frmMapInfo.txtMapMusica.Text = MapInfo.Music
     frmMapInfo.txtMapTerreno.Text = MapInfo.Terreno
     frmMapInfo.txtMapZona.Text = MapInfo.Zona
@@ -846,7 +860,7 @@ On Error Resume Next
     frmMapInfo.chkMapNoEncriptarMP.value = MapInfo.NoEncriptarMP
     frmMapInfo.chkMapPK.value = IIf(MapInfo.PK = True, 1, 0)
     frmMapInfo.txtMapVersion = MapInfo.MapVersion
-    frmMain.lblMapNombre = MapInfo.name
+    frmMain.lblMapNombre = MapInfo.Name
     frmMain.lblMapMusica = MapInfo.Music
     frmMain.lblMapAmbient = MapInfo.ambient
     frmMapInfo.TxtlvlMinimo = MapInfo.lvlMinimo
@@ -986,18 +1000,18 @@ Open Map For Binary Access Read As fh
             Next i
         End If
             
-        If .NumeroLuces > 0 Then
-            ReDim Luces(1 To .NumeroLuces)
-            Dim p As Byte
-            Get #fh, , Luces
-            'For i = 1 To .NumeroLuces
-                'For p = 0 To 3
-                    'MapData(Luces(i).X, Luces(i).y).base_light(p) = Luces(i).base_light(p)
-                    'If MapData(Luces(i).X, Luces(i).y).base_light(p) Then _
-                        MapData(Luces(i).X, Luces(i).y).light_value(p) = Luces(i).light_value(p)
-                'Next p
-            'Next i
-        End If
+'        If .NumeroLuces > 0 Then
+'            ReDim Luces(1 To .NumeroLuces)
+'            Dim p As Byte
+'            Get #fh, , Luces
+'            For i = 1 To .NumeroLuces
+'                For p = 0 To 3
+'                    MapData(Luces(i).X, Luces(i).Y).base_light(p) = Luces(i).base_light(p)
+'                    If MapData(Luces(i).X, Luces(i).Y).base_light(p) Then _
+'                        MapData(Luces(i).X, Luces(i).Y).light_value(p) = Luces(i).light_value(p)
+'                Next p
+'            Next i
+'        End If
             
         If .NumeroOBJs > 0 Then
             ReDim Objetos(1 To .NumeroOBJs)
@@ -1082,7 +1096,7 @@ Next J
         frmRender.Hide
    End If
     
-    Call AddtoRichTextBox(frmMain.StatTxt, "Mapa " & Map & " cargado...", 0, 255, 0)
+    Call AddtoRichTextBox(frmMain.StatTxt, "Mapa " & Map & " cargado...", 43, 0, 255)
 ErrorHandler:
     If fh <> 0 Then Close fh
     Call AddtoRichTextBox(frmMain.StatTxt, "Error en el Mapa " & Map & ", se ha generado un informe de errores en: " & App.Path & "\Logs.txt", 255, 0, 0)
@@ -1179,19 +1193,19 @@ For J = MapSize.YMin To MapSize.YMax
                 Particulas(MH.NumeroParticulas).Particula = CLng(particle_group_list(.particle_group_index).stream_type)
             End If
            
-            'If .base_light(0) Or .base_light(1) _
-            '        Or .base_light(2) Or .base_light(3) Then
-            '    MH.NumeroLuces = MH.NumeroLuces + 1
-            '    ReDim Preserve Luces(1 To MH.NumeroLuces)
-            '    Dim p As Byte
-            '    Luces(MH.NumeroLuces).X = i
-            '    Luces(MH.NumeroLuces).y = j
-            '    For p = 0 To 3
-            '        Luces(MH.NumeroLuces).base_light(p) = .base_light(p)
-            '        If .base_light(p) Then _
-            '            Luces(MH.NumeroLuces).light_value(p) = .light_value(p)
-            '    Next p
-            'End If
+'            If .base_light(0) Or .base_light(1) _
+'                    Or .base_light(2) Or .base_light(3) Then
+'                MH.NumeroLuces = MH.NumeroLuces + 1
+'                ReDim Preserve Luces(1 To MH.NumeroLuces)
+'                Dim p As Byte
+'                Luces(MH.NumeroLuces).X = i
+'                Luces(MH.NumeroLuces).Y = J
+'                For p = 0 To 3
+'                    Luces(MH.NumeroLuces).base_light(p) = .base_light(p)
+'                    If .base_light(p) Then _
+'                        Luces(MH.NumeroLuces).light_value(p) = .light_value(p)
+'                Next p
+'            End If
             
             If .OBJInfo.objindex > 0 Then
                 MH.NumeroOBJs = MH.NumeroOBJs + 1
@@ -1266,7 +1280,7 @@ MapInfo.Changed = 0
 
 Save_CSM = True
 
- Call AddtoRichTextBox(frmMain.StatTxt, "Mapa " & MapRoute & " guardado...", 0, 255, 0)
+ Call AddtoRichTextBox(frmMain.StatTxt, "Mapa " & MapRoute & " guardado...", 43, 0, 255)
 Exit Function
 
 ErrorHandler:
@@ -1276,7 +1290,7 @@ End Function
 
 
 Public Sub CSMInfoSave()
-    MapDat.map_name = MapInfo.name
+    MapDat.map_name = MapInfo.Name
     MapDat.music_number = MapInfo.Music
     MapDat.MagiaSinEfecto = MapInfo.MagiaSinEfecto
     MapDat.InviSinEfecto = MapInfo.InviSinEfecto
@@ -1301,7 +1315,7 @@ Public Sub CSMInfoSave()
 End Sub
 
 Public Sub CSMInfoCargar()
-    MapInfo.name = MapDat.map_name
+    MapInfo.Name = MapDat.map_name
     MapInfo.Music = MapDat.music_number
     MapInfo.MagiaSinEfecto = MapDat.MagiaSinEfecto
     MapInfo.InviSinEfecto = MapDat.InviSinEfecto
@@ -1345,6 +1359,186 @@ Public Sub Resolucion()
     MaxXBorder = XMaxMapSize - (ClienteWidth \ 2)
     MinYBorder = YMinMapSize + (ClienteHeight \ 2)
     MaxYBorder = YMaxMapSize - (ClienteHeight \ 2)
+
+End Sub
+
+''
+' Guardar Mapa con el formato V5
+'
+' @param SaveAs Especifica donde guardar el mapa
+
+Public Sub MapaV5_Guardar(ByVal SaveAs As String, Optional ByVal Preguntar As Boolean)
+    '*************************************************
+    'Author: ^[GS]^
+    'Last modified: 20/05/06
+    '*************************************************
+
+    On Error GoTo ErrorSave
+
+    Dim FreeFileMap As Long
+    Dim FreeFileInf As Long
+    Dim loopc       As Long
+    Dim TempInt     As Integer
+    Dim Y           As Long
+    Dim X           As Long
+    Dim ByFlags     As Byte
+    
+    'If frmConvert.Check2.value = 0 Then Preguntar = False
+    
+    
+
+    If FileExist(SaveAs, vbNormal) = True Then
+        
+        If frmConvert.Check2.value = 0 Then
+            If MsgBox("¿Desea sobrescribir " & SaveAs & "?", vbCritical + vbYesNo) = vbNo Then
+                Exit Sub
+            Else
+                Call Kill(SaveAs)
+            End If
+        
+        Else
+            Call Kill(SaveAs)
+            
+        End If
+        
+    End If
+
+    frmMain.MousePointer = 11
+
+    ' y borramos el .inf tambien
+    If FileExist(Left$(SaveAs, Len(SaveAs) - 4) & ".inf", vbNormal) = True Then
+        Call Kill(Left$(SaveAs, Len(SaveAs) - 4) & ".inf")
+    End If
+
+    'Open .map file
+    FreeFileMap = FreeFile
+    Open SaveAs For Binary As FreeFileMap
+    Seek FreeFileMap, 1
+
+    SaveAs = Left$(SaveAs, Len(SaveAs) - 4)
+    SaveAs = SaveAs & ".inf"
+
+    'Open .inf file
+    FreeFileInf = FreeFile
+    Open SaveAs For Binary As FreeFileInf
+    Seek FreeFileInf, 1
+
+    'map Header
+    
+    ' Version del Mapa
+    If frmMain.lblMapVersion.Caption < 32767 Then
+        frmMain.lblMapVersion.Caption = frmMain.lblMapVersion + 1
+        frmMapInfo.txtMapVersion = frmMain.lblMapVersion.Caption
+    End If
+
+    Put FreeFileMap, , CInt(frmMain.lblMapVersion.Caption)
+    Put FreeFileMap, , MiCabecera
+    Put FreeFileMap, , TempInt
+    Put FreeFileMap, , TempInt
+    Put FreeFileMap, , TempInt
+    Put FreeFileMap, , TempInt
+    
+    'inf Header
+    Put FreeFileInf, , TempInt
+    Put FreeFileInf, , TempInt
+    Put FreeFileInf, , TempInt
+    Put FreeFileInf, , TempInt
+    Put FreeFileInf, , TempInt
+    
+    'Write .map file
+    For Y = YMinMapSize To YMaxMapSize
+        For X = XMinMapSize To XMaxMapSize
+            
+            With MapData(X, Y)
+            
+                ByFlags = 0
+                
+                If .blocked = 1 Then ByFlags = ByFlags Or 1
+                
+                If .Graphic(2).GrhIndex Then ByFlags = ByFlags Or 2
+                If .Graphic(3).GrhIndex Then ByFlags = ByFlags Or 4
+                If .Graphic(4).GrhIndex Then ByFlags = ByFlags Or 8
+
+                If .Trigger Then ByFlags = ByFlags Or 16
+                
+'                If .particle_group_index Then ByFlags = ByFlags Or 32
+                    
+                Put FreeFileMap, , ByFlags
+                    
+                If MapaCargado_Integer Then
+                    Put FreeFileMap, , .Graphic(1).GrhIndexIntg
+                Else
+                    Put FreeFileMap, , .Graphic(1).GrhIndex
+                End If
+                
+                For loopc = 2 To 4
+                    
+                    If MapaCargado_Integer Then
+                        If .Graphic(loopc).GrhIndex Then Put FreeFileMap, , .Graphic(loopc).GrhIndexIntg
+                    Else
+                        If .Graphic(loopc).GrhIndex Then Put FreeFileMap, , .Graphic(loopc).GrhIndex
+                    End If
+
+                Next loopc
+                    
+                If .Trigger Then Put FreeFileMap, , .Trigger
+                
+'                If .particle_group_index Then
+'                    Put FreeFileMap, , .particle_Index
+'                End If
+                
+                'Escribimos el archivo ".INF"
+                ByFlags = 0
+                    
+                If .TileExit.Map Then ByFlags = ByFlags Or 1
+                
+                If .NPCIndex Then ByFlags = ByFlags Or 2
+                
+                If .OBJInfo.objindex Then ByFlags = ByFlags Or 4
+                    
+                Put FreeFileInf, , ByFlags
+                    
+                If .TileExit.Map Then
+                    Put FreeFileInf, , .TileExit.Map
+                    Put FreeFileInf, , .TileExit.X
+                    Put FreeFileInf, , .TileExit.Y
+                End If
+                    
+                If .NPCIndex Then
+                    Put FreeFileInf, , CInt(.NPCIndex)
+                End If
+                    
+                If .OBJInfo.objindex Then
+                    Put FreeFileInf, , .OBJInfo.objindex
+                    Put FreeFileInf, , .OBJInfo.Amount
+                End If
+            
+            End With
+            
+            
+        Next X
+    Next Y
+    
+    'Close .map file
+    Close FreeFileMap
+    
+    'Close .inf file
+    Close FreeFileInf
+
+    Call Pestañas(SaveAs, ".map")
+
+    'write .dat file
+    SaveAs = Left$(SaveAs, Len(SaveAs) - 4) & ".dat"
+    Call MapInfo_Guardar(SaveAs)
+
+    'Change mouse icon
+    frmMain.MousePointer = 0
+    MapInfo.Changed = 0
+
+    Exit Sub
+
+ErrorSave:
+    MsgBox "Error en GuardarV5, nro. " & err.Number & " - " & err.Description
 
 End Sub
 

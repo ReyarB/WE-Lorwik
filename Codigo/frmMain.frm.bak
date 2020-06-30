@@ -2,12 +2,14 @@ VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
 Begin VB.Form frmMain 
+   Appearance      =   0  'Flat
+   BackColor       =   &H00FFFFFF&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "WorldEditor Versi�n 2.0.56  ReyarB"
-   ClientHeight    =   14415
-   ClientLeft      =   3270
-   ClientTop       =   690
-   ClientWidth     =   22290
+   Caption         =   "WorldEditor"
+   ClientHeight    =   14040
+   ClientLeft      =   390
+   ClientTop       =   840
+   ClientWidth     =   22305
    BeginProperty Font 
       Name            =   "Tahoma"
       Size            =   8.25
@@ -20,247 +22,11 @@ Begin VB.Form frmMain
    Icon            =   "frmMain.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
-   ScaleHeight     =   961
-   ScaleMode       =   3  'Pixel
-   ScaleWidth      =   1486
+   ScaleHeight     =   936
+   ScaleMode       =   0  'User
+   ScaleWidth      =   719.516
+   StartUpPosition =   1  'CenterOwner
    Visible         =   0   'False
-   Begin MSComDlg.CommonDialog CommonDialog1 
-      Left            =   4680
-      Top             =   120
-      _ExtentX        =   847
-      _ExtentY        =   847
-      _Version        =   393216
-   End
-   Begin WorldEditor.lvButtons_H SelectPanelextra 
-      Height          =   1275
-      Index           =   2
-      Left            =   24840
-      TabIndex        =   210
-      Top             =   0
-      Width           =   1785
-      _ExtentX        =   3149
-      _ExtentY        =   2249
-      Caption         =   "Abrir Datos en Exel"
-      CapAlign        =   2
-      BackStyle       =   2
-      Shape           =   1
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Times New Roman"
-         Size            =   9
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      LockHover       =   1
-      cGradient       =   8421631
-      Mode            =   1
-      Value           =   0   'False
-      CustomClick     =   1
-      ImgAlign        =   5
-      ImgSize         =   24
-      cBack           =   -2147483633
-   End
-   Begin WorldEditor.lvButtons_H SelectPanelextra 
-      Height          =   1275
-      Index           =   1
-      Left            =   23160
-      TabIndex        =   209
-      Top             =   0
-      Width           =   2985
-      _ExtentX        =   5265
-      _ExtentY        =   2249
-      Caption         =   "&Translados Mapa Adtacentes"
-      CapAlign        =   2
-      BackStyle       =   2
-      Shape           =   3
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Arial"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      LockHover       =   1
-      cGradient       =   8421631
-      Mode            =   1
-      Value           =   0   'False
-      ImgAlign        =   5
-      Image           =   "frmMain.frx":7F6A
-      ImgSize         =   24
-      cBack           =   -2147483633
-   End
-   Begin RichTextLib.RichTextBox StatTxt 
-      Height          =   960
-      Left            =   4680
-      TabIndex        =   88
-      TabStop         =   0   'False
-      ToolTipText     =   "Mensajes del servidor"
-      Top             =   13440
-      Width           =   12855
-      _ExtentX        =   22675
-      _ExtentY        =   1693
-      _Version        =   393217
-      BackColor       =   16777215
-      ReadOnly        =   -1  'True
-      ScrollBars      =   2
-      DisableNoScroll =   -1  'True
-      TextRTF         =   $"frmMain.frx":B5CA
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-   End
-   Begin VB.PictureBox PreviewNPCs 
-      BackColor       =   &H00000000&
-      FillColor       =   &H00C0C0C0&
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   4740
-      Left            =   120
-      ScaleHeight     =   4680
-      ScaleWidth      =   4425
-      TabIndex        =   205
-      Top             =   9600
-      Visible         =   0   'False
-      Width           =   4485
-      Begin VB.Label Label5 
-         AutoSize        =   -1  'True
-         BackColor       =   &H8000000D&
-         BackStyle       =   0  'Transparent
-         Caption         =   "Ancho"
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00000000&
-         Height          =   210
-         Index           =   3
-         Left            =   120
-         TabIndex        =   207
-         Top             =   555
-         Width           =   525
-      End
-      Begin VB.Label Label7 
-         AutoSize        =   -1  'True
-         BackColor       =   &H8000000D&
-         BackStyle       =   0  'Transparent
-         Caption         =   "Largo"
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00000000&
-         Height          =   210
-         Left            =   120
-         TabIndex        =   206
-         Top             =   900
-         Width           =   480
-      End
-   End
-   Begin VB.PictureBox PreviewObj 
-      BackColor       =   &H00000000&
-      FillColor       =   &H00C0C0C0&
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   4380
-      Left            =   120
-      ScaleHeight     =   4320
-      ScaleWidth      =   4425
-      TabIndex        =   202
-      Top             =   9600
-      Visible         =   0   'False
-      Width           =   4485
-      Begin VB.Label Label4 
-         AutoSize        =   -1  'True
-         BackColor       =   &H8000000D&
-         BackStyle       =   0  'Transparent
-         Caption         =   "Largo"
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00000000&
-         Height          =   210
-         Left            =   120
-         TabIndex        =   203
-         Top             =   900
-         Width           =   480
-      End
-      Begin VB.Label Label5 
-         AutoSize        =   -1  'True
-         BackColor       =   &H8000000D&
-         BackStyle       =   0  'Transparent
-         Caption         =   "Ancho"
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00000000&
-         Height          =   210
-         Index           =   2
-         Left            =   120
-         TabIndex        =   204
-         Top             =   555
-         Width           =   525
-      End
-   End
-   Begin VB.PictureBox Picture3 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   495
-      Left            =   20880
-      Picture         =   "frmMain.frx":B647
-      ScaleHeight     =   495
-      ScaleWidth      =   1335
-      TabIndex        =   201
-      Top             =   13320
-      Width           =   1335
-   End
    Begin VB.PictureBox pPaneles 
       Appearance      =   0  'Flat
       AutoSize        =   -1  'True
@@ -278,1295 +44,13 @@ Begin VB.Form frmMain
       ForeColor       =   &H80000008&
       Height          =   6255
       Left            =   120
-      Picture         =   "frmMain.frx":1013D
+      Picture         =   "frmMain.frx":7F6A
       ScaleHeight     =   415
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   295
       TabIndex        =   2
       Top             =   3360
       Width           =   4455
-      Begin VB.ListBox lstParticle 
-         BackColor       =   &H00000000&
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00FFFFFF&
-         Height          =   2205
-         Left            =   120
-         TabIndex        =   115
-         Top             =   120
-         Visible         =   0   'False
-         Width           =   4095
-      End
-      Begin VB.ListBox lListado 
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   2160
-         Index           =   0
-         ItemData        =   "frmMain.frx":6A109
-         Left            =   120
-         List            =   "frmMain.frx":6A10B
-         Sorted          =   -1  'True
-         TabIndex        =   61
-         Tag             =   "-1"
-         Top             =   120
-         Visible         =   0   'False
-         Width           =   4095
-      End
-      Begin VB.Frame MapasFrame 
-         BackColor       =   &H80000012&
-         ForeColor       =   &H8000000B&
-         Height          =   615
-         Left            =   120
-         TabIndex        =   176
-         Top             =   5520
-         Width           =   4215
-         Begin VB.OptionButton Option2 
-            BackColor       =   &H00000000&
-            Caption         =   "Mapas para 680"
-            ForeColor       =   &H8000000E&
-            Height          =   255
-            Left            =   2400
-            TabIndex        =   178
-            Top             =   240
-            Width           =   1695
-         End
-         Begin VB.OptionButton Option1 
-            BackColor       =   &H00000000&
-            Caption         =   "Mapas para 1024"
-            ForeColor       =   &H8000000E&
-            Height          =   255
-            Left            =   240
-            TabIndex        =   177
-            Top             =   240
-            Value           =   -1  'True
-            Width           =   1815
-         End
-      End
-      Begin VB.TextBox Life 
-         Alignment       =   2  'Center
-         BackColor       =   &H00000000&
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00FFFFFF&
-         Height          =   285
-         Left            =   2280
-         TabIndex        =   116
-         Text            =   "-1"
-         Top             =   2520
-         Visible         =   0   'False
-         Width           =   495
-      End
-      Begin VB.TextBox tTY 
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   315
-         Left            =   1200
-         TabIndex        =   76
-         Text            =   "1"
-         Top             =   960
-         Visible         =   0   'False
-         Width           =   2900
-      End
-      Begin VB.TextBox tTX 
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   315
-         Left            =   1200
-         TabIndex        =   75
-         Text            =   "1"
-         Top             =   600
-         Visible         =   0   'False
-         Width           =   2900
-      End
-      Begin VB.TextBox tTMapa 
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   315
-         Left            =   1200
-         TabIndex        =   74
-         Text            =   "1"
-         Top             =   240
-         Visible         =   0   'False
-         Width           =   2900
-      End
-      Begin WorldEditor.lvButtons_H cInsertarTrans 
-         Height          =   375
-         Left            =   240
-         TabIndex        =   77
-         Top             =   1320
-         Visible         =   0   'False
-         Width           =   3855
-         _ExtentX        =   6800
-         _ExtentY        =   661
-         Caption         =   "&Insertar Translado"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cInsertarTransOBJ 
-         Height          =   375
-         Left            =   240
-         TabIndex        =   78
-         Top             =   1680
-         Visible         =   0   'False
-         Width           =   3855
-         _ExtentX        =   6800
-         _ExtentY        =   661
-         Caption         =   "Colocar automaticamente &Objeto"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin VB.ComboBox cCapas 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   330
-         ItemData        =   "frmMain.frx":6A10D
-         Left            =   1080
-         List            =   "frmMain.frx":6A11D
-         TabIndex        =   1
-         TabStop         =   0   'False
-         Text            =   "1"
-         Top             =   2640
-         Visible         =   0   'False
-         Width           =   855
-      End
-      Begin VB.ComboBox cGrh 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   330
-         Left            =   2880
-         TabIndex        =   63
-         Text            =   "1"
-         Top             =   2640
-         Visible         =   0   'False
-         Width           =   1335
-      End
-      Begin VB.ComboBox cFiltro 
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   330
-         Index           =   0
-         Left            =   600
-         TabIndex        =   62
-         Top             =   2280
-         Visible         =   0   'False
-         Width           =   3615
-      End
-      Begin VB.ComboBox cFiltro 
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   330
-         Index           =   3
-         Left            =   600
-         TabIndex        =   55
-         Top             =   2760
-         Visible         =   0   'False
-         Width           =   3615
-      End
-      Begin VB.ComboBox cNumFunc 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   330
-         Index           =   0
-         ItemData        =   "frmMain.frx":6A12D
-         Left            =   3360
-         List            =   "frmMain.frx":6A12F
-         TabIndex        =   47
-         Text            =   "1"
-         Top             =   3120
-         Visible         =   0   'False
-         Width           =   855
-      End
-      Begin VB.ComboBox cFiltro 
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   330
-         Index           =   1
-         Left            =   600
-         TabIndex        =   46
-         Top             =   2760
-         Visible         =   0   'False
-         Width           =   3615
-      End
-      Begin VB.PictureBox Picture5 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   0
-         Left            =   0
-         ScaleHeight     =   0
-         ScaleWidth      =   0
-         TabIndex        =   3
-         Top             =   0
-         Width           =   0
-      End
-      Begin VB.PictureBox Picture6 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   0
-         Left            =   0
-         ScaleHeight     =   0
-         ScaleWidth      =   0
-         TabIndex        =   4
-         Top             =   0
-         Width           =   0
-      End
-      Begin VB.PictureBox Picture7 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   0
-         Left            =   0
-         ScaleHeight     =   0
-         ScaleWidth      =   0
-         TabIndex        =   5
-         Top             =   0
-         Width           =   0
-      End
-      Begin VB.PictureBox Picture8 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   0
-         Left            =   0
-         ScaleHeight     =   0
-         ScaleWidth      =   0
-         TabIndex        =   6
-         Top             =   0
-         Width           =   0
-      End
-      Begin VB.PictureBox Picture9 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   0
-         Left            =   0
-         ScaleHeight     =   0
-         ScaleWidth      =   0
-         TabIndex        =   7
-         Top             =   0
-         Width           =   0
-      End
-      Begin VB.PictureBox Picture11 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   0
-         Left            =   0
-         ScaleHeight     =   0
-         ScaleWidth      =   0
-         TabIndex        =   40
-         Top             =   0
-         Width           =   0
-      End
-      Begin WorldEditor.lvButtons_H cQuitarTrigger 
-         Height          =   375
-         Left            =   120
-         TabIndex        =   41
-         Top             =   3840
-         Visible         =   0   'False
-         Width           =   2175
-         _ExtentX        =   3836
-         _ExtentY        =   661
-         Caption         =   "&Quitar Trigger's"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cAgregarFuncalAzar 
-         Height          =   375
-         Index           =   0
-         Left            =   120
-         TabIndex        =   49
-         Top             =   3480
-         Visible         =   0   'False
-         Width           =   2175
-         _ExtentX        =   3836
-         _ExtentY        =   661
-         Caption         =   "Insetar NPC's al &Azar"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   0
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cQuitarFunc 
-         Height          =   375
-         Index           =   0
-         Left            =   120
-         TabIndex        =   50
-         Top             =   3840
-         Visible         =   0   'False
-         Width           =   2175
-         _ExtentX        =   3836
-         _ExtentY        =   661
-         Caption         =   "&Quitar NPC's"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cInsertarFunc 
-         Height          =   735
-         Index           =   0
-         Left            =   2400
-         TabIndex        =   51
-         Top             =   3480
-         Visible         =   0   'False
-         Width           =   1815
-         _ExtentX        =   3201
-         _ExtentY        =   1296
-         Caption         =   "&Insertar NPC's"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cVerBloqueos 
-         Height          =   495
-         Left            =   120
-         TabIndex        =   52
-         Top             =   120
-         Visible         =   0   'False
-         Width           =   4095
-         _ExtentX        =   7223
-         _ExtentY        =   873
-         Caption         =   "&Mostrar Bloqueos"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cInsertarBloqueo 
-         Height          =   735
-         Left            =   120
-         TabIndex        =   53
-         Top             =   720
-         Visible         =   0   'False
-         Width           =   4095
-         _ExtentX        =   7223
-         _ExtentY        =   1296
-         Caption         =   "&Insertar Bloqueos"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cQuitarBloqueo 
-         Height          =   735
-         Left            =   120
-         TabIndex        =   54
-         Top             =   1560
-         Visible         =   0   'False
-         Width           =   4095
-         _ExtentX        =   7223
-         _ExtentY        =   1296
-         Caption         =   "&Quitar Bloqueos"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cAgregarFuncalAzar 
-         Height          =   375
-         Index           =   2
-         Left            =   120
-         TabIndex        =   58
-         Top             =   3480
-         Visible         =   0   'False
-         Width           =   2175
-         _ExtentX        =   3836
-         _ExtentY        =   661
-         Caption         =   "Insetar OBJ's al &Azar"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   0
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cQuitarFunc 
-         Height          =   375
-         Index           =   2
-         Left            =   120
-         TabIndex        =   59
-         Top             =   3840
-         Visible         =   0   'False
-         Width           =   2175
-         _ExtentX        =   3836
-         _ExtentY        =   661
-         Caption         =   "&Quitar OBJ's"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cInsertarFunc 
-         Height          =   735
-         Index           =   2
-         Left            =   2400
-         TabIndex        =   60
-         Top             =   3480
-         Visible         =   0   'False
-         Width           =   1815
-         _ExtentX        =   3201
-         _ExtentY        =   1296
-         Caption         =   "&Insertar Objetos"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cInsertarFunc 
-         Height          =   735
-         Index           =   1
-         Left            =   2400
-         TabIndex        =   73
-         Top             =   3480
-         Visible         =   0   'False
-         Width           =   1815
-         _ExtentX        =   3201
-         _ExtentY        =   1296
-         Caption         =   "&Insertar NPC's"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cQuitarFunc 
-         Height          =   375
-         Index           =   1
-         Left            =   120
-         TabIndex        =   72
-         Top             =   3840
-         Visible         =   0   'False
-         Width           =   2175
-         _ExtentX        =   3836
-         _ExtentY        =   661
-         Caption         =   "&Quitar NPC's"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cAgregarFuncalAzar 
-         Height          =   375
-         Index           =   1
-         Left            =   120
-         TabIndex        =   71
-         Top             =   3480
-         Visible         =   0   'False
-         Width           =   2175
-         _ExtentX        =   3836
-         _ExtentY        =   661
-         Caption         =   "Insetar NPC's al &Azar"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   0
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin VB.ComboBox cCantFunc 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   330
-         Index           =   1
-         ItemData        =   "frmMain.frx":6A131
-         Left            =   840
-         List            =   "frmMain.frx":6A133
-         TabIndex        =   67
-         Text            =   "1"
-         Top             =   3120
-         Visible         =   0   'False
-         Width           =   1215
-      End
-      Begin VB.ComboBox cFiltro 
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   330
-         Index           =   2
-         Left            =   600
-         TabIndex        =   68
-         Top             =   2760
-         Visible         =   0   'False
-         Width           =   3615
-      End
-      Begin VB.ComboBox cNumFunc 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   330
-         Index           =   1
-         ItemData        =   "frmMain.frx":6A135
-         Left            =   3360
-         List            =   "frmMain.frx":6A137
-         TabIndex        =   70
-         Text            =   "500"
-         Top             =   3120
-         Visible         =   0   'False
-         Width           =   855
-      End
-      Begin WorldEditor.lvButtons_H cmdAdd 
-         Height          =   375
-         Left            =   1320
-         TabIndex        =   118
-         Top             =   3720
-         Visible         =   0   'False
-         Width           =   1575
-         _ExtentX        =   2778
-         _ExtentY        =   661
-         Caption         =   "&Agregar"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cmdDel 
-         Height          =   375
-         Left            =   1320
-         TabIndex        =   119
-         Top             =   4080
-         Visible         =   0   'False
-         Width           =   1575
-         _ExtentX        =   2778
-         _ExtentY        =   661
-         Caption         =   "&Quitar"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin VB.ListBox lListado 
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   2370
-         Index           =   3
-         ItemData        =   "frmMain.frx":6A139
-         Left            =   120
-         List            =   "frmMain.frx":6A13B
-         TabIndex        =   56
-         Tag             =   "-1"
-         Top             =   120
-         Visible         =   0   'False
-         Width           =   4095
-      End
-      Begin VB.ListBox lListado 
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   2370
-         Index           =   1
-         ItemData        =   "frmMain.frx":6A13D
-         Left            =   120
-         List            =   "frmMain.frx":6A13F
-         TabIndex        =   45
-         Tag             =   "-1"
-         Top             =   120
-         Visible         =   0   'False
-         Width           =   4095
-      End
-      Begin VB.ListBox lListado 
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   2370
-         Index           =   4
-         ItemData        =   "frmMain.frx":6A141
-         Left            =   120
-         List            =   "frmMain.frx":6A143
-         TabIndex        =   44
-         Tag             =   "-1"
-         Top             =   120
-         Visible         =   0   'False
-         Width           =   4095
-      End
-      Begin VB.ComboBox cCantFunc 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   330
-         Index           =   2
-         ItemData        =   "frmMain.frx":6A145
-         Left            =   840
-         List            =   "frmMain.frx":6A147
-         TabIndex        =   0
-         Text            =   "1"
-         Top             =   3120
-         Visible         =   0   'False
-         Width           =   1215
-      End
-      Begin VB.ComboBox cCantFunc 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   330
-         Index           =   0
-         ItemData        =   "frmMain.frx":6A149
-         Left            =   840
-         List            =   "frmMain.frx":6A14B
-         TabIndex        =   48
-         Text            =   "1"
-         Top             =   3120
-         Visible         =   0   'False
-         Width           =   1215
-      End
-      Begin VB.ComboBox cNumFunc 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   330
-         Index           =   2
-         ItemData        =   "frmMain.frx":6A14D
-         Left            =   3360
-         List            =   "frmMain.frx":6A14F
-         TabIndex        =   57
-         Text            =   "1"
-         Top             =   3120
-         Visible         =   0   'False
-         Width           =   855
-      End
-      Begin WorldEditor.lvButtons_H cQuitarEnTodasLasCapas 
-         Height          =   375
-         Left            =   120
-         TabIndex        =   64
-         Top             =   3480
-         Visible         =   0   'False
-         Width           =   2175
-         _ExtentX        =   3836
-         _ExtentY        =   661
-         Caption         =   "Quitar en &Capas 2 y 3"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cSeleccionarSuperficie 
-         Height          =   855
-         Left            =   2400
-         TabIndex        =   66
-         Top             =   3000
-         Visible         =   0   'False
-         Width           =   1815
-         _ExtentX        =   3201
-         _ExtentY        =   1508
-         Caption         =   "&Insertar Superficie"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cUnionAuto 
-         Height          =   375
-         Left            =   240
-         TabIndex        =   80
-         Top             =   2520
-         Visible         =   0   'False
-         Width           =   3855
-         _ExtentX        =   6800
-         _ExtentY        =   661
-         Caption         =   "Union con Mapas &Adyacentes (auto)"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   0
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cUnionManual 
-         Height          =   375
-         Left            =   240
-         TabIndex        =   79
-         Top             =   2160
-         Visible         =   0   'False
-         Width           =   3855
-         _ExtentX        =   6800
-         _ExtentY        =   661
-         Caption         =   "&Union con Mapa Adyacente (manual)"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   0
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cQuitarEnEstaCapa 
-         Height          =   375
-         Left            =   120
-         TabIndex        =   65
-         Top             =   3000
-         Visible         =   0   'False
-         Width           =   2175
-         _ExtentX        =   3836
-         _ExtentY        =   661
-         Caption         =   "&Quitar en esta Capa"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin VB.ListBox lListado 
-         BackColor       =   &H80000012&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000014&
-         Height          =   2370
-         Index           =   2
-         ItemData        =   "frmMain.frx":6A151
-         Left            =   120
-         List            =   "frmMain.frx":6A153
-         TabIndex        =   69
-         Tag             =   "-1"
-         Top             =   120
-         Visible         =   0   'False
-         Width           =   4095
-      End
-      Begin WorldEditor.lvButtons_H cQuitarTrans 
-         Height          =   375
-         Left            =   240
-         TabIndex        =   81
-         Top             =   3000
-         Visible         =   0   'False
-         Width           =   3855
-         _ExtentX        =   6800
-         _ExtentY        =   661
-         Caption         =   "&Quitar Translados"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cVerTriggers 
-         Height          =   375
-         Left            =   120
-         TabIndex        =   42
-         Top             =   3480
-         Visible         =   0   'False
-         Width           =   2175
-         _ExtentX        =   3836
-         _ExtentY        =   661
-         Caption         =   "&Mostrar Trigger's"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
-      Begin WorldEditor.lvButtons_H cInsertarTrigger 
-         Height          =   735
-         Left            =   2400
-         TabIndex        =   43
-         Top             =   3480
-         Visible         =   0   'False
-         Width           =   1815
-         _ExtentX        =   3201
-         _ExtentY        =   1296
-         Caption         =   "&Insertar Trigger"
-         CapAlign        =   2
-         BackStyle       =   2
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         cGradient       =   0
-         Mode            =   1
-         Value           =   0   'False
-         cBack           =   -2147483633
-      End
       Begin VB.Frame CopyBorder 
          Appearance      =   0  'Flat
          BackColor       =   &H00000000&
@@ -1760,7 +244,6 @@ Begin VB.Form frmMain
             Left            =   1920
             TabIndex        =   189
             Top             =   3600
-            Visible         =   0   'False
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
@@ -1787,7 +270,6 @@ Begin VB.Form frmMain
             Left            =   1320
             TabIndex        =   190
             Top             =   3960
-            Visible         =   0   'False
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
@@ -1814,7 +296,6 @@ Begin VB.Form frmMain
             Left            =   1920
             TabIndex        =   191
             Top             =   3960
-            Visible         =   0   'False
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
@@ -1841,7 +322,6 @@ Begin VB.Form frmMain
             Left            =   1320
             TabIndex        =   188
             Top             =   3600
-            Visible         =   0   'False
             Width           =   495
             _ExtentX        =   873
             _ExtentY        =   661
@@ -2496,7 +976,7 @@ Begin VB.Form frmMain
                Width           =   1425
                _ExtentX        =   2514
                _ExtentY        =   635
-               Caption         =   "Ma�ana"
+               Caption         =   "Maï¿½ana"
                CapAlign        =   2
                BackStyle       =   2
                BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2607,6 +1087,55 @@ Begin VB.Form frmMain
             TabIndex        =   137
             Top             =   2280
             Width           =   3615
+         End
+      End
+      Begin VB.ListBox lstParticle 
+         BackColor       =   &H00000000&
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
+         Height          =   2205
+         Left            =   120
+         TabIndex        =   115
+         Top             =   120
+         Visible         =   0   'False
+         Width           =   4095
+      End
+      Begin VB.Frame MapasFrame 
+         BackColor       =   &H80000012&
+         ForeColor       =   &H8000000B&
+         Height          =   615
+         Left            =   120
+         TabIndex        =   176
+         Top             =   5520
+         Width           =   4215
+         Begin VB.OptionButton Option2 
+            BackColor       =   &H00000000&
+            Caption         =   "Mapas para 680"
+            ForeColor       =   &H8000000E&
+            Height          =   255
+            Left            =   2400
+            TabIndex        =   178
+            Top             =   240
+            Width           =   1695
+         End
+         Begin VB.OptionButton Option1 
+            BackColor       =   &H00000000&
+            Caption         =   "Mapas para 1024"
+            ForeColor       =   &H8000000E&
+            Height          =   255
+            Left            =   240
+            TabIndex        =   177
+            Top             =   240
+            Value           =   -1  'True
+            Width           =   1815
          End
       End
       Begin VB.Frame FraRellenar 
@@ -2851,6 +1380,1239 @@ Begin VB.Form frmMain
             Top             =   240
             Width           =   255
          End
+      End
+      Begin VB.TextBox Life 
+         Alignment       =   2  'Center
+         BackColor       =   &H00000000&
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FFFFFF&
+         Height          =   285
+         Left            =   2280
+         TabIndex        =   116
+         Text            =   "-1"
+         Top             =   2520
+         Visible         =   0   'False
+         Width           =   495
+      End
+      Begin VB.TextBox tTY 
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   315
+         Left            =   1200
+         TabIndex        =   76
+         Text            =   "1"
+         Top             =   960
+         Visible         =   0   'False
+         Width           =   2900
+      End
+      Begin VB.TextBox tTX 
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   315
+         Left            =   1200
+         TabIndex        =   75
+         Text            =   "1"
+         Top             =   600
+         Visible         =   0   'False
+         Width           =   2900
+      End
+      Begin VB.TextBox tTMapa 
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   315
+         Left            =   1200
+         TabIndex        =   74
+         Text            =   "1"
+         Top             =   240
+         Visible         =   0   'False
+         Width           =   2900
+      End
+      Begin WorldEditor.lvButtons_H cInsertarTrans 
+         Height          =   375
+         Left            =   240
+         TabIndex        =   77
+         Top             =   1320
+         Visible         =   0   'False
+         Width           =   3855
+         _ExtentX        =   6800
+         _ExtentY        =   661
+         Caption         =   "&Insertar Translado"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cInsertarTransOBJ 
+         Height          =   375
+         Left            =   240
+         TabIndex        =   78
+         Top             =   1680
+         Visible         =   0   'False
+         Width           =   3855
+         _ExtentX        =   6800
+         _ExtentY        =   661
+         Caption         =   "Colocar automaticamente &Objeto"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin VB.ComboBox cCapas 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   330
+         ItemData        =   "frmMain.frx":61F36
+         Left            =   1080
+         List            =   "frmMain.frx":61F46
+         TabIndex        =   1
+         TabStop         =   0   'False
+         Text            =   "1"
+         Top             =   2640
+         Visible         =   0   'False
+         Width           =   855
+      End
+      Begin VB.ComboBox cGrh 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   330
+         Left            =   2880
+         TabIndex        =   63
+         Text            =   "1"
+         Top             =   2640
+         Visible         =   0   'False
+         Width           =   1335
+      End
+      Begin VB.ComboBox cFiltro 
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   330
+         Index           =   0
+         Left            =   600
+         TabIndex        =   62
+         Top             =   2280
+         Visible         =   0   'False
+         Width           =   3615
+      End
+      Begin VB.ComboBox cFiltro 
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   330
+         Index           =   3
+         Left            =   600
+         TabIndex        =   55
+         Top             =   2760
+         Visible         =   0   'False
+         Width           =   3615
+      End
+      Begin VB.ComboBox cNumFunc 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   330
+         Index           =   0
+         ItemData        =   "frmMain.frx":61F56
+         Left            =   3360
+         List            =   "frmMain.frx":61F58
+         TabIndex        =   47
+         Text            =   "1"
+         Top             =   3120
+         Visible         =   0   'False
+         Width           =   855
+      End
+      Begin VB.ComboBox cFiltro 
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   330
+         Index           =   1
+         Left            =   600
+         TabIndex        =   46
+         Top             =   2760
+         Visible         =   0   'False
+         Width           =   3615
+      End
+      Begin VB.PictureBox Picture5 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   0
+         Left            =   0
+         ScaleHeight     =   0
+         ScaleWidth      =   0
+         TabIndex        =   3
+         Top             =   0
+         Width           =   0
+      End
+      Begin VB.PictureBox Picture6 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   0
+         Left            =   0
+         ScaleHeight     =   0
+         ScaleWidth      =   0
+         TabIndex        =   4
+         Top             =   0
+         Width           =   0
+      End
+      Begin VB.PictureBox Picture7 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   0
+         Left            =   0
+         ScaleHeight     =   0
+         ScaleWidth      =   0
+         TabIndex        =   5
+         Top             =   0
+         Width           =   0
+      End
+      Begin VB.PictureBox Picture8 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   0
+         Left            =   0
+         ScaleHeight     =   0
+         ScaleWidth      =   0
+         TabIndex        =   6
+         Top             =   0
+         Width           =   0
+      End
+      Begin VB.PictureBox Picture9 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   0
+         Left            =   0
+         ScaleHeight     =   0
+         ScaleWidth      =   0
+         TabIndex        =   7
+         Top             =   0
+         Width           =   0
+      End
+      Begin VB.PictureBox Picture11 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   0
+         Left            =   0
+         ScaleHeight     =   0
+         ScaleWidth      =   0
+         TabIndex        =   40
+         Top             =   0
+         Width           =   0
+      End
+      Begin WorldEditor.lvButtons_H cQuitarTrigger 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   41
+         Top             =   3840
+         Visible         =   0   'False
+         Width           =   2175
+         _ExtentX        =   3836
+         _ExtentY        =   661
+         Caption         =   "&Quitar Trigger's"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cAgregarFuncalAzar 
+         Height          =   375
+         Index           =   0
+         Left            =   120
+         TabIndex        =   49
+         Top             =   3480
+         Visible         =   0   'False
+         Width           =   2175
+         _ExtentX        =   3836
+         _ExtentY        =   661
+         Caption         =   "Insetar NPC's al &Azar"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   0
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cQuitarFunc 
+         Height          =   375
+         Index           =   0
+         Left            =   120
+         TabIndex        =   50
+         Top             =   3840
+         Visible         =   0   'False
+         Width           =   2175
+         _ExtentX        =   3836
+         _ExtentY        =   661
+         Caption         =   "&Quitar NPC's"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cInsertarFunc 
+         Height          =   735
+         Index           =   0
+         Left            =   2400
+         TabIndex        =   51
+         Top             =   3480
+         Visible         =   0   'False
+         Width           =   1815
+         _ExtentX        =   3201
+         _ExtentY        =   1296
+         Caption         =   "&Insertar NPC's"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cVerBloqueos 
+         Height          =   495
+         Left            =   120
+         TabIndex        =   52
+         Top             =   120
+         Visible         =   0   'False
+         Width           =   4095
+         _ExtentX        =   7223
+         _ExtentY        =   873
+         Caption         =   "&Mostrar Bloqueos"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cInsertarBloqueo 
+         Height          =   735
+         Left            =   120
+         TabIndex        =   53
+         Top             =   720
+         Visible         =   0   'False
+         Width           =   4095
+         _ExtentX        =   7223
+         _ExtentY        =   1296
+         Caption         =   "&Insertar Bloqueos"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cQuitarBloqueo 
+         Height          =   735
+         Left            =   120
+         TabIndex        =   54
+         Top             =   1560
+         Visible         =   0   'False
+         Width           =   4095
+         _ExtentX        =   7223
+         _ExtentY        =   1296
+         Caption         =   "&Quitar Bloqueos"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cAgregarFuncalAzar 
+         Height          =   375
+         Index           =   2
+         Left            =   120
+         TabIndex        =   58
+         Top             =   3480
+         Visible         =   0   'False
+         Width           =   2175
+         _ExtentX        =   3836
+         _ExtentY        =   661
+         Caption         =   "Insetar OBJ's al &Azar"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   0
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cQuitarFunc 
+         Height          =   375
+         Index           =   2
+         Left            =   120
+         TabIndex        =   59
+         Top             =   3840
+         Visible         =   0   'False
+         Width           =   2175
+         _ExtentX        =   3836
+         _ExtentY        =   661
+         Caption         =   "&Quitar OBJ's"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cInsertarFunc 
+         Height          =   735
+         Index           =   2
+         Left            =   2400
+         TabIndex        =   60
+         Top             =   3480
+         Visible         =   0   'False
+         Width           =   1815
+         _ExtentX        =   3201
+         _ExtentY        =   1296
+         Caption         =   "&Insertar Objetos"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cInsertarFunc 
+         Height          =   735
+         Index           =   1
+         Left            =   2400
+         TabIndex        =   73
+         Top             =   3480
+         Visible         =   0   'False
+         Width           =   1815
+         _ExtentX        =   3201
+         _ExtentY        =   1296
+         Caption         =   "&Insertar NPC's"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cQuitarFunc 
+         Height          =   375
+         Index           =   1
+         Left            =   120
+         TabIndex        =   72
+         Top             =   3840
+         Visible         =   0   'False
+         Width           =   2175
+         _ExtentX        =   3836
+         _ExtentY        =   661
+         Caption         =   "&Quitar NPC's"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cAgregarFuncalAzar 
+         Height          =   375
+         Index           =   1
+         Left            =   120
+         TabIndex        =   71
+         Top             =   3480
+         Visible         =   0   'False
+         Width           =   2175
+         _ExtentX        =   3836
+         _ExtentY        =   661
+         Caption         =   "Insetar NPC's al &Azar"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   0
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin VB.ComboBox cCantFunc 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   330
+         Index           =   1
+         ItemData        =   "frmMain.frx":61F5A
+         Left            =   840
+         List            =   "frmMain.frx":61F5C
+         TabIndex        =   67
+         Text            =   "1"
+         Top             =   3120
+         Visible         =   0   'False
+         Width           =   1215
+      End
+      Begin VB.ComboBox cFiltro 
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   330
+         Index           =   2
+         Left            =   600
+         TabIndex        =   68
+         Top             =   2760
+         Visible         =   0   'False
+         Width           =   3615
+      End
+      Begin VB.ComboBox cNumFunc 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   330
+         Index           =   1
+         ItemData        =   "frmMain.frx":61F5E
+         Left            =   3360
+         List            =   "frmMain.frx":61F60
+         TabIndex        =   70
+         Text            =   "500"
+         Top             =   3120
+         Visible         =   0   'False
+         Width           =   855
+      End
+      Begin WorldEditor.lvButtons_H cmdAdd 
+         Height          =   375
+         Left            =   1320
+         TabIndex        =   118
+         Top             =   3720
+         Visible         =   0   'False
+         Width           =   1575
+         _ExtentX        =   2778
+         _ExtentY        =   661
+         Caption         =   "&Agregar"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cmdDel 
+         Height          =   375
+         Left            =   1320
+         TabIndex        =   119
+         Top             =   4080
+         Visible         =   0   'False
+         Width           =   1575
+         _ExtentX        =   2778
+         _ExtentY        =   661
+         Caption         =   "&Quitar"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin VB.ListBox lListado 
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   2160
+         Index           =   0
+         ItemData        =   "frmMain.frx":61F62
+         Left            =   120
+         List            =   "frmMain.frx":61F64
+         Sorted          =   -1  'True
+         TabIndex        =   61
+         Tag             =   "-1"
+         Top             =   120
+         Visible         =   0   'False
+         Width           =   4095
+      End
+      Begin VB.ListBox lListado 
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   2370
+         Index           =   3
+         ItemData        =   "frmMain.frx":61F66
+         Left            =   120
+         List            =   "frmMain.frx":61F68
+         TabIndex        =   56
+         Tag             =   "-1"
+         Top             =   120
+         Visible         =   0   'False
+         Width           =   4095
+      End
+      Begin VB.ListBox lListado 
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   2370
+         Index           =   1
+         ItemData        =   "frmMain.frx":61F6A
+         Left            =   120
+         List            =   "frmMain.frx":61F6C
+         TabIndex        =   45
+         Tag             =   "-1"
+         Top             =   120
+         Visible         =   0   'False
+         Width           =   4095
+      End
+      Begin VB.ListBox lListado 
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   2370
+         Index           =   4
+         ItemData        =   "frmMain.frx":61F6E
+         Left            =   120
+         List            =   "frmMain.frx":61F70
+         TabIndex        =   44
+         Tag             =   "-1"
+         Top             =   120
+         Visible         =   0   'False
+         Width           =   4095
+      End
+      Begin VB.ComboBox cCantFunc 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   330
+         Index           =   2
+         ItemData        =   "frmMain.frx":61F72
+         Left            =   840
+         List            =   "frmMain.frx":61F74
+         TabIndex        =   0
+         Text            =   "1"
+         Top             =   3120
+         Visible         =   0   'False
+         Width           =   1215
+      End
+      Begin VB.ComboBox cCantFunc 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   330
+         Index           =   0
+         ItemData        =   "frmMain.frx":61F76
+         Left            =   840
+         List            =   "frmMain.frx":61F78
+         TabIndex        =   48
+         Text            =   "1"
+         Top             =   3120
+         Visible         =   0   'False
+         Width           =   1215
+      End
+      Begin VB.ComboBox cNumFunc 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   330
+         Index           =   2
+         ItemData        =   "frmMain.frx":61F7A
+         Left            =   3360
+         List            =   "frmMain.frx":61F7C
+         TabIndex        =   57
+         Text            =   "1"
+         Top             =   3120
+         Visible         =   0   'False
+         Width           =   855
+      End
+      Begin WorldEditor.lvButtons_H cQuitarEnTodasLasCapas 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   64
+         Top             =   3480
+         Visible         =   0   'False
+         Width           =   2175
+         _ExtentX        =   3836
+         _ExtentY        =   661
+         Caption         =   "Quitar en &Capas 2 y 3"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cSeleccionarSuperficie 
+         Height          =   855
+         Left            =   2400
+         TabIndex        =   66
+         Top             =   3000
+         Visible         =   0   'False
+         Width           =   1815
+         _ExtentX        =   3201
+         _ExtentY        =   1508
+         Caption         =   "&Insertar Superficie"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cUnionAuto 
+         Height          =   375
+         Left            =   240
+         TabIndex        =   80
+         Top             =   2520
+         Visible         =   0   'False
+         Width           =   3855
+         _ExtentX        =   6800
+         _ExtentY        =   661
+         Caption         =   "Union con Mapas &Adyacentes (auto)"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   0
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cUnionManual 
+         Height          =   375
+         Left            =   240
+         TabIndex        =   79
+         Top             =   2160
+         Visible         =   0   'False
+         Width           =   3855
+         _ExtentX        =   6800
+         _ExtentY        =   661
+         Caption         =   "&Union con Mapa Adyacente (manual)"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   0
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cQuitarEnEstaCapa 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   65
+         Top             =   3000
+         Visible         =   0   'False
+         Width           =   2175
+         _ExtentX        =   3836
+         _ExtentY        =   661
+         Caption         =   "&Quitar en esta Capa"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin VB.ListBox lListado 
+         BackColor       =   &H80000012&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000014&
+         Height          =   2370
+         Index           =   2
+         ItemData        =   "frmMain.frx":61F7E
+         Left            =   120
+         List            =   "frmMain.frx":61F80
+         TabIndex        =   69
+         Tag             =   "-1"
+         Top             =   120
+         Visible         =   0   'False
+         Width           =   4095
+      End
+      Begin WorldEditor.lvButtons_H cQuitarTrans 
+         Height          =   375
+         Left            =   240
+         TabIndex        =   81
+         Top             =   3000
+         Visible         =   0   'False
+         Width           =   3855
+         _ExtentX        =   6800
+         _ExtentY        =   661
+         Caption         =   "&Quitar Translados"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cVerTriggers 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   42
+         Top             =   3480
+         Visible         =   0   'False
+         Width           =   2175
+         _ExtentX        =   3836
+         _ExtentY        =   661
+         Caption         =   "&Mostrar Trigger's"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
+      End
+      Begin WorldEditor.lvButtons_H cInsertarTrigger 
+         Height          =   735
+         Left            =   2400
+         TabIndex        =   43
+         Top             =   3480
+         Visible         =   0   'False
+         Width           =   1815
+         _ExtentX        =   3201
+         _ExtentY        =   1296
+         Caption         =   "&Insertar Trigger"
+         CapAlign        =   2
+         BackStyle       =   2
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         cGradient       =   0
+         Mode            =   1
+         Value           =   0   'False
+         cBack           =   -2147483633
       End
       Begin VB.Label lNumFunc 
          AutoSize        =   -1  'True
@@ -3204,12 +2966,12 @@ Begin VB.Form frmMain
       ForeColor       =   &H80000008&
       Height          =   900
       Left            =   20040
-      Picture         =   "frmMain.frx":6A155
+      Picture         =   "frmMain.frx":61F82
       ScaleHeight     =   900
       ScaleWidth      =   855
       TabIndex        =   173
       TabStop         =   0   'False
-      Top             =   13440
+      Top             =   12960
       Width           =   855
    End
    Begin VB.Frame FraFormatoDel 
@@ -3224,20 +2986,19 @@ Begin VB.Form frmMain
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   960
+      Height          =   1095
       Left            =   17640
       TabIndex        =   170
-      Top             =   13440
+      Top             =   12840
       Width           =   2295
       Begin VB.OptionButton OptX 
-         BackColor       =   &H00FFFFFF&
-         Caption         =   "300 x 300 (Maximo)"
-         Height          =   195
+         Caption         =   "300 x 300 (Continete)"
+         Height          =   255
          Index           =   2
          Left            =   120
          TabIndex        =   200
          Top             =   720
-         Width           =   2055
+         Width           =   2175
       End
       Begin VB.OptionButton OptX 
          BackColor       =   &H00FFFFFF&
@@ -3276,14 +3037,13 @@ Begin VB.Form frmMain
       EndProperty
       ForeColor       =   &H80000008&
       Height          =   3000
-      Left            =   22320
+      Left            =   23040
       ScaleHeight     =   198
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   200
       TabIndex        =   169
       TabStop         =   0   'False
-      Top             =   1680
-      Visible         =   0   'False
+      Top             =   1440
       Width           =   3023
    End
    Begin VB.CheckBox chkOptMinimap 
@@ -3347,6 +3107,7 @@ Begin VB.Form frmMain
       Left            =   1560
       TabIndex        =   162
       Top             =   3075
+      Value           =   1  'Checked
       Width           =   975
    End
    Begin VB.CheckBox chkOptMinimap 
@@ -3428,7 +3189,7 @@ Begin VB.Form frmMain
          cGradient       =   0
          Mode            =   0
          Value           =   0   'False
-         Image           =   "frmMain.frx":6CBC9
+         Image           =   "frmMain.frx":649F6
          cBack           =   -2147483633
       End
       Begin VB.CheckBox chkRenderizarAl 
@@ -3463,7 +3224,7 @@ Begin VB.Form frmMain
          cGradient       =   0
          Mode            =   0
          Value           =   0   'False
-         Image           =   "frmMain.frx":6D81B
+         Image           =   "frmMain.frx":65648
          cBack           =   -2147483633
       End
       Begin WorldEditor.lvButtons_H LvBOpcion 
@@ -3489,7 +3250,7 @@ Begin VB.Form frmMain
          cGradient       =   0
          Mode            =   0
          Value           =   0   'False
-         Image           =   "frmMain.frx":6E46D
+         Image           =   "frmMain.frx":6629A
          cBack           =   -2147483633
       End
       Begin WorldEditor.lvButtons_H LvBOpcion 
@@ -3515,7 +3276,7 @@ Begin VB.Form frmMain
          cGradient       =   0
          Mode            =   0
          Value           =   0   'False
-         Image           =   "frmMain.frx":6F0BF
+         Image           =   "frmMain.frx":66EEC
          cBack           =   -2147483633
       End
       Begin WorldEditor.lvButtons_H LvBOpcion 
@@ -3639,11 +3400,11 @@ Begin VB.Form frmMain
       ForeColor       =   &H80000008&
       Height          =   660
       Left            =   20880
-      Picture         =   "frmMain.frx":6FD11
+      Picture         =   "frmMain.frx":67B3E
       ScaleHeight     =   660
       ScaleWidth      =   1455
       TabIndex        =   121
-      Top             =   13680
+      Top             =   13200
       Width           =   1455
    End
    Begin VB.PictureBox Minimap 
@@ -3677,10 +3438,10 @@ Begin VB.Form frmMain
       End
       Begin VB.Shape Shape1 
          BorderColor     =   &H00FFFFFF&
-         Height          =   2775
-         Left            =   120
-         Top             =   119
-         Width           =   2745
+         Height          =   2895
+         Left            =   45
+         Top             =   45
+         Width           =   2895
       End
    End
    Begin VB.Frame Frame1 
@@ -3959,7 +3720,6 @@ Begin VB.Form frmMain
    End
    Begin VB.PictureBox Renderer 
       Appearance      =   0  'Flat
-      AutoSize        =   -1  'True
       BackColor       =   &H00000000&
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -3971,10 +3731,10 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H80000008&
-      Height          =   11880
+      Height          =   11295
       Left            =   4680
-      ScaleHeight     =   800
-      ScaleMode       =   0  'User
+      ScaleHeight     =   751
+      ScaleMode       =   3  'Pixel
       ScaleWidth      =   1167
       TabIndex        =   86
       Top             =   1440
@@ -3985,7 +3745,7 @@ Begin VB.Form frmMain
       Index           =   6
       Left            =   11760
       TabIndex        =   37
-      Top             =   0
+      Top             =   30
       Width           =   2415
       _ExtentX        =   4260
       _ExtentY        =   1826
@@ -4008,7 +3768,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":736BF
+      Image           =   "frmMain.frx":6B4EC
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -4017,7 +3777,7 @@ Begin VB.Form frmMain
       Index           =   5
       Left            =   10320
       TabIndex        =   36
-      Top             =   0
+      Top             =   30
       Width           =   2565
       _ExtentX        =   4524
       _ExtentY        =   1826
@@ -4040,7 +3800,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":73C85
+      Image           =   "frmMain.frx":6BAB2
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -4049,7 +3809,7 @@ Begin VB.Form frmMain
       Index           =   3
       Left            =   8955
       TabIndex        =   35
-      Top             =   0
+      Top             =   30
       Width           =   2415
       _ExtentX        =   4260
       _ExtentY        =   1826
@@ -4072,7 +3832,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":74186
+      Image           =   "frmMain.frx":6BFB3
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -4081,7 +3841,7 @@ Begin VB.Form frmMain
       Index           =   2
       Left            =   7440
       TabIndex        =   34
-      Top             =   0
+      Top             =   30
       Width           =   2565
       _ExtentX        =   4524
       _ExtentY        =   1826
@@ -4104,7 +3864,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":7453A
+      Image           =   "frmMain.frx":6C367
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -4113,7 +3873,7 @@ Begin VB.Form frmMain
       Index           =   1
       Left            =   5880
       TabIndex        =   33
-      Top             =   0
+      Top             =   30
       Width           =   2627
       _ExtentX        =   4630
       _ExtentY        =   1826
@@ -4135,7 +3895,7 @@ Begin VB.Form frmMain
       Mode            =   1
       Value           =   0   'False
       ImgAlign        =   5
-      Image           =   "frmMain.frx":78329
+      Image           =   "frmMain.frx":6C6E8
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -4144,7 +3904,7 @@ Begin VB.Form frmMain
       Index           =   0
       Left            =   5191
       TabIndex        =   32
-      Top             =   0
+      Top             =   30
       Width           =   1753
       _ExtentX        =   3096
       _ExtentY        =   1826
@@ -4167,7 +3927,7 @@ Begin VB.Form frmMain
       Mode            =   1
       Value           =   0   'False
       ImgAlign        =   5
-      Image           =   "frmMain.frx":7B989
+      Image           =   "frmMain.frx":6FD48
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -4239,20 +3999,46 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":7EECF
+      Image           =   "frmMain.frx":7328E
       ImgSize         =   24
       cBack           =   -2147483633
+   End
+   Begin RichTextLib.RichTextBox StatTxt 
+      Height          =   1155
+      Left            =   4680
+      TabIndex        =   88
+      TabStop         =   0   'False
+      ToolTipText     =   "Mensajes del servidor"
+      Top             =   12840
+      Width           =   12855
+      _ExtentX        =   22675
+      _ExtentY        =   2037
+      _Version        =   393217
+      BackColor       =   16777215
+      ReadOnly        =   -1  'True
+      ScrollBars      =   2
+      DisableNoScroll =   -1  'True
+      TextRTF         =   $"frmMain.frx":73642
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
    End
    Begin WorldEditor.lvButtons_H SelectPanel 
       Height          =   1035
       Index           =   7
       Left            =   13080
       TabIndex        =   98
-      Top             =   0
+      Top             =   30
       Width           =   2415
       _ExtentX        =   4260
       _ExtentY        =   1826
-      Caption         =   "&Copiar Mapa"
+      Caption         =   "&Copiar Bordes"
       CapAlign        =   2
       BackStyle       =   2
       Shape           =   3
@@ -4271,7 +4057,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":7F283
+      Image           =   "frmMain.frx":736BF
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -4280,7 +4066,7 @@ Begin VB.Form frmMain
       Index           =   8
       Left            =   14445
       TabIndex        =   114
-      Top             =   0
+      Top             =   30
       Width           =   2415
       _ExtentX        =   4260
       _ExtentY        =   1826
@@ -4303,7 +4089,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":7F8C4
+      Image           =   "frmMain.frx":73D00
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -4312,7 +4098,7 @@ Begin VB.Form frmMain
       Index           =   9
       Left            =   15810
       TabIndex        =   120
-      Top             =   0
+      Top             =   30
       Width           =   1785
       _ExtentX        =   3149
       _ExtentY        =   1826
@@ -4335,7 +4121,7 @@ Begin VB.Form frmMain
       Value           =   0   'False
       CustomClick     =   1
       ImgAlign        =   5
-      Image           =   "frmMain.frx":7FF46
+      Image           =   "frmMain.frx":74382
       ImgSize         =   24
       cBack           =   -2147483633
    End
@@ -4363,38 +4149,6 @@ Begin VB.Form frmMain
       cGradient       =   0
       Mode            =   0
       Value           =   0   'False
-      cBack           =   -2147483633
-   End
-   Begin WorldEditor.lvButtons_H SelectPanelextra 
-      Height          =   1275
-      Index           =   0
-      Left            =   22440
-      TabIndex        =   208
-      Top             =   0
-      Width           =   2115
-      _ExtentX        =   3731
-      _ExtentY        =   2249
-      Caption         =   "&Insertar Bloqueos en Bordes Mapa"
-      CapAlign        =   2
-      BackStyle       =   2
-      Shape           =   2
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Arial"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      cFore           =   0
-      cFHover         =   0
-      cGradient       =   8421631
-      Mode            =   1
-      Value           =   0   'False
-      ImgAlign        =   5
-      Image           =   "frmMain.frx":803E8
-      ImgSize         =   24
       cBack           =   -2147483633
    End
    Begin VB.Label MapPest 
@@ -4472,32 +4226,32 @@ Begin VB.Form frmMain
    Begin VB.Line Separacion1 
       BorderColor     =   &H00808080&
       Index           =   1
-      X1              =   320
-      X2              =   320
+      X1              =   154.839
+      X2              =   154.839
       Y1              =   8
       Y2              =   88
    End
    Begin VB.Line Separacion2 
       BorderColor     =   &H00FFFFFF&
       Index           =   1
-      X1              =   337
-      X2              =   337
+      X1              =   163.064
+      X2              =   163.064
       Y1              =   8
       Y2              =   88
    End
    Begin VB.Line Separacion2 
       BorderColor     =   &H00808080&
       Index           =   0
-      X1              =   336
-      X2              =   336
+      X1              =   162.581
+      X2              =   162.581
       Y1              =   8
       Y2              =   88
    End
    Begin VB.Line Separacion1 
       BorderColor     =   &H00808080&
       Index           =   0
-      X1              =   328
-      X2              =   328
+      X1              =   158.71
+      X2              =   158.71
       Y1              =   8
       Y2              =   88
    End
@@ -4848,7 +4602,7 @@ Begin VB.Form frmMain
          Caption         =   "-"
       End
       Begin VB.Menu mnuConvert 
-         Caption         =   "&Conversor y Utilidades"
+         Caption         =   "&Conversor"
       End
       Begin VB.Menu mnuRenderMapa 
          Caption         =   "Renderizar Mapa"
@@ -5234,8 +4988,6 @@ Attribute VB_Exposed = False
 '**************************************************************
 Option Explicit
 
-
-    
 Public MouseX As Integer
 Public MouseY As Integer
 
@@ -5246,7 +4998,7 @@ Private Sub PonerAlAzar(ByVal n As Integer, T As Byte)
 '*************************************************
 Dim objindex As Long
 Dim NPCIndex As Long
-Dim X, Y, i
+Dim X, y, i
 Dim Head As Integer
 Dim Body As Integer
 Dim Heading As Byte
@@ -5257,50 +5009,50 @@ modEdicion.Deshacer_Add "Aplicar " & IIf(T = 0, "Objetos", "NPCs") & " al Azar" 
 
 Do While i > 0
     X = CInt(RandomNumber(XMinMapSize, XMaxMapSize - 1))
-    Y = CInt(RandomNumber(YMinMapSize, YMaxMapSize - 1))
+    y = CInt(RandomNumber(YMinMapSize, YMaxMapSize - 1))
     
     Select Case T
         Case 0
-            If MapData(X, Y).OBJInfo.objindex = 0 Then
+            If MapData(X, y).OBJInfo.objindex = 0 Then
                   i = i - 1
                   If cInsertarBloqueo.value = True Then
-                    MapData(X, Y).blocked = 1
+                    MapData(X, y).blocked = 1
                   Else
-                    MapData(X, Y).blocked = 0
+                    MapData(X, y).blocked = 0
                   End If
                   If cNumFunc(2).Text > 0 Then
                       objindex = cNumFunc(2).Text
-                      InitGrh MapData(X, Y).ObjGrh, ObjData(objindex).GrhIndex
-                      MapData(X, Y).OBJInfo.objindex = objindex
-                      MapData(X, Y).OBJInfo.Amount = Val(cCantFunc(2).Text)
+                      InitGrh MapData(X, y).ObjGrh, ObjData(objindex).GrhIndex
+                      MapData(X, y).OBJInfo.objindex = objindex
+                      MapData(X, y).OBJInfo.Amount = Val(cCantFunc(2).Text)
                       Select Case ObjData(objindex).ObjType ' GS
                             Case 4, 8, 10, 22 ' Arboles, Carteles, Foros, Yacimientos
-                                MapData(X, Y).Graphic(3) = MapData(X, Y).ObjGrh
+                                MapData(X, y).Graphic(3) = MapData(X, y).ObjGrh
                       End Select
                   End If
             End If
         Case 1
-           If MapData(X, Y).blocked = 0 Then
+           If MapData(X, y).blocked = 0 Then
                   i = i - 1
                   If cNumFunc(T - 1).Text > 0 Then
                         NPCIndex = cNumFunc(T - 1).Text
                         Body = NpcData(NPCIndex).Body
                         Head = NpcData(NPCIndex).Head
                         Heading = NpcData(NPCIndex).Heading
-                        Call MakeChar(NextOpenChar(), Body, Head, Heading, CInt(X), CInt(Y))
-                        MapData(X, Y).NPCIndex = NPCIndex
+                        Call MakeChar(NextOpenChar(), Body, Head, Heading, CInt(X), CInt(y))
+                        MapData(X, y).NPCIndex = NPCIndex
                   End If
             End If
         Case 2
-           If MapData(X, Y).blocked = 0 Then
+           If MapData(X, y).blocked = 0 Then
                   i = i - 1
                   If cNumFunc(T - 1).Text >= 0 Then
                         NPCIndex = cNumFunc(T - 1).Text
                         Body = NpcData(NPCIndex).Body
                         Head = NpcData(NPCIndex).Head
                         Heading = NpcData(NPCIndex).Heading
-                        Call MakeChar(NextOpenChar(), Body, Head, Heading, CInt(X), CInt(Y))
-                        MapData(X, Y).NPCIndex = NPCIndex
+                        Call MakeChar(NextOpenChar(), Body, Head, Heading, CInt(X), CInt(y))
+                        MapData(X, y).NPCIndex = NPCIndex
                   End If
            End If
         End Select
@@ -5485,13 +5237,12 @@ Private Sub cQuitarLuz_Click()
     End If
 End Sub
 Private Sub cmdAdd_Click()
-
 If cmdAdd.value = True Then
-    lstParticle.Enabled = True
+    'lstParticle.Enabled = False
     cmdDel.Enabled = False
     Call modPaneles.EstSelectPanel(8, True)
 Else
-    lstParticle.Enabled = False
+    lstParticle.Enabled = True
     cmdDel.Enabled = True
     Call modPaneles.EstSelectPanel(8, False)
 End If
@@ -5501,9 +5252,7 @@ Private Sub cmdampliacion_Click()
     frmAmpliacion.Show
 End Sub
 
-
 Private Sub cmdDel_Click()
-
 If cmdDel.value = True Then
     lstParticle.Enabled = False
     cmdAdd.Enabled = False
@@ -5513,7 +5262,6 @@ Else
     cmdAdd.Enabled = True
     Call modPaneles.EstSelectPanel(8, False)
 End If
-
 End Sub
 
 Private Sub cmdInformacionDelMapa_Click()
@@ -5537,7 +5285,7 @@ End Sub
 '*******************************************************
 Private Sub COPIAR_GRH_Click(index As Integer)
 
-    Dim Y As Integer
+    Dim y As Integer
     Dim X As Integer
     Dim An As Integer
     Dim Bn As Integer
@@ -5640,46 +5388,46 @@ Call Resolucion
         Call MapEspejo(Sur)
         
         
-            For Y = 1 To An  ' borrado
+            For y = 1 To An  ' borrado
                 For X = 1 To XMaxMapSize
                 
                     'Quitar NPCs
-                    If MapData(X, Y).NPCIndex > 0 Then
-                        EraseChar MapData(X, Y).CharIndex
-                        MapData(X, Y).NPCIndex = 0
+                    If MapData(X, y).NPCIndex > 0 Then
+                        EraseChar MapData(X, y).CharIndex
+                        MapData(X, y).NPCIndex = 0
                     End If
     
                     ' Quitar Objetos
-                    MapData(X, Y).OBJInfo.objindex = 0
-                    MapData(X, Y).OBJInfo.Amount = 0
-                    MapData(X, Y).ObjGrh.GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
+                    MapData(X, y).OBJInfo.Amount = 0
+                    MapData(X, y).ObjGrh.GrhIndex = 0
     
                     ' Quitar Triggers
-                    MapData(X, Y).Trigger = 0
+                    MapData(X, y).Trigger = 0
               
                     ' Quitar Graficos
-                    MapData(X, Y).Graphic(1).GrhIndex = 0
-                    MapData(X, Y).Graphic(2).GrhIndex = 0
-                    MapData(X, Y).Graphic(3).GrhIndex = 0
-                    MapData(X, Y).OBJInfo.objindex = 0
+                    MapData(X, y).Graphic(1).GrhIndex = 0
+                    MapData(X, y).Graphic(2).GrhIndex = 0
+                    MapData(X, y).Graphic(3).GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
 
                 Next
             Next
 
-            For Y = 1 To An
+            For y = 1 To An
                 For X = 1 To XMaxMapSize
-                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X, TXTArriba + Y).Graphic(1)
-                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X, TXTArriba + Y).Graphic(2)
-                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X, TXTArriba + Y).Graphic(3)
-                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X, TXTArriba + Y).Graphic(4)
-                    MapData(X, Y).Trigger = MapData_Adyacente(X, TXTArriba + Y).Trigger
-                    MapData(X, Y).ObjGrh = MapData_Adyacente(X, TXTArriba + Y).ObjGrh
-                    MapData(X, Y).OBJInfo = MapData_Adyacente(X, TXTArriba + Y).OBJInfo
+                    MapData(X, y).Graphic(1) = MapData_Adyacente(X, TXTArriba + y).Graphic(1)
+                    MapData(X, y).Graphic(2) = MapData_Adyacente(X, TXTArriba + y).Graphic(2)
+                    MapData(X, y).Graphic(3) = MapData_Adyacente(X, TXTArriba + y).Graphic(3)
+                    MapData(X, y).Graphic(4) = MapData_Adyacente(X, TXTArriba + y).Graphic(4)
+                    MapData(X, y).Trigger = MapData_Adyacente(X, TXTArriba + y).Trigger
+                    MapData(X, y).ObjGrh = MapData_Adyacente(X, TXTArriba + y).ObjGrh
+                    MapData(X, y).OBJInfo = MapData_Adyacente(X, TXTArriba + y).OBJInfo
 
                 Next
             Next
             MapInfo.Changed = 1
-            UserPos.Y = 12
+            UserPos.y = 12
 
         Case 1 'Oeste
         
@@ -5697,38 +5445,38 @@ Call Resolucion
         
         Call MapEspejo(Oeste)
         
-            For Y = 1 To YMaxMapSize
+            For y = 1 To YMaxMapSize
                 For X = Bn To XMaxMapSize
                     'Quitar NPCs
-                    If MapData(X, Y).NPCIndex > 0 Then
-                        EraseChar MapData(X, Y).CharIndex
-                        MapData(X, Y).NPCIndex = 0
+                    If MapData(X, y).NPCIndex > 0 Then
+                        EraseChar MapData(X, y).CharIndex
+                        MapData(X, y).NPCIndex = 0
                     End If
     
                     ' Quitar Objetos
-                    MapData(X, Y).OBJInfo.objindex = 0
-                    MapData(X, Y).OBJInfo.Amount = 0
-                    MapData(X, Y).ObjGrh.GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
+                    MapData(X, y).OBJInfo.Amount = 0
+                    MapData(X, y).ObjGrh.GrhIndex = 0
     
                     ' Quitar Triggers
-                    MapData(X, Y).Trigger = 0
+                    MapData(X, y).Trigger = 0
               
                     ' Quitar Graficos
-                    MapData(X, Y).Graphic(1).GrhIndex = 0
-                    MapData(X, Y).Graphic(2).GrhIndex = 0
-                    MapData(X, Y).Graphic(3).GrhIndex = 0
-                    MapData(X, Y).OBJInfo.objindex = 0
+                    MapData(X, y).Graphic(1).GrhIndex = 0
+                    MapData(X, y).Graphic(2).GrhIndex = 0
+                    MapData(X, y).Graphic(3).GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
                 Next
             Next
 
-            For Y = 1 To YMaxMapSize
+            For y = 1 To YMaxMapSize
                 For X = Bn To XMaxMapSize
-                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X - TxTDerecha, Y).Graphic(1)
-                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X - TxTDerecha, Y).Graphic(2)
-                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X - TxTDerecha, Y).Graphic(3)
-                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X - TxTDerecha, Y).Graphic(4)
-                    MapData(X, Y).ObjGrh = MapData_Adyacente(X - TxTDerecha, Y).ObjGrh
-                    MapData(X, Y).OBJInfo = MapData_Adyacente(X - TxTDerecha, Y).OBJInfo
+                    MapData(X, y).Graphic(1) = MapData_Adyacente(X - TxTDerecha, y).Graphic(1)
+                    MapData(X, y).Graphic(2) = MapData_Adyacente(X - TxTDerecha, y).Graphic(2)
+                    MapData(X, y).Graphic(3) = MapData_Adyacente(X - TxTDerecha, y).Graphic(3)
+                    MapData(X, y).Graphic(4) = MapData_Adyacente(X - TxTDerecha, y).Graphic(4)
+                    MapData(X, y).ObjGrh = MapData_Adyacente(X - TxTDerecha, y).ObjGrh
+                    MapData(X, y).OBJInfo = MapData_Adyacente(X - TxTDerecha, y).OBJInfo
 
                 Next
             Next
@@ -5751,38 +5499,38 @@ Call Resolucion
         
         Call MapEspejo(Este)
 
-            For Y = 1 To YMaxMapSize
+            For y = 1 To YMaxMapSize
                 For X = 1 To Cn
                     'Quitar NPCs
-                    If MapData(X, Y).NPCIndex > 0 Then
-                        EraseChar MapData(X, Y).CharIndex
-                        MapData(X, Y).NPCIndex = 0
+                    If MapData(X, y).NPCIndex > 0 Then
+                        EraseChar MapData(X, y).CharIndex
+                        MapData(X, y).NPCIndex = 0
                     End If
     
                     ' Quitar Objetos
-                    MapData(X, Y).OBJInfo.objindex = 0
-                    MapData(X, Y).OBJInfo.Amount = 0
-                    MapData(X, Y).ObjGrh.GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
+                    MapData(X, y).OBJInfo.Amount = 0
+                    MapData(X, y).ObjGrh.GrhIndex = 0
     
                     ' Quitar Triggers
-                    MapData(X, Y).Trigger = 0
+                    MapData(X, y).Trigger = 0
               
                     ' Quitar Graficos
-                    MapData(X, Y).Graphic(1).GrhIndex = 0
-                    MapData(X, Y).Graphic(2).GrhIndex = 0
-                    MapData(X, Y).Graphic(3).GrhIndex = 0
-                    MapData(X, Y).OBJInfo.objindex = 0
+                    MapData(X, y).Graphic(1).GrhIndex = 0
+                    MapData(X, y).Graphic(2).GrhIndex = 0
+                    MapData(X, y).Graphic(3).GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
                 Next
             Next
 
-            For Y = 1 To YMaxMapSize
+            For y = 1 To YMaxMapSize
                 For X = 1 To Cn
-                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X + TxTIzquierda, Y).Graphic(1)
-                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X + TxTIzquierda, Y).Graphic(2)
-                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X + TxTIzquierda, Y).Graphic(3)
-                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X + TxTIzquierda, Y).Graphic(4)
-                    MapData(X, Y).ObjGrh = MapData_Adyacente(X + TxTIzquierda, Y).ObjGrh
-                    MapData(X, Y).OBJInfo = MapData_Adyacente(X + TxTIzquierda, Y).OBJInfo
+                    MapData(X, y).Graphic(1) = MapData_Adyacente(X + TxTIzquierda, y).Graphic(1)
+                    MapData(X, y).Graphic(2) = MapData_Adyacente(X + TxTIzquierda, y).Graphic(2)
+                    MapData(X, y).Graphic(3) = MapData_Adyacente(X + TxTIzquierda, y).Graphic(3)
+                    MapData(X, y).Graphic(4) = MapData_Adyacente(X + TxTIzquierda, y).Graphic(4)
+                    MapData(X, y).ObjGrh = MapData_Adyacente(X + TxTIzquierda, y).ObjGrh
+                    MapData(X, y).OBJInfo = MapData_Adyacente(X + TxTIzquierda, y).OBJInfo
 
                 Next
             Next
@@ -5805,42 +5553,42 @@ Call Resolucion
         
         Call MapEspejo(Norte)
 
-            For Y = Dn To YMaxMapSize
+            For y = Dn To YMaxMapSize
                 For X = 1 To XMaxMapSize
                     'Quitar NPCs
-                    If MapData(X, Y).NPCIndex > 0 Then
-                        EraseChar MapData(X, Y).CharIndex
-                        MapData(X, Y).NPCIndex = 0
+                    If MapData(X, y).NPCIndex > 0 Then
+                        EraseChar MapData(X, y).CharIndex
+                        MapData(X, y).NPCIndex = 0
                     End If
     
                     ' Quitar Objetos
-                    MapData(X, Y).OBJInfo.objindex = 0
-                    MapData(X, Y).OBJInfo.Amount = 0
-                    MapData(X, Y).ObjGrh.GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
+                    MapData(X, y).OBJInfo.Amount = 0
+                    MapData(X, y).ObjGrh.GrhIndex = 0
     
                     ' Quitar Triggers
-                    MapData(X, Y).Trigger = 0
+                    MapData(X, y).Trigger = 0
               
                     ' Quitar Graficos
-                    MapData(X, Y).Graphic(1).GrhIndex = 0
-                    MapData(X, Y).Graphic(2).GrhIndex = 0
-                    MapData(X, Y).Graphic(3).GrhIndex = 0
-                    MapData(X, Y).OBJInfo.objindex = 0
+                    MapData(X, y).Graphic(1).GrhIndex = 0
+                    MapData(X, y).Graphic(2).GrhIndex = 0
+                    MapData(X, y).Graphic(3).GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
                 Next
             Next
-            For Y = Dn To YMaxMapSize
+            For y = Dn To YMaxMapSize
                 For X = 1 To XMaxMapSize
-                    MapData(X, Y).Graphic(1) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(1)
-                    MapData(X, Y).Graphic(2) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(2)
-                    MapData(X, Y).Graphic(3) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(3)
-                    MapData(X, Y).Graphic(4) = MapData_Adyacente(X, Y - TxTAbajo).Graphic(4)
-                    MapData(X, Y).ObjGrh = MapData_Adyacente(X, Y - TxTAbajo).ObjGrh
-                    MapData(X, Y).OBJInfo = MapData_Adyacente(X, Y - TxTAbajo).OBJInfo
+                    MapData(X, y).Graphic(1) = MapData_Adyacente(X, y - TxTAbajo).Graphic(1)
+                    MapData(X, y).Graphic(2) = MapData_Adyacente(X, y - TxTAbajo).Graphic(2)
+                    MapData(X, y).Graphic(3) = MapData_Adyacente(X, y - TxTAbajo).Graphic(3)
+                    MapData(X, y).Graphic(4) = MapData_Adyacente(X, y - TxTAbajo).Graphic(4)
+                    MapData(X, y).ObjGrh = MapData_Adyacente(X, y - TxTAbajo).ObjGrh
+                    MapData(X, y).OBJInfo = MapData_Adyacente(X, y - TxTAbajo).OBJInfo
 
                 Next
             Next
             MapInfo.Changed = 1
-            UserPos.Y = 88
+            UserPos.y = 88
                        
         Case 4 'Mapa entero en posicion 1
         
@@ -6181,10 +5929,9 @@ Private Sub LvBGuardarMinimapa_Click(index As Integer)
     UserArea.Visible = False
     DoEvents
     Call frmRender.Capturar_Imagen(frmMain.Minimap, frmMain.MinimapCapture)
-    SavePicture frmMain.MinimapCapture, App.Path & "\Recursos\Graficos\MiniMapa\" & NumMap_Save & ".bmp"
+    SavePicture frmMain.MinimapCapture, App.Path & "\Renderizados\Minimapa\" & NumMap_Save & ".bmp"
     Shape1.Visible = True
     UserArea.Visible = True
-    Call DibujarMiniMapa
 End Sub
 
 Private Sub LvBOpcion_Click(index As Integer)
@@ -6216,7 +5963,7 @@ Private Sub LvBAreas_Click(index As Integer)
        IsNumeric(DY1.Text) = False Or _
        IsNumeric(DY2.Text) = False Then
     
-        Call MsgBox("Debes introducir valores n�mericos. Estos pueden tener un mï¿½nimo de 1 y un mï¿½ximo de " & (YMinMapSize + XMinMapSize) / 2 & ".")
+        Call MsgBox("Debes introducir valores nï¿½mericos. Estos pueden tener un mï¿½nimo de 1 y un mï¿½ximo de " & (YMinMapSize + XMinMapSize) / 2 & ".")
     
        Exit Sub
     End If
@@ -6301,10 +6048,10 @@ If Len(Dialog.FileName) < 3 Then Exit Sub
     
     Call modMapIO.NuevoMapa
     
-    'Tambien podr� elegir CSM, pero no habra diferencia
-    If frmMain.Dialog.FilterIndex = 2 Then
+    'Tambien podrï¿½ elegir CSM, pero no habra diferencia
+    If frmMain.Dialog.FilterIndex = 1 Then
         modMapIO.Cargar_CSM Dialog.FileName
-    ElseIf frmMain.Dialog.FilterIndex = 1 Then
+    ElseIf frmMain.Dialog.FilterIndex = 2 Then
         modMapIO.MapaV2_Cargar Dialog.FileName, True
     End If
     
@@ -6329,23 +6076,8 @@ Private Sub mnuIniciarWE_Click()
 End Sub
 
 Private Sub mnulmpcostas_Click()
-    Call AddtoRichTextBox(frmMain.StatTxt, "Limpiando costas", 43, 0, 255)
+    Call AddtoRichTextBox(frmMain.StatTxt, "Limpiando costas", 0, 255, 0)
     Call LimpiarCostas
-End Sub
-
-Private Sub mnuMasterObjetos_Click()
-'    Dim Verifica_archivo
-'    Dim cadena1 As String
-'    Verifica_archivo = Dir(DirDats & "\obj.dat")
-'    If Verifica_archivo <> "" Then
-'        Dim Nuevo As New FileSystemObject, Nuevo1
-'        Set Nuevo1 = Nuevo.GetFile(DirDats & "\obj.dat")
-'        Nuevo1.Copy (DirDats & "\objetos.csv")
-'    End If
-'
-'        Call Reemplazar_Texto(DirDats & "\objetos.csv", "=", ",")
-'        Call ObjetosExel
-'        Call CrearMasterDatos
 End Sub
 
 Private Sub mnuquitararboles_Click()
@@ -6376,7 +6108,7 @@ Private Sub OptX_Click(index As Integer)
 'Author: Lorwik
 'Last modified: 25/04/2020
 '*************************************************
-'Nota: Hay que cambiar muchas cosas, el engine cuando inicia hace calculos con el tama�o de los mapas
+'Nota: Hay que cambiar muchas cosas, el engine cuando inicia hace calculos con el tamaï¿½o de los mapas
 'ademas hay mas funciones que manejan estos datos, no basta con cambiar el XMax & YMax.
    Call Resolucion
       Select Case index
@@ -6386,13 +6118,9 @@ Private Sub OptX_Click(index As Integer)
             YMaxMapSize = 100
             frmMain.Minimap.ScaleHeight = 100
             frmMain.Minimap.ScaleWidth = 100
-            frmMain.UserArea.Height = 32
+            frmMain.UserArea.Height = 30
             frmMain.UserArea.Width = 40
-            frmMain.Shape1.Height = 83
-            frmMain.Shape1.Width = 76
-            frmMain.Shape1.Left = 12
-            frmMain.Shape1.Top = 9
-                If frmMain.CopyBorder.Visible = True Then
+            If frmMain.CopyBorder.Visible = True Then
                 frmMain.COPIAR_GRH(4).Visible = False
                 frmMain.COPIAR_GRH(5).Visible = False
                 frmMain.COPIAR_GRH(6).Visible = False
@@ -6411,12 +6139,8 @@ Private Sub OptX_Click(index As Integer)
             YMaxMapSize = 200
             frmMain.Minimap.ScaleHeight = 200
             frmMain.Minimap.ScaleWidth = 200
-            frmMain.UserArea.Height = 30
-            frmMain.UserArea.Width = 40
-            frmMain.Shape1.Height = 183
-            frmMain.Shape1.Width = 176
-            frmMain.Shape1.Left = 12
-            frmMain.Shape1.Top = 9
+            frmMain.UserArea.Height = 20
+            frmMain.UserArea.Width = 30
             If frmMain.CopyBorder.Visible = True Then
                 frmMain.COPIAR_GRH(4).Visible = True
                 frmMain.COPIAR_GRH(5).Visible = True
@@ -6429,12 +6153,6 @@ Private Sub OptX_Click(index As Integer)
             YMaxMapSize = 300
             frmMain.Minimap.ScaleHeight = 300
             frmMain.Minimap.ScaleWidth = 300
-            frmMain.UserArea.Height = 30
-            frmMain.UserArea.Width = 40
-            frmMain.Shape1.Height = 283
-            frmMain.Shape1.Width = 276
-            frmMain.Shape1.Left = 12
-            frmMain.Shape1.Top = 9
         If frmMain.CopyBorder.Visible = True Then
             frmMain.COPIAR_GRH(4).Visible = True
             frmMain.COPIAR_GRH(5).Visible = True
@@ -6467,7 +6185,7 @@ Dim tX As Integer
 Dim tY As Integer
 
 If Not MapaCargado Then Exit Sub
-    
+
 If SobreX > 0 And SobreY > 0 Then
     DobleClick Val(SobreX), Val(SobreY)
 End If
@@ -6508,7 +6226,7 @@ Select Case UCase(Chr(KeyAscii))
 End Select
 End Sub
 
-Private Sub Form_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Form_MouseUp(Button As Integer, Shift As Integer, X As Single, y As Single)
     'If Seleccionando Then CopiarSeleccion
 End Sub
 
@@ -6547,16 +6265,10 @@ If HotKeysAllow = False Then
             Call fPreviewGrh(cGrh.Text)
             Call modPaneles.VistaPreviaDeSup
         Case 1
-            cNumFunc(0).Text = DameNPCsIndex(ReadField(2, lListado(index).Text, Asc("#")))
-            Call fPreviewNPCs(cNumFunc(0).Text)
-            Call modPaneles.VistaPreviaDeNPCs
             cNumFunc(0).Text = ReadField(2, lListado(index).Text, Asc("#"))
         Case 2
             cNumFunc(1).Text = ReadField(2, lListado(index).Text, Asc("#"))
         Case 3
-            cNumFunc(2).Text = DameOBJIndex(ReadField(2, lListado(index).Text, Asc("#")))
-            Call fPreviewObj(cNumFunc(2).Text)
-            Call modPaneles.VistaPreviaDeObj
             cNumFunc(2).Text = ReadField(2, lListado(index).Text, Asc("#"))
     End Select
 Else
@@ -6565,7 +6277,7 @@ End If
 
 End Sub
 
-Private Sub lListado_MouseDown(index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub lListado_MouseDown(index As Integer, Button As Integer, Shift As Integer, X As Single, y As Single)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 29/05/06
@@ -6575,7 +6287,7 @@ If index = 3 And Button = 2 Then
 End If
 End Sub
 
-Private Sub lListado_MouseMove(index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub lListado_MouseMove(index As Integer, Button As Integer, Shift As Integer, X As Single, y As Single)
 '*************************************************
 'Author: ^[GS]^
 'Last modified: 22/05/06
@@ -6611,10 +6323,10 @@ Private Sub MapPest_Click(index As Integer)
 
     Select Case frmMain.Dialog.FilterIndex
     
-        Case 2
+        Case 1
             formato = ".csm"
             
-        Case 1
+        Case 2
             formato = ".map"
             
     End Select
@@ -6628,7 +6340,7 @@ Private Sub MapPest_Click(index As Integer)
 
         End If
         
-       
+        
     If (index + NumMap_Save - 4) <> NumMap_Save Then
         Dialog.CancelError = True
 
@@ -6659,10 +6371,10 @@ Private Sub MapPest_Click(index As Integer)
         DoEvents
         Select Case frmMain.Dialog.FilterIndex
         
-            Case 2
+            Case 1
                 Call modMapIO.Cargar_CSM(Dialog.FileName)
                 
-            Case 1
+            Case 2
                 Call modMapIO.MapaV2_Cargar(Dialog.FileName, MapaCargado_Integer)
             
         End Select
@@ -6681,7 +6393,7 @@ End Sub
 'Ultima modificacion 08/05/2020 por ReyarB
 '*******************************************
 Private Sub MemoriaAuxiliar_Click()
-On Error GoTo error
+On Error GoTo Error
  
     MapData_Adyacente = MapData
     
@@ -6711,35 +6423,35 @@ On Error GoTo error
     frmMain.OpcBorde.Visible = True
     frmMain.OpcExit.Visible = True
     
-    Call AddtoRichTextBox(frmMain.StatTxt, "Mapa copiado a la memoria", 43, 0, 255)
+    Call AddtoRichTextBox(frmMain.StatTxt, "Mapa copiado a la memoria", 0, 255, 0)
      
     Exit Sub
-error:
+Error:
     Call AddtoRichTextBox(frmMain.StatTxt, "Error guardando mapa", 255, 0, 0)
 End Sub
 '*************************************************
 'Author: ^[GS]^
 'Modificado el 10/05/2020 por ReyarB
 '*************************************************
-Private Sub minimap_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub minimap_MouseDown(Button As Integer, Shift As Integer, X As Single, y As Single)
 If X < MinXBorder Then X = MinXBorder '11
 If X > MaxXBorder Then X = MaxXBorder '89
-If Y < MinYBorder Then Y = MinYBorder '10
-If Y > MaxYBorder Then Y = MaxYBorder '92
+If y < MinYBorder Then y = MinYBorder '10
+If y > MaxYBorder Then y = MaxYBorder '92
     
     UserPos.X = X
-    UserPos.Y = Y
+    UserPos.y = y
     
     Call ActualizaMinimap
 End Sub
 
-Private Sub minimap_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub minimap_MouseMove(Button As Integer, Shift As Integer, X As Single, y As Single)
 '*************************************************
 'Author: ^[GS]^
 'Modificado el 10/05/2020 por ReyarB
 '*************************************************
 MiRadarX = X
-MiRadarY = Y
+MiRadarY = y
 End Sub
 
 
@@ -6780,11 +6492,11 @@ If Len(Dialog.FileName) < 3 Then Exit Sub
            
     
     Call modMapIO.NuevoMapa
-    If frmMain.Dialog.FilterIndex = 2 Then
+    If frmMain.Dialog.FilterIndex = 1 Then
     
         modMapIO.Cargar_CSM Dialog.FileName
         
-    ElseIf frmMain.Dialog.FilterIndex = 1 Then
+    ElseIf frmMain.Dialog.FilterIndex = 2 Then
     
         modMapIO.MapaV2_Cargar Dialog.FileName
         
@@ -6792,7 +6504,7 @@ If Len(Dialog.FileName) < 3 Then Exit Sub
     DoEvents
     mnuReAbrirMapa.Enabled = True
     EngineRun = True
-
+    
 Exit Sub
 errhandler:
 End Sub
@@ -6912,7 +6624,7 @@ Private Sub mnuBloquear_Click()
 'Last modified: 20/05/06
 '*************************************************
 Dim i As Byte
-For i = 0 To 9
+For i = 0 To 8
     If i <> 2 Then
         frmMain.SelectPanel(i).value = False
         Call VerFuncion(i, False)
@@ -6944,7 +6656,7 @@ Private Sub mnuBloquearS_Click()
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
-Call modEdicion.Deshacer_Add("Bloquear Selecci�n")
+Call modEdicion.Deshacer_Add("Bloquear Selecciï¿½n")
 Call BlockearSeleccion
 End Sub
 
@@ -6981,7 +6693,7 @@ Private Sub mnuCortar_Click()
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
-Call modEdicion.Deshacer_Add("Cortar Selecci�n")
+Call modEdicion.Deshacer_Add("Cortar Selecciï¿½n")
 Call CortarSeleccion
 End Sub
 
@@ -6998,7 +6710,7 @@ Private Sub mnuDeshacerPegado_Click()
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
-Call modEdicion.Deshacer_Add("Deshacer Pegado de Selecci�n")
+Call modEdicion.Deshacer_Add("Deshacer Pegado de Selecciï¿½n")
 Call DePegar
 End Sub
 
@@ -7089,8 +6801,8 @@ Private Sub mnuManual_Click()
 'Author: ^[GS]^
 'Last modified: 24/11/08
 '*************************************************
-If LenB(Dir(App.Path & "\Manual\index.htm", vbArchive)) <> 0 Then
-    Call Shell("explorer " & App.Path & "\Manual\index.htm")
+If LenB(Dir(App.Path & "\manual\index.html", vbArchive)) <> 0 Then
+    Call Shell("explorer " & App.Path & "\manual\index.html")
     DoEvents
 End If
 End Sub
@@ -7109,7 +6821,7 @@ Private Sub mnuNPCs_Click()
 'Last modified: 20/05/06
 '*************************************************
 Dim i As Byte
-For i = 0 To 9
+For i = 0 To 8
     If i <> 3 Then
         frmMain.SelectPanel(i).value = False
         Call VerFuncion(i, False)
@@ -7126,7 +6838,7 @@ End Sub
 'Last modified: 20/05/06
 '*************************************************
 'Dim i As Byte
-'For i = 0 To 9
+'For i = 0 To 8
 '    If i <> 4 Then
 '        frmMain.SelectPanel(i).value = False
 '        Call VerFuncion(i, False)
@@ -7167,7 +6879,7 @@ Private Sub mnuObjetos_Click()
 'Last modified: 20/05/06
 '*************************************************
 Dim i As Byte
-For i = 0 To 9
+For i = 0 To 8
     If i <> 5 Then
         frmMain.SelectPanel(i).value = False
         Call VerFuncion(i, False)
@@ -7190,7 +6902,7 @@ Private Sub mnuPegar_Click()
 'Author: ^[GS]^
 'Last modified: 01/11/08
 '*************************************************
-Call modEdicion.Deshacer_Add("Pegar Selecci�n")
+Call modEdicion.Deshacer_Add("Pegar Selecciï¿½n")
 Call PegarSeleccion
 End Sub
 
@@ -7304,11 +7016,7 @@ cInsertarLuz.value = False
 Call cInsertarLuz_Click
 cQuitarLuz.value = False
 Call cQuitarLuz_Click
-'Particulas
-cmdAdd.value = False
-Call cmdAdd_Click
-cmdDel.value = False
-Call cmdDel_Click
+''Particulas
 'cQuitarParticula.value = False
 'Call cQuitarParticula_Click
 'cInsertarParticula.value = False
@@ -7399,9 +7107,9 @@ On Error GoTo errhandler
     End If
     Call modMapIO.NuevoMapa
     
-    If frmMain.Dialog.FilterIndex = 1 Then
+    If frmMain.Dialog.FilterIndex = 0 Then
         modMapIO.MapaV2_Cargar Dialog.FileName
-    ElseIf frmMain.Dialog.FilterIndex = 2 Then
+    ElseIf frmMain.Dialog.FilterIndex = 1 Then
         modMapIO.Cargar_CSM Dialog.FileName
     End If
     
@@ -7417,7 +7125,7 @@ Private Sub mnuRealizarOperacion_Click()
 'Author: ^[GS]^
 'Ultima modificacion 08/05/2020 por ReyarB
 '*************************************************
-Call modEdicion.Deshacer_Add("Realizar Operaci�n en Selecci�n")
+Call modEdicion.Deshacer_Add("Realizar Operaciï¿½n en Selecciï¿½n")
 Call AccionSeleccion
 End Sub
 
@@ -7439,7 +7147,7 @@ Private Sub mnuSuperficie_Click()
 'Last modified: 20/05/06
 '*************************************************
 Dim i As Byte
-For i = 0 To 9
+For i = 0 To 8
     If i <> 0 Then
         frmMain.SelectPanel(i).value = False
         Call VerFuncion(i, False)
@@ -7454,7 +7162,7 @@ Private Sub mnuTranslados_Click()
 'Last modified: 20/05/06
 '*************************************************
 Dim i As Byte
-For i = 0 To 9
+For i = 0 To 8
     If i <> 1 Then
         frmMain.SelectPanel(i).value = False
         Call VerFuncion(i, False)
@@ -7469,7 +7177,7 @@ Private Sub mnuTriggers_Click()
 'Last modified: 20/05/06
 '*************************************************
 Dim i As Byte
-For i = 0 To 9
+For i = 0 To 8
     If i <> 6 Then
         frmMain.SelectPanel(i).value = False
         Call VerFuncion(i, False)
@@ -7579,7 +7287,7 @@ cVerTriggers.value = (cVerTriggers.value = False)
 mnuVerTriggers.Checked = cVerTriggers.value
 End Sub
 
-Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, y As Single)
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06 - GS
@@ -7591,7 +7299,7 @@ Dim tY As Integer
 
 If Not MapaCargado Then Exit Sub
 
-ConvertCPtoTP X, Y, tX, tY
+ConvertCPtoTP X, y, tX, tY
 
 'If Shift = 1 And Button = 2 Then PegarSeleccion tX, tY: Exit Sub
 If Shift = 1 And Button = 1 Then
@@ -7606,13 +7314,13 @@ End If
 
 End Sub
 
-Private Sub Renderer_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    Call Form_MouseMove(Button, Shift, X, Y)
+Private Sub Renderer_MouseMove(Button As Integer, Shift As Integer, X As Single, y As Single)
+    Call Form_MouseMove(Button, Shift, X, y)
     MouseX = X
-    MouseY = Y
+    MouseY = y
 End Sub
 
-Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, y As Single)
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06 - GS
@@ -7625,7 +7333,7 @@ Dim tY As Integer
 If Not MapaCargado Then Exit Sub
 HotKeysAllow = True
 
-ConvertCPtoTP X, Y, tX, tY
+ConvertCPtoTP X, y, tX, tY
 
 PosX = "X: " & tX & " - Y: " & tY
 
@@ -7640,8 +7348,8 @@ Else
 End If
 End Sub
 
-Private Sub Renderer_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    Call Form_MouseDown(Button, Shift, X, Y)
+Private Sub Renderer_MouseDown(Button As Integer, Shift As Integer, X As Single, y As Single)
+    Call Form_MouseDown(Button, Shift, X, y)
     Call DibujarMiniMapa
 End Sub
 
@@ -7651,7 +7359,7 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 'Last modified: 24/11/08
 '*************************************************
 
-' Guardar configuraci�n
+' Guardar configuraciï¿½n
 WriteVar IniPath & "WorldEditor.ini", "CONFIGURACION", "GuardarConfig", IIf(frmMain.mnuGuardarUltimaConfig.Checked = True, "1", "0")
 If frmMain.mnuGuardarUltimaConfig.Checked = True Then
     WriteVar IniPath & "WorldEditor.ini", "PATH", "UltimoMapa", Dialog.FileName
@@ -7665,7 +7373,7 @@ If frmMain.mnuGuardarUltimaConfig.Checked = True Then
     WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "Triggers", IIf(frmMain.mnuVerTriggers.Checked = True, "1", "0")
     WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "Grilla", IIf(frmMain.mnuVerGrilla.Checked = True, "1", "0")
     WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "Bloqueos", IIf(frmMain.mnuVerBloqueos.Checked = True, "1", "0")
-    WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "LastPos", UserPos.X & "-" & UserPos.Y
+    WriteVar IniPath & "WorldEditor.ini", "MOSTRAR", "LastPos", UserPos.X & "-" & UserPos.y
     WriteVar IniPath & "WorldEditor.ini", "CONFIGURACION", "UtilizarDeshacer", IIf(frmMain.mnuUtilizarDeshacer.Checked = True, "1", "0")
     WriteVar IniPath & "WorldEditor.ini", "CONFIGURACION", "AutoCapturarTrans", IIf(frmMain.mnuAutoCapturarTranslados.Checked = True, "1", "0")
     WriteVar IniPath & "WorldEditor.ini", "CONFIGURACION", "AutoCapturarSup", IIf(frmMain.mnuAutoCapturarSuperficie.Checked = True, "1", "0")
@@ -7696,22 +7404,6 @@ If mnuAutoQuitarFunciones.Checked = True Then Call mnuQuitarFunciones_Click
 Call VerFuncion(index, SelectPanel(index).value)
 End Sub
 
-
-
-Private Sub SelectPanelExtra_Click(index As Integer)
-Select Case index
-    Case 0
-        Call Resolucion
-        Call modEdicion.Bloquear_Bordes(1)
-    Case 1
-        Call Resolucion
-        frmUnionAdyacente.Show
-    Case 2
-    
-
-   End Select
-End Sub
-
 Private Sub TimAutoGuardarMapa_Timer()
 '*************************************************
 'Author: ^[GS]^
@@ -7736,7 +7428,7 @@ Public Sub ObtenerNombreArchivo(ByVal Guardar As Boolean)
 '*************************************************
 On Error Resume Next
 With Dialog
-    .Filter = "Mapas formato (*.map)|*.map|Mapas formato (*.csm)|*.csm"
+    .Filter = "Mapas del nuevo formato (*.csm)|*.csm|Mapas clasicos de Argentum Online (*.map)|*.map"
     If Guardar Then
             .DialogTitle = "Guardar"
             .DefaultExt = ".txt"
@@ -7755,40 +7447,40 @@ End Sub
 ' Lee los traslados del mapa y retorna los mapas adyacentes o cero si no tiene en esa direccion
 Private Sub LeerAdyacentes(ByRef Norte As Integer, ByRef Sur As Integer, ByRef Este As Integer, ByRef Oeste As Integer)
     Dim X As Integer
-    Dim Y As Integer
+    Dim y As Integer
 
     ' Norte
-    Y = MinYBorder
+    y = MinYBorder
     For X = (MinXBorder + 1) To (MaxXBorder - 1)
-        If MapData(X, Y).TileExit.Map > 0 Then
-            Norte = MapData(X, Y).TileExit.Map
+        If MapData(X, y).TileExit.Map > 0 Then
+            Norte = MapData(X, y).TileExit.Map
             Exit For
         End If
     Next
 
     ' Este
     X = MaxXBorder
-    For Y = (MinYBorder + 1) To (MaxYBorder - 1)
-        If MapData(X, Y).TileExit.Map > 0 Then
-            Este = MapData(X, Y).TileExit.Map
+    For y = (MinYBorder + 1) To (MaxYBorder - 1)
+        If MapData(X, y).TileExit.Map > 0 Then
+            Este = MapData(X, y).TileExit.Map
             Exit For
         End If
     Next
 
     ' Sur
-    Y = MaxYBorder
+    y = MaxYBorder
     For X = (MinXBorder + 1) To (MaxXBorder - 1)
-        If MapData(X, Y).TileExit.Map > 0 Then
-            Sur = MapData(X, Y).TileExit.Map
+        If MapData(X, y).TileExit.Map > 0 Then
+            Sur = MapData(X, y).TileExit.Map
             Exit For
         End If
     Next
 
     ' Oeste
     X = MinXBorder
-    For Y = (MinYBorder + 1) To (MaxYBorder - 1)
-        If MapData(X, Y).TileExit.Map > 0 Then
-            Oeste = MapData(X, Y).TileExit.Map
+    For y = (MinYBorder + 1) To (MaxYBorder - 1)
+        If MapData(X, y).TileExit.Map > 0 Then
+            Oeste = MapData(X, y).TileExit.Map
             Exit For
         End If
     Next
@@ -7803,9 +7495,9 @@ Private Sub MapEspejo(index As Integer)
     Dim formato As String
     
     Select Case frmMain.Dialog.FilterIndex
-        Case 2
-            formato = ".csm"
         Case 1
+            formato = ".csm"
+        Case 2
             formato = ".map"
     End Select
     
@@ -7820,10 +7512,10 @@ Private Sub MapEspejo(index As Integer)
         
         DoEvents
         Select Case frmMain.Dialog.FilterIndex
-            Case 2
+            Case 1
                 Call modMapIO.Cargar_CSM(Dialog.FileName)
                 
-            Case 1
+            Case 2
                 Call modMapIO.MapaV2_Cargar(Dialog.FileName, MapaCargado_Integer)
             
         End Select
@@ -7842,29 +7534,29 @@ Private Sub PegarMapa(ByVal mX As Integer, ByVal mY As Integer)
 On Error GoTo err
 Dim OffsetX As Integer
 Dim OffsetY As Integer
-Dim X As Integer, Y As Integer
+Dim X As Integer, y As Integer
 
 
     OffsetX = X + mX
-    OffsetY = Y + mY
+    OffsetY = y + mY
 
     For X = 1 To 100
-        For Y = 1 To 100
+        For y = 1 To 100
         
             If OffsetX + X > 0 And OffsetX + X < 301 Then
-              If OffsetY + Y > 0 And OffsetY + Y < 301 Then
+              If OffsetY + y > 0 And OffsetY + y < 301 Then
               
-                With MapData(X + OffsetX, Y + OffsetY)
+                With MapData(X + OffsetX, y + OffsetY)
     
-                    .Graphic(1) = MapData_Adyacente(X, Y).Graphic(1)
-                    .Graphic(2) = MapData_Adyacente(X, Y).Graphic(2)
-                    .Graphic(3) = MapData_Adyacente(X, Y).Graphic(3)
-                    .Graphic(4) = MapData_Adyacente(X, Y).Graphic(4)
-                    .blocked = MapData_Adyacente(X, Y).blocked
-                    .NPCIndex = MapData_Adyacente(X, Y).NPCIndex
-                    .Trigger = MapData_Adyacente(X, Y).Trigger
-                    .ObjGrh = MapData_Adyacente(X, Y).ObjGrh
-                    .OBJInfo = MapData_Adyacente(X, Y).OBJInfo
+                    .Graphic(1) = MapData_Adyacente(X, y).Graphic(1)
+                    .Graphic(2) = MapData_Adyacente(X, y).Graphic(2)
+                    .Graphic(3) = MapData_Adyacente(X, y).Graphic(3)
+                    .Graphic(4) = MapData_Adyacente(X, y).Graphic(4)
+                    .blocked = MapData_Adyacente(X, y).blocked
+                    .NPCIndex = MapData_Adyacente(X, y).NPCIndex
+                    .Trigger = MapData_Adyacente(X, y).Trigger
+                    .ObjGrh = MapData_Adyacente(X, y).ObjGrh
+                    .OBJInfo = MapData_Adyacente(X, y).OBJInfo
                 End With
               End If
             End If
@@ -7880,29 +7572,29 @@ End Sub
 Private Sub BorrarMapa(ByVal mX As Integer, ByVal mY As Integer)
 Dim GrhNull As Grh
 Dim ObjectNull As Obj
-Dim X As Integer, Y As Integer
+Dim X As Integer, y As Integer
 
-            For Y = 1 + mY To 100 + mY ' borrado
+            For y = 1 + mY To 100 + mY ' borrado
                 For X = 1 + mX To 100 + mX
 
                     'Quitar NPCs
-                    If MapData(X, Y).NPCIndex > 0 Then
-                        EraseChar MapData(X, Y).CharIndex
-                        MapData(X, Y).NPCIndex = 0
+                    If MapData(X, y).NPCIndex > 0 Then
+                        EraseChar MapData(X, y).CharIndex
+                        MapData(X, y).NPCIndex = 0
                     End If
                     ' Quitar Objetos
-                    MapData(X, Y).OBJInfo.objindex = 0
-                    MapData(X, Y).OBJInfo.Amount = 0
-                    MapData(X, Y).ObjGrh.GrhIndex = 0
+                    MapData(X, y).OBJInfo.objindex = 0
+                    MapData(X, y).OBJInfo.Amount = 0
+                    MapData(X, y).ObjGrh.GrhIndex = 0
                     ' Quitar Triggers
-                    MapData(X, Y).Trigger = 0
+                    MapData(X, y).Trigger = 0
                     ' Quitar Bloqueos
-                    MapData(X, Y).blocked = 0
+                    MapData(X, y).blocked = 0
                     ' Quitar Graficos
-                    MapData(X, Y).Graphic(1).GrhIndex = 0
-                    MapData(X, Y).Graphic(2).GrhIndex = 0
-                    MapData(X, Y).Graphic(3).GrhIndex = 0
-                    MapData(X, Y).Graphic(4).GrhIndex = 0
+                    MapData(X, y).Graphic(1).GrhIndex = 0
+                    MapData(X, y).Graphic(2).GrhIndex = 0
+                    MapData(X, y).Graphic(3).GrhIndex = 0
+                    MapData(X, y).Graphic(4).GrhIndex = 0
                     
                 Next
             Next
@@ -7911,17 +7603,17 @@ End Sub
 
 Private Sub BorrarBloqueos()
 Dim X As Integer
-Dim Y As Integer
+Dim y As Integer
     For X = XMinMapSize To XMaxMapSize
-        For Y = YMinMapSize To YMaxMapSize
+        For y = YMinMapSize To YMaxMapSize
         
-        If MapData(X, Y).Graphic(2).GrhIndex > 0 Or _
-           MapData(X, Y).Graphic(3).GrhIndex > 0 Or _
-           MapData(X, Y).Graphic(4).GrhIndex > 0 Or _
-           MapData(X, Y).OBJInfo.objindex > 0 Then GoTo Jump
+        If MapData(X, y).Graphic(2).GrhIndex > 0 Or _
+           MapData(X, y).Graphic(3).GrhIndex > 0 Or _
+           MapData(X, y).Graphic(4).GrhIndex > 0 Or _
+           MapData(X, y).OBJInfo.objindex > 0 Then GoTo Jump
         
-        If X >= 13 And Y >= 92 And Y <= 109 Then MapData(X, Y).blocked = 0
-        If X >= 89 And X <= 112 And Y >= 10 Then MapData(X, Y).blocked = 0
+        If X >= 13 And y >= 92 And y <= 109 Then MapData(X, y).blocked = 0
+        If X >= 89 And X <= 112 And y >= 10 Then MapData(X, y).blocked = 0
 '        If X >= 192 And X <= 211 And y >= 10 Then MapData(X, y).blocked = 0
 '        If X >= 13 And X <= 92 And y >= 192 And y <= 193 Then MapData(X, y).blocked = 0
 
@@ -7933,36 +7625,5 @@ Dim Y As Integer
 Jump:
         Next
     Next
-End Sub
-Private Sub Form_Resize()
-'***********************************************
-'Autor: Lorwik
-'Fecha: 11/05/2020
-'Descripcion: Ajusta los controles cuando se redimensiona la ventana
-'***********************************************
-    Me.Renderer.Height = Me.Height / 19 'Alto
-    Me.Renderer.Width = Me.Width / 18 'Ancho
-
-    StatTxt.Top = Me.Renderer.Height + 100
-    FraFormatoDel.Top = Me.Renderer.Height + 100
-    Picture2.Top = Me.Renderer.Height + 100
-    Picture1.Top = Me.Renderer.Height + 115
-    Picture3.Top = Me.Renderer.Height + 100
-    'agregamos accesos directos
-     
-     
-    'Modificamos los parametros del engine
-    SetHalfWindowTileHeight (frmMain.Renderer.ScaleHeight)
-    SetHalfWindowTileWidth (frmMain.Renderer.ScaleWidth)
-End Sub
-
-
-Private Sub TxtMapa_KeyPress(KeyAscii As Integer)
-
-If KeyAscii = 13 Then
-    NumMap_Save = 7
-    Call MapPest_Click(TxtMapa)
-End If
-
 End Sub
 

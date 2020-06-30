@@ -90,7 +90,7 @@ If HotKeysAllow = False Then Exit Sub
         '[/Loopzer]
 
     Static timer As Long ' Agrego para se sea mas lento ver de 30 a 100 ReyarB
-        If GetTickCount - timer > 60 Then
+        If GetTickCount - timer > 1 Then '60 Then
             timer = GetTickCount
         Else
             Exit Sub
@@ -232,7 +232,9 @@ Private Sub CargarMapIni()
     Call Leer.Initialize(IniPath & "WorldEditor.ini")
     
     IniPath = App.Path & "\"
-
+    
+    Call frmImpCliente.verClienteyServer
+    
     If FileExist(IniPath & "WorldEditor.ini", vbArchive) = False Then
         MsgBox "Falta el archivo 'WorldEditor.ini' de configuración.", vbInformation
         End
@@ -265,6 +267,10 @@ Private Sub CargarMapIni()
         MsgBox "¡Faltan los graficos!", vbCritical + vbOKOnly
         End
     End If
+    If FileExist(DirGraficos, vbArchive) = False Then
+        MsgBox "¡Faltan los graficos!  copiar todos los graficos en " & DirGraficos, vbCritical + vbOKOnly
+        End
+    End If
     
     DirIndex = IniPath & "Recursos\INIT\"
     If FileExist(DirIndex, vbDirectory) = False Then
@@ -272,9 +278,16 @@ Private Sub CargarMapIni()
         End
     End If
     
+    
     DirDats = IniPath & "Recursos\Dat\"
     If FileExist(DirDats, vbDirectory) = False Then
         MsgBox "El directorio de Dats es incorrecto", vbCritical + vbOKOnly
+        End
+    End If
+    
+    DirDats = IniPath & "Recursos\Dat\"
+    If FileExist(DirDats, vbArchive) = False Then
+        MsgBox "Copiar los NPCs.dat y obj.dat en " & DirDats, vbCritical + vbOKOnly
         End
     End If
     
@@ -382,7 +395,7 @@ On Error Resume Next
     modMapIO.NuevoMapa
     prgRun = True
     Start
-    Call AddtoRichTextBox(frmMain.StatTxt, "World Editor By Lorwik iniciado...", 0, 255, 0)
+    Call AddtoRichTextBox(frmMain.StatTxt, "World Editor By Lorwik iniciado...", 43, 0, 255)
 End Sub
 
 Public Function GetVar(File As String, Main As String, Var As String) As String

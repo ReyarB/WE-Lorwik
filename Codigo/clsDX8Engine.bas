@@ -493,7 +493,7 @@ On Error Resume Next
     If Grh.GrhIndex = 0 Then Exit Sub
     
     If Grh.GrhIndex > GrhCount Or GrhData(Grh.GrhIndex).NumFrames = 0 And GrhData(Grh.GrhIndex).FileNum = 0 Then
-        Call InitGrh(Grh, 32179) ' 23829
+        Call InitGrh(Grh, 23829) 'llamita= 32179) ' error=23829
         Call AddtoRichTextBox(frmMain.StatTxt, "Error en Grh. Posicion: X:" & map_x & " Y:" & map_y, 255, 0, 0)
     End If
     

@@ -213,10 +213,10 @@ Public Sub VerFuncion(ByVal Numero As Byte, ByVal Ver As Boolean, Optional Norma
             frmMain.TxTDerecha.Visible = False
             frmMain.TxTIzquierda.Visible = False
             
-            Call AddtoRichTextBox(frmMain.StatTxt, "Mapa copiado a la memoria", 0, 255, 0)
+            Call AddtoRichTextBox(frmMain.StatTxt, "Mapa copiado a la memoria", 43, 0, 255)
             Exit Sub
 error:
-            Call AddtoRichTextBox(frmMain.StatTxt, "Error guardando mapa", 255, 0, 0)
+            Call AddtoRichTextBox(frmMain.StatTxt, "Error guardando mapa", 43, 0, 255)
 
         Case 8 'Particulas
             frmMain.lstParticle.Visible = Ver
@@ -224,6 +224,7 @@ error:
             frmMain.Label2.Visible = Ver
             frmMain.cmdAdd.Visible = Ver
             frmMain.cmdDel.Visible = Ver
+            
         Case 9 'Luces
             frmMain.cLuces.Visible = Ver
     End Select
@@ -279,16 +280,16 @@ Public Sub Filtrar(ByVal Numero As Byte)
     
         Select Case Numero
             Case 0 ' superficie
-                vDatos = SupData(i).name
+                vDatos = SupData(i).Name
                 NumI = i
             Case 1 ' NPCs
-                vDatos = NpcData(i + 1).name
+                vDatos = NpcData(i + 1).Name
                 NumI = i + 1
             Case 2 ' NPCs Hostiles
                 'vDatos = NpcData(i + 500).name
                 'NumI = i + 500
             Case 3 ' Objetos
-                vDatos = ObjData(i + 1).name
+                vDatos = ObjData(i + 1).Name
                 NumI = i + 1
         End Select
         
