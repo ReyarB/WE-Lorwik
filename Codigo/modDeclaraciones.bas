@@ -20,7 +20,7 @@ Public Type RGB
 End Type
  
 Public Type Stream
-    name As String
+    Name As String
     NumOfParticles As Long
     NumGrhs As Long
     ID As Long
@@ -102,7 +102,7 @@ Public VerNpcs As Boolean
 '[/Loopzer]
 
 Public Type tCabecera 'Cabecera de los con
-    desc As String * 255
+    Desc As String * 255
     CRC As Long
     MagicWord As Long
 End Type
@@ -156,7 +156,7 @@ Public MiRadarY As Integer
 Public bRefreshRadar As Boolean
 
 Type SupData
-    name As String
+    Name As String
     Grh As Long
     Width As Byte
     Height As Byte
@@ -167,7 +167,7 @@ Public MaxSup As Integer
 Public SupData() As SupData
 
 Public Type NpcData
-    name As String
+    Name As String
     Body As Integer
     Head As Integer
     Heading As Byte
@@ -177,8 +177,8 @@ Public NumNPCs As Long
 Public NpcData() As NpcData
 
 Public Type ObjData
-    name As String 'Nombre del obj
-    ObjType As Integer 'Tipo enum que determina cuales son las caract del obj
+    Name As String 'Nombre del obj
+    objtype As Integer 'Tipo enum que determina cuales son las caract del obj
     GrhIndex As Long ' Indice del grafico que representa el obj
     GrhSecundario As Integer
     Info As String
@@ -206,7 +206,7 @@ Public MAlto As Byte
 'Hold info about each map
 Public Type MapInfo
     Music As String
-    name As String
+    Name As String
     MapVersion As Integer
     PK As Boolean
     MagiaSinEfecto As Byte
@@ -240,14 +240,14 @@ Public Const YMinMapSize As Integer = 1
 'Holds a local position
 Public Type Position
     X As Integer
-    Y As Integer
+    y As Integer
 End Type
 
 'Holds a world position
 Public Type WorldPos
     Map As Integer
     X As Integer
-    Y As Integer
+    y As Integer
 End Type
 
 'Points to a grhData and keeps animation info
@@ -378,7 +378,7 @@ Public Light As New clsLight
 
 Public Type TLVERTEX
     X As Single
-    Y As Single
+    y As Single
     z As Single
     rhw As Single
     color As Long
@@ -389,7 +389,7 @@ End Type
 
 Public Type TLVERTEX2
     X As Single
-    Y As Single
+    y As Single
     z As Single
     rhw As Single
     color As Long
@@ -419,7 +419,7 @@ Public Const maxDeshacer As Integer = 10
 Public MapData_Deshacer() As MapBlock
 Type tDeshacerInfo
     Libre As Boolean
-    desc As String
+    Desc As String
 End Type
 Public MapData_Deshacer_Info(1 To maxDeshacer) As tDeshacerInfo
 
@@ -502,7 +502,7 @@ Global LastChar As Integer
 
 '********** OUTSIDE FUNCTIONS ***********
 'Good old BitBlt
-Public Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal X As Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long) As Long
+Public Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal X As Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long) As Long
 
 'Sound stuff
 Public Declare Function mciSendString Lib "winmm.dll" Alias "mciSendStringA" (ByVal lpstrCommand As String, ByVal lpstrReturnString As String, ByVal uRetrunLength As Long, ByVal hwndCallback As Long) As Long
@@ -518,7 +518,7 @@ Public Declare Function GetKeyState Lib "user32" (ByVal nVirtKey As Long) As Int
 Public Declare Function GetTickCount Lib "kernel32" () As Long
 
 'SetPixel utilizada por minimapa
-Public Declare Function SetPixel Lib "gdi32" (ByVal hdc As Long, ByVal X As Long, ByVal Y As Long, ByVal crColor As Long) As Long
+Public Declare Function SetPixel Lib "gdi32" (ByVal hdc As Long, ByVal X As Long, ByVal y As Long, ByVal crColor As Long) As Long
 
 ' tamaño para render de minimapas
 Public BY As Integer

@@ -49,7 +49,7 @@ Private Type Particle
 End Type
 
 Private Type Stream
-    name As String
+    Name As String
     NumOfParticles As Long
     NumGrhs As Long
     ID As Long
