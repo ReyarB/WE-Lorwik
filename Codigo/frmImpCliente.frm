@@ -235,6 +235,7 @@ End Sub
 Sub verClienteyServer()
 
 
+    
     If FileExist(IniPath & "Conversor\", vbDirectory) = False Then
         MsgBox "Falta La Carpeta 'Conversor\' Se creara y se guardara los mapas para el Cliente.", vbCritical
         MkDir (IniPath & "Conversor\")
@@ -247,7 +248,23 @@ Sub verClienteyServer()
         MsgBox "Falta La Carpeta 'Conversor\Mapas Cliente\' Se creara y se guardara los mapas para el Cliente.", vbCritical
         MkDir (IniPath & "Conversor\Mapas Cliente\")
     End If
+    
+    If FileExist(IniPath & "Conversor\Mapas CSM\", vbDirectory) = False Then
+        MsgBox "Falta La Carpeta 'Conversor\Mapas CSM\' Se creara y se guardara los mapas CSM.", vbCritical
+        MkDir (IniPath & "Conversor\Mapas CSM\")
+    End If
 
+    If FileExist(IniPath & "Conversor\Mapas Integer\", vbDirectory) = False Then
+        MsgBox "Falta La Carpeta 'Conversor\Mapas Integer\' Se creara y se guardara los mapas Integer.", vbCritical
+        MkDir (IniPath & "Conversor\Mapas Integer\")
+    End If
+
+    If FileExist(IniPath & "Conversor\Mapas Long\", vbDirectory) = False Then
+        MsgBox "Falta La Carpeta 'Conversor\Mapas Long\' Se creara y se guardara los mapas Long.", vbCritical
+        MkDir (IniPath & "Conversor\Mapas Long\")
+    End If
+    
+    
     If FileExist(IniPath & "Recursos\", vbDirectory) = False Then
         MsgBox "Falta La Carpeta 'Recursos\Dat\' Se crera y se guardara los mapas para el Server sin Particulas.", vbCritical
         MkDir (IniPath & "Recursos\")

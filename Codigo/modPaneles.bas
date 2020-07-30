@@ -302,7 +302,7 @@ Public Sub Filtrar(ByVal Numero As Byte)
     Next
 End Sub
 
-Public Function DameGrhIndex(ByVal GrhIn As Integer) As Integer
+Public Function DameGrhIndex(ByVal GrhIn As Long) As Long
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06
@@ -324,7 +324,7 @@ End If
 
 End Function
 
-Public Function DameNPCsIndex(ByVal GrhIn As Integer) As Integer
+Public Function DameNPCsIndex(ByVal GrhIn As Long) As Long
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06
@@ -337,7 +337,7 @@ DameNPCsIndex = NpcData(GrhIn).Body
 '    frmConfigSup.mLargo.Text = "0"
 
 End Function
-Public Function DameOBJIndex(ByVal GrhIn As Integer) As Integer
+Public Function DameOBJIndex(ByVal GrhIn As Long) As Long
 '*************************************************
 'Author: Unkwown
 'Last modified: 20/05/06
@@ -350,7 +350,7 @@ DameOBJIndex = ObjData(GrhIn).GrhIndex
 '    frmConfigSup.mLargo.Text = "0"
 
 End Function
-Public Sub fPreviewNPCs(ByVal GrhIn As Integer)
+Public Sub fPreviewNPCs(ByVal GrhIn As Long)
 '*************************************************
 'Author: Unkwown
 'Last modified: 22/05/06
@@ -373,7 +373,7 @@ CurrentGrh.FrameCounter = 1
 CurrentGrh.Speed = GrhData(CurrentGrh.GrhIndex).Speed
 
 End Sub
-Public Sub fPreviewObj(ByVal GrhIn As Integer)
+Public Sub fPreviewObj(ByVal GrhIn As Long)
 '*************************************************
 'Author: Unkwown
 'Last modified: 22/05/06
@@ -397,13 +397,13 @@ CurrentGrh.Speed = GrhData(CurrentGrh.GrhIndex).Speed
 
 End Sub
 
-Public Sub fPreviewGrh(ByVal GrhIn As Integer)
+Public Sub fPreviewGrh(ByVal GrhIn As Long)
 '*************************************************
 'Author: Unkwown
 'Last modified: 22/05/06
 '*************************************************
 Dim X As Byte
-Dim Y As Byte
+Dim y As Byte
 
 If Val(GrhIn) < 1 Then
   frmMain.cGrh.Text = MaxGrhs
@@ -462,7 +462,7 @@ If CurrentGrh.GrhIndex = 0 Then Exit Sub
         SR.Right = SR.Left + (GrhData(CurrentGrh.GrhIndex).pixelWidth)
         Call DrawGrhtoHdc(frmMain.PreviewGrh, CurrentGrh.GrhIndex, 1, 1)
     Else
-        Dim X As Integer, Y As Integer, J As Integer, i As Integer
+        Dim X As Integer, y As Integer, J As Integer, i As Integer
         Dim Cont As Integer
         For i = 1 To CInt(Val(frmConfigSup.mLargo))
             For J = 1 To CInt(Val(frmConfigSup.mAncho))
